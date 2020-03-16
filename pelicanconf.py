@@ -8,7 +8,7 @@ SITETITLE = u'R.K.S. blog'
 SITESUBTITLE = u'Live as if you were to die tomorrow. Learn as if you were to live forever.'
 SITETAG = 'R.K.S. blog'
 #SITEURL = 'http://ryokbys.web.nitech.ac.jp/contents/blog'
-SITEURL = 'http://ryokbys.github.io/blog/'
+SITEURL = 'http://ryokbys.github.io/blog'
 #SITEURL = 'file:///Users/kobayashi/Dropbox/Public/pelican_blog/output'
 SITELOGO = SITEURL+'/images/yoda-and-me.png'
 
