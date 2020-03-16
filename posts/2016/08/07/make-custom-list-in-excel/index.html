@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Ryo KOBAYASHI" />
+<meta name="description" content="Excelにて並び替えを行いたいが，数値や日付やアルファベットではなく，「高，中，低」のように自分で設定した文字列で並べたい場合，「 ユーザー設定リスト 」というものを自作する必要がある．そのやり方をメモしておく． 高 中 低 と縦に並べたものを用意しておいて，Excelの「環境設定」を開き，その中の「ユーザー設定リスト」を開く．そのウィンドウの一番下にある「リストの取り込み元範囲：」というところに，上で用意した範囲を記載する（クリックして範囲選択できる）．そして「インポート」ボタンを押して，「追加」すればよし． あとは並べ替える際に，「ユーザー設定リスト」から上で作成した自作リストを選択すればよし．" />
+<meta name="keywords" content="excel">
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:title" content="Excel: make custom list"/>
+<meta property="og:description" content="Excelにて並び替えを行いたいが，数値や日付やアルファベットではなく，「高，中，低」のように自分で設定した文字列で並べたい場合，「 ユーザー設定リスト 」というものを自作する必要がある．そのやり方をメモしておく． 高 中 低 と縦に並べたものを用意しておいて，Excelの「環境設定」を開き，その中の「ユーザー設定リスト」を開く．そのウィンドウの一番下にある「リストの取り込み元範囲：」というところに，上で用意した範囲を記載する（クリックして範囲選択できる）．そして「インポート」ボタンを押して，「追加」すればよし． あとは並べ替える際に，「ユーザー設定リスト」から上で作成した自作リストを選択すればよし．"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2016/08/07/make-custom-list-in-excel/index.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-08-07 12:26:33+09:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/ryo-kobayashi.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="excel"/>
+<meta property="og:image" content="http://ryokbys.github.io/blog//images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash; Excel: make custom list</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="http://ryokbys.github.io/blog//images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="../../../../..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.github.io/blog//archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.github.io/blog//tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="make-custom-list-in-excel">Excel: make custom list</h1>
+    <p>
+          Posted on Sun 07 August 2016 in <a href="../../../../../category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/excel.html">excel</a>
+    </p>
+  </div>
+  <div>
+    <p>Excelにて並び替えを行いたいが，数値や日付やアルファベットではなく，「高，中，低」のように自分で設定した文字列で並べたい場合，「 <strong>ユーザー設定リスト</strong> 」というものを自作する必要がある．そのやり方をメモしておく．</p>
+<p>高
+中
+低</p>
+<p>と縦に並べたものを用意しておいて，Excelの「環境設定」を開き，その中の「ユーザー設定リスト」を開く．そのウィンドウの一番下にある「リストの取り込み元範囲：」というところに，上で用意した範囲を記載する（クリックして範囲選択できる）．そして「インポート」ボタンを押して，「追加」すればよし．</p>
+<p>あとは並べ替える際に，「ユーザー設定リスト」から上で作成した自作リストを選択すればよし．</p>
+
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "../../../../..",
+  "image": "http://ryokbys.github.io/blog//images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>

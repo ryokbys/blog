@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Ryo KOBAYASHI" />
+<meta name="description" content="When I code python programs using emacs, emacs uses elpy and elpy uses flake8 for syntax checking. But this syntax checking is kind of annoying. For example, I would like to write like this x = some_func(a,b,c+d) instead of this x = some_func(a, b, c + d) I …" />
+<meta name="keywords" content="python, emacs, mac">
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:title" content="flake8 personal setting for python"/>
+<meta property="og:description" content="When I code python programs using emacs, emacs uses elpy and elpy uses flake8 for syntax checking. But this syntax checking is kind of annoying. For example, I would like to write like this x = some_func(a,b,c+d) instead of this x = some_func(a, b, c + d) I …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2016/10/27/flake8-personal-setting-for-python/index.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-10-27 06:44:20+09:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/ryo-kobayashi.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="emacs"/>
+<meta property="article:tag" content="mac"/>
+<meta property="og:image" content="http://ryokbys.github.io/blog//images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash; flake8 personal setting for python</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="http://ryokbys.github.io/blog//images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="../../../../..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.github.io/blog//archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.github.io/blog//tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="flake8-personal-setting-for-python">flake8 personal setting for python</h1>
+    <p>
+          Posted on Thu 27 October 2016 in <a href="../../../../../category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/python.html">python</a>
+      <a href="../../../../../tag/emacs.html">emacs</a>
+      <a href="../../../../../tag/mac.html">mac</a>
+    </p>
+  </div>
+  <div>
+    <p>When I code python programs using emacs, emacs uses elpy and elpy uses flake8 for syntax checking.
+But this syntax checking is kind of annoying.
+For example, I would like to write like this</p>
+<pre class="code python literal-block">
+<span class="n">x</span> <span class="o">=</span> <span class="n">some_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">+</span><span class="n">d</span><span class="p">)</span>
+</pre>
+<p>instead of this</p>
+<pre class="code python literal-block">
+<span class="n">x</span> <span class="o">=</span> <span class="n">some_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span>
+</pre>
+<p>I think this style condtains too many whitespaces which make code lengthy.</p>
+<p>To change the style in flake8,
+you can write the following lines in <tt class="docutils literal"><span class="pre">~/.config/flake8</span></tt></p>
+<pre class="literal-block">
+[flake8]
+ignore = E226, E231
+</pre>
+<p>To be honest, I forget what those E226 and E231 means (one can google them)
+but at least you can change the syntax style by doing this.</p>
+
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "../../../../..",
+  "image": "http://ryokbys.github.io/blog//images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>

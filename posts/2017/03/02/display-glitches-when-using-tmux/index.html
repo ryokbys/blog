@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Ryo KOBAYASHI" />
+<meta name="description" content="When I was using tmux on a remote server in Terminal.app and tried to type something in addition to existing text, sometimes display went wrong not shifting the existing text rather overriding the text. This seems a problem of setting of TERM environment variable of the shell used. So …" />
+<meta name="keywords" content="mac, linux, tmux">
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:title" content="Display glitches when using tmux"/>
+<meta property="og:description" content="When I was using tmux on a remote server in Terminal.app and tried to type something in addition to existing text, sometimes display went wrong not shifting the existing text rather overriding the text. This seems a problem of setting of TERM environment variable of the shell used. So …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2017/03/02/display-glitches-when-using-tmux/index.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-03-02 19:13:28+09:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/ryo-kobayashi.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="mac"/>
+<meta property="article:tag" content="linux"/>
+<meta property="article:tag" content="tmux"/>
+<meta property="og:image" content="http://ryokbys.github.io/blog//images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash; Display glitches when using tmux</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="http://ryokbys.github.io/blog//images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="../../../../..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.github.io/blog//archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.github.io/blog//tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="display-glitches-when-using-tmux">Display glitches when using tmux</h1>
+    <p>
+          Posted on Thu 02 March 2017 in <a href="../../../../../category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/mac.html">mac</a>
+      <a href="../../../../../tag/linux.html">linux</a>
+      <a href="../../../../../tag/tmux.html">tmux</a>
+    </p>
+  </div>
+  <div>
+    <p>When I was using <code>tmux</code> on a remote server in Terminal.app and tried to type something in addition to existing text, sometimes display went wrong not shifting the existing text rather overriding the text.</p>
+<p>This seems a problem of setting of <code>TERM</code> environment variable of the shell used. So I changed the <code>TERM</code> variable from <code>xterm-color</code> to <code>xterm-256color</code> and the problem was fixed.</p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "../../../../..",
+  "image": "http://ryokbys.github.io/blog//images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>

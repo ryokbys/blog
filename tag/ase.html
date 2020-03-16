@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+    <meta name="author" content="Ryo KOBAYASHI" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="R.K.S. blog"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=".."/>
+<meta property="og:image" content="http://ryokbys.github.io/blog//images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash;     Tag ase
+</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+        <img src="http://ryokbys.github.io/blog//images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.github.io/blog//archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.github.io/blog//tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+
+
+<article>
+  <header>
+    <h2><a href="../posts/2016/01/22/bugfix-in-ase/index.html#bugfix-in-ase">Bugfix in ASE</a></h2>
+    <p>
+          Posted on Fri 22 January 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/research.html">research</a>,              <a href="../tag/ase.html">ase</a>
+    </p>
+  </header>
+  <div>
+      <p>There was a bug in ASE package.</p>
+<p>When I tried to read a <tt class="docutils literal">vasprun.xml</tt> file using <tt class="docutils literal">ase.io.read</tt> like,</p>
+<div class="highlight"><pre><span></span><span class="n">atoms</span><span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s1">&#39;vasprun.xml&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s1">&#39;vasp-xml&#39;</span><span class="p">)</span>
+</pre></div>
+<p>and the <tt class="docutils literal">vasprun.xml</tt> contains some constraints for atoms, I got the following message,</p>
+<pre class="literal-block">
+Traceback (most recent call last):
+  File &quot;/Users …</pre>
+      <br>
+      <a class="btn" href="../posts/2016/01/22/bugfix-in-ase/index.html#bugfix-in-ase">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/01/14/generating-vasp-inputs-via-ase/index.html#generating-vasp-inputs-via-ase">Generating VASP inputs via ASE</a></h2>
+    <p>
+          Posted on Thu 14 January 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/research.html">research</a>,              <a href="../tag/ase.html">ase</a>,              <a href="../tag/vasp.html">vasp</a>
+    </p>
+  </header>
+  <div>
+      <div class="section" id="on-jupyter-notebook">
+<h2>On jupyter notebook</h2>
+<p>This is done on jupyter notebook, and it can be read via nbviewer web service. See the link below:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://nbviewer.ipython.org/urls/dl.dropboxusercontent.com/u/7875490/ipynbs/160114_ase_prepare_vasp.ipynb">Generating VASP inputs via ASE</a></li>
+</ul>
+</div>
+<div class="section" id="how-to-put-your-jupyter-notebook-on-the-web">
+<h2>How to put your jupyter notebook on the web?</h2>
+<p>When you make a jupyter notebook, put it at somewhere public place like <tt class="docutils literal">Dropbox …</tt></p></div>
+      <br>
+      <a class="btn" href="../posts/2016/01/14/generating-vasp-inputs-via-ase/index.html#generating-vasp-inputs-via-ase">    Continue reading
+</a>
+  </div>
+</article>
+
+  <div class="pagination">
+  </div>
+
+
+
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "..",
+  "image": "http://ryokbys.github.io/blog//images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>

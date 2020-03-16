@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Ryo KOBAYASHI" />
+<meta name="description" content="材料の機械的性質を議論する場合，generalized stacking fault もしくは gamma surface を考える場合が多い． その場合，ある面内で上下の原子をシフトした場合のエネルギーがどう変化するかを調べるわけだが，その可視化として二次元カラーで表示することが多いようだ． これは，gnuplotで以下のようにして可視化できる． Data format x座標，y座標，データの３列のデータを以下のように並べる． 0.000 0.000 -9.96910530855912E+001 0.000 0.033 -9.89868134250834E+001 0.000 0.067 -9.74010559556275E+001 ... 0.000 0.967 -9.88510003534038E+001 0.000 1.000 …" />
+<meta name="keywords" content="research, gnuplot">
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:title" content="gamma surface with gnuplot"/>
+<meta property="og:description" content="材料の機械的性質を議論する場合，generalized stacking fault もしくは gamma surface を考える場合が多い． その場合，ある面内で上下の原子をシフトした場合のエネルギーがどう変化するかを調べるわけだが，その可視化として二次元カラーで表示することが多いようだ． これは，gnuplotで以下のようにして可視化できる． Data format x座標，y座標，データの３列のデータを以下のように並べる． 0.000 0.000 -9.96910530855912E+001 0.000 0.033 -9.89868134250834E+001 0.000 0.067 -9.74010559556275E+001 ... 0.000 0.967 -9.88510003534038E+001 0.000 1.000 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2016/06/19/gamma-surface-with-gnuplot/index.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-06-19 23:02:20+09:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/ryo-kobayashi.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="research"/>
+<meta property="article:tag" content="gnuplot"/>
+<meta property="og:image" content="http://ryokbys.github.io/blog//images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash; gamma surface with gnuplot</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="http://ryokbys.github.io/blog//images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="../../../../..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.github.io/blog//archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.github.io/blog//tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="gamma-surface-with-gnuplot">gamma surface with gnuplot</h1>
+    <p>
+          Posted on Sun 19 June 2016 in <a href="../../../../../category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/research.html">research</a>
+      <a href="../../../../../tag/gnuplot.html">gnuplot</a>
+    </p>
+  </div>
+  <div>
+    <p>材料の機械的性質を議論する場合，generalized stacking fault もしくは gamma surface を考える場合が多い．
+その場合，ある面内で上下の原子をシフトした場合のエネルギーがどう変化するかを調べるわけだが，その可視化として二次元カラーで表示することが多いようだ．
+これは，gnuplotで以下のようにして可視化できる．</p>
+<div class="section" id="data-format">
+<h2>Data format</h2>
+<p>x座標，y座標，データの３列のデータを以下のように並べる．</p>
+<pre class="literal-block">
+0.000   0.000 -9.96910530855912E+001
+0.000   0.033 -9.89868134250834E+001
+0.000   0.067 -9.74010559556275E+001
+...
+0.000   0.967 -9.88510003534038E+001
+0.000   1.000 -9.96910530855912E+001
+
+0.200   0.000 -9.32691179812626E+001
+0.200   0.033 -9.14654801350688E+001
+</pre>
+<p>のように <strong>xデータの値が変わるところで空行が必要．</strong>
+これが結構厄介． <a class="reference external" href="http://cosmos.ge.ce.nihon-u.ac.jp/diary/20130826.html">ココ</a> などでawk空行を挿入するスクリプトなどが公開されているが，
+そもそもxデータが毎行変化するようなデータの場合は毎行に空行を入れる必要がある（これ自体は簡単だが，そもそもそれが必要な意味が．．．）</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="pm3d">
+<h2>pm3d</h2>
+<pre class="literal-block">
+reset
+unset key
+set pm3d map
+set pm3d interpolate 10,10
+set xrange [0:1]
+set yrange [0:1]
+set cbrange [0:10]
+set format x &quot;&quot;
+set format y &quot;&quot;
+set palette rgbformulae 33,13,10
+splot fname us 1:2:($3-(e0)) with pm3d
+</pre>
+<p>こうすると，以下のようなカラーマップで出力できる．</p>
+<div class="figure align-right">
+<a class="reference external image-reference" href="https://c2.staticflickr.com/8/7706/27167190134_9010c3bb5a_o.png"><img alt="gnuplot01" src="https://c2.staticflickr.com/8/7706/27167190134_9010c3bb5a_o.png" style="width: 500px;" /></a>
+</div>
+<p>ここで，</p>
+<pre class="literal-block">
+set pm3d map
+</pre>
+<p>とし，</p>
+<pre class="literal-block">
+set pm3d interpolate 10,10
+</pre>
+<p>のようにすることで，少ないデータ点の間を補間してなめらかなカラーマップとできる．</p>
+<pre class="literal-block">
+set palette rgbformulae 33,13,10
+</pre>
+<p>のところは，</p>
+<pre class="literal-block">
+set palette defined (0 &quot;blue&quot;, 5 &quot;white&quot;, 10 &quot;red&quot;)
+</pre>
+<p>のような指定の仕方もあるらしい．この場合以下のようになる</p>
+<div class="figure align-right">
+<a class="reference external image-reference" href="https://c2.staticflickr.com/8/7599/27704738041_25e48c3795_o.png"><img alt="gnuplot02" src="https://c2.staticflickr.com/8/7599/27704738041_25e48c3795_o.png" style="width: 500px;" /></a>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="id2">
+<h2>等高線も付ける</h2>
+<p>等高線も付ける場合は以下のようにする．
+以下の例では，全ての等高線を黒線としている．このようにline styleを指定しないと各等高線は別々の色となる．</p>
+<pre class="literal-block">
+reset
+unset key
+set pm3d map
+set pm3d interpolate 10,10
+set contour
+set cntrparam cubicspline
+set cntrparam levels 10
+set style line 1 lw 1.0 lc rgb &quot;#000000&quot;
+set style line 2 lw 1.0 lc rgb &quot;#000000&quot;
+set style line 3 lw 1.0 lc rgb &quot;#000000&quot;
+set style line 4 lw 1.0 lc rgb &quot;#000000&quot;
+set style line 5 lw 1.0 lc rgb &quot;#000000&quot;
+set style line 6 lw 1.0 lc rgb &quot;#000000&quot;
+set style line 7 lw 1.0 lc rgb &quot;#000000&quot;
+set style line 8 lw 1.0 lc rgb &quot;#000000&quot;
+set style line 9 lw 1.0 lc rgb &quot;#000000&quot;
+set style line 10 lw 1.0 lc rgb &quot;#000000&quot;
+set style line 11 lw 1.0 lc rgb &quot;#000000&quot;
+set style line 12 lw 1.0 lc rgb &quot;#000000&quot;
+set style line 13 lw 1.0 lc rgb &quot;#000000&quot;
+set style line 14 lw 1.0 lc rgb &quot;#000000&quot;
+set style increment user
+set xrange [0:1]
+set yrange [0:1]
+set format x &quot;&quot;
+set format y &quot;&quot;
+set cblabel &quot;Stacking fault energy (mJ/m^2)&quot;
+set palette rgbformulae 33,13,10
+splot fname us 1:2:($3-(e0))/area*gpa with pm3d, \
+    fname us 1:2:($3-(e0))/area*gpa w l lt -1 lw 1.0 nosurface
+</pre>
+<p>結果は以下のような感じ．</p>
+<div class="figure align-right">
+<a class="reference external image-reference" href="https://c2.staticflickr.com/8/7425/27167191154_8c3789ff7b_o.png"><img alt="gnuplot03" src="https://c2.staticflickr.com/8/7425/27167191154_8c3789ff7b_o.png" style="width: 500px;" /></a>
+</div>
+<p><tt class="docutils literal">set cblabel <span class="pre">&quot;...&quot;</span></tt> でカラー・マップのラベルを指定している．</p>
+</div>
+
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "../../../../..",
+  "image": "http://ryokbys.github.io/blog//images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>

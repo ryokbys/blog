@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Ryo KOBAYASHI" />
+<meta name="description" content="Sometimes XQuartz windows go somewhere off the screen if you are using multiple monitors. To bring back the window, you may be able to use wmctrl utility which can be installed as, $ brew install wmctrl And you can see XQuartz window list as, $ wmctrl -G -l 0x00600008 0 0 44 …" />
+<meta name="keywords" content="mac">
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:title" content="Retrieve offscreen XQuartz windows"/>
+<meta property="og:description" content="Sometimes XQuartz windows go somewhere off the screen if you are using multiple monitors. To bring back the window, you may be able to use wmctrl utility which can be installed as, $ brew install wmctrl And you can see XQuartz window list as, $ wmctrl -G -l 0x00600008 0 0 44 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2016/02/08/retrieve-offscreen-xquartz-window/index.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-02-08 11:21:49+09:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/ryo-kobayashi.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="mac"/>
+<meta property="og:image" content="http://ryokbys.github.io/blog//images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash; Retrieve offscreen XQuartz windows</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="http://ryokbys.github.io/blog//images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="../../../../..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.github.io/blog//archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.github.io/blog//tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="retrieve-offscreen-xquartz-window">Retrieve offscreen XQuartz windows</h1>
+    <p>
+          Posted on Mon 08 February 2016 in <a href="../../../../../category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/mac.html">mac</a>
+    </p>
+  </div>
+  <div>
+    <p>Sometimes XQuartz windows go somewhere off the screen if you are using multiple monitors.</p>
+<p>To bring back the window, you may be able to use <tt class="docutils literal">wmctrl</tt> utility which can be
+installed as,</p>
+<pre class="literal-block">
+$ brew install wmctrl
+</pre>
+<p>And you can see XQuartz window list as,</p>
+<pre class="literal-block">
+$ wmctrl  -G -l
+0x00600008  0 0    44   200  200  N/A Gnuplot
+</pre>
+<p>It seems the window I am now looking for is at the position (0,0) with width and height (200,200),
+but it is not seen on the screen.
+Try something like,</p>
+<pre class="literal-block">
+$ wmctrl -i -r 0x00600008 -e 0,200,2000,200,200
+</pre>
+<p>which means specify windows in number <tt class="docutils literal"><span class="pre">-i</span> <span class="pre">-r</span> 0x00600008</tt>,
+and specify the position (x,y), and width and height (w,h) as <tt class="docutils literal"><span class="pre">-e</span> 0,x,y,w,h</tt>.</p>
+<p>It seems that the position (x,y) is not correctly pointing the up and left corner,
+so we need to specify some large values for (x,y), in this case (200,2000),
+but I don't know what is the apropriate values for the coordinate, though.
+At least, I could bring back my window from outside the screen.</p>
+
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "../../../../..",
+  "image": "http://ryokbys.github.io/blog//images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>

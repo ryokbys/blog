@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Ryo KOBAYASHI" />
+<meta name="description" content="Linux上での結果を残しておくための簡単なスクリプト例をメモしておく． いくつかの結果ファイルを日付の入ったディレクトリに保存するスクリプト． #!/bin/bash now=`date +%y%m%d_%H%M%S` dname=results_$now mkdir $dname cp some result files $dname/ echo some result files echo "These files are Saved at " $dname 引数を受け取って保存するようにしたい場合は， #!/bin/bash if [ $# -eq 0 ]; then echo "There is nothing to be saved..." exit 0 fi …" />
+<meta name="keywords" content="research, linux">
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:title" content="日付入りディレクトリへのデータ保存スクリプト"/>
+<meta property="og:description" content="Linux上での結果を残しておくための簡単なスクリプト例をメモしておく． いくつかの結果ファイルを日付の入ったディレクトリに保存するスクリプト． #!/bin/bash now=`date +%y%m%d_%H%M%S` dname=results_$now mkdir $dname cp some result files $dname/ echo some result files echo "These files are Saved at " $dname 引数を受け取って保存するようにしたい場合は， #!/bin/bash if [ $# -eq 0 ]; then echo "There is nothing to be saved..." exit 0 fi …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2016/02/05/script-for-keeping-results/index.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-02-05 15:00:53+09:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/ryo-kobayashi.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="research"/>
+<meta property="article:tag" content="linux"/>
+<meta property="og:image" content="http://ryokbys.github.io/blog//images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash; 日付入りディレクトリへのデータ保存スクリプト</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="http://ryokbys.github.io/blog//images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="../../../../..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.github.io/blog//archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.github.io/blog//tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="script-for-keeping-results">日付入りディレクトリへのデータ保存スクリプト</h1>
+    <p>
+          Posted on Fri 05 February 2016 in <a href="../../../../../category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/research.html">research</a>
+      <a href="../../../../../tag/linux.html">linux</a>
+    </p>
+  </div>
+  <div>
+    <p>Linux上での結果を残しておくための簡単なスクリプト例をメモしておく．</p>
+<p>いくつかの結果ファイルを日付の入ったディレクトリに保存するスクリプト．</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nv">now</span><span class="o">=</span><span class="sb">`</span>date +%y%m%d_%H%M%S<span class="sb">`</span>
+<span class="nv">dname</span><span class="o">=</span>results_<span class="nv">$now</span>
+mkdir <span class="nv">$dname</span>
+cp some result files <span class="nv">$dname</span>/
+<span class="nb">echo</span> some result files
+<span class="nb">echo</span> <span class="s2">&quot;These files are Saved at &quot;</span> <span class="nv">$dname</span>
+</pre></div>
+<p>引数を受け取って保存するようにしたい場合は，</p>
+<div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="k">if</span> <span class="o">[</span> <span class="nv">$#</span> -eq <span class="m">0</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;There is nothing to be saved...&quot;</span>
+    <span class="nb">exit</span> <span class="m">0</span>
+<span class="k">fi</span>
+<span class="nv">now</span><span class="o">=</span><span class="sb">`</span>date +%y%m%d_%H%M%S<span class="sb">`</span>
+<span class="nv">dname</span><span class="o">=</span>results_<span class="nv">$now</span>
+mkdir <span class="nv">$dname</span>
+cp <span class="nv">$*</span> <span class="nv">$dname</span>/
+<span class="nb">echo</span> <span class="nv">$*</span>
+<span class="nb">echo</span> <span class="s2">&quot;These files are saved at &quot;</span> <span class="nv">$dname</span>
+</pre></div>
+
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "../../../../..",
+  "image": "http://ryokbys.github.io/blog//images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>
