@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://ryokbys.web.nitech.ac.jp/contents/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="R.K.S. blog Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+    <meta name="author" content="Ryo KOBAYASHI" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="R.K.S. blog"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="."/>
+<meta property="og:image" content="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png">
+
+  <title>R.K.S. blog</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href=".">
+        <img src="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href=".">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+
+
+<article>
+  <header>
+    <h2><a href="./posts/2016/01/08/inheritance-in-python/index.html#inheritance-in-python">Inheritance in python</a></h2>
+    <p>
+          Posted on Fri 08 January 2016 in <a href="./category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="./tag/python.html">python</a>
+    </p>
+  </header>
+  <div>
+      <p>Pythonでクラスの継承の仕方を練習したのでメモしておく．</p>
+<p>以下のようにして， <tt class="docutils literal">ClassA</tt> と <tt class="docutils literal">ClassB</tt> を定義する．</p>
+<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ClassA</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">=</span> <span class="n">x</span>
+
+    <span class="k">def</span> <span class="nf">multi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+
+<span class="k">class</span> <span class="nc">ClassB</span><span class="p">(</span><span class="n">ClassA</span><span class="p">):</span>
+  <span class="k">def</span> <span class="nf">multi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+      <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ClassB</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">multi</span><span class="p">()</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span>
+</pre></div>
+<p>これを実行すると，以下のように狙い通りクラスの継承およびオーバーライドができていることが分かる．</p>
+<pre class="literal-block">
+&gt;&gt;&gt; a= ClassA(10)
+&gt;&gt;&gt; print a.x
+10
+&gt;&gt;&gt; print a.multi()
+100 …</pre>
+      <br>
+      <a class="btn" href="./posts/2016/01/08/inheritance-in-python/index.html#inheritance-in-python">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="./posts/2016/01/08/internet_speed/index.html#internet_speed">Internet speed in Switzerland</a></h2>
+    <p>
+          Posted on Fri 08 January 2016 in <a href="./category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="./tag/swiss.html">swiss</a>
+    </p>
+  </header>
+  <div>
+      <p>インターネットのスピードは（実際のところは分からないが）心象的には，かなり仕事の効率に影響するように感じる．
+そこで，以下のサイトを用いてインターネットスピードを測定してみた．</p>
+<ul class="simple">
+<li><a class="reference external" href="http://www.musen-lan.com/speed/">BNRスピードテスト</a></li>
+</ul>
+<div class="section" id="epfl">
+<h2>EPFLにて</h2>
+<p>LANケーブルに繋いで測定すると（部屋に記載されているポート名 C406.20），</p>
+<pre class="literal-block">
+測定日時： 2016/01/08 11:20:09
+--------------------------------------------------
+1.NTTPC(WebARENA)1： 15.16Mbps (1.90MB/sec)
+2.NTTPC(WebARENA)2： 16.87Mbps (2.11MB/sec)
+推定転送速度： 16.87Mbps (2.11MB/sec)
+</pre>
+<p>他のポートでも試してみる．
+ポート C406.21では接続できなかった．</p>
+<p>ポートC406.18では，</p>
+<pre class="literal-block">
+測定日時 …</pre></div>
+      <br>
+      <a class="btn" href="./posts/2016/01/08/internet_speed/index.html#internet_speed">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="./posts/2016/01/07/logger/index.html#logger">Use logger in python</a></h2>
+    <p>
+          Posted on Thu 07 January 2016 in <a href="./category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="./tag/python.html">python</a>
+    </p>
+  </header>
+  <div>
+      <div class="section" id="id1">
+<h2>使用例</h2>
+<p>Pythonでのloggerの使い方を学んだからメモしておく．</p>
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
+<span class="n">logger</span><span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">console</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
+<span class="n">console</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%(name)-12s</span><span class="s1">: </span><span class="si">%(levelname)-8s</span><span class="s1"> </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">console</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">console</span><span class="p">)</span>
+
+<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;this is debug&#39;</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;this is info&#39;</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;this is warn&#39;</span><span class="p">)</span>
+<span class="n">logger …</span></pre></div></div>
+      <br>
+      <a class="btn" href="./posts/2016/01/07/logger/index.html#logger">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="./posts/2016/01/06/gnuplot_inkscale/index.html#gnuplot_inkscale">From gnuplot to inkscape</a></h2>
+    <p>
+          Posted on Wed 06 January 2016 in <a href="./category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="./tag/mac.html">mac</a>,              <a href="./tag/research.html">research</a>,              <a href="./tag/inkscape.html">inkscape</a>
+    </p>
+  </header>
+  <div>
+      <p>Mac OSXのバージョンがEl Capitanになってから，Illustrator CS4の調子がすこぶる悪く，ほぼ使えない状態なので，gnuplotなどで出力したグラフを編集してEPSやPDFにする作業が滞っていたので対策を記載．</p>
+<p>流れとしては，</p>
+<ol class="arabic simple">
+<li>gnuplotから <strong>SVG</strong> 出力．</li>
+<li>inkscapeで編集．</li>
+<li>inkscapeでEPSもしくはPDF出力．</li>
+</ol>
+<p>具体的に必要なのは，gnuplotとinkscapeがインストールされていること．inkscapeはbrewなどでインストールできると思う．</p>
+<ol class="arabic">
+<li><p class="first">gnuplotで，</p>
+<pre class="literal-block">
+...
+gnuplot&gt; set term svg
+gnuplot&gt; set output 'hoge.svg'
+gnuplot&gt; replot
+</pre>
+<p>として <strong>SVG</strong> 形式にして出力．</p>
+</li>
+<li><p class="first">inkscapeで編集．</p>
+</li>
+<li><p class="first">キャンバスサイズの調節．</p>
+<ol class="arabic simple">
+<li>すべてを選択しておく．</li>
+<li>キャンバスサイズの変更のため， <tt class="docutils literal">File</tt> &gt; <tt class="docutils literal">Document <span class="pre">properties...</span></tt> を開く．</li>
+<li>開いたウィンドウの真ん中あたりの，Custum sizeのところで，Unitsを <strong>px</strong> にし，すべての辺のマージンを <strong>10.0</strong> とする．</li>
+<li><tt class="docutils literal">Resize …</tt></li></ol></li></ol>
+      <br>
+      <a class="btn" href="./posts/2016/01/06/gnuplot_inkscale/index.html#gnuplot_inkscale">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="./posts/2016/01/04/internet_swiss/index.html#internet_swiss">Internet in Switzerland...</a></h2>
+    <p>
+          Posted on Mon 04 January 2016 in <a href="./category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="./tag/swiss.html">swiss</a>
+    </p>
+  </header>
+  <div>
+      <p>スイスで暮らし始めて１ヶ月になるが未だに安定したインターネット環境が得られない．</p>
+<p>インターネット込みの家具付きアパートを契約しているので，そこで契約しているSwisscomのインターネットがちゃんと使えるべきなのだが，それが月が変わったとたんに使えなくなってしまった．Swisscomに電話して使えないことを伝えても，ちゃんと対応してくれないし．．．スイスとはいってもやはり日本ほど手厚いサービスはされないということか．．．</p>
+<p>そこで，臨時措置としてポケットwifiでインターネット接続している（Salt）のだが，そのインターネットも結構頻繁に接続が途絶える．
+インターネット提供会社の質が悪いのか，ローザンヌの街の回線自体がしょぼいのか．何にせよ，ここらへんの面倒くささが日本とは違うと思う．</p>
+
+      <br>
+      <a class="btn" href="./posts/2016/01/04/internet_swiss/index.html#internet_swiss">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="./posts/2016/01/03/create_post/index.html#create_post">Python utility for creating new post</a></h2>
+    <p>
+          Posted on Sun 03 January 2016 in <a href="./category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="./tag/python.html">python</a>,              <a href="./tag/pelican.html">pelican</a>
+    </p>
+  </header>
+  <div>
+      <p>Pelicanでブログポストを作るときに，作成するファイル自体をtinkererで</p>
+<pre class="literal-block">
+$ tinker --post
+</pre>
+<p>とした時のように，日付で整理されたディレクトリ内に原稿テンプレートを作成したかったので，pythonスクリプトを作成した．</p>
+<ul class="simple">
+<li><a class="reference external" href="https://gist.github.com/ryokbys/e5dea8f2476a83ec2758">create_post.py at Gist</a></li>
+</ul>
+<p>Pelicanのルートディレクトリ（ <tt class="docutils literal">content</tt> ディレクトリが存在するディレクトリ）で，</p>
+<pre class="literal-block">
+$ python /path/to/create_post.py -s create_post 'Utility for creating new post'
+</pre>
+<p>のように <tt class="docutils literal">slug</tt> と <tt class="docutils literal">TITLE</tt> を指定してやると，</p>
+<pre class="literal-block">
+./content/2016/01/03_create_post.rst was written.
+</pre>
+<p>のようにファイルが作成される．
+ファイル中身にはPelican用の次のようなテンプレートが記載されている．</p>
+<pre class="literal-block">
+:title: Utility for creating new post
+:date: 2016-01-03 21 …</pre>
+      <br>
+      <a class="btn" href="./posts/2016/01/03/create_post/index.html#create_post">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="./posts/2016/01/03/test_post/index.html#test_post">test post</a></h2>
+    <p>
+          Posted on Sun 03 January 2016 in <a href="./category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="./tag/pelican.html">pelican</a>
+    </p>
+  </header>
+  <div>
+      <p>Pelicanにおいてどのように新しい投稿を作成するか悩みどころ．</p>
+<p><tt class="docutils literal">content</tt> 内に深いディレクトリ階層を作成したら反映されるか？</p>
+<p>ちゃんと表示される．
+ということは，あとはこのポストを自動的に作成するスクリプトを作れば良いだけ．</p>
+
+      <br>
+      <a class="btn" href="./posts/2016/01/03/test_post/index.html#test_post">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="./posts/2016/01/03/hello_pelican/index.html#hello_pelican">Hello Pelican!</a></h2>
+    <p>
+          Posted on Sun 03 January 2016 in <a href="./category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="./tag/pelican.html">pelican</a>
+    </p>
+  </header>
+  <div>
+      <p>1st and test blog post for Pelican!</p>
+<p>TinkererよりもPelicanの方がユーザが多いようなので乗り換えることにしてみた．</p>
+<div class="figure align-right">
+<a class="reference external image-reference" href="https://flic.kr/p/CmYCGD"><img alt="figure test" src="https://farm6.staticflickr.com/5647/23866223301_661ad26f4e_k.jpg" style="width: 300px;" /></a>
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit …</p>
+      <br>
+      <a class="btn" href="./posts/2016/01/03/hello_pelican/index.html#hello_pelican">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="./posts/2015/12/26/al_mg_si_alloy_paper/index.html#al_mg_si_alloy_paper">Al-Mg-Si alloy paper</a></h2>
+    <p>
+          Posted on Sat 26 December 2015 in <a href="./category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="./tag/research.html">research</a>,              <a href="./tag/alloy.html">alloy</a>,              <a href="./tag/paper.html">paper</a>
+    </p>
+  </header>
+  <div>
+      <div class="section" id="al-mg-si-alloy-paper">
+<h2>Al-Mg-Si alloy paper</h2>
+<p>Pogatscher et al, PRL 112, 225701 (2014)</p>
+<ul class="simple">
+<li>Al-Mg-Si alloyにSnを少量添加して，natural agingの負の効果を抑えて，artificial agingを促進できる．</li>
+<li>どちらの過程もvacancy-mediatedからの二次相析出．温度の変化で，どちらかを抑えて，どちらかを促進できるということ．</li>
+<li>Sn-V compositeの形成能が温度に依存し，束縛されないV濃度が大きく変化する．</li>
+<li>Sn濃度，温度，時効時間で原子の拡散をコントロールできる．</li>
+</ul>
+</div>
+
+      <br>
+      <a class="btn" href="./posts/2015/12/26/al_mg_si_alloy_paper/index.html#al_mg_si_alloy_paper">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="./posts/2015/12/26/maps_me/index.html#maps_me">MAPS.ME アプリ</a></h2>
+    <p>
+          Posted on Sat 26 December 2015 in <a href="./category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="./tag/iphone.html">iphone</a>
+    </p>
+  </header>
+  <div>
+      <div class="section" id="maps-me">
+<h2>MAPS.ME</h2>
+<p>知らない土地を旅する時に地図は必需品なわけだが，海外旅行なんかのときにはインターネット接続がないことが多く，google mapを使えないことが多い．そんなときにオフラインマップアプリがあるとかなり重宝する．</p>
+<p>最近ぼくが使っているアプリは <strong>MAPS.ME</strong> というアプリで，旅行前のオンラインの時に旅行先の国のマップをiPhoneにダウンロードしておけば，あとはオフラインで使用できる．スイスで200MBくらいだから，他の国のデータだとかなり大きいかもしれないからiOSデバイスの空き容量が必要だろうけど．</p>
+<ul class="simple">
+<li><a class="reference external" href="https://itunes.apple.com/jp/app/maps.me-ofurain-tutonabigeshon/id510623322?mt=8">MAPS.ME</a></li>
+</ul>
+</div>
+
+      <br>
+      <a class="btn" href="./posts/2015/12/26/maps_me/index.html#maps_me">    Continue reading
+</a>
+  </div>
+</article>
+
+  <div class="pagination">
+    <a class="btn" href="./index10.html">
+      <i class="fa fa-angle-left"></i>     Older Posts
+
+    </a>
+    <a class="btn float-right" href="./index8.html">
+          Newer Posts
+ <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36370521-4', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : ".",
+  "image": "http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>

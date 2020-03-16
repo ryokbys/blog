@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://ryokbys.web.nitech.ac.jp/contents/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="R.K.S. blog Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Ryo KOBAYASHI" />
+<meta name="description" content="Currently this site uses the pelican theme Flex, and I like it. But one thing annoyed me. There is a logo image on the left side and it works fine with the home, archive, and tag pages. But it does not show up on post pages. The reason is that …" />
+<meta name="keywords" content="pelican">
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:title" content="Logo path in Flex theme"/>
+<meta property="og:description" content="Currently this site uses the pelican theme Flex, and I like it. But one thing annoyed me. There is a logo image on the left side and it works fine with the home, archive, and tag pages. But it does not show up on post pages. The reason is that …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2017/12/22/logo-path-in-flex-theme/index.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-12-22 16:24:39+09:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/ryo-kobayashi.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="pelican"/>
+<meta property="og:image" content="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash; Logo path in Flex theme</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="../../../../..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="logo-path-in-flex-theme">Logo path in Flex theme</h1>
+    <p>
+          Posted on Fri 22 December 2017 in <a href="../../../../../category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/pelican.html">pelican</a>
+    </p>
+  </div>
+  <div>
+    <p>Currently this site uses the pelican theme <a href="https://github.com/alexandrevicenzi/Flex">Flex</a>, and I like it.
+But one thing annoyed me. There is a logo image on the left side and it works fine with the home, archive, and tag pages. But it does not show up on post pages.
+The reason is that the path to the logo image is set in <code>pelicanconf.py</code> and it seems to be relative URL from the current content which is dependent on the article.
+So setting</p>
+<div class="highlight"><pre><span></span><code><span class="n">SITELOGO</span> <span class="o">=</span> <span class="ss">&quot;images/logo.png&quot;</span>
+</code></pre></div>
+
+
+<p>does not work for post pages.
+But I do not know how to set <code>SITEURL</code> into it.</p>
+<p>So I modified directory <code>pelican-themes/Flex/templates/base.html</code> file, line 81,
+from</p>
+<div class="highlight"><pre><span></span><code>        {<span class="o">%</span> <span class="k">if</span> <span class="nv">SITELOGO</span> <span class="o">%</span>}
+        <span class="o">&lt;</span><span class="nv">img</span> <span class="nv">src</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">{{ SITELOGO }}</span><span class="s2">&quot;</span> <span class="nv">alt</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">{{ SITETITLE }}</span><span class="s2">&quot;</span> <span class="nv">title</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">{{ SITETITLE }}</span><span class="s2">&quot;</span><span class="o">&gt;</span>
+        {<span class="o">%</span> <span class="k">else</span> <span class="o">%</span>}
+</code></pre></div>
+
+
+<p>to</p>
+<div class="highlight"><pre><span></span><code>        {<span class="o">%</span> <span class="k">if</span> <span class="nv">SITELOGO</span> <span class="o">%</span>}
+        <span class="o">&lt;</span><span class="nv">img</span> <span class="nv">src</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">{{ SITEURL }}/{{ SITELOGO }}</span><span class="s2">&quot;</span> <span class="nv">alt</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">{{ SITETITLE }}</span><span class="s2">&quot;</span> <span class="nv">title</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">{{ SITETITLE }}</span><span class="s2">&quot;</span><span class="o">&gt;</span>
+        {<span class="o">%</span> <span class="k">else</span> <span class="o">%</span>}
+</code></pre></div>
+
+
+<p>I added <code>{{ SITEURL }}/</code> before <code>{{ SITELOGO }}</code> to make the <code>SITELOGO</code> path as a relative path from <code>SITEURL</code>.</p>
+<p>Then it works fine even at post pages.</p>
+<p>But after struggling on this for hours, it turns out that just setting</p>
+<div class="highlight"><pre><span></span><code><span class="n">SITELOGO</span> <span class="o">=</span> <span class="ss">&quot;/images/logo.png&quot;</span>
+</code></pre></div>
+
+
+<p>solves the issue here... What a waste of time...</p>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36370521-4', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "../../../../..",
+  "image": "http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>

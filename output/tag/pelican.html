@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://ryokbys.web.nitech.ac.jp/contents/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="R.K.S. blog Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+    <meta name="author" content="Ryo KOBAYASHI" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="R.K.S. blog"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=".."/>
+<meta property="og:image" content="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash;     Tag pelican
+</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+        <img src="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+
+
+<article>
+  <header>
+    <h2><a href="../posts/2017/12/22/logo-path-in-flex-theme/index.html#logo-path-in-flex-theme">Logo path in Flex theme</a></h2>
+    <p>
+          Posted on Fri 22 December 2017 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/pelican.html">pelican</a>
+    </p>
+  </header>
+  <div>
+      <p>Currently this site uses the pelican theme <a href="https://github.com/alexandrevicenzi/Flex">Flex</a>, and I like it.
+But one thing annoyed me. There is a logo image on the left side and it works fine with the home, archive, and tag pages. But it does not show up on post pages.
+The reason is that …</p>
+      <br>
+      <a class="btn" href="../posts/2017/12/22/logo-path-in-flex-theme/index.html#logo-path-in-flex-theme">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/12/16/markdown-on-pelican/index.html#markdown-on-pelican">Markdown on Pelican</a></h2>
+    <p>
+          Posted on Fri 16 December 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/pelican.html">pelican</a>
+    </p>
+  </header>
+  <div>
+      <p>Since I got to know that Markdown is available in pelican, I tried to use Markdown.</p>
+<p>[TOC]</p>
+<h2>Markdown setting</h2>
+<p>To activate the Markdown, I wrote the following line in <code>pelicanconf.py</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">MD_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;codehilite&#39;</span><span class="p">,</span><span class="s1">&#39;extra&#39;</span><span class="p">,</span><span class="s1">&#39;smarty&#39;</span><span class="p">,</span> <span class="s1">&#39;toc&#39;</span><span class="p">]</span>
+</code></pre></div>
+
+
+<p>And to make <code>toc</code> to be available in Markdown I added <code>'extract_toc'</code> as,</p>
+<div class="highlight"><pre><span></span><code><span class="n">PLUGINS …</span></code></pre></div>
+      <br>
+      <a class="btn" href="../posts/2016/12/16/markdown-on-pelican/index.html#markdown-on-pelican">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/11/03/put-a-google-photo-on-to-pelican-blog/index.html#put-a-google-photo-on-to-pelican-blog">ペリカンブログにグーグルフォトを載せる</a></h2>
+    <p>
+          Posted on Thu 03 November 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/pelican.html">pelican</a>
+    </p>
+  </header>
+  <div>
+      <p>最近，スマホで撮った写真は自動的にグーグルフォトに同期されるようになっていて，そこから写真のURLを取得するだけでブログに写真を載せることができる．</p>
+<p>備忘録として記載しておく．</p>
+<div class="section" id="rest">
+<h2>画像の貼り付け方（ReSTで共通？）</h2>
+<pre class="literal-block">
+.. figure:: http://......
+  :target: http://target.url.here
+  :align: right
+  :width: 400px
+  :alt: Alternative text
+</pre>
+<p>のようにして貼り付ける．</p>
+<p>この <tt class="docutils literal">figure</tt> の右にグーグルフォトで取得した写真のURLを貼り付ければいい．</p>
+</div>
+<div class="section" id="url">
+<h2>グーグルフォトから写真のURLを取得</h2>
+<p>どうもグーグルフォトの写真を右クリックして「イメージのアドレスをコピー」としただけでは，そのURLは一時的なものもしくはグーグルフォトにログインしていない人には見れないなどの問題があるらしい．
+Picasa web（こちらもgoogleの写真サービス）のアルバムのアクセス設定を，アドレスを知っている人のみに制限しつつ公開する．Picasa webでグーグルフォトの写真が見れたらその写真を右クリックして写真のURLを取得すればよいらしい．</p>
+<p>参考サイト：</p>
+<ul class="simple">
+<li><a class="reference external" href="http://ameblo.jp/wantan-52/entry-12119213036.html">Googleフォトの画像URLを取得</a></li>
+<li><a class="reference external" href="http://stackoverflow.com/questions/39508631/how-to-get-direct-permanent-link-to-public-image-on-google-photos">How to get direct permanent link to public image on Google Photos …</a></li></ul></div>
+      <br>
+      <a class="btn" href="../posts/2016/11/03/put-a-google-photo-on-to-pelican-blog/index.html#put-a-google-photo-on-to-pelican-blog">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/02/28/pelican-blog-post-script/index.html#pelican-blog-post-script">Pelican blog post script</a></h2>
+    <p>
+          Posted on Sun 28 February 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/python.html">python</a>,              <a href="../tag/pelican.html">pelican</a>
+    </p>
+  </header>
+  <div>
+      <p>I updated my blog automation script.
+This version make blog posting process much more efficient
+and I am much happier than before.</p>
+<p>This version is uploaded on Gist.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://gist.github.com/ryokbys/d4f343cdbb2f5d33c305">gist ryokbys/myblog.py</a></li>
+</ul>
+<p>Now I can create a new blog post by typing,</p>
+<pre class="literal-block">
+$ blogpost 'BLOG TITLE'
+</pre>
+<p>then a blog-post file is …</p>
+      <br>
+      <a class="btn" href="../posts/2016/02/28/pelican-blog-post-script/index.html#pelican-blog-post-script">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/02/28/figures-on-pelican-post/index.html#figures-on-pelican-post">Figures on pelican post</a></h2>
+    <p>
+          Posted on Sun 28 February 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/pelican.html">pelican</a>
+    </p>
+  </header>
+  <div>
+      <p>In my case, the images used in the blog post are all uploaded on to <strong>flickr</strong> and loaded from <strong>flickr</strong> to show in the post.</p>
+<div class="section" id="upload-the-images-on-flickr">
+<h2>Upload the images on flickr</h2>
+<ol class="arabic">
+<li><p class="first">Fist you have to have an account on <strong>flickr</strong>, of course.</p>
+</li>
+<li><p class="first">Upload a image to be included in a post …</p></li></ol></div>
+      <br>
+      <a class="btn" href="../posts/2016/02/28/figures-on-pelican-post/index.html#figures-on-pelican-post">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/01/13/ipython-notebook-to-pelican-blog-post/index.html#ipython-notebook-to-pelican-blog-post">IPython notebook to Pelican blog post</a></h2>
+    <p>
+          Posted on Wed 13 January 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/pelican.html">pelican</a>,              <a href="../tag/python.html">python</a>
+    </p>
+  </header>
+  <div>
+      <p>この前のブログポストはIPython notebookでの作業をブログに載せたものだが，ちょっと面倒な方法だった．</p>
+<p>直接 <tt class="docutils literal">.ipynb</tt> ファイルを参照できればよいのだが，そのような手段はないらしい．
+nbviewerというサイトがあるが，そこでは数式が表示されない．
+基本的にはnbviewerサイトと同じことだが，以下のように <tt class="docutils literal">nbconvert</tt> を用いて</p>
+<pre class="literal-block">
+$ ipython nbconvert --to html hoge.ipynb
+</pre>
+<p>とすれば，HTMLファイルが生成されるが，数式が表示されなかったりする．</p>
+<p>結局，ipython notebookから <tt class="docutils literal">.rst</tt> 形式に出力して，Emacsで編集した．</p>
+<ul>
+<li><p class="first">改行コードの <tt class="docutils literal">^M</tt> が含まれていたため，Emacsで <tt class="docutils literal">^M</tt> を置換した．（Emacsでは，改行コード <tt class="docutils literal">^M</tt> は <tt class="docutils literal"><span class="pre">C-q</span> <span class="pre">C-m</span></tt> で指定できる．）</p>
+</li>
+<li><p class="first">別行だての数式が，</p>
+<pre class="literal-block">
+.. raw:: latex
+</pre>
+<p>とかになっていたので，</p>
+<pre class="literal-block">
+.. math::
+</pre>
+<p>に訂正し，微調整した．</p>
+</li>
+</ul>
+
+      <br>
+      <a class="btn" href="../posts/2016/01/13/ipython-notebook-to-pelican-blog-post/index.html#ipython-notebook-to-pelican-blog-post">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/01/10/a-little-bit-more-automating-blog-post/index.html#a-little-bit-more-automating-blog-post">A little bit more automating blog post</a></h2>
+    <p>
+          Posted on Sun 10 January 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/pelican.html">pelican</a>,              <a href="../tag/python.html">python</a>,              <a href="../tag/mac.html">mac</a>
+    </p>
+  </header>
+  <div>
+      <p>以前に，Pelicanでのブログ投稿をある程度自動化するツールを作成することについて書いたが，
+それでもまだいろいろと自動化する必要があったから，少しだけ修正．</p>
+<ul class="simple">
+<li><a class="reference external" href="https://gist.github.com/ryokbys/e5dea8f2476a83ec2758#file-create_post-py">create_post.py</a></li>
+</ul>
+<p>このファイルをどこかパスの通ったところにおいて， <tt class="docutils literal">.bashrc</tt> などに，</p>
+<pre class="literal-block">
+alias post='create_post.py --basedir=&quot;/path/to/pelican/&quot; -a &quot;Author name&quot;'
+</pre>
+<p>と書いておけば，</p>
+<pre class="literal-block">
+$ post &quot;new post title&quot;
+</pre>
+<p>とすれば， <tt class="docutils literal"><span class="pre">/path/to/pelican/content/2016/01/10_new-post-title.rst</span></tt> というファイルが作成されて，
+自動的にrst形式ファイルを開くエディタがこのファイルを開いてくれる．
+編集が終わったら，（ <tt class="docutils literal">post</tt> を実行した）ターミナルは <tt class="docutils literal">/path/to/pelican/</tt> へ移動しているので，</p>
+<pre class="literal-block">
+$ make html
+</pre>
+<p>とすれば，ブログが更新される．</p>
+
+      <br>
+      <a class="btn" href="../posts/2016/01/10/a-little-bit-more-automating-blog-post/index.html#a-little-bit-more-automating-blog-post">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/01/03/create_post/index.html#create_post">Python utility for creating new post</a></h2>
+    <p>
+          Posted on Sun 03 January 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/python.html">python</a>,              <a href="../tag/pelican.html">pelican</a>
+    </p>
+  </header>
+  <div>
+      <p>Pelicanでブログポストを作るときに，作成するファイル自体をtinkererで</p>
+<pre class="literal-block">
+$ tinker --post
+</pre>
+<p>とした時のように，日付で整理されたディレクトリ内に原稿テンプレートを作成したかったので，pythonスクリプトを作成した．</p>
+<ul class="simple">
+<li><a class="reference external" href="https://gist.github.com/ryokbys/e5dea8f2476a83ec2758">create_post.py at Gist</a></li>
+</ul>
+<p>Pelicanのルートディレクトリ（ <tt class="docutils literal">content</tt> ディレクトリが存在するディレクトリ）で，</p>
+<pre class="literal-block">
+$ python /path/to/create_post.py -s create_post 'Utility for creating new post'
+</pre>
+<p>のように <tt class="docutils literal">slug</tt> と <tt class="docutils literal">TITLE</tt> を指定してやると，</p>
+<pre class="literal-block">
+./content/2016/01/03_create_post.rst was written.
+</pre>
+<p>のようにファイルが作成される．
+ファイル中身にはPelican用の次のようなテンプレートが記載されている．</p>
+<pre class="literal-block">
+:title: Utility for creating new post
+:date: 2016-01-03 21 …</pre>
+      <br>
+      <a class="btn" href="../posts/2016/01/03/create_post/index.html#create_post">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/01/03/test_post/index.html#test_post">test post</a></h2>
+    <p>
+          Posted on Sun 03 January 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/pelican.html">pelican</a>
+    </p>
+  </header>
+  <div>
+      <p>Pelicanにおいてどのように新しい投稿を作成するか悩みどころ．</p>
+<p><tt class="docutils literal">content</tt> 内に深いディレクトリ階層を作成したら反映されるか？</p>
+<p>ちゃんと表示される．
+ということは，あとはこのポストを自動的に作成するスクリプトを作れば良いだけ．</p>
+
+      <br>
+      <a class="btn" href="../posts/2016/01/03/test_post/index.html#test_post">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/01/03/hello_pelican/index.html#hello_pelican">Hello Pelican!</a></h2>
+    <p>
+          Posted on Sun 03 January 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/pelican.html">pelican</a>
+    </p>
+  </header>
+  <div>
+      <p>1st and test blog post for Pelican!</p>
+<p>TinkererよりもPelicanの方がユーザが多いようなので乗り換えることにしてみた．</p>
+<div class="figure align-right">
+<a class="reference external image-reference" href="https://flic.kr/p/CmYCGD"><img alt="figure test" src="https://farm6.staticflickr.com/5647/23866223301_661ad26f4e_k.jpg" style="width: 300px;" /></a>
+</div>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit …</p>
+      <br>
+      <a class="btn" href="../posts/2016/01/03/hello_pelican/index.html#hello_pelican">    Continue reading
+</a>
+  </div>
+</article>
+
+  <div class="pagination">
+  </div>
+
+
+
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36370521-4', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "..",
+  "image": "http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>

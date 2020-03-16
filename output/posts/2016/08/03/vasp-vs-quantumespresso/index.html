@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://ryokbys.web.nitech.ac.jp/contents/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="R.K.S. blog Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Ryo KOBAYASHI" />
+<meta name="description" content="近年，さまざまなDFTコードが世に出ており，それぞれいろいろと特徴を出そうとしている． 擬ポテンシャルと平面波展開のコードについては，ほとんど同じことが出来るようになってきている． 最近少し使う必要性が出てきた Quantum ESPRESSO (QE) と VASP を比較したサイトを検索したら，いかのようなものがあった． 速度：QuantumESPRESSO vs VASP (Round 1) 精度：Comparing Solid State DFT Codes, Basis Sets and Potentials 感想 32 core くらいまでは VASP も QE も同じようなスピード それ以上になると QE はほとんどサチってしまう (2013時点で band parallelizationなし？) QE はいくつかの元素のPAW potentialの素性が良くないためか，計算ができなったらしい（Li2FeSiO4など？）（Liポテンシャルのcutoff energyが1100 …" />
+<meta name="keywords" content="research, DFT">
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:title" content="VASP vs QuantumESPRESSO"/>
+<meta property="og:description" content="近年，さまざまなDFTコードが世に出ており，それぞれいろいろと特徴を出そうとしている． 擬ポテンシャルと平面波展開のコードについては，ほとんど同じことが出来るようになってきている． 最近少し使う必要性が出てきた Quantum ESPRESSO (QE) と VASP を比較したサイトを検索したら，いかのようなものがあった． 速度：QuantumESPRESSO vs VASP (Round 1) 精度：Comparing Solid State DFT Codes, Basis Sets and Potentials 感想 32 core くらいまでは VASP も QE も同じようなスピード それ以上になると QE はほとんどサチってしまう (2013時点で band parallelizationなし？) QE はいくつかの元素のPAW potentialの素性が良くないためか，計算ができなったらしい（Li2FeSiO4など？）（Liポテンシャルのcutoff energyが1100 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2016/08/03/vasp-vs-quantumespresso/index.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-08-03 15:30:54+09:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/ryo-kobayashi.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="research"/>
+<meta property="article:tag" content="DFT"/>
+<meta property="og:image" content="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash; VASP vs QuantumESPRESSO</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="../../../../..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="vasp-vs-quantumespresso">VASP vs QuantumESPRESSO</h1>
+    <p>
+          Posted on Wed 03 August 2016 in <a href="../../../../../category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/research.html">research</a>
+      <a href="../../../../../tag/dft.html">DFT</a>
+    </p>
+  </div>
+  <div>
+    <p>近年，さまざまなDFTコードが世に出ており，それぞれいろいろと特徴を出そうとしている．
+擬ポテンシャルと平面波展開のコードについては，ほとんど同じことが出来るようになってきている．</p>
+<p>最近少し使う必要性が出てきた <strong>Quantum ESPRESSO (QE)</strong> と VASP を比較したサイトを検索したら，いかのようなものがあった．</p>
+<ul class="simple">
+<li>速度：<a class="reference external" href="https://www.nsc.liu.se/~pla/blog/2013/02/04/qevasp-part1/">QuantumESPRESSO vs VASP (Round 1)</a></li>
+<li>精度：<a class="reference external" href="http://molmod.ugent.be/deltacodesdft">Comparing Solid State DFT Codes, Basis Sets and Potentials</a></li>
+</ul>
+<div class="section" id="id1">
+<h2>感想</h2>
+<ul class="simple">
+<li>32 core くらいまでは VASP も QE も同じようなスピード</li>
+<li>それ以上になると QE はほとんどサチってしまう (2013時点で band parallelizationなし？)</li>
+<li>QE はいくつかの元素のPAW potentialの素性が良くないためか，計算ができなったらしい（Li2FeSiO4など？）（Liポテンシャルのcutoff energyが1100 eVと大きすぎ，それでは計算できないから小さいcutoff energyで計算したために？エラーで止まってしまったらしい）</li>
+<li>QE の方が VASP よりも多くのメモリーを必要とする．そのため多くのノードに並列しないと計算が走らない．</li>
+<li>上記サイト（速度）は2013年の結果だが，QEのメジャーバージョンアップはされていないので結果は大きく変わらないと予想される．</li>
+</ul>
+</div>
+
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36370521-4', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "../../../../..",
+  "image": "http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>

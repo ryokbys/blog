@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://ryokbys.web.nitech.ac.jp/contents/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="R.K.S. blog Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Ryo KOBAYASHI" />
+<meta name="description" content="I updated my blog automation script. This version make blog posting process much more efficient and I am much happier than before. This version is uploaded on Gist. gist ryokbys/myblog.py Now I can create a new blog post by typing, $ blogpost 'BLOG TITLE' then a blog-post file is …" />
+<meta name="keywords" content="python, pelican">
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:title" content="Pelican blog post script"/>
+<meta property="og:description" content="I updated my blog automation script. This version make blog posting process much more efficient and I am much happier than before. This version is uploaded on Gist. gist ryokbys/myblog.py Now I can create a new blog post by typing, $ blogpost 'BLOG TITLE' then a blog-post file is …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2016/02/28/pelican-blog-post-script/index.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-02-28 22:43:34+09:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/ryo-kobayashi.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="pelican"/>
+<meta property="og:image" content="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash; Pelican blog post script</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="../../../../..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="pelican-blog-post-script">Pelican blog post script</h1>
+    <p>
+          Posted on Sun 28 February 2016 in <a href="../../../../../category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/python.html">python</a>
+      <a href="../../../../../tag/pelican.html">pelican</a>
+    </p>
+  </div>
+  <div>
+    <p>I updated my blog automation script.
+This version make blog posting process much more efficient
+and I am much happier than before.</p>
+<p>This version is uploaded on Gist.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://gist.github.com/ryokbys/d4f343cdbb2f5d33c305">gist ryokbys/myblog.py</a></li>
+</ul>
+<p>Now I can create a new blog post by typing,</p>
+<pre class="literal-block">
+$ blogpost 'BLOG TITLE'
+</pre>
+<p>then a blog-post file is created at the apropriate place in the system with
+the date and title in the filename.
+And also open it with <em>Emacs.app</em>.</p>
+<p>After writing the post, just type</p>
+<pre class="literal-block">
+$ blogmake
+</pre>
+<p>will update the blog post.</p>
+<p>If this <tt class="docutils literal">blogmake</tt> command should be called from <em>Emacs.app</em>,
+it is necesarry that the following lines should be written in <tt class="docutils literal"><span class="pre">~/.emacs.d/init.el</span></tt>.</p>
+<pre class="literal-block">
+(setq shell-file-name &quot;bash&quot;)
+(setq shell-command-switch &quot;-ic&quot;)
+</pre>
+<p>in order to let emacs know that the interactive shell (-i option) is
+bash with aliases in <tt class="docutils literal">.bashrc</tt> file.</p>
+
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36370521-4', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "../../../../..",
+  "image": "http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>

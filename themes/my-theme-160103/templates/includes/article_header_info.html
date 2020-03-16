@@ -1,0 +1,31 @@
+<div class="article-header-info">
+  <p>
+    {% if AUTHORS_IN_ARTICLE_HEADER and article.author %}
+      Posted by <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
+    {% endif %}
+    {% if CATEGORIES_IN_ARTICLE_HEADER %}
+    in 
+    <a href="{{ SITEURL }}/{{ article.category.url }}">
+      {{ article.category }}</a>
+    &nbsp;&nbsp;
+    {% endif %}
+    
+    {% if TAGS_IN_ARTICLE_HEADER and article.tags %}
+    <div class="article-tag-list">
+      <i class="fa fa-tags fa-fw fa-lg"></i>&nbsp;
+      {% for tag in article.tags %}
+	    <a href="{{ SITEURL }}/{{ tag.url }}" class="article-tag">{{ tag }}</a>&nbsp;
+      {% endfor %}
+    </div>
+    &nbsp;&nbsp;
+    {% endif %}
+
+    {% if PDF_PROCESSOR %}
+    <span class="label">
+      <a href="{{ SITEURL }}/pdf/{{ article.slug }}.pdf">PDF</a>
+    </span>
+    &nbsp;&nbsp;
+    {% endif %}
+    {% include "includes/translations.html" %}
+  </p>
+</div> <!-- /.article-header-info -->

@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://ryokbys.web.nitech.ac.jp/contents/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="R.K.S. blog Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Ryo KOBAYASHI" />
+<meta name="description" content="Markdownでスライドを作ることができれば，コンテンツに集中できるし，かなり速くスライド作成ができるようになると期待される． 現状（2017/05/25）では，MarpとDecksetというアプリが良さそうに思うが，どちらも一長一短でまだまだ改良の余地がある． Marp Pros 無料 デザインがシンプルで良い． サイズを自由に変更できる． 数式の書き方が好き（$マーク１つで囲めば inline で，２つで囲めば別行立て） 書いたらライブで更新される． Cons デザインが２パターンしかない． 開発が遅い．．． 画像を含む場合のPDF出力のサイズが異常に大きい（簡単に数MBになる．．．） ライブで更新されるから，数式などを書いている間にスライドがぐちゃっとなる． Deckset Pros デザインが豊富にある． 画像の配置が豊富． 画像の貼り方がおしゃれ（drag & dropで画像ファイルを同一フォルダーにコピーして，コードをコピーしてくれる） 外部エディタを使える．（Emacsなどで書けるのは良い．） Floating windowで画面を確認できる． Cons 画面サイズを選べない． 数式や文字のサイズを選べない． 上の２つより，基本的にサイズ選択の自由を与えられていない． 有料（結構高い …" />
+<meta name="keywords" content="Markdown">
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:title" content="Making slide with Markdown"/>
+<meta property="og:description" content="Markdownでスライドを作ることができれば，コンテンツに集中できるし，かなり速くスライド作成ができるようになると期待される． 現状（2017/05/25）では，MarpとDecksetというアプリが良さそうに思うが，どちらも一長一短でまだまだ改良の余地がある． Marp Pros 無料 デザインがシンプルで良い． サイズを自由に変更できる． 数式の書き方が好き（$マーク１つで囲めば inline で，２つで囲めば別行立て） 書いたらライブで更新される． Cons デザインが２パターンしかない． 開発が遅い．．． 画像を含む場合のPDF出力のサイズが異常に大きい（簡単に数MBになる．．．） ライブで更新されるから，数式などを書いている間にスライドがぐちゃっとなる． Deckset Pros デザインが豊富にある． 画像の配置が豊富． 画像の貼り方がおしゃれ（drag & dropで画像ファイルを同一フォルダーにコピーして，コードをコピーしてくれる） 外部エディタを使える．（Emacsなどで書けるのは良い．） Floating windowで画面を確認できる． Cons 画面サイズを選べない． 数式や文字のサイズを選べない． 上の２つより，基本的にサイズ選択の自由を与えられていない． 有料（結構高い …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2017/05/25/making-slide-with-markdown/index.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-05-25 19:37:52+09:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/ryo-kobayashi.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="Markdown"/>
+<meta property="og:image" content="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash; Making slide with Markdown</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="../../../../..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="making-slide-with-markdown">Making slide with Markdown</h1>
+    <p>
+          Posted on Thu 25 May 2017 in <a href="../../../../../category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/markdown.html">Markdown</a>
+    </p>
+  </div>
+  <div>
+    <p>Markdownでスライドを作ることができれば，コンテンツに集中できるし，かなり速くスライド作成ができるようになると期待される．</p>
+<p>現状（2017/05/25）では，<a href="https://yhatt.github.io/marp/">Marp</a>と<a href="https://www.decksetapp.com">Deckset</a>というアプリが良さそうに思うが，どちらも一長一短でまだまだ改良の余地がある．</p>
+<h2>Marp</h2>
+<h3>Pros</h3>
+<ul>
+<li>無料</li>
+<li>デザインがシンプルで良い．</li>
+<li>サイズを自由に変更できる．</li>
+<li>数式の書き方が好き（<code>$</code>マーク１つで囲めば inline で，２つで囲めば別行立て）</li>
+<li>書いたらライブで更新される．</li>
+</ul>
+<h3>Cons</h3>
+<ul>
+<li>デザインが２パターンしかない．</li>
+<li>開発が遅い．．．</li>
+<li>画像を含む場合のPDF出力のサイズが異常に大きい（簡単に数MBになる．．．）</li>
+<li>ライブで更新されるから，数式などを書いている間にスライドがぐちゃっとなる．</li>
+</ul>
+<hr>
+<h2>Deckset</h2>
+<h3>Pros</h3>
+<ul>
+<li>デザインが豊富にある．</li>
+<li>画像の配置が豊富．</li>
+<li>画像の貼り方がおしゃれ（drag &amp; dropで画像ファイルを同一フォルダーにコピーして，コードをコピーしてくれる）</li>
+<li>外部エディタを使える．（Emacsなどで書けるのは良い．）</li>
+<li>Floating windowで画面を確認できる．</li>
+</ul>
+<h3>Cons</h3>
+<ul>
+<li>画面サイズを選べない．</li>
+<li>数式や文字のサイズを選べない．</li>
+<li>上の２つより，基本的にサイズ選択の自由を与えられていない．</li>
+<li>有料（結構高い）</li>
+</ul>
+<hr>
+<h2>現状における結論</h2>
+<ul>
+<li>どちらかというと<strong>Marp</strong>の方が好き．</li>
+<li>Marpの開発者が新しいバージョンをいつ出すか，それが良いものか，継続的に開発されていくかが鍵．</li>
+<li>JupyterLabでスライドを作れるようになったら良いのにと思ったりする．．．</li>
+</ul>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36370521-4', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "../../../../..",
+  "image": "http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>

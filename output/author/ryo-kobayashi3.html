@@ -1,0 +1,449 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://ryokbys.web.nitech.ac.jp/contents/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="R.K.S. blog Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+    <meta name="author" content="Ryo KOBAYASHI" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="R.K.S. blog"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=".."/>
+<meta property="og:image" content="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash;     Posts by Ryo KOBAYASHI
+:</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+        <img src="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+
+
+<article>
+  <header>
+    <h2><a href="../posts/2017/01/31/move-to-new-macbookpro/index.html#move-to-new-macbookpro">新しいMacBookProへの移行の記録</a></h2>
+    <p>
+          Posted on Tue 31 January 2017 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/mac.html">mac</a>
+    </p>
+  </header>
+  <div>
+      <h2>移行アシスタントは使えなかった．</h2>
+<p>旧Mac（MacBookAir）と接続して，直接移行することをトライ．（一回目は，MBAの方はEl Capitanだったが，二回目はアップグレードしてSeirra同士での移行）
+なぜだか最後，残り1時間40分から先に進めなくなる．
+２回やってどちらもほぼ同じ症状（再現性あり）なので，ダメなのだろう．
+ということで，否応無く__手動インストール__を余儀なくされた．</p>
+<h3>macOS sierraのクリーンインストール</h3>
+<ol>
+<li><code>Cmd+r</code>を押しながら起動．アップルマークが表示されたら<code>Cmd+r</code>を離して良いみたい．</li>
+<li>ディスクユーティリティを開いてディスクを消去およびフォーマット</li>
+<li>OSの再インストール</li>
+</ol>
+<p>これ自体は時間は少々かかるが，スムーズに進む．</p>
+<h2>Xcode</h2>
+<p>App Storeからダウンロード．
+一度Xcodeを起動して認証(?)しないと，のちのhomebrewインストールで引っかかる．</p>
+<h2>Terminal.appの設定</h2>
+<p><a href="http://ethanschoonover.com/solarized">Solarized</a> から，ファイルをダウンロード．
+Terminal.appの環境設定「プロファイル」で，「読み込み...」からsolarizedの「Light」と「Dark …</p>
+      <br>
+      <a class="btn" href="../posts/2017/01/31/move-to-new-macbookpro/index.html#move-to-new-macbookpro">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/12/16/markdown-on-pelican/index.html#markdown-on-pelican">Markdown on Pelican</a></h2>
+    <p>
+          Posted on Fri 16 December 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/pelican.html">pelican</a>
+    </p>
+  </header>
+  <div>
+      <p>Since I got to know that Markdown is available in pelican, I tried to use Markdown.</p>
+<p>[TOC]</p>
+<h2>Markdown setting</h2>
+<p>To activate the Markdown, I wrote the following line in <code>pelicanconf.py</code>.</p>
+<div class="highlight"><pre><span></span><code><span class="n">MD_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;codehilite&#39;</span><span class="p">,</span><span class="s1">&#39;extra&#39;</span><span class="p">,</span><span class="s1">&#39;smarty&#39;</span><span class="p">,</span> <span class="s1">&#39;toc&#39;</span><span class="p">]</span>
+</code></pre></div>
+
+
+<p>And to make <code>toc</code> to be available in Markdown I added <code>'extract_toc'</code> as,</p>
+<div class="highlight"><pre><span></span><code><span class="n">PLUGINS …</span></code></pre></div>
+      <br>
+      <a class="btn" href="../posts/2016/12/16/markdown-on-pelican/index.html#markdown-on-pelican">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/11/06/farewell-to-my-lausanne-life/index.html#farewell-to-my-lausanne-life">ローザンヌ生活終了 - 日本帰国</a></h2>
+    <p>
+          Posted on Sun 06 November 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/swiss.html">swiss</a>,              <a href="../tag/lausanne.html">lausanne</a>
+    </p>
+  </header>
+  <div>
+      <p>昨日（2016年11月5日）に，１１ヶ月のローザンヌ生活を終えて日本に帰国した．
+いろいろと思ったことを今思い出せることだけでもメモしておく．</p>
+<ul class="simple">
+<li>ローザンヌ（スイス？）はネットを使える環境がかなり限られている．ネット使いたければ携帯番号が必要みたいなサービスが多く，携帯電話持っていないと使えない．．．</li>
+<li>日本で契約しているiPhoneはSIM lockがかかっていて海外では使えなかった．（このSIM lockで販売している会社はホントにクソと思う．契約満了してもSIM lockは外してもらえない．．．）</li>
+<li>海外において，外でネットが使えないと困ることが多いので，SIM freeのスマホを持っていくか買うかするべしと思った．</li>
+<li>山と湖などの自然が身近にある生活は良いものだ．</li>
+<li>湖畔を歩いたり走ったりサイクリングしたりできるような道や，BBQできるような公園，泳げるようなビーチを作ることは魅力的な町として重要な要素．（ローザンヌと三ヶ日町の違い．．．）</li>
+<li>海外では電車やカフェなどの空間で，人目を気にせずに大きな声で電話している人が結構多い．人目を気にせず行動できることは良いことだが，このような悪い側面も生じてしまうのかもしれない．</li>
+<li>街なかの人が集まるところで，いろんな種類の音楽のライブパフォーマンスがあるのは良い．日本では，駆け出しアイドルか，フォークデュオ的な人が多いが，もっと様々な楽器の生演奏があると街の雰囲気が良くなると思う．</li>
+<li>本当に３ヶ国語以上話せる人がたくさんいる．そもそもフランス語とドイツ語が多く使われており，それに近い英語を学校で習って使えるようになるわけだから，そうなるのもうなずける．しかし，３ヶ国語を話せるのが当然のような空気・雰囲気も大事な気がする．</li>
+<li>言語は頻繁に会話に使うようにしないと上達しない．（フランス語は少しだけ勉強していたが，使っていなかったので全く上達しなかった．．．）</li>
+<li>英語は研究室で使ってはいたが，もっと使う機会を持つべきだった．（そのうち勝手に上達するだろうと期待したが，そう簡単ではなかった．）</li>
+<li>上と同じだが …</li></ul>
+      <br>
+      <a class="btn" href="../posts/2016/11/06/farewell-to-my-lausanne-life/index.html#farewell-to-my-lausanne-life">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/11/03/last-dinner-in-lausanne/index.html#last-dinner-in-lausanne">Last dinner in Lausanne</a></h2>
+    <p>
+          Posted on Thu 03 November 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/swiss.html">swiss</a>
+    </p>
+  </header>
+  <div>
+      <p>ローザンヌ最後の晩餐はPrilly-Malley駅近くの <strong>Restaurant des Bouchers</strong> でとった．</p>
+<div class="section" id="id1">
+<h2>ホタテのタルタル</h2>
+<div class="figure align-center">
+<img alt="Tartare de St. Jacque" src="https://lh3.googleusercontent.com/SEQdv2II_Rd1eE45EUYHgQk3QkwTLyHorENGJwlvx_b1eSms0adf1BeUyG50ZQVunTyMzc9Fp38an4Q=w1440-h900-no" style="width: 600px;" />
+</div>
+<p>ホタテのタルタルはなかなか他では見たことなくて美味しかった．</p>
+</div>
+<div class="section" id="id2">
+<h2>ビーフ・ペペロンチーノの生スパゲッティ</h2>
+<div class="figure align-center">
+<img alt="Beef spaghetti?" src="https://lh3.googleusercontent.com/VtAHr-7HAZ5Q62-I8WX46W2eY5IIvr9tee0892Gotd6o0Hnny7_ii0wGsvm05tY-gs2M8b1NL3EPIyU=w1440-h900-no" style="width: 600px;" />
+</div>
+<p>ソースはありそうなペペロンチーノの味だが，生パスタがちぢれている太麺で食感が面白く，ビーフがたっぷり入っていて美味しかった．
+しかし，さすがにスイス価格なので高い．．．
+これとサラダでCHF26だったかな？</p>
+<p><a class="reference external" href="../posts/2016/11/03/put-a-google-photo-on-to-pelican-blog/index.html">もし画像が表示されないのであれば，それはGoogle Photoに問題があるからです．．．</a></p>
+</div>
+
+      <br>
+      <a class="btn" href="../posts/2016/11/03/last-dinner-in-lausanne/index.html#last-dinner-in-lausanne">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/11/03/put-a-google-photo-on-to-pelican-blog/index.html#put-a-google-photo-on-to-pelican-blog">ペリカンブログにグーグルフォトを載せる</a></h2>
+    <p>
+          Posted on Thu 03 November 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/pelican.html">pelican</a>
+    </p>
+  </header>
+  <div>
+      <p>最近，スマホで撮った写真は自動的にグーグルフォトに同期されるようになっていて，そこから写真のURLを取得するだけでブログに写真を載せることができる．</p>
+<p>備忘録として記載しておく．</p>
+<div class="section" id="rest">
+<h2>画像の貼り付け方（ReSTで共通？）</h2>
+<pre class="literal-block">
+.. figure:: http://......
+  :target: http://target.url.here
+  :align: right
+  :width: 400px
+  :alt: Alternative text
+</pre>
+<p>のようにして貼り付ける．</p>
+<p>この <tt class="docutils literal">figure</tt> の右にグーグルフォトで取得した写真のURLを貼り付ければいい．</p>
+</div>
+<div class="section" id="url">
+<h2>グーグルフォトから写真のURLを取得</h2>
+<p>どうもグーグルフォトの写真を右クリックして「イメージのアドレスをコピー」としただけでは，そのURLは一時的なものもしくはグーグルフォトにログインしていない人には見れないなどの問題があるらしい．
+Picasa web（こちらもgoogleの写真サービス）のアルバムのアクセス設定を，アドレスを知っている人のみに制限しつつ公開する．Picasa webでグーグルフォトの写真が見れたらその写真を右クリックして写真のURLを取得すればよいらしい．</p>
+<p>参考サイト：</p>
+<ul class="simple">
+<li><a class="reference external" href="http://ameblo.jp/wantan-52/entry-12119213036.html">Googleフォトの画像URLを取得</a></li>
+<li><a class="reference external" href="http://stackoverflow.com/questions/39508631/how-to-get-direct-permanent-link-to-public-image-on-google-photos">How to get direct permanent link to public image on Google Photos …</a></li></ul></div>
+      <br>
+      <a class="btn" href="../posts/2016/11/03/put-a-google-photo-on-to-pelican-blog/index.html#put-a-google-photo-on-to-pelican-blog">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/11/03/petit-baeof-at-lausanne/index.html#petit-baeof-at-lausanne">Petit Boeuf in Lausanne</a></h2>
+    <p>
+          Posted on Thu 03 November 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/swiss.html">swiss</a>,              <a href="../tag/lausanne.html">lausanne</a>
+    </p>
+  </header>
+  <div>
+      <p>ローザンヌ生活も終わりに近づいたので，何かスイスっぽい食事をと考えていたところ，
+同僚から <strong>Petit Boeuf</strong> なるお店を勧められたので行ってみた．
+名前は「プチ牛肉」だけど，量はプチではないとのこと．</p>
+<p>注文したのは，以下二点（実際の名前はもっとファンシーだったかもしれない）．</p>
+<div class="section" id="tartar-de-boeuf">
+<h2>Tartar de boeuf</h2>
+<div class="figure align-center">
+<img alt="Tartare de boeuf" src="https://lh3.googleusercontent.com/X1pR6jxXhKbRaLfEav02OVbXeLLS1lS0E6tQAiozZJedsyxoX7Sz5YhgdXqh5qtIVxbOkCP0LDNlBnQ=w1440-h900-no" style="width: 400px;" />
+</div>
+<p>これは意外にしょっぱい．
+目の前でスパイスと混ぜてくれて，その後に少し味見させてくれて「これで良いか？」と聞いてくる．スパイシーすぎる場合はそう言えばマイルドにしてくれるっぽい．</p>
+<p>ハート型によそってくれたのは我々を見てデートだとでも思ったからか？</p>
+</div>
+<div class="section" id="tagliatelle-aux-crevette">
+<h2>Tagliatelle aux crevette</h2>
+<div class="figure align-center">
+<img alt="Tagliatelle aux crevette" src="https://lh3.googleusercontent.com/mLeJAwxH5fDpO9zv_9w4nYshSWJ46vDZWwbZPadTmUW9YEAAg8ejBvHz0sLuNiL8LgSjaUXZ7kos6ZI=w1440-h900-no" style="width: 400px;" />
+</div>
+<p>肉のレストランなのにエビパスタとかアホかとお思うかもしれないが，このパスタはかなりおいしい．ローザンヌで食べられるパスタの中ではトップクラスと思った．</p>
+<p><a class="reference external" href="../posts/2016/11/03/put-a-google-photo-on-to-pelican-blog/index.html">もし画像が表示されないのであれば，それはGoogle Photoに問題があるからです．．．</a></p>
+</div>
+
+      <br>
+      <a class="btn" href="../posts/2016/11/03/petit-baeof-at-lausanne/index.html#petit-baeof-at-lausanne">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/10/27/flake8-personal-setting-for-python/index.html#flake8-personal-setting-for-python">flake8 personal setting for python</a></h2>
+    <p>
+          Posted on Thu 27 October 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/python.html">python</a>,              <a href="../tag/emacs.html">emacs</a>,              <a href="../tag/mac.html">mac</a>
+    </p>
+  </header>
+  <div>
+      <p>When I code python programs using emacs, emacs uses elpy and elpy uses flake8 for syntax checking.
+But this syntax checking is kind of annoying.
+For example, I would like to write like this</p>
+<pre class="code python literal-block">
+<span class="n">x</span> <span class="o">=</span> <span class="n">some_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">+</span><span class="n">d</span><span class="p">)</span>
+</pre>
+<p>instead of this</p>
+<pre class="code python literal-block">
+<span class="n">x</span> <span class="o">=</span> <span class="n">some_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span>
+</pre>
+<p>I …</p>
+      <br>
+      <a class="btn" href="../posts/2016/10/27/flake8-personal-setting-for-python/index.html#flake8-personal-setting-for-python">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/10/02/no-match-found-in-reftex/index.html#no-match-found-in-reftex">No match found in Reftex</a></h2>
+    <p>
+          Posted on Sun 02 October 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/emacs.html">emacs</a>
+    </p>
+  </header>
+  <div>
+      <p>Sometimes when writing a LaTeX document with Emacs.app in MacOS
+and I tried to put citation in the document by typing <tt class="docutils literal"><span class="pre">Ctl-C</span> + [</tt>,
+emacs fails to search references I am looking for.
+I do not know the reason exactly, but I seems that emacs does not store the reference information …</p>
+      <br>
+      <a class="btn" href="../posts/2016/10/02/no-match-found-in-reftex/index.html#no-match-found-in-reftex">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/08/14/web-shop-service-thebase/index.html#web-shop-service-thebase">Web shop service thebase</a></h2>
+    <p>
+          Posted on Sun 14 August 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/misc.html">misc</a>
+    </p>
+  </header>
+  <div>
+      <p>友人のサイトにウェブショップ <a class="reference external" href="http://wataroom.thebase.in">wataroom</a> がオープンしてたから見てみたら，なんだか有名なウェブショップ作成サービスで作られてものだった．</p>
+<p>このサービス <a class="reference external" href="https://thebase.in/?from=wataroom&amp;p=shop">BASE</a> というのはかなりお手軽にウェブショップをオープンできて，決済方法なんかを構築する手間が省けるらしい．
+今後どんどんネットショップが普及すると思われるなかで，このサービスは秀逸と思う．
+要チェックや．</p>
+<p>あまりに多くのネットショップができてくると玉石混淆で煩わしくなるかもしれないが．．．</p>
+
+      <br>
+      <a class="btn" href="../posts/2016/08/14/web-shop-service-thebase/index.html#web-shop-service-thebase">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
+    <h2><a href="../posts/2016/08/11/math-font-in-sphinx-document/index.html#math-font-in-sphinx-document">Math font in sphinx-document</a></h2>
+    <p>
+          Posted on Thu 11 August 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/sphinx.html">sphinx</a>
+    </p>
+  </header>
+  <div>
+      <p>SphinxドキュメントをHTML出力する際の数式フォントを変更したい．
+ここでは，数式をPNGで出力する <strong>pngmath</strong> が選択されているとする．（ <strong>mathjax</strong> の場合は別の話らしい．）</p>
+<p><tt class="docutils literal">conf.py</tt> 内に
+.. code:: python</p>
+<blockquote>
+extensions = ['sphinx.ext.pngmath']</blockquote>
+<p>と書かれていたら， <em>pngmath</em> を使う設定になっている．
+この場合，sphinxはコンパイル時にlatexを呼び出して数式のpngファイルを作成する．
+そのlatexのためのプリアンブル（preamble）を以下のように <tt class="docutils literal">conf.py</tt> に追加すればよい．</p>
+<pre class="code python literal-block">
+<span class="n">pngmath_latex_preamble</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;&quot;&quot;
+\usepackage{eulervm}
+\usepackage{amsmath,amssymb}
+\newcommand{\degree}{$^{\circ}$}
+\newcommand{\temp}{${}^\circ$C}
+\newcommand{\rmd}{{\rm d}}
+\newcommand{\rme}{{\rm e}}
+&quot;&quot;&quot;</span>
+</pre>
+<p>そうするとめでたく数式フォントの変更や自作コマンドなんかを使えるようになる …</p>
+      <br>
+      <a class="btn" href="../posts/2016/08/11/math-font-in-sphinx-document/index.html#math-font-in-sphinx-document">    Continue reading
+</a>
+  </div>
+</article>
+
+  <div class="pagination">
+    <a class="btn" href="../author/ryo-kobayashi4.html">
+      <i class="fa fa-angle-left"></i>     Older Posts
+
+    </a>
+    <a class="btn float-right" href="../author/ryo-kobayashi2.html">
+          Newer Posts
+ <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36370521-4', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "..",
+  "image": "http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>

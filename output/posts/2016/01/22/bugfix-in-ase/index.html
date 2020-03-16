@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/font-awesome.min.css">
+
+
+    <link href="http://ryokbys.web.nitech.ac.jp/contents/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="R.K.S. blog Atom">
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Ryo KOBAYASHI" />
+<meta name="description" content="There was a bug in ASE package. When I tried to read a vasprun.xml file using ase.io.read like, atoms= read('vasprun.xml', index=0, format='vasp-xml') and the vasprun.xml contains some constraints for atoms, I got the following message, Traceback (most recent call last): File "/Users …" />
+<meta name="keywords" content="research, ase">
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:title" content="Bugfix in ASE"/>
+<meta property="og:description" content="There was a bug in ASE package. When I tried to read a vasprun.xml file using ase.io.read like, atoms= read('vasprun.xml', index=0, format='vasp-xml') and the vasprun.xml contains some constraints for atoms, I got the following message, Traceback (most recent call last): File "/Users …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2016/01/22/bugfix-in-ase/index.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-01-22 10:49:15+09:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/ryo-kobayashi.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="research"/>
+<meta property="article:tag" content="ase"/>
+<meta property="og:image" content="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash; Bugfix in ASE</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="../../../../..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.web.nitech.ac.jp/contents/blog/tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="bugfix-in-ase">Bugfix in ASE</h1>
+    <p>
+          Posted on Fri 22 January 2016 in <a href="../../../../../category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/research.html">research</a>
+      <a href="../../../../../tag/ase.html">ase</a>
+    </p>
+  </div>
+  <div>
+    <p>There was a bug in ASE package.</p>
+<p>When I tried to read a <tt class="docutils literal">vasprun.xml</tt> file using <tt class="docutils literal">ase.io.read</tt> like,</p>
+<div class="highlight"><pre><span></span><span class="n">atoms</span><span class="o">=</span> <span class="n">read</span><span class="p">(</span><span class="s1">&#39;vasprun.xml&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">format</span><span class="o">=</span><span class="s1">&#39;vasp-xml&#39;</span><span class="p">)</span>
+</pre></div>
+<p>and the <tt class="docutils literal">vasprun.xml</tt> contains some constraints for atoms, I got the following message,</p>
+<pre class="literal-block">
+Traceback (most recent call last):
+  File &quot;/Users/kobayashi/src/fitpot/vasprun2fp.py&quot;, line 63, in &lt;module&gt;
+    atoms= read('vasprun.xml',index=0,format='vasp-xml')
+  File &quot;/Users/kobayashi/src/ase/ase/io/formats.py&quot;, line 290, in read
+    return next(_iread(filename, slice(index, None), format, **kwargs))
+  File &quot;/Users/kobayashi/src/ase/ase/io/formats.py&quot;, line 360, in _iread
+    for dct in io.read(fd, *args, **kwargs):
+  File &quot;/Users/kobayashi/src/ase/ase/io/vasp.py&quot;, line 451, in read_vasp_xml
+    constraints.append(FixScaled(cell, i, flags))
+UnboundLocalError: local variable 'cell' referenced before assignment
+</pre>
+<p>I fixed <tt class="docutils literal">cell</tt> to <tt class="docutils literal">cell_init</tt> on a line 451 in <tt class="docutils literal">ase/io/vasp.py</tt>. Then now it works fine ;)</p>
+
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-36370521-4', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "../../../../..",
+  "image": "http://ryokbys.web.nitech.ac.jp/contents/blog/images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>
