@@ -7,7 +7,8 @@ SITENAME = u'R.K.S. blog'
 SITETITLE = u'R.K.S. blog'
 SITESUBTITLE = u'Live as if you were to die tomorrow. Learn as if you were to live forever.'
 SITETAG = 'R.K.S. blog'
-SITEURL = 'http://ryokbys.web.nitech.ac.jp/contents/blog'
+#SITEURL = 'http://ryokbys.web.nitech.ac.jp/contents/blog'
+SITEURL = 'http://ryokbys.github.io/blog/'
 #SITEURL = 'file:///Users/kobayashi/Dropbox/Public/pelican_blog/output'
 SITELOGO = SITEURL+'/images/yoda-and-me.png'
 
@@ -88,7 +89,8 @@ USE_FOLDER_AS_CATEGORY = False
 DEFAULT_CATEGORY = 'misc'
 FILENAME_METADATA = r'(?P<date>\d{4}-\d{2}-\d{2})_(?P<slug>.*)'
 #THEME= './themes/my-theme-160103'
-THEME= '/Users/kobayashi/pelican-themes/Flex'
+#THEME= '/Users/kobayashi/pelican-themes/Flex'
+THEME= './themes/Flex'
 
 #...Flex theme setting
 # MAIN_MENU = True
