@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Ryo KOBAYASHI" />
+<meta name="description" content="FX100でも，大きな計算だけでなく大量の小さな計算をバカ並列で行うことが認められて来ているので，FX100計算サーバ上でnumpyを用いたpythonコードを走らせたいというモチベーションがあった． しかし，numpyは入っていないし，管理者に要望を伝えても，「メンテナンスの時でないとインストールできないし，優先順位は低い」みたいな感じだったので，自分でインストールしなければならなかった． 前提 名大スパコン FX100 $ uname -aとすると，Linux f13c06n08 2.6.32 #2 SMP Wed Nov 2 17:44:12 JST 2016 s64fx s64fx s64fx GNU/Linuxとなる．Sparc64の上でLinuxが動いている環境． gccは初めから入っているが，gfortranは存在しない． 管理者権限はないし，スパコン側からインターネットに接続できないから，$ pip install numpyのような便利コマンドが使えないため，自分で依存関係も含めてソースコードからコンパイルしてインストールしなければならない． numpyのインストールにはFortranコンパイラが必要そう． gcc-4.4 …" />
+<meta name="keywords" content="FX100, python, numpy, gcc, gfortran">
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:title" content="Install numpy on Fujitsu FX100"/>
+<meta property="og:description" content="FX100でも，大きな計算だけでなく大量の小さな計算をバカ並列で行うことが認められて来ているので，FX100計算サーバ上でnumpyを用いたpythonコードを走らせたいというモチベーションがあった． しかし，numpyは入っていないし，管理者に要望を伝えても，「メンテナンスの時でないとインストールできないし，優先順位は低い」みたいな感じだったので，自分でインストールしなければならなかった． 前提 名大スパコン FX100 $ uname -aとすると，Linux f13c06n08 2.6.32 #2 SMP Wed Nov 2 17:44:12 JST 2016 s64fx s64fx s64fx GNU/Linuxとなる．Sparc64の上でLinuxが動いている環境． gccは初めから入っているが，gfortranは存在しない． 管理者権限はないし，スパコン側からインターネットに接続できないから，$ pip install numpyのような便利コマンドが使えないため，自分で依存関係も含めてソースコードからコンパイルしてインストールしなければならない． numpyのインストールにはFortranコンパイラが必要そう． gcc-4.4 …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2017/02/02/install-numpy-on-fujitsu-fx100/index.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2017-02-02 18:51:18+09:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/ryo-kobayashi.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="FX100"/>
+<meta property="article:tag" content="python"/>
+<meta property="article:tag" content="numpy"/>
+<meta property="article:tag" content="gcc"/>
+<meta property="article:tag" content="gfortran"/>
+<meta property="og:image" content="http://ryokbys.github.io/blog//images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash; Install numpy on Fujitsu FX100</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="http://ryokbys.github.io/blog//images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="../../../../..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.github.io/blog//archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.github.io/blog//tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="install-numpy-on-fujitsu-fx100">Install numpy on Fujitsu FX100</h1>
+    <p>
+          Posted on Thu 02 February 2017 in <a href="../../../../../category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/fx100.html">FX100</a>
+      <a href="../../../../../tag/python.html">python</a>
+      <a href="../../../../../tag/numpy.html">numpy</a>
+      <a href="../../../../../tag/gcc.html">gcc</a>
+      <a href="../../../../../tag/gfortran.html">gfortran</a>
+    </p>
+  </div>
+  <div>
+    <p>FX100でも，大きな計算だけでなく大量の小さな計算をバカ並列で行うことが認められて来ているので，FX100計算サーバ上でnumpyを用いたpythonコードを走らせたいというモチベーションがあった．
+しかし，numpyは入っていないし，管理者に要望を伝えても，「メンテナンスの時でないとインストールできないし，優先順位は低い」みたいな感じだったので，自分でインストールしなければならなかった．</p>
+<h2>前提</h2>
+<ul>
+<li>名大スパコン <strong>FX100</strong></li>
+<li><code>$ uname -a</code>とすると，<code>Linux f13c06n08 2.6.32 #2 SMP Wed Nov 2 17:44:12 JST 2016 s64fx s64fx s64fx GNU/Linux</code>となる．Sparc64の上でLinuxが動いている環境．</li>
+<li>gccは初めから入っているが，gfortranは存在しない．</li>
+<li>管理者権限はないし，スパコン側からインターネットに接続できないから，<code>$ pip install numpy</code>のような便利コマンドが使えないため，自分で依存関係も含めてソースコードからコンパイルしてインストールしなければならない．</li>
+<li>numpyのインストールにはFortranコンパイラが必要そう．</li>
+</ul>
+<h2>gcc-4.4.7</h2>
+<p>最新バージョンではないが，もともとそのスパコンにはこのバージョンのgccがインストールされていたので，このバージョンを選択．</p>
+<p><a href="http://ftp.tsukuba.wide.ad.jp/software/gcc/releases/gcc-4.4.7/">ここ</a>から
+<code>gcc-4.4.7.tar.gz</code> を落として来て，<code>fx:src/</code>にコピー．</p>
+<div class="highlight"><pre><span></span><code>$ ./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/local-fx --enable-languages<span class="o">=</span>c,fortran
+...
+configure: error: cannot guess build type<span class="p">;</span> you must specify one
+</code></pre></div>
+
+
+<p>となって，進むことができない．
+オプションに<code>--build=sparc64-linux-gnu</code>を追加すると，</p>
+<div class="highlight"><pre><span></span><code><span class="nv">checking</span> <span class="k">for</span> <span class="nv">correct</span> <span class="nv">version</span> <span class="nv">of</span> <span class="nv">gmp</span>.<span class="nv">h</span>... <span class="nv">no</span>
+<span class="nv">configure</span>: <span class="nv">error</span>: <span class="nv">Building</span> <span class="nv">GCC</span> <span class="nv">requires</span> <span class="nv">GMP</span> <span class="mi">4</span>.<span class="mi">1</span><span class="o">+</span> <span class="nv">and</span> <span class="nv">MPFR</span> <span class="mi">2</span>.<span class="mi">3</span>.<span class="mi">2</span><span class="o">+</span>.
+<span class="nv">Try</span> <span class="nv">the</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">gmp</span> <span class="nv">and</span><span class="o">/</span><span class="nv">or</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">mpfr</span> <span class="nv">options</span> <span class="nv">to</span> <span class="nv">specify</span> <span class="nv">their</span> <span class="nv">locations</span>.
+<span class="nv">Copies</span> <span class="nv">of</span> <span class="nv">these</span> <span class="nv">libraries</span><span class="s1">&#39;</span><span class="s"> source code can be found at their respective</span>
+<span class="nv">hosting</span> <span class="nv">sites</span> <span class="nv">as</span> <span class="nv">well</span> <span class="nv">as</span> <span class="nv">at</span> <span class="nv">ftp</span>:<span class="o">//</span><span class="nv">gcc</span>.<span class="nv">gnu</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">pub</span><span class="o">/</span><span class="nv">gcc</span><span class="o">/</span><span class="nv">infrastructure</span><span class="o">/</span>.
+<span class="nv">See</span> <span class="nv">also</span> <span class="nv">http</span>:<span class="o">//</span><span class="nv">gcc</span>.<span class="nv">gnu</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">install</span><span class="o">/</span><span class="nv">prerequisites</span>.<span class="nv">html</span> <span class="k">for</span> <span class="nv">additional</span> <span class="nv">info</span>.
+<span class="k">If</span> <span class="nv">you</span> <span class="nv">obtained</span> <span class="nv">GMP</span> <span class="nv">and</span><span class="o">/</span><span class="nv">or</span> <span class="nv">MPFR</span> <span class="nv">from</span> <span class="nv">a</span> <span class="nv">vendor</span> <span class="nv">distribution</span> <span class="nv">package</span>, <span class="nv">make</span>
+<span class="nv">sure</span> <span class="nv">that</span> <span class="nv">you</span> <span class="nv">have</span> <span class="nv">installed</span> <span class="nv">both</span> <span class="nv">the</span> <span class="nv">libraries</span> <span class="nv">and</span> <span class="nv">the</span> <span class="nv">header</span> <span class="nv">files</span>.
+<span class="nv">They</span> <span class="nv">may</span> <span class="nv">be</span> <span class="nv">located</span> <span class="nv">in</span> <span class="nv">separate</span> <span class="nv">packages</span>.
+</code></pre></div>
+
+
+<p>となり，進めない．どうも<code>GMP</code>と<code>MPFR</code>というライブラリが必要とのこと．</p>
+<p><strong>次のセクションにMPFRとGMPのインストールを記載する．</strong></p>
+<p>GMPとMPFRをインストールしたら，それらのヘッダファイルやライブラリファイルへのパスを明示的に渡してやって<code>./configure</code>を行う．</p>
+<div class="highlight"><pre><span></span><code>$ .<span class="o">/</span><span class="nv">configure</span> <span class="o">--</span><span class="nv">prefix</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span> <span class="o">--</span><span class="nv">build</span><span class="o">=</span><span class="nv">sparc64</span><span class="o">-</span><span class="nv">linux</span><span class="o">-</span><span class="nv">gnu</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">gmp</span><span class="o">-</span><span class="k">include</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span><span class="k">include</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">gmp</span><span class="o">-</span><span class="nv">lib</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span><span class="nv">lib</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">mpfr</span><span class="o">-</span><span class="k">include</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span><span class="k">include</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">mpfr</span><span class="o">-</span><span class="nv">lib</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span><span class="nv">lib</span> <span class="o">--</span><span class="nv">enable</span><span class="o">-</span><span class="nv">languages</span><span class="o">=</span><span class="nv">c</span>,<span class="nv">fortran</span> <span class="o">--</span><span class="nv">disable</span><span class="o">-</span><span class="nv">multilib</span>
+$ <span class="nv">make</span> <span class="o">-</span><span class="nv">j24</span>
+$ <span class="nv">make</span> <span class="nv">install</span>
+</code></pre></div>
+
+
+<ul>
+<li><code>--disable-multilib</code>をつけないと，コンパイル途中で，<code>gnu/stubs-32.h</code>が見つからないというエラーで止まってしまう．（<a href="http://qiita.com/liveralmask/items/6ed4a98ebb3bf6b7f707">ココ</a>を参照．） </li>
+</ul>
+<h3>MPFR</h3>
+<ul>
+<li><a href="http://www.mpfr.org">http://www.mpfr.org</a>
+からダウンロードしてきて，解凍して，</li>
+</ul>
+<div class="highlight"><pre><span></span><code>$ .<span class="o">/</span><span class="nv">configure</span> <span class="o">--</span><span class="nv">prefix</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span> <span class="o">--</span><span class="nv">build</span><span class="o">=</span><span class="nv">sparc64</span><span class="o">-</span><span class="nv">linux</span><span class="o">-</span><span class="nv">gnu</span>
+...
+<span class="nv">checking</span> <span class="k">for</span> <span class="nv">gmp</span>.<span class="nv">h</span>... <span class="nv">no</span>
+<span class="nv">configure</span>: <span class="nv">error</span>: <span class="nv">gmp</span>.<span class="nv">h</span> <span class="nv">can</span><span class="s1">&#39;</span><span class="s">t be found, or is unusable.</span>
+</code></pre></div>
+
+
+<p>と，結局<code>GMP</code>が必要．</p>
+<p>次のセクションのGMPをインストール後，下記のようにGMPの<code>gmp.h</code>と<code>libgmp.a</code>の場所を明示的にconfigureに渡してやれば，configureは通る．</p>
+<div class="highlight"><pre><span></span><code>$ .<span class="o">/</span><span class="nv">configure</span> <span class="o">--</span><span class="nv">prefix</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span> <span class="o">--</span><span class="nv">build</span><span class="o">=</span><span class="nv">sparc64</span><span class="o">-</span><span class="nv">linux</span><span class="o">-</span><span class="nv">gnu</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">gmp</span><span class="o">-</span><span class="k">include</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span><span class="k">include</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">gmp</span><span class="o">-</span><span class="nv">lib</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span><span class="nv">lib</span>
+$ <span class="nv">make</span> <span class="o">-</span><span class="nv">j12</span>
+$ <span class="nv">make</span> <span class="nv">install</span>
+</code></pre></div>
+
+
+<h3>GMP</h3>
+<p>下記参考
+* <a href="http://d.hatena.ne.jp/fuku_dw/20111217/1324127010">http://d.hatena.ne.jp/fuku_dw/20111217/1324127010</a></p>
+<div class="highlight"><pre><span></span><code>$ ./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/local-fx/ --build<span class="o">=</span>sparc64-linux-gnu
+$ make -j4
+$ make check
+$ make install
+</code></pre></div>
+
+
+<hr>
+<h2>numpy</h2>
+<h3>build</h3>
+<div class="highlight"><pre><span></span><code>$ <span class="nv">CC</span><span class="o">=</span>gcc python setup.py build --fcompiler<span class="o">=</span>gfortran
+</code></pre></div>
+
+
+<ul>
+<li><code>CC=gcc</code>と先に宣言してから<code>setup.py</code>を実行しなければエラーで止まってしまう．</li>
+<li><code>sparc64-unknown-linux-gnu-gcc</code>という名前で，コンパイラが存在していないとダメだったので，パスの通っているディレクトリにリンクを貼っておいた．</li>
+<li>BLASやLAPACKなどはマシンにインストールされているものを使えなかった．しかし，インストールはできる．おそらくnumpyの性能はあまりよくないと思われる．</li>
+</ul>
+<h3>install</h3>
+<p><a href="https://docs.python.org/3/install/index.html#alternate-installation">ここ</a>を参考にして下記のように<code>--prefix</code>にインストール先を指定．</p>
+<div class="highlight"><pre><span></span><code>$ python setup.py install --prefix<span class="o">=</span><span class="nv">$HOME</span>/local-fx
+</code></pre></div>
+
+
+<p>こうしたら，
+<code>$HOME/local-fx/lib64/python2.6/site-packages/</code>以下にインストールされた．
+<code>lib</code>ではなく，<code>lib64</code>であることに注意．</p>
+<h3>check</h3>
+<div class="highlight"><pre><span></span><code><span class="err">$</span> <span class="n">export</span> <span class="n">PYTHONPATH</span><span class="o">=</span><span class="err">$</span><span class="n">HOME</span><span class="o">/</span><span class="n">local</span><span class="o">-</span><span class="n">fx</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">python2</span><span class="o">.</span><span class="mi">6</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="p">:</span><span class="err">$</span><span class="n">PYTHONPATH</span>
+<span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import numpy; print numpy.__file__&quot;</span>
+<span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">usr0</span><span class="o">/</span><span class="n">z41110v</span><span class="o">/</span><span class="n">local</span><span class="o">-</span><span class="n">fx</span><span class="o">/</span><span class="n">lib64</span><span class="o">/</span><span class="n">python2</span><span class="o">.</span><span class="mi">6</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">numpy</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">pyc</span>
+</code></pre></div>
+
+
+<ul>
+<li>まず，<code>numpy</code>が置かれているところへ，PYTHONPATHを通してやる．</li>
+<li><code>import numpy</code>が通ることを確認．</li>
+</ul>
+<h2>注意点</h2>
+<ul>
+<li>今回のインストールでは，BLAS, LAPACKを用いずにnumpyをインストールしているので，もしかしたら思い計算は遅くなるかもしれない．</li>
+<li>BLAS, LAPACKをインストールしていないので，scipyのインストールはできなかった．今の所は必要としていないので，これ以上は追求しない．</li>
+</ul>
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "../../../../..",
+  "image": "http://ryokbys.github.io/blog//images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>

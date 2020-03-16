@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../../../../../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../../../../../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+<meta name="author" content="Ryo KOBAYASHI" />
+<meta name="description" content="Suppose if one creates a dislocation in a system with two surfaces top and bottom on z axis and periodic in x and y axes. Motions of atoms at the top and bottom layer should be limited along x and y direction and not to move z direction. One can …" />
+<meta name="keywords" content="lammps, research">
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:title" content="Constraint atom motion in LAMMPS"/>
+<meta property="og:description" content="Suppose if one creates a dislocation in a system with two surfaces top and bottom on z axis and periodic in x and y axes. Motions of atoms at the top and bottom layer should be limited along x and y direction and not to move z direction. One can …"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content="../../../../../posts/2016/03/11/constraint-atom-motion-in-lammps/index.html"/>
+<meta property="og:type" content="article"/>
+<meta property="article:published_time" content="2016-03-11 22:26:13+09:00"/>
+<meta property="article:modified_time" content=""/>
+<meta property="article:author" content="../../../../../author/ryo-kobayashi.html">
+<meta property="article:section" content="misc"/>
+<meta property="article:tag" content="lammps"/>
+<meta property="article:tag" content="research"/>
+<meta property="og:image" content="http://ryokbys.github.io/blog//images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash; Constraint atom motion in LAMMPS</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="../../../../..">
+        <img src="http://ryokbys.github.io/blog//images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="../../../../..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.github.io/blog//archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.github.io/blog//tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+<article class="single">
+  <header>
+    <h1 id="constraint-atom-motion-in-lammps">Constraint atom motion in LAMMPS</h1>
+    <p>
+          Posted on Fri 11 March 2016 in <a href="../../../../../category/misc.html">misc</a>
+
+
+    </p>
+  </header>
+
+
+  <div class="tag-cloud">
+    <p>
+      <a href="../../../../../tag/lammps.html">lammps</a>
+      <a href="../../../../../tag/research.html">research</a>
+    </p>
+  </div>
+  <div>
+    <p>Suppose if one creates a dislocation in a system with two surfaces top and bottom on z axis and
+periodic in x and y axes.
+Motions of atoms at the top and bottom layer should be limited along x and y direction and
+not to move z direction.
+One can achieve this constraint in LAMMPS by writing as follows,</p>
+<pre class="literal-block">
+region top block      0.0  300.0  0.0  20.0  212.643446964  300.0
+region bottom block   0.0  300.0  0.0  20.0  0.0    7.0
+group  topatoms  region top
+group  botatoms  region bottom
+fix  constraint  topatoms  setforce  NULL  NULL  0.0
+fix  constraint  botatoms  setforce  NULL  NULL  0.0
+velocity all set  0.0  0.0  0.0
+</pre>
+<p>Here two regions are defined, called <tt class="docutils literal">top</tt> and <tt class="docutils literal">bottom</tt>.
+Then groups of atoms called <tt class="docutils literal">topatoms</tt> and <tt class="docutils literal">botatoms</tt> are defined,
+and the forces of z component are reset to 0.</p>
+
+  </div>
+
+
+
+
+</article>
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "../../../../..",
+  "image": "http://ryokbys.github.io/blog//images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>

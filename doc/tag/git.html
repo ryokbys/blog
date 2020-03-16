@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" type="text/css" href="../theme/stylesheet/style.min.css">
+
+  <link rel="stylesheet" type="text/css" href="../theme/pygments/github.min.css">
+  <link rel="stylesheet" type="text/css" href="../theme/font-awesome/css/font-awesome.min.css">
+
+
+
+
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="" />
+
+
+    <meta name="author" content="Ryo KOBAYASHI" />
+    <meta name="description" content="" />
+<meta property="og:site_name" content="R.K.S. blog"/>
+<meta property="og:type" content="blog"/>
+<meta property="og:title" content="R.K.S. blog"/>
+<meta property="og:description" content=""/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:url" content=".."/>
+<meta property="og:image" content="http://ryokbys.github.io/blog//images/yoda-and-me.png">
+
+  <title>R.K.S. blog &ndash;     Tag git
+</title>
+
+</head>
+<body>
+  <aside>
+    <div>
+      <a href="..">
+        <img src="http://ryokbys.github.io/blog//images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
+      </a>
+      <h1><a href="..">R.K.S. blog</a></h1>
+
+<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
+      <nav>
+        <ul class="list">
+
+          <!-- <li><a href="http://ryokbys.github.io/blog//archives.html" target="_blank">Archives</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//archives.html" >Archives</a></li>
+          <!-- <li><a href="http://ryokbys.github.io/blog//tags.html" target="_blank">Tags</a></li> -->
+          <li><a href="http://ryokbys.github.io/blog//tags.html" >Tags</a></li>
+        </ul>
+      </nav>
+
+      <ul class="social">
+      </ul>
+    </div>
+
+
+  </aside>
+  <main>
+
+
+
+
+<article>
+  <header>
+    <h2><a href="../posts/2016/03/01/automate-git-archive/index.html#automate-git-archive">Automate git archive</a></h2>
+    <p>
+          Posted on Tue 01 March 2016 in <a href="../category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="../tag/linux.html">linux</a>,              <a href="../tag/git.html">git</a>
+    </p>
+  </header>
+  <div>
+      <p>I made a bash function to replace <tt class="docutils literal">git archive</tt> command,</p>
+<pre class="literal-block">
+function gitarch(){
+    basedname=$(git rev-parse --show-toplevel)
+    dname=$(basename $basedname)
+    cwd=$(pwd)
+    cd $basedname
+    fname=${dname}_`ymd`.tgz
+    git archive --format=tar --prefix=${dname}/ HEAD | gzip &gt; $fname
+    cp $fname ${cwd}/
+    cd $cwd
+}
+</pre>
+<p>Writing this function in <tt class="docutils literal">.bashrc</tt> file,
+I can …</p>
+      <br>
+      <a class="btn" href="../posts/2016/03/01/automate-git-archive/index.html#automate-git-archive">    Continue reading
+</a>
+  </div>
+</article>
+
+  <div class="pagination">
+  </div>
+
+
+
+
+    <footer>
+<p>&copy; Ryo KOBAYASHI </p>
+<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
+</p>    </footer>
+  </main>
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context" : "http://schema.org",
+  "@type" : "Blog",
+  "name": " R.K.S. blog ",
+  "url" : "..",
+  "image": "http://ryokbys.github.io/blog//images/yoda-and-me.png",
+  "description": ""
+}
+</script>
+</body>
+</html>
