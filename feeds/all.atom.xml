@@ -6,14 +6,17 @@
 &lt;li&gt;&lt;a href="https://qiita.com/koikoi_jam/items/29d9ef4e16a42038325c"&gt;jupyter-themes の fontについて&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;My current setting is provided by the following command.&lt;/p&gt;
-&lt;p&gt;$ jt -t grade3 -f code -fs 12 -cellw 95% -lineh 140 -T -N -tf droidsans -tfs 12 -nf ptsans -nfs 12 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Appearance of Jupyter Notebook can be modified using &lt;code&gt;jupyter-themes&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ jt -t grade3 -f code -fs &lt;span class="m"&gt;12&lt;/span&gt; -cellw &lt;span class="m"&gt;95&lt;/span&gt;% -lineh &lt;span class="m"&gt;140&lt;/span&gt; -T -N -tf droidsans -tfs &lt;span class="m"&gt;12&lt;/span&gt; -nf ptsans -nfs &lt;span class="m"&gt;12 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Appearance of Jupyter Notebook can be modified using &lt;code&gt;jupyter-themes&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;See the following websites for details,&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.hirayuki.com/zakki/jupyter-notebook-dark-thema"&gt;jupyterの表示拡張機能、jupyter-themesを徹底紹介する&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://qiita.com/koikoi_jam/items/29d9ef4e16a42038325c"&gt;jupyter-themes の fontについて&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;My current setting is provided by the following command.&lt;/p&gt;
-&lt;p&gt;$ jt -t grade3 -f code -fs 12 -cellw 95% -lineh 140 -T -N -tf droidsans -tfs 12 -nf ptsans -nfs 12 -ofs 10&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ jt -t grade3 -f code -fs &lt;span class="m"&gt;12&lt;/span&gt; -cellw &lt;span class="m"&gt;95&lt;/span&gt;% -lineh &lt;span class="m"&gt;140&lt;/span&gt; -T -N -tf droidsans -tfs &lt;span class="m"&gt;12&lt;/span&gt; -nf ptsans -nfs &lt;span class="m"&gt;12&lt;/span&gt; -ofs &lt;span class="m"&gt;10&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;p&gt;It looks good ;)&lt;/p&gt;</content><category term="misc"></category><category term="notebook"></category><category term="python"></category></entry><entry><title>2020年初頭における作業環境</title><link href="http://ryokbys.web.nitech.ac.jp/contents/blog/posts/2020/03/15/2020-environment/index.html" rel="alternate"></link><published>2020-03-15T21:56:22+09:00</published><updated>2020-03-15T21:56:22+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.web.nitech.ac.jp,2020-03-15:/contents/blog/posts/2020/03/15/2020-environment/index.html</id><summary type="html">&lt;p&gt;もう最近はこれを毎年メモするだけのブログになってきているので，今年も書いておく．
 すでに３月も中旬なので初頭というのはフェイクニュースだが．&lt;/p&gt;
 &lt;h2&gt;Mac&lt;/h2&gt;
