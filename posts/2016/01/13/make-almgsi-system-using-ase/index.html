@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Make AlMgSi-system LAMMPS file using ASE - R.K.S. blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../../../posts/2016/01/13/make-almgsi-system-using-ase/index.html">
+
+        <meta name="author" content="Ryo KOBAYASHI" />
+        <meta name="keywords" content="research,alloy,ase,lammps,python" />
+        <meta name="description" content="A bit Math first To get \(y\)-at%Mg2Si for the 1.2wt%Mg2Si system, calculate the following simultaneous equations, \begin{align*} \frac{(\text{Mg$_2$Si})_y}{\text{Al}_x +(\text{Mg$_2$Si})_y} &amp;=&amp; 0.012, \\ x + y &amp;=&amp; 1, \end{align*} using masses, Al=26,981, Mg=24 …" />
+
+        <meta property="og:site_name" content="R.K.S. blog" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Make AlMgSi-system LAMMPS file using ASE"/>
+        <meta property="og:url" content="../../../../../posts/2016/01/13/make-almgsi-system-using-ase/index.html"/>
+        <meta property="og:description" content="A bit Math first To get \(y\)-at%Mg2Si for the 1.2wt%Mg2Si system, calculate the following simultaneous equations, \begin{align*} \frac{(\text{Mg$_2$Si})_y}{\text{Al}_x +(\text{Mg$_2$Si})_y} &amp;=&amp; 0.012, \\ x + y &amp;=&amp; 1, \end{align*} using masses, Al=26,981, Mg=24 …"/>
+        <meta property="article:published_time" content="2016-01-13" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="research" />
+            <meta property="article:tag" content="alloy" />
+            <meta property="article:tag" content="ase" />
+            <meta property="article:tag" content="lammps" />
+            <meta property="article:tag" content="python" />
+            <meta property="article:author" content="Ryo KOBAYASHI" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../../../theme/css/bootstrap.slate.min.css" type="text/css"/>
+    <link href="../../../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../../../theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../../theme/css/style.css" type="text/css"/>
+
+        <link href="../../../../../feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="R.K.S. blog ATOM Feed"/>
+
+        <link href="../../../../../feeds/misc.atom.xml" type="application/atom+xml" rel="alternate"
+              title="R.K.S. blog misc ATOM Feed"/>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../../../../../" class="navbar-brand">
+R.K.S. blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a href="../../../../../category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../../../posts/2016/01/13/make-almgsi-system-using-ase/index.html"
+                       rel="bookmark"
+                       title="Permalink to Make AlMgSi-system LAMMPS file using ASE">
+                        Make AlMgSi-system LAMMPS file using ASE
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2016-01-13T16:58:33+09:00"> Wed 13 January 2016</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="../../../../../tag/research.html">research</a>
+        /
+	<a href="../../../../../tag/alloy.html">alloy</a>
+        /
+	<a href="../../../../../tag/ase.html">ase</a>
+        /
+	<a href="../../../../../tag/lammps.html">lammps</a>
+        /
+	<a href="../../../../../tag/python.html">python</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <div class="section" id="a-bit-math-first">
+<h2>A bit Math first</h2>
+<p>To get <span class="math">\(y\)</span>-at%Mg2Si for the 1.2wt%Mg2Si system, calculate the
+following simultaneous equations,</p>
+<div class="math">
+\begin{align*}
+\frac{(\text{Mg$_2$Si})_y}{\text{Al}_x +(\text{Mg$_2$Si})_y} &amp;=&amp; 0.012, \\
+x + y &amp;=&amp; 1,
+\end{align*}
+</div>
+<p>using masses, Al=26,981, Mg=24.305, and Si=28.085. We get
+<span class="math">\(y\simeq 0.00425\)</span>.</p>
+</div>
+<div class="section" id="in-case-of-32000-atom-system">
+<h2>In case of 32000-atom system</h2>
+<p>If we put (20,20,20) cubic FCC cells including 4 atoms in the simulation
+box, the box contains 32,000 atoms. In the 32000-atom system,</p>
+<div class="math">
+\begin{equation*}
+32000*y \simeq 32000 *0.00425 \sim 136,
+\end{equation*}
+</div>
+<p>there are 136 Mg<span class="math">\(_2\)</span>Si units. So there are about 90 Mg atoms
+and 45 Si atoms in the system, and rest of all are Al atoms.</p>
+<pre class="code python literal-block">
+<span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">Atoms</span>
+<span class="kn">from</span> <span class="nn">ase.lattice.cubic</span> <span class="kn">import</span> <span class="n">FaceCenteredCubic</span>
+<span class="n">atoms</span><span class="o">=</span><span class="n">FaceCenteredCubic</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s1">'Al'</span><span class="p">,</span><span class="n">latticeconstant</span><span class="o">=</span><span class="mf">4.041</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+<span class="k">print</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_number_of_atoms</span><span class="p">()</span>
+</pre>
+<pre class="literal-block">
+32000
+</pre>
+<pre class="code python literal-block">
+<span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">random</span>
+<span class="n">natm0</span><span class="o">=</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_number_of_atoms</span><span class="p">()</span>
+<span class="n">n_si</span><span class="o">=</span> <span class="mi">0</span>
+<span class="n">n_mg</span><span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">natm0</span><span class="p">):</span>
+    <span class="n">rnd</span><span class="o">=</span> <span class="n">random</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">rnd</span> <span class="o">&lt;</span> <span class="mf">0.00425</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">rnd</span> <span class="o">&lt;</span> <span class="mf">0.00425</span><span class="o">/</span><span class="mi">3</span><span class="p">:</span>
+            <span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">symbol</span><span class="o">=</span> <span class="s1">'Si'</span>
+            <span class="n">n_si</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">symbol</span><span class="o">=</span> <span class="s1">'Mg'</span>
+            <span class="n">n_mg</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">print</span> <span class="s1">'number of Mg = '</span><span class="p">,</span><span class="n">n_mg</span>
+<span class="k">print</span> <span class="s1">'number of Si = '</span><span class="p">,</span><span class="n">n_si</span>
+</pre>
+<pre class="literal-block">
+number of Mg =  102
+number of Si =  46
+</pre>
+</div>
+<div class="section" id="introduce-vacancy">
+<h2>Introduce vacancy</h2>
+<p>For solute atoms to move, there must be sufficient amount of vacancies
+in the system. Here we introduce vacancies of almost the same amount of
+solute atoms.</p>
+<pre class="code python literal-block">
+<span class="n">n_vac</span><span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">natm0</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">random</span><span class="p">()</span> <span class="o">&lt;</span> <span class="mf">0.00425</span><span class="p">:</span>
+        <span class="n">atoms</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">n_vac</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="k">print</span> <span class="s1">'number of vacancies = '</span><span class="p">,</span><span class="n">n_vac</span>
+</pre>
+<pre class="literal-block">
+number of vacancies =  139
+</pre>
+<pre class="code python literal-block">
+<span class="n">n_si</span><span class="o">=</span> <span class="mi">0</span>
+<span class="n">n_mg</span><span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atoms</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">symbol</span> <span class="o">==</span> <span class="s1">'Si'</span><span class="p">:</span>
+        <span class="n">n_si</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">elif</span> <span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">symbol</span> <span class="o">==</span> <span class="s1">'Mg'</span><span class="p">:</span>
+        <span class="n">n_mg</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="k">print</span> <span class="s1">'number of Mg = '</span><span class="p">,</span><span class="n">n_mg</span>
+<span class="k">print</span> <span class="s1">'number of Si = '</span><span class="p">,</span><span class="n">n_si</span>
+</pre>
+<pre class="literal-block">
+number of Mg =  101
+number of Si =  46
+</pre>
+</div>
+<div class="section" id="write-the-atoms-to-lammps-readable-format">
+<h2>Write the atoms to lammps-readable format</h2>
+<p>In order to write an atomic configuration file for LAMMPS, ase's
+<tt class="docutils literal">write</tt> function does not work. Instead, we have to use
+<tt class="docutils literal">write_lammps_data</tt> function in <tt class="docutils literal">lammpsrun</tt> module.</p>
+<pre class="code python literal-block">
+<span class="kn">from</span> <span class="nn">ase.calculators</span> <span class="kn">import</span> <span class="n">lammpsrun</span>
+</pre>
+<pre class="code python literal-block">
+<span class="n">fname</span><span class="o">=</span> <span class="s1">'data.AlMgSi'</span>
+<span class="n">lammpsrun</span><span class="o">.</span><span class="n">write_lammps_data</span><span class="p">(</span><span class="n">fname</span><span class="p">,</span><span class="n">atoms</span><span class="p">)</span>
+</pre>
+<pre class="code python literal-block">
+<span class="err">!</span><span class="n">head</span> <span class="o">-</span><span class="n">n15</span> <span class="n">data</span><span class="o">.</span><span class="n">AlMgSi</span>
+</pre>
+<pre class="literal-block">
+data.AlMgSi (written by ASE)
+
+31861  atoms
+3  atom types
+0.0 80.820000000  xlo xhi
+0.0 80.820000000  ylo yhi
+0.0 80.819999999  zlo zhi
+
+
+Atoms
+
+     1   1 0E-9 0E-9 0E-9
+     2   1 2.020500000 2.020500000 0E-9
+     3   1 2.020500000 0E-9 2.020500000
+     4   1 0E-9 2.020500000 2.020500000
+</pre>
+<p>Note that in this case, the order of chemical species are Al, Mg, and Si,
+because in LAMMPS atoms types are assigned according to the alphabetic order.</p>
+</div>
+<script type='text/javascript'>if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.3/latest.js?config=TeX-AMS-MML_HTMLorMML';
+
+    var configscript = document.createElement('script');
+    configscript.type = 'text/x-mathjax-config';
+    configscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'none' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        availableFonts: ['STIX', 'TeX']," +
+        "        preferredFont: 'STIX'," +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(configscript);
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="../../../../../"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group " id="tags">
+    <li class="list-group-item tag-1">
+      <a href="../../../../../tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="../../../../../tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="../../../../../tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="../../../../../tag/research.html">research</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="../../../../../tag/swiss.html">swiss</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="../../../../../tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="../../../../../tag/notebook.html">notebook</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="../../../../../tag/emacs.html">emacs</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="../../../../../tag/alloy.html">alloy</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="../../../../../tag/paper.html">paper</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="../../../../../tag/dft.html">DFT</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="../../../../../tag/vasp.html">vasp</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="../../../../../tag/ase.html">ase</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="../../../../../tag/language.html">language</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="../../../../../tag/tmux.html">tmux</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="../../../../../tag/lausanne.html">lausanne</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="../../../../../tag/book.html">book</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="../../../../../tag/lammps.html">lammps</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="../../../../../tag/fortran.html">fortran</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/excel.html">excel</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/stock.html">stock</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/inkscape.html">inkscape</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/makefile.html">makefile</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/marp.html">Marp</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/markdown.html">Markdown</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/sphinx.html">sphinx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/iphone.html">iphone</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/fx100.html">FX100</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/shellscript.html">shellscript</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/numpy.html">numpy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/misc.html">misc</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/gfortran.html">gfortran</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/football.html">football</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/gcc.html">gcc</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/scikit-learn.html">scikit-learn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="../../../../../tag/gnuplot.html">gnuplot</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://ryokbys.github.io/blog/archives.html" target="_blank">Archives</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://ryokbys.github.io/blog/tags.html" target="_blank">Tags</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Ryo KOBAYASHI
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../../../theme/js/respond.min.js"></script>
+
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36370521-4']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>

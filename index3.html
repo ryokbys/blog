@@ -1,83 +1,75 @@
-
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
-
-    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
-
-  <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
-  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/font-awesome.min.css">
-
-
-    <link href="http://ryokbys.web.nitech.ac.jp/contents/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="R.K.S. blog Atom">
+    <title>R.K.S. blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
+<link rel="canonical" href=".">
+        <meta name="author" content="Ryo KOBAYASHI" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="R.K.S. blog" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="R.K.S. blog"/>
+        <meta property="og:url" content="."/>
+        <meta property="og:description" content="R.K.S. blog"/>
 
 
-    <meta name="author" content="Ryo KOBAYASHI" />
-    <meta name="description" content="" />
-<meta property="og:site_name" content="R.K.S. blog"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="R.K.S. blog"/>
-<meta property="og:description" content=""/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="."/>
-<meta property="og:image" content="http://ryokbys.github.io/blog/images/yoda-and-me.png">
 
-  <title>R.K.S. blog</title>
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.slate.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+
+        <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="R.K.S. blog ATOM Feed"/>
+
 
 </head>
 <body>
-  <aside>
-    <div>
-      <a href=".">
-        <img src="http://ryokbys.github.io/blog/images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
-      </a>
-      <h1><a href=".">R.K.S. blog</a></h1>
 
-<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
-      <nav>
-        <ul class="list">
-
-          <!-- <li><a href="http://ryokbys.github.io/blog/archives.html" target="_blank">Archives</a></li> -->
-          <li><a href="http://ryokbys.github.io/blog/archives.html" >Archives</a></li>
-          <!-- <li><a href="http://ryokbys.github.io/blog/tags.html" target="_blank">Tags</a></li> -->
-          <li><a href="http://ryokbys.github.io/blog/tags.html" >Tags</a></li>
-        </ul>
-      </nav>
-
-      <ul class="social">
-      </ul>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="./" class="navbar-brand">
+R.K.S. blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
+</div> <!-- /.navbar -->
 
+<!-- Banner -->
+<!-- End Banner -->
 
-  </aside>
-  <main>
-
-
-
-
-<article>
-  <header>
-    <h2><a href="./posts/2017/02/02/install-numpy-on-fujitsu-fx100/index.html#install-numpy-on-fujitsu-fx100">Install numpy on Fujitsu FX100</a></h2>
-    <p>
-          Posted on Thu 02 February 2017 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/fx100.html">FX100</a>,              <a href="./tag/python.html">python</a>,              <a href="./tag/numpy.html">numpy</a>,              <a href="./tag/gcc.html">gcc</a>,              <a href="./tag/gfortran.html">gfortran</a>
-    </p>
-  </header>
-  <div>
-      <p>FX100でも，大きな計算だけでなく大量の小さな計算をバカ並列で行うことが認められて来ているので，FX100計算サーバ上でnumpyを用いたpythonコードを走らせたいというモチベーションがあった．
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <article>
+                <h2><a href="./posts/2017/02/02/install-numpy-on-fujitsu-fx100/index.html">Install numpy on Fujitsu FX100</a></h2>
+                <div class="summary"><p>FX100でも，大きな計算だけでなく大量の小さな計算をバカ並列で行うことが認められて来ているので，FX100計算サーバ上でnumpyを用いたpythonコードを走らせたいというモチベーションがあった．
 しかし，numpyは入っていないし，管理者に要望を伝えても，「メンテナンスの時でないとインストールできないし，優先順位は低い」みたいな感じだったので，自分でインストールしなければならなかった．</p>
 <h2>前提</h2>
 <ul>
@@ -88,26 +80,13 @@
 <li>numpyのインストールにはFortranコンパイラが必要そう．</li>
 </ul>
 <h2>gcc-4.4 …</h2>
-      <br>
-      <a class="btn" href="./posts/2017/02/02/install-numpy-on-fujitsu-fx100/index.html#install-numpy-on-fujitsu-fx100">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2017/01/31/move-to-new-macbookpro/index.html#move-to-new-macbookpro">新しいMacBookProへの移行の記録</a></h2>
-    <p>
-          Posted on Tue 31 January 2017 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/mac.html">mac</a>
-    </p>
-  </header>
-  <div>
-      <h2>移行アシスタントは使えなかった．</h2>
+                    <a class="btn btn-default btn-xs" href="./posts/2017/02/02/install-numpy-on-fujitsu-fx100/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2017/01/31/move-to-new-macbookpro/index.html">新しいMacBookProへの移行の記録</a></h2>
+                <div class="summary"><h2>移行アシスタントは使えなかった．</h2>
 <p>旧Mac（MacBookAir）と接続して，直接移行することをトライ．（一回目は，MBAの方はEl Capitanだったが，二回目はアップグレードしてSeirra同士での移行）
 なぜだか最後，残り1時間40分から先に進めなくなる．
 ２回やってどちらもほぼ同じ症状（再現性あり）なので，ダメなのだろう．
@@ -125,26 +104,13 @@
 <h2>Terminal.appの設定</h2>
 <p><a href="http://ethanschoonover.com/solarized">Solarized</a> から，ファイルをダウンロード．
 Terminal.appの環境設定「プロファイル」で，「読み込み...」からsolarizedの「Light」と「Dark …</p>
-      <br>
-      <a class="btn" href="./posts/2017/01/31/move-to-new-macbookpro/index.html#move-to-new-macbookpro">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/12/16/markdown-on-pelican/index.html#markdown-on-pelican">Markdown on Pelican</a></h2>
-    <p>
-          Posted on Fri 16 December 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/pelican.html">pelican</a>
-    </p>
-  </header>
-  <div>
-      <p>Since I got to know that Markdown is available in pelican, I tried to use Markdown.</p>
+                    <a class="btn btn-default btn-xs" href="./posts/2017/01/31/move-to-new-macbookpro/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/12/16/markdown-on-pelican/index.html">Markdown on Pelican</a></h2>
+                <div class="summary"><p>Since I got to know that Markdown is available in pelican, I tried to use Markdown.</p>
 <p>[TOC]</p>
 <h2>Markdown setting</h2>
 <p>To activate the Markdown, I wrote the following line in <code>pelicanconf.py</code>.</p>
@@ -154,26 +120,13 @@ Terminal.appの環境設定「プロファイル」で，「読み込み...」�
 
 <p>And to make <code>toc</code> to be available in Markdown I added <code>'extract_toc'</code> as,</p>
 <div class="highlight"><pre><span></span><code><span class="n">PLUGINS …</span></code></pre></div>
-      <br>
-      <a class="btn" href="./posts/2016/12/16/markdown-on-pelican/index.html#markdown-on-pelican">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/11/06/farewell-to-my-lausanne-life/index.html#farewell-to-my-lausanne-life">ローザンヌ生活終了 - 日本帰国</a></h2>
-    <p>
-          Posted on Sun 06 November 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/swiss.html">swiss</a>,              <a href="./tag/lausanne.html">lausanne</a>
-    </p>
-  </header>
-  <div>
-      <p>昨日（2016年11月5日）に，１１ヶ月のローザンヌ生活を終えて日本に帰国した．
+                    <a class="btn btn-default btn-xs" href="./posts/2016/12/16/markdown-on-pelican/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/11/06/farewell-to-my-lausanne-life/index.html">ローザンヌ生活終了 - 日本帰国</a></h2>
+                <div class="summary"><p>昨日（2016年11月5日）に，１１ヶ月のローザンヌ生活を終えて日本に帰国した．
 いろいろと思ったことを今思い出せることだけでもメモしておく．</p>
 <ul class="simple">
 <li>ローザンヌ（スイス？）はネットを使える環境がかなり限られている．ネット使いたければ携帯番号が必要みたいなサービスが多く，携帯電話持っていないと使えない．．．</li>
@@ -187,26 +140,13 @@ Terminal.appの環境設定「プロファイル」で，「読み込み...」�
 <li>言語は頻繁に会話に使うようにしないと上達しない．（フランス語は少しだけ勉強していたが，使っていなかったので全く上達しなかった．．．）</li>
 <li>英語は研究室で使ってはいたが，もっと使う機会を持つべきだった．（そのうち勝手に上達するだろうと期待したが，そう簡単ではなかった．）</li>
 <li>上と同じだが …</li></ul>
-      <br>
-      <a class="btn" href="./posts/2016/11/06/farewell-to-my-lausanne-life/index.html#farewell-to-my-lausanne-life">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/11/03/last-dinner-in-lausanne/index.html#last-dinner-in-lausanne">Last dinner in Lausanne</a></h2>
-    <p>
-          Posted on Thu 03 November 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/swiss.html">swiss</a>
-    </p>
-  </header>
-  <div>
-      <p>ローザンヌ最後の晩餐はPrilly-Malley駅近くの <strong>Restaurant des Bouchers</strong> でとった．</p>
+                    <a class="btn btn-default btn-xs" href="./posts/2016/11/06/farewell-to-my-lausanne-life/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/11/03/last-dinner-in-lausanne/index.html">Last dinner in Lausanne</a></h2>
+                <div class="summary"><p>ローザンヌ最後の晩餐はPrilly-Malley駅近くの <strong>Restaurant des Bouchers</strong> でとった．</p>
 <div class="section" id="id1">
 <h2>ホタテのタルタル</h2>
 <div class="figure align-center">
@@ -225,26 +165,13 @@ Terminal.appの環境設定「プロファイル」で，「読み込み...」�
 <p><a class="reference external" href="./posts/2016/11/03/put-a-google-photo-on-to-pelican-blog/index.html">もし画像が表示されないのであれば，それはGoogle Photoに問題があるからです．．．</a></p>
 </div>
 
-      <br>
-      <a class="btn" href="./posts/2016/11/03/last-dinner-in-lausanne/index.html#last-dinner-in-lausanne">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/11/03/put-a-google-photo-on-to-pelican-blog/index.html#put-a-google-photo-on-to-pelican-blog">ペリカンブログにグーグルフォトを載せる</a></h2>
-    <p>
-          Posted on Thu 03 November 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/pelican.html">pelican</a>
-    </p>
-  </header>
-  <div>
-      <p>最近，スマホで撮った写真は自動的にグーグルフォトに同期されるようになっていて，そこから写真のURLを取得するだけでブログに写真を載せることができる．</p>
+                    <a class="btn btn-default btn-xs" href="./posts/2016/11/03/last-dinner-in-lausanne/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/11/03/put-a-google-photo-on-to-pelican-blog/index.html">ペリカンブログにグーグルフォトを載せる</a></h2>
+                <div class="summary"><p>最近，スマホで撮った写真は自動的にグーグルフォトに同期されるようになっていて，そこから写真のURLを取得するだけでブログに写真を載せることができる．</p>
 <p>備忘録として記載しておく．</p>
 <div class="section" id="rest">
 <h2>画像の貼り付け方（ReSTで共通？）</h2>
@@ -266,26 +193,13 @@ Picasa web（こちらもgoogleの写真サービス）のアルバムのアク�
 <ul class="simple">
 <li><a class="reference external" href="http://ameblo.jp/wantan-52/entry-12119213036.html">Googleフォトの画像URLを取得</a></li>
 <li><a class="reference external" href="http://stackoverflow.com/questions/39508631/how-to-get-direct-permanent-link-to-public-image-on-google-photos">How to get direct permanent link to public image on Google Photos …</a></li></ul></div>
-      <br>
-      <a class="btn" href="./posts/2016/11/03/put-a-google-photo-on-to-pelican-blog/index.html#put-a-google-photo-on-to-pelican-blog">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/11/03/petit-baeof-at-lausanne/index.html#petit-baeof-at-lausanne">Petit Boeuf in Lausanne</a></h2>
-    <p>
-          Posted on Thu 03 November 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/swiss.html">swiss</a>,              <a href="./tag/lausanne.html">lausanne</a>
-    </p>
-  </header>
-  <div>
-      <p>ローザンヌ生活も終わりに近づいたので，何かスイスっぽい食事をと考えていたところ，
+                    <a class="btn btn-default btn-xs" href="./posts/2016/11/03/put-a-google-photo-on-to-pelican-blog/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/11/03/petit-baeof-at-lausanne/index.html">Petit Boeuf in Lausanne</a></h2>
+                <div class="summary"><p>ローザンヌ生活も終わりに近づいたので，何かスイスっぽい食事をと考えていたところ，
 同僚から <strong>Petit Boeuf</strong> なるお店を勧められたので行ってみた．
 名前は「プチ牛肉」だけど，量はプチではないとのこと．</p>
 <p>注文したのは，以下二点（実際の名前はもっとファンシーだったかもしれない）．</p>
@@ -307,26 +221,13 @@ Picasa web（こちらもgoogleの写真サービス）のアルバムのアク�
 <p><a class="reference external" href="./posts/2016/11/03/put-a-google-photo-on-to-pelican-blog/index.html">もし画像が表示されないのであれば，それはGoogle Photoに問題があるからです．．．</a></p>
 </div>
 
-      <br>
-      <a class="btn" href="./posts/2016/11/03/petit-baeof-at-lausanne/index.html#petit-baeof-at-lausanne">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/10/27/flake8-personal-setting-for-python/index.html#flake8-personal-setting-for-python">flake8 personal setting for python</a></h2>
-    <p>
-          Posted on Thu 27 October 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/python.html">python</a>,              <a href="./tag/emacs.html">emacs</a>,              <a href="./tag/mac.html">mac</a>
-    </p>
-  </header>
-  <div>
-      <p>When I code python programs using emacs, emacs uses elpy and elpy uses flake8 for syntax checking.
+                    <a class="btn btn-default btn-xs" href="./posts/2016/11/03/petit-baeof-at-lausanne/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/10/27/flake8-personal-setting-for-python/index.html">flake8 personal setting for python</a></h2>
+                <div class="summary"><p>When I code python programs using emacs, emacs uses elpy and elpy uses flake8 for syntax checking.
 But this syntax checking is kind of annoying.
 For example, I would like to write like this</p>
 <pre class="code python literal-block">
@@ -337,103 +238,248 @@ For example, I would like to write like this</p>
 <span class="n">x</span> <span class="o">=</span> <span class="n">some_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span>
 </pre>
 <p>I …</p>
-      <br>
-      <a class="btn" href="./posts/2016/10/27/flake8-personal-setting-for-python/index.html#flake8-personal-setting-for-python">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/10/02/no-match-found-in-reftex/index.html#no-match-found-in-reftex">No match found in Reftex</a></h2>
-    <p>
-          Posted on Sun 02 October 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/emacs.html">emacs</a>
-    </p>
-  </header>
-  <div>
-      <p>Sometimes when writing a LaTeX document with Emacs.app in MacOS
+                    <a class="btn btn-default btn-xs" href="./posts/2016/10/27/flake8-personal-setting-for-python/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/10/02/no-match-found-in-reftex/index.html">No match found in Reftex</a></h2>
+                <div class="summary"><p>Sometimes when writing a LaTeX document with Emacs.app in MacOS
 and I tried to put citation in the document by typing <tt class="docutils literal"><span class="pre">Ctl-C</span> + [</tt>,
 emacs fails to search references I am looking for.
 I do not know the reason exactly, but I seems that emacs does not store the reference information …</p>
-      <br>
-      <a class="btn" href="./posts/2016/10/02/no-match-found-in-reftex/index.html#no-match-found-in-reftex">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/08/14/web-shop-service-thebase/index.html#web-shop-service-thebase">Web shop service thebase</a></h2>
-    <p>
-          Posted on Sun 14 August 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/misc.html">misc</a>
-    </p>
-  </header>
-  <div>
-      <p>友人のサイトにウェブショップ <a class="reference external" href="http://wataroom.thebase.in">wataroom</a> がオープンしてたから見てみたら，なんだか有名なウェブショップ作成サービスで作られてものだった．</p>
+                    <a class="btn btn-default btn-xs" href="./posts/2016/10/02/no-match-found-in-reftex/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/08/14/web-shop-service-thebase/index.html">Web shop service thebase</a></h2>
+                <div class="summary"><p>友人のサイトにウェブショップ <a class="reference external" href="http://wataroom.thebase.in">wataroom</a> がオープンしてたから見てみたら，なんだか有名なウェブショップ作成サービスで作られてものだった．</p>
 <p>このサービス <a class="reference external" href="https://thebase.in/?from=wataroom&amp;p=shop">BASE</a> というのはかなりお手軽にウェブショップをオープンできて，決済方法なんかを構築する手間が省けるらしい．
 今後どんどんネットショップが普及すると思われるなかで，このサービスは秀逸と思う．
 要チェックや．</p>
 <p>あまりに多くのネットショップができてくると玉石混淆で煩わしくなるかもしれないが．．．</p>
 
-      <br>
-      <a class="btn" href="./posts/2016/08/14/web-shop-service-thebase/index.html#web-shop-service-thebase">    Continue reading
-</a>
-  </div>
-</article>
+                    <a class="btn btn-default btn-xs" href="./posts/2016/08/14/web-shop-service-thebase/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
-  <div class="pagination">
-    <a class="btn" href="./index4.html">
-      <i class="fa fa-angle-left"></i>     Older Posts
+        <ul class="pagination">
+                <li class="prev"><a href="./index2.html">&laquo;</a>
+                </li>
+                    <li class=""><a
+                            href="./index.html">1</a></li>
+                    <li class=""><a
+                            href="./index2.html">2</a></li>
+                    <li class="active"><a
+                            href="./index3.html">3</a></li>
+                    <li class=""><a
+                            href="./index4.html">4</a></li>
+                    <li class=""><a
+                            href="./index5.html">5</a></li>
+                    <li class=""><a
+                            href="./index6.html">6</a></li>
+                    <li class=""><a
+                            href="./index7.html">7</a></li>
+                    <li class=""><a
+                            href="./index8.html">8</a></li>
+                    <li class=""><a
+                            href="./index9.html">9</a></li>
+                    <li class=""><a
+                            href="./index10.html">10</a></li>
+                <li class="next"><a
+                        href="./index4.html">&raquo;</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
 
-    </a>
-    <a class="btn float-right" href="./index2.html">
-          Newer Posts
- <i class="fa fa-angle-right"></i>
-    </a>
-  </div>
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="./"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group " id="tags">
+    <li class="list-group-item tag-1">
+      <a href="./tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="./tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="./tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="./tag/research.html">research</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="./tag/swiss.html">swiss</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="./tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="./tag/notebook.html">notebook</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="./tag/emacs.html">emacs</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="./tag/alloy.html">alloy</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="./tag/paper.html">paper</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/dft.html">DFT</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/vasp.html">vasp</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/ase.html">ase</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/language.html">language</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/tmux.html">tmux</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/lausanne.html">lausanne</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/book.html">book</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/lammps.html">lammps</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/fortran.html">fortran</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/excel.html">excel</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/stock.html">stock</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/inkscape.html">inkscape</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/makefile.html">makefile</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/marp.html">Marp</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/markdown.html">Markdown</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/sphinx.html">sphinx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/iphone.html">iphone</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/fx100.html">FX100</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/shellscript.html">shellscript</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/numpy.html">numpy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/misc.html">misc</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/gfortran.html">gfortran</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/football.html">football</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/gcc.html">gcc</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/scikit-learn.html">scikit-learn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/gnuplot.html">gnuplot</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://ryokbys.github.io/blog/archives.html" target="_blank">Archives</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://ryokbys.github.io/blog/tags.html" target="_blank">Tags</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Ryo KOBAYASHI
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
 
 
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36370521-4']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
 
 
-    <footer>
-<p>&copy; Ryo KOBAYASHI </p>
-<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
-</p>    </footer>
-  </main>
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-36370521-4', 'auto');
-  ga('send', 'pageview');
-</script>
-<!-- End Google Analytics -->
-
-
-
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " R.K.S. blog ",
-  "url" : ".",
-  "image": "http://ryokbys.github.io/blog/images/yoda-and-me.png",
-  "description": ""
-}
-</script>
 </body>
 </html>

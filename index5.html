@@ -1,83 +1,75 @@
-
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-  <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,400italic' rel='stylesheet' type='text/css'>
-
-    <link rel="stylesheet" type="text/css" href="./theme/stylesheet/style.min.css">
-
-  <link rel="stylesheet" type="text/css" href="./theme/pygments/github.min.css">
-  <link rel="stylesheet" type="text/css" href="./theme/font-awesome/css/font-awesome.min.css">
-
-
-    <link href="http://ryokbys.web.nitech.ac.jp/contents/blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="R.K.S. blog Atom">
+    <title>R.K.S. blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="HandheldFriendly" content="True" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="robots" content="" />
+<link rel="canonical" href=".">
+        <meta name="author" content="Ryo KOBAYASHI" />
+
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="R.K.S. blog" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="R.K.S. blog"/>
+        <meta property="og:url" content="."/>
+        <meta property="og:description" content="R.K.S. blog"/>
 
 
-    <meta name="author" content="Ryo KOBAYASHI" />
-    <meta name="description" content="" />
-<meta property="og:site_name" content="R.K.S. blog"/>
-<meta property="og:type" content="blog"/>
-<meta property="og:title" content="R.K.S. blog"/>
-<meta property="og:description" content=""/>
-<meta property="og:locale" content="en_US"/>
-<meta property="og:url" content="."/>
-<meta property="og:image" content="http://ryokbys.github.io/blog/images/yoda-and-me.png">
 
-  <title>R.K.S. blog</title>
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="./theme/css/bootstrap.slate.min.css" type="text/css"/>
+    <link href="./theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="./theme/css/pygments/native.css" rel="stylesheet">
+    <link rel="stylesheet" href="./theme/css/style.css" type="text/css"/>
+
+        <link href="./feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="R.K.S. blog ATOM Feed"/>
+
 
 </head>
 <body>
-  <aside>
-    <div>
-      <a href=".">
-        <img src="http://ryokbys.github.io/blog/images/yoda-and-me.png" alt="R.K.S. blog" title="R.K.S. blog">
-      </a>
-      <h1><a href=".">R.K.S. blog</a></h1>
 
-<p>Live as if you were to die tomorrow. Learn as if you were to live forever.</p>
-      <nav>
-        <ul class="list">
-
-          <!-- <li><a href="http://ryokbys.github.io/blog/archives.html" target="_blank">Archives</a></li> -->
-          <li><a href="http://ryokbys.github.io/blog/archives.html" >Archives</a></li>
-          <!-- <li><a href="http://ryokbys.github.io/blog/tags.html" target="_blank">Tags</a></li> -->
-          <li><a href="http://ryokbys.github.io/blog/tags.html" >Tags</a></li>
-        </ul>
-      </nav>
-
-      <ul class="social">
-      </ul>
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="./" class="navbar-brand">
+R.K.S. blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                        <li >
+                            <a href="./category/misc.html">Misc</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
+</div> <!-- /.navbar -->
 
+<!-- Banner -->
+<!-- End Banner -->
 
-  </aside>
-  <main>
-
-
-
-
-<article>
-  <header>
-    <h2><a href="./posts/2016/06/19/gamma-surface-with-gnuplot/index.html#gamma-surface-with-gnuplot">gamma surface with gnuplot</a></h2>
-    <p>
-          Posted on Sun 19 June 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/research.html">research</a>,              <a href="./tag/gnuplot.html">gnuplot</a>
-    </p>
-  </header>
-  <div>
-      <p>材料の機械的性質を議論する場合，generalized stacking fault もしくは gamma surface を考える場合が多い．
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <article>
+                <h2><a href="./posts/2016/06/19/gamma-surface-with-gnuplot/index.html">gamma surface with gnuplot</a></h2>
+                <div class="summary"><p>材料の機械的性質を議論する場合，generalized stacking fault もしくは gamma surface を考える場合が多い．
 その場合，ある面内で上下の原子をシフトした場合のエネルギーがどう変化するかを調べるわけだが，その可視化として二次元カラーで表示することが多いようだ．
 これは，gnuplotで以下のようにして可視化できる．</p>
 <div class="section" id="data-format">
@@ -90,26 +82,13 @@
 ...
 0.000   0.967 -9.88510003534038E+001
 0.000   1.000 …</pre></div>
-      <br>
-      <a class="btn" href="./posts/2016/06/19/gamma-surface-with-gnuplot/index.html#gamma-surface-with-gnuplot">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/06/14/random-sensitive-search/index.html#random-sensitive-search">Random structure search</a></h2>
-    <p>
-          Posted on Tue 14 June 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/research.html">research</a>
-    </p>
-  </header>
-  <div>
-      <p>EPFLでの会議PASC16にて，Chris J Pickardの発表を聴いた．
+                    <a class="btn btn-default btn-xs" href="./posts/2016/06/19/gamma-surface-with-gnuplot/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/06/14/random-sensitive-search/index.html">Random structure search</a></h2>
+                <div class="summary"><p>EPFLでの会議PASC16にて，Chris J Pickardの発表を聴いた．
 そこで <strong>Ab initio random structure search (AIRSS)</strong> を紹介していたので下記論文を読んでみた．</p>
 <ul class="simple">
 <li>Pickard, C. J., &amp; Needs, R. J. (2011). Ab initio random structure searching. Journal of Physics: Condensed Matter, 23(5), 053201. <a class="reference external" href="http://doi.org/10.1088/0953-8984/23/5/053201">http://doi.org/10.1088/0953-8984/23/5/053201</a></li>
@@ -117,52 +96,26 @@
 <p>これまでにいくつかの構造探索アルゴリズムが提案されているが，ランダム探索といくつかのバイアス（原子間の結びつきや対称性）を加えるというシンプルなものが良いよという論文．
 結局，以下に挙げられるようなどんなグローバル探索手法でも一長一短でこれが良いという決定打はない．ランダム検索でないと最安定構造を逃すことも多い．</p>
 <p>しかし，当然ランダム探索では …</p>
-      <br>
-      <a class="btn" href="./posts/2016/06/14/random-sensitive-search/index.html#random-sensitive-search">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/05/17/bash:-all-the-output-to-somewhere/index.html#bash:-all-the-output-to-somewhere">Bash: all the output to /dev/null</a></h2>
-    <p>
-          Posted on Tue 17 May 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/linux.html">linux</a>
-    </p>
-  </header>
-  <div>
-      <p>I wanted to run jupyter notebook background without showing any outputs from it.
+                    <a class="btn btn-default btn-xs" href="./posts/2016/06/14/random-sensitive-search/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/05/17/bash:-all-the-output-to-somewhere/index.html">Bash: all the output to /dev/null</a></h2>
+                <div class="summary"><p>I wanted to run jupyter notebook background without showing any outputs from it.
 So I tried the following command,</p>
 <pre class="literal-block">
 $ jupyter notebook hoge.ipynb 2&gt;&amp;1 &gt; /dev/null &amp;
 </pre>
 <p>But it still showed some outputs on the screen and interrupted me typing other commands.
 This is because, <tt class="docutils literal"><span class="pre">2&gt;&amp;1</span></tt> means that standard …</p>
-      <br>
-      <a class="btn" href="./posts/2016/05/17/bash:-all-the-output-to-somewhere/index.html#bash:-all-the-output-to-somewhere">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/05/17/install-python-on-fx100/index.html#install-python-on-fx100">Install python on FX100 in nagoya-u</a></h2>
-    <p>
-          Posted on Tue 17 May 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/linux.html">linux</a>,              <a href="./tag/research.html">research</a>
-    </p>
-  </header>
-  <div>
-      <p>名大スパコン <strong>FX100</strong> で作業することが多いが，作業に必要なツールがデフォルトでは入っていないので自分でpythonをインストールすることから始めた．</p>
+                    <a class="btn btn-default btn-xs" href="./posts/2016/05/17/bash:-all-the-output-to-somewhere/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/05/17/install-python-on-fx100/index.html">Install python on FX100 in nagoya-u</a></h2>
+                <div class="summary"><p>名大スパコン <strong>FX100</strong> で作業することが多いが，作業に必要なツールがデフォルトでは入っていないので自分でpythonをインストールすることから始めた．</p>
 <p>普通にpythonをインストールすると，後々numpyをインストールしようとしたときにhashlibがないことが問題になるようなので，解決する必要がある．</p>
 <p>OSに入っているopensslに問題があるらしいので，opensslを取ってきてインストールしようとすると，
 OSに入っているperlに問題があるらしいので，perl-5.22.2を取ってきてインストール．</p>
@@ -181,26 +134,13 @@ $ make install
 <h2>Install openssl</h2>
 <p><a class="reference external" href="https://www.openssl.org">OpenSSL Homepage</a> からソースパッケージをダウンロードしてきて，展開し，以下のようにしてコンパイルおよびインストールする．</p>
 <div class="highlight"><pre><span></span>$ ./config shared …</pre></div></div>
-      <br>
-      <a class="btn" href="./posts/2016/05/17/install-python-on-fx100/index.html#install-python-on-fx100">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/05/15/lavaux-vineyard-tasting-walk/index.html#lavaux-vineyard-tasting-walk">ラヴォー地区ワイナリーテイスティング歩き</a></h2>
-    <p>
-          Posted on Sun 15 May 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/swiss.html">swiss</a>
-    </p>
-  </header>
-  <div>
-      <p>本日はLausanne近くのLavaux地区のワイナリーをいくつも巡ってテイスティングをしまくるというイベント（？）があった．</p>
+                    <a class="btn btn-default btn-xs" href="./posts/2016/05/17/install-python-on-fx100/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/05/15/lavaux-vineyard-tasting-walk/index.html">ラヴォー地区ワイナリーテイスティング歩き</a></h2>
+                <div class="summary"><p>本日はLausanne近くのLavaux地区のワイナリーをいくつも巡ってテイスティングをしまくるというイベント（？）があった．</p>
 <p>20CHFくらいでLausanneからの往復電車代とフリーテイスティングとワイングラスが含まれている．テイスティングがいくら位するものなのか知らないので値段設定の良し悪しは分からないが，その程度であの素晴らしい景色の丘をハイキングしながら，ところどころのワイナリーで幾つもの種類のワインを試飲して回れるというのは楽しい．</p>
 <p>まぁ，自分はワインの味の違いなどはほとんど分からんので，テイスティングしても意味ないのだけど，ちょっとハイな気分でアルプスとレマン湖眺めながらハイキングできるなんてのは素晴らしい．この企画はどうも，年に一回しか行われないらしい．これのためにローザンヌに来るなんてのはできないだろうけど，ローザンヌにいてこれに行かないのはもったいない．</p>
 <p>しかし良き一日であった．</p>
@@ -208,26 +148,13 @@ $ make install
 <li><a class="reference external" href="http://www.lausanne-tourisme.ch/en/loisirs/incontournables/vignoble-de-lavaux/balade-lavaux-cully.html">Lausanne tourisme: Through the Lavaux vineyard: from Grandvaux to Cully</a></li>
 </ul>
 
-      <br>
-      <a class="btn" href="./posts/2016/05/15/lavaux-vineyard-tasting-walk/index.html#lavaux-vineyard-tasting-walk">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/05/12/gnu-parallel-for-easy-multiprocessing/index.html#gnu-parallel-for-easy-multiprocessing">GNU parallel for easy multiprocessing</a></h2>
-    <p>
-          Posted on Thu 12 May 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/linux.html">linux</a>
-    </p>
-  </header>
-  <div>
-      <ul class="simple">
+                    <a class="btn btn-default btn-xs" href="./posts/2016/05/15/lavaux-vineyard-tasting-walk/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/05/12/gnu-parallel-for-easy-multiprocessing/index.html">GNU parallel for easy multiprocessing</a></h2>
+                <div class="summary"><ul class="simple">
 <li><a class="reference external" href="http://bicycle1885.hatenablog.com/entry/2014/08/10/143612">コマンドを並列に実行するGNU parallelがとても便利</a></li>
 <li><a class="reference external" href="https://blog.riywo.com/2011/04/19/022802/">GNU Parallelがすごすぎて生きるのがつらい</a></li>
 <li><a class="reference external" href="http://w.koshigoe.jp/study/?%5Bsystem%5D+GNU+parallel+%BB%C8%CD%D1%CE%E3">GNU parallel 使用例</a></li>
@@ -247,73 +174,34 @@ $ ./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/loca
 <div class="section" id="id4">
 <h2>並列処理</h2>
 <p>自分の場合，多くのディレクトリ内（ <tt class="docutils literal"><span class="pre">smpl_*/smd/</span></tt> 内 ）で …</p></div>
-      <br>
-      <a class="btn" href="./posts/2016/05/12/gnu-parallel-for-easy-multiprocessing/index.html#gnu-parallel-for-easy-multiprocessing">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/05/04/galapagos/index.html#galapagos">Galapagos</a></h2>
-    <p>
-          Posted on Wed 04 May 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/book.html">book</a>
-    </p>
-  </header>
-  <div>
-      <p><a class="reference external" href="https://www.amazon.co.jp/ガラパゴス-上-相場英雄-ebook/dp/B01BD6O708?ie=UTF8&amp;btkr=1&amp;ref_=dp-kindle-redirect">ガラパゴス 相場英雄</a></p>
+                    <a class="btn btn-default btn-xs" href="./posts/2016/05/12/gnu-parallel-for-easy-multiprocessing/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/05/04/galapagos/index.html">Galapagos</a></h2>
+                <div class="summary"><p><a class="reference external" href="https://www.amazon.co.jp/ガラパゴス-上-相場英雄-ebook/dp/B01BD6O708?ie=UTF8&amp;btkr=1&amp;ref_=dp-kindle-redirect">ガラパゴス 相場英雄</a></p>
 <p>現代の日本の車業界，派遣労働，非正規社員なんかを背景とした刑事もので非常に勉強になるし，展開も面白い．</p>
 <p>しかし，最後に鳥居が交換条件として，Tモータースの社長の松崎の辞任を交換条件として提示したのは解せない．鳥居としてはTモータースに天下りする方が圧倒的に利益があると思えるのに．．．そこらへんはあまり説明がなされていないから，ちょっとモヤモヤした読後感が残る．</p>
 
-      <br>
-      <a class="btn" href="./posts/2016/05/04/galapagos/index.html#galapagos">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/04/27/simple-minimization-using-fire/index.html#simple-minimization-using-fire">Simple minimization using FIRE</a></h2>
-    <p>
-          Posted on Wed 27 April 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/research.html">research</a>
-    </p>
-  </header>
-  <div>
-      <p>Bitzek et al. <em>Structural Relaxation Made Simple</em>, PRL <strong>97</strong>, 170201 (2006)</p>
+                    <a class="btn btn-default btn-xs" href="./posts/2016/05/04/galapagos/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/04/27/simple-minimization-using-fire/index.html">Simple minimization using FIRE</a></h2>
+                <div class="summary"><p>Bitzek et al. <em>Structural Relaxation Made Simple</em>, PRL <strong>97</strong>, 170201 (2006)</p>
 <p>Damped MDのような発想で，より効率的に，MDコードをあまり改変する必要なく構造最適化を行う方法．
 論文にアルゴリズムも記載されており，良いパラメータの値も提案されているから本当に実装は簡単．
 それでいて，BFGSやCGと同程度もしくはより効率的に構造最適化が可能．</p>
 
-      <br>
-      <a class="btn" href="./posts/2016/04/27/simple-minimization-using-fire/index.html#simple-minimization-using-fire">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/04/05/nn-potential-for-ionic-system/index.html#nn-potential-for-ionic-system">イオン結合系のNNポテンシャル</a></h2>
-    <p>
-          Posted on Tue 05 April 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/research.html">research</a>
-    </p>
-  </header>
-  <div>
-      <p>S.A.Ghasemi et al., PRB92, 045131 (2015)</p>
+                    <a class="btn btn-default btn-xs" href="./posts/2016/04/27/simple-minimization-using-fire/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/04/05/nn-potential-for-ionic-system/index.html">イオン結合系のNNポテンシャル</a></h2>
+                <div class="summary"><p>S.A.Ghasemi et al., PRB92, 045131 (2015)</p>
 <p>電荷可変型（variable charge）原子間ポテンシャルの電気陰性度（electronegativity）項にNNを適用することで，
 環境に依存した電荷分布に対応する原子間ポテンシャルを作るという論文．</p>
 <p>環境に依存した電荷分布は，環境に依存した電気陰性度から自動的に得られる．
@@ -321,81 +209,239 @@ $ ./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/loca
 電荷やエネルギーそのものをNNで予想するよりも安定となる模様．</p>
 <p>金属系や半導体系へはダイレクトには適用できないだろうが，考え方を援用することでポテンシャルを作ることが可能かもと思える．</p>
 
-      <br>
-      <a class="btn" href="./posts/2016/04/05/nn-potential-for-ionic-system/index.html#nn-potential-for-ionic-system">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2016/04/02/how-to-watch-football-game-live-online/index.html#how-to-watch-football-game-live-online">サッカーのオンラインライブストリーミング</a></h2>
-    <p>
-          Posted on Sat 02 April 2016 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/football.html">football</a>
-    </p>
-  </header>
-  <div>
-      <p>今日のクラシコを見たいと思って調べたら意外に簡単にライブ観戦できたからメモしておく．</p>
+                    <a class="btn btn-default btn-xs" href="./posts/2016/04/05/nn-potential-for-ionic-system/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
+            <article>
+                <h2><a href="./posts/2016/04/02/how-to-watch-football-game-live-online/index.html">サッカーのオンラインライブストリーミング</a></h2>
+                <div class="summary"><p>今日のクラシコを見たいと思って調べたら意外に簡単にライブ観戦できたからメモしておく．</p>
 <p><a class="reference external" href="http://www.sportcategory.com/c-1.html">このサイト</a> にいくつかリストされている中から最も見やすいサイトを選択すればよい．
 （他にもこうのようなライブ配信サイトのまとめサイトみたいのがある．）</p>
 <p>大抵のライブストリーミング配信サイトはいろんな広告が表示されて煩わしいし，アクセスが遅くなるのも嫌だから，Adblockというものを導入してそれを防いだほうが良い．
 そのためには，SafariだとダメらしいからFirefoxでも使って，Adblockというアドオンをインストールすべし．</p>
 <p>あとは，画面いっぱいにしてライブ配信を楽しめばよし．</p>
 
-      <br>
-      <a class="btn" href="./posts/2016/04/02/how-to-watch-football-game-live-online/index.html#how-to-watch-football-game-live-online">    Continue reading
-</a>
-  </div>
-</article>
+                    <a class="btn btn-default btn-xs" href="./posts/2016/04/02/how-to-watch-football-game-live-online/index.html">more ...</a>
+                </div>
+            </article>
+            <hr/>
 
-  <div class="pagination">
-    <a class="btn" href="./index6.html">
-      <i class="fa fa-angle-left"></i>     Older Posts
+        <ul class="pagination">
+                <li class="prev"><a href="./index4.html">&laquo;</a>
+                </li>
+                    <li class=""><a
+                            href="./index.html">1</a></li>
+                    <li class=""><a
+                            href="./index2.html">2</a></li>
+                    <li class=""><a
+                            href="./index3.html">3</a></li>
+                    <li class=""><a
+                            href="./index4.html">4</a></li>
+                    <li class="active"><a
+                            href="./index5.html">5</a></li>
+                    <li class=""><a
+                            href="./index6.html">6</a></li>
+                    <li class=""><a
+                            href="./index7.html">7</a></li>
+                    <li class=""><a
+                            href="./index8.html">8</a></li>
+                    <li class=""><a
+                            href="./index9.html">9</a></li>
+                    <li class=""><a
+                            href="./index10.html">10</a></li>
+                <li class="next"><a
+                        href="./index6.html">&raquo;</a></li>
+        </ul>
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
 
-    </a>
-    <a class="btn float-right" href="./index4.html">
-          Newer Posts
- <i class="fa fa-angle-right"></i>
-    </a>
-  </div>
+<!-- Sidebar/Tag Cloud -->
+<li class="list-group-item">
+  <a href="./"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
+  <ul class="list-group " id="tags">
+    <li class="list-group-item tag-1">
+      <a href="./tag/pelican.html">pelican</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="./tag/linux.html">linux</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="./tag/python.html">python</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="./tag/research.html">research</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="./tag/swiss.html">swiss</a>
+    </li>
+    <li class="list-group-item tag-1">
+      <a href="./tag/mac.html">mac</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="./tag/notebook.html">notebook</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="./tag/emacs.html">emacs</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="./tag/alloy.html">alloy</a>
+    </li>
+    <li class="list-group-item tag-2">
+      <a href="./tag/paper.html">paper</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/dft.html">DFT</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/vasp.html">vasp</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/ase.html">ase</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/language.html">language</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/tmux.html">tmux</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/lausanne.html">lausanne</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/book.html">book</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/lammps.html">lammps</a>
+    </li>
+    <li class="list-group-item tag-3">
+      <a href="./tag/fortran.html">fortran</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/excel.html">excel</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/stock.html">stock</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/inkscape.html">inkscape</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/makefile.html">makefile</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/marp.html">Marp</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/markdown.html">Markdown</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/sphinx.html">sphinx</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/iphone.html">iphone</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/fx100.html">FX100</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/shellscript.html">shellscript</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/ssh.html">ssh</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/numpy.html">numpy</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/misc.html">misc</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/git.html">git</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/gfortran.html">gfortran</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/football.html">football</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/gcc.html">gcc</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/scikit-learn.html">scikit-learn</a>
+    </li>
+    <li class="list-group-item tag-4">
+      <a href="./tag/gnuplot.html">gnuplot</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Tag Cloud -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://ryokbys.github.io/blog/archives.html" target="_blank">Archives</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://ryokbys.github.io/blog/tags.html" target="_blank">Tags</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Ryo KOBAYASHI
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="./theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="./theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="./theme/js/respond.min.js"></script>
 
 
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36370521-4']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
 
 
-    <footer>
-<p>&copy; Ryo KOBAYASHI </p>
-<p>    Powered by <a href="http://getpelican.com" target="_blank">Pelican</a> - <a href="https://github.com/alexandrevicenzi/flex" target="_blank">Flex</a> theme by <a href="http://alexandrevicenzi.com" target="_blank">Alexandre Vicenzi</a>
-</p>    </footer>
-  </main>
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-36370521-4', 'auto');
-  ga('send', 'pageview');
-</script>
-<!-- End Google Analytics -->
-
-
-
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Blog",
-  "name": " R.K.S. blog ",
-  "url" : ".",
-  "image": "http://ryokbys.github.io/blog/images/yoda-and-me.png",
-  "description": ""
-}
-</script>
 </body>
 </html>
