@@ -5,19 +5,22 @@
 &lt;li&gt;&lt;a href="https://www.hirayuki.com/zakki/jupyter-notebook-dark-thema"&gt;jupyterの表示拡張機能、jupyter-themesを徹底紹介する&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://qiita.com/koikoi_jam/items/29d9ef4e16a42038325c"&gt;jupyter-themes の fontについて&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Chrome extension &lt;code&gt;Stylish&lt;/code&gt; should be installed in addition to &lt;code&gt;jupyter-themes&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;My current setting is provided by the following command.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ jt -t grade3 -f code -fs &lt;span class="m"&gt;12&lt;/span&gt; -cellw &lt;span class="m"&gt;95&lt;/span&gt;% -lineh &lt;span class="m"&gt;140&lt;/span&gt; -T -N -tf droidsans -tfs &lt;span class="m"&gt;12&lt;/span&gt; -nf ptsans -nfs &lt;span class="m"&gt;12 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Appearance of Jupyter Notebook can be modified using &lt;code&gt;jupyter-themes&lt;/code&gt;.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ jt -t grade3 -f code -fs &lt;span class="m"&gt;12&lt;/span&gt; -cellw &lt;span class="m"&gt;95&lt;/span&gt;% -lineh &lt;span class="m"&gt;140 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;Appearance of Jupyter Notebook can be modified using &lt;code&gt;jupyter-themes&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;See the following websites for details,&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://www.hirayuki.com/zakki/jupyter-notebook-dark-thema"&gt;jupyterの表示拡張機能、jupyter-themesを徹底紹介する&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://qiita.com/koikoi_jam/items/29d9ef4e16a42038325c"&gt;jupyter-themes の fontについて&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;Chrome extension &lt;code&gt;Stylish&lt;/code&gt; should be installed in addition to &lt;code&gt;jupyter-themes&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;My current setting is provided by the following command.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ jt -t grade3 -f code -fs &lt;span class="m"&gt;12&lt;/span&gt; -cellw &lt;span class="m"&gt;95&lt;/span&gt;% -lineh &lt;span class="m"&gt;140&lt;/span&gt; -T -N -tf droidsans -tfs &lt;span class="m"&gt;12&lt;/span&gt; -nf ptsans -nfs &lt;span class="m"&gt;12&lt;/span&gt; -ofs &lt;span class="m"&gt;10&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;It looks good ;)&lt;/p&gt;</content><category term="misc"></category><category term="notebook"></category><category term="python"></category></entry><entry><title>2020年初頭における作業環境</title><link href="https://ryokbys.github.io/blog/posts/2020/03/15/2020-environment/index.html" rel="alternate"></link><published>2020-03-15T21:56:22+09:00</published><updated>2020-03-15T21:56:22+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-03-15:/blog/posts/2020/03/15/2020-environment/index.html</id><summary type="html">&lt;p&gt;もう最近はこれを毎年メモするだけのブログになってきているので，今年も書いておく．
+&lt;p&gt;It looks good ;)&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="https://ryokbys.github.io/blog/images/200324_jupyter-themes.png"&gt;&lt;/p&gt;</content><category term="misc"></category><category term="notebook"></category><category term="python"></category></entry><entry><title>2020年初頭における作業環境</title><link href="https://ryokbys.github.io/blog/posts/2020/03/15/2020-environment/index.html" rel="alternate"></link><published>2020-03-15T21:56:22+09:00</published><updated>2020-03-15T21:56:22+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-03-15:/blog/posts/2020/03/15/2020-environment/index.html</id><summary type="html">&lt;p&gt;もう最近はこれを毎年メモするだけのブログになってきているので，今年も書いておく．
 すでに３月も中旬なので初頭というのはフェイクニュースだが．&lt;/p&gt;
 &lt;h2&gt;Mac&lt;/h2&gt;
 &lt;p&gt;Macにおいて使っているソフトを列挙する．&lt;/p&gt;
@@ -3817,12 +3820,15 @@ Then you can set the &lt;code&gt;DISPLAY&lt;/code&gt; variable in the &lt;code&g
 &lt;li&gt;有料（結構高い）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;hr&gt;
-&lt;h2&gt;現状における結論&lt;/h2&gt;
+&lt;h2&gt;結論&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;どちらかというと&lt;strong&gt;Marp&lt;/strong&gt;の方が好き．&lt;/li&gt;
 &lt;li&gt;Marpの開発者が新しいバージョンをいつ出すか，それが良いものか，継続的に開発されていくかが鍵．&lt;/li&gt;
 &lt;li&gt;JupyterLabでスライドを作れるようになったら良いのにと思ったりする．．．&lt;/li&gt;
-&lt;/ul&gt;</content><category term="misc"></category><category term="Markdown"></category></entry><entry><title>2017年初頭における作業環境</title><link href="https://ryokbys.github.io/blog/posts/2017/03/03/work-environment-feb.-2017/index.html" rel="alternate"></link><published>2017-03-03T22:36:38+09:00</published><updated>2017-03-03T22:36:38+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2017-03-03:/blog/posts/2017/03/03/work-environment-feb.-2017/index.html</id><summary type="html">&lt;p&gt;最近，近年で最もコンピュータ上での作業環境が変化したので，僕の作業環境を紹介してみる．
+&lt;/ul&gt;
+&lt;h3&gt;2020-03-24 追記&lt;/h3&gt;
+&lt;p&gt;Jupyter Notebookで&lt;strong&gt;RISE&lt;/strong&gt;というextensionを使うと，notebookをそのままスライドショーにすることができる．
+Codeを含めてスライドにする場合なんかはこれはかなり便利かもしれない．&lt;/p&gt;</content><category term="misc"></category><category term="Markdown"></category></entry><entry><title>2017年初頭における作業環境</title><link href="https://ryokbys.github.io/blog/posts/2017/03/03/work-environment-feb.-2017/index.html" rel="alternate"></link><published>2017-03-03T22:36:38+09:00</published><updated>2017-03-03T22:36:38+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2017-03-03:/blog/posts/2017/03/03/work-environment-feb.-2017/index.html</id><summary type="html">&lt;p&gt;最近，近年で最もコンピュータ上での作業環境が変化したので，僕の作業環境を紹介してみる．
 前提として，自分の仕事上，どのような作業が多いかを挙げておく．&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;ローカルマシン（MacBook）にてプログラム作成，結果の解析，文書作成など&lt;/li&gt;
