@@ -66,6 +66,34 @@
 
 <article>
   <header>
+    <h2><a href="./posts/2017/07/27/clean-script/index.html#clean-script">clean script</a></h2>
+    <p>
+          Posted on Thu 27 July 2017 in <a href="./category/misc.html">misc</a>
+
+
+          &#8226;     Tagged with
+
+              <a href="./tag/linux.html">linux</a>
+    </p>
+  </header>
+  <div>
+      <p>I made a simple script that removes files specified by a file <code>.clean</code> in the current working directory.</p>
+<p>The script is like this.</p>
+<div class="highlight"><pre><span></span><code><span class="ch">#!/bin/bash</span>
+
+<span class="nv">CLEAN_FILE</span><span class="o">=</span><span class="s1">&#39;.clean&#39;</span>
+
+<span class="k">if</span> <span class="o">[</span> ! -f <span class="si">${</span><span class="nv">CLEAN_FILE</span><span class="si">}</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;  There is no &quot;</span> <span class="si">${</span><span class="nv">CLEAN_FILE</span><span class="si">}</span> <span class="s2">&quot; file.&quot;</span>
+    <span class="nb">echo</span> <span class="s2">&quot;  You write a list of files to be cleaned into &quot;</span> <span class="si">${</span><span class="nv">CLEAN_FILE</span><span class="si">}</span> <span class="s2">&quot; file …</span></code></pre></div>
+      <br>
+      <a class="btn" href="./posts/2017/07/27/clean-script/index.html#clean-script">    Continue reading
+</a>
+  </div>
+  <hr />
+</article>
+<article>
+  <header>
     <h2><a href="./posts/2017/07/05/display-environment-variable-in-tmux/index.html#display-environment-variable-in-tmux">DISPLAY environment variable in tmux</a></h2>
     <p>
           Posted on Wed 05 July 2017 in <a href="./category/misc.html">misc</a>
@@ -341,36 +369,6 @@
     <span class="nt">&lt;rc&gt;&lt;c&gt;</span>  28<span class="nt">&lt;/c&gt;&lt;c&gt;</span>Li<span class="nt">&lt;/c&gt;&lt;c&gt;</span>      7.01000000<span class="nt">&lt;/c&gt;&lt;c&gt;</span>      1.00000000<span class="nt">&lt;/c&gt;&lt;c&gt;</span>  PAW_PBE Li 17Jan2003                  <span class="nt">&lt;/c&gt;&lt;/rc …</span></code></pre></div>
       <br>
       <a class="btn" href="./posts/2017/02/15/bug-in-vasprun.xml/index.html#bug-in-vasprun.xml">    Continue reading
-</a>
-  </div>
-  <hr />
-</article>
-<article>
-  <header>
-    <h2><a href="./posts/2017/02/02/install-numpy-on-fujitsu-fx100/index.html#install-numpy-on-fujitsu-fx100">Install numpy on Fujitsu FX100</a></h2>
-    <p>
-          Posted on Thu 02 February 2017 in <a href="./category/misc.html">misc</a>
-
-
-          &#8226;     Tagged with
-
-              <a href="./tag/fx100.html">FX100</a>,              <a href="./tag/python.html">python</a>,              <a href="./tag/numpy.html">numpy</a>,              <a href="./tag/gcc.html">gcc</a>,              <a href="./tag/gfortran.html">gfortran</a>
-    </p>
-  </header>
-  <div>
-      <p>FX100でも，大きな計算だけでなく大量の小さな計算をバカ並列で行うことが認められて来ているので，FX100計算サーバ上でnumpyを用いたpythonコードを走らせたいというモチベーションがあった．
-しかし，numpyは入っていないし，管理者に要望を伝えても，「メンテナンスの時でないとインストールできないし，優先順位は低い」みたいな感じだったので，自分でインストールしなければならなかった．</p>
-<h2>前提</h2>
-<ul>
-<li>名大スパコン <strong>FX100</strong></li>
-<li><code>$ uname -a</code>とすると，<code>Linux f13c06n08 2.6.32 #2 SMP Wed Nov 2 17:44:12 JST 2016 s64fx s64fx s64fx GNU/Linux</code>となる．Sparc64の上でLinuxが動いている環境．</li>
-<li>gccは初めから入っているが，gfortranは存在しない．</li>
-<li>管理者権限はないし，スパコン側からインターネットに接続できないから，<code>$ pip install numpy</code>のような便利コマンドが使えないため，自分で依存関係も含めてソースコードからコンパイルしてインストールしなければならない．</li>
-<li>numpyのインストールにはFortranコンパイラが必要そう．</li>
-</ul>
-<h2>gcc-4.4 …</h2>
-      <br>
-      <a class="btn" href="./posts/2017/02/02/install-numpy-on-fujitsu-fx100/index.html#install-numpy-on-fujitsu-fx100">    Continue reading
 </a>
   </div>
 </article>
