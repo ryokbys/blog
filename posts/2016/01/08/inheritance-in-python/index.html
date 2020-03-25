@@ -13,13 +13,13 @@
 
         <meta name="author" content="Ryo KOBAYASHI" />
         <meta name="keywords" content="python" />
-        <meta name="description" content="Pythonでクラスの継承の仕方を練習したのでメモしておく． 以下のようにして， ClassA と ClassB を定義する． class ClassA(object): def __init__(self,x): self.x= x def multi(self): return self.x *self.x class ClassB(ClassA): def multi(self): return super(ClassB,self).multi() *self.x これを実行すると，以下のように狙い通りクラスの継承およびオーバーライドができていることが分かる． &gt;&gt;&gt; a= ClassA(10) &gt;&gt;&gt; print a.x 10 &gt;&gt;&gt; print a.multi() 100 …" />
+        <meta name="description" content="Pythonでクラスの継承の仕方を練習したのでメモしておく．" />
 
         <meta property="og:site_name" content="R.K.S. blog" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Inheritance in python"/>
         <meta property="og:url" content="../../../../../posts/2016/01/08/inheritance-in-python/index.html"/>
-        <meta property="og:description" content="Pythonでクラスの継承の仕方を練習したのでメモしておく． 以下のようにして， ClassA と ClassB を定義する． class ClassA(object): def __init__(self,x): self.x= x def multi(self): return self.x *self.x class ClassB(ClassA): def multi(self): return super(ClassB,self).multi() *self.x これを実行すると，以下のように狙い通りクラスの継承およびオーバーライドができていることが分かる． &gt;&gt;&gt; a= ClassA(10) &gt;&gt;&gt; print a.x 10 &gt;&gt;&gt; print a.multi() 100 …"/>
+        <meta property="og:description" content="Pythonでクラスの継承の仕方を練習したのでメモしておく．"/>
         <meta property="article:published_time" content="2016-01-08" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="python" />

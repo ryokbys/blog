@@ -63,206 +63,71 @@ R.K.S. blog            </a>
         <div class="col-sm-9">
             <article>
                 <h2><a href="../posts/2016/01/10/use-argsort/index.html">Use argsort</a></h2>
-                <div class="summary"><p>Numpyパッケージにリストを並び替えるための <tt class="docutils literal">argsort</tt> という関数があるが，その使い方がちょいと難しいからメモ．</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
-<span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">a</span><span class="p">)[</span><span class="n">b</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
-<span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span>
-<span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-</pre></div>
-<p>この例を見ると， <tt class="docutils literal"><span class="pre">a=[3,1,2]</span></tt> の …</p>
+                <div class="summary">Numpyパッケージにリストを並び替えるための <tt class="docutils literal">argsort</tt> という関数があるが，その使い方がちょいと難しいからメモ．
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/10/use-argsort/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/01/08/inheritance-in-python/index.html">Inheritance in python</a></h2>
-                <div class="summary"><p>Pythonでクラスの継承の仕方を練習したのでメモしておく．</p>
-<p>以下のようにして， <tt class="docutils literal">ClassA</tt> と <tt class="docutils literal">ClassB</tt> を定義する．</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ClassA</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">=</span> <span class="n">x</span>
-
-    <span class="k">def</span> <span class="nf">multi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span>
-
-<span class="k">class</span> <span class="nc">ClassB</span><span class="p">(</span><span class="n">ClassA</span><span class="p">):</span>
-  <span class="k">def</span> <span class="nf">multi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-      <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ClassB</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">multi</span><span class="p">()</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span>
-</pre></div>
-<p>これを実行すると，以下のように狙い通りクラスの継承およびオーバーライドができていることが分かる．</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a= ClassA(10)
-&gt;&gt;&gt; print a.x
-10
-&gt;&gt;&gt; print a.multi()
-100 …</pre>
+                <div class="summary">Pythonでクラスの継承の仕方を練習したのでメモしておく．
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/08/inheritance-in-python/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/01/08/internet_speed/index.html">Internet speed in Switzerland</a></h2>
-                <div class="summary"><p>インターネットのスピードは（実際のところは分からないが）心象的には，かなり仕事の効率に影響するように感じる．
-そこで，以下のサイトを用いてインターネットスピードを測定してみた．</p>
-<ul class="simple">
-<li><a class="reference external" href="http://www.musen-lan.com/speed/">BNRスピードテスト</a></li>
-</ul>
-<div class="section" id="epfl">
-<h2>EPFLにて</h2>
-<p>LANケーブルに繋いで測定すると（部屋に記載されているポート名 C406.20），</p>
-<pre class="literal-block">
-測定日時： 2016/01/08 11:20:09
---------------------------------------------------
-1.NTTPC(WebARENA)1： 15.16Mbps (1.90MB/sec)
-2.NTTPC(WebARENA)2： 16.87Mbps (2.11MB/sec)
-推定転送速度： 16.87Mbps (2.11MB/sec)
-</pre>
-<p>他のポートでも試してみる．
-ポート C406.21では接続できなかった．</p>
-<p>ポートC406.18では，</p>
-<pre class="literal-block">
-測定日時 …</pre></div>
+                <div class="summary">インターネットのスピードは（実際のところは分からないが）心象的には，かなり仕事の効率に影響するように感じる．
+そこで，以下のサイトを用いてインターネットスピードを測定してみた．
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/08/internet_speed/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/01/07/logger/index.html">Use logger in python</a></h2>
-                <div class="summary"><div class="section" id="id1">
-<h2>使用例</h2>
-<p>Pythonでのloggerの使い方を学んだからメモしておく．</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">logger</span><span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="n">console</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
-<span class="n">console</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
-<span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%(name)-12s</span><span class="s1">: </span><span class="si">%(levelname)-8s</span><span class="s1"> </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">console</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">console</span><span class="p">)</span>
-
-<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;this is debug&#39;</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;this is info&#39;</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;this is warn&#39;</span><span class="p">)</span>
-<span class="n">logger …</span></pre></div></div>
+                <div class="summary">Pythonでのloggerの使い方を学んだからメモしておく．
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/07/logger/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/01/06/gnuplot_inkscale/index.html">From gnuplot to inkscape</a></h2>
-                <div class="summary"><p>Mac OSXのバージョンがEl Capitanになってから，Illustrator CS4の調子がすこぶる悪く，ほぼ使えない状態なので，gnuplotなどで出力したグラフを編集してEPSやPDFにする作業が滞っていたので対策を記載．</p>
-<p>流れとしては，</p>
-<ol class="arabic simple">
-<li>gnuplotから <strong>SVG</strong> 出力．</li>
-<li>inkscapeで編集．</li>
-<li>inkscapeでEPSもしくはPDF出力．</li>
-</ol>
-<p>具体的に必要なのは，gnuplotとinkscapeがインストールされていること．inkscapeはbrewなどでインストールできると思う．</p>
-<ol class="arabic">
-<li><p class="first">gnuplotで，</p>
-<pre class="literal-block">
-...
-gnuplot&gt; set term svg
-gnuplot&gt; set output 'hoge.svg'
-gnuplot&gt; replot
-</pre>
-<p>として <strong>SVG</strong> 形式にして出力．</p>
-</li>
-<li><p class="first">inkscapeで編集．</p>
-</li>
-<li><p class="first">キャンバスサイズの調節．</p>
-<ol class="arabic simple">
-<li>すべてを選択しておく．</li>
-<li>キャンバスサイズの変更のため， <tt class="docutils literal">File</tt> &gt; <tt class="docutils literal">Document <span class="pre">properties...</span></tt> を開く．</li>
-<li>開いたウィンドウの真ん中あたりの，Custum sizeのところで，Unitsを <strong>px</strong> にし，すべての辺のマージンを <strong>10.0</strong> とする．</li>
-<li><tt class="docutils literal">Resize …</tt></li></ol></li></ol>
+                <div class="summary">Mac OSXのバージョンがEl Capitanになってから，Illustrator CS4の調子がすこぶる悪く，ほぼ使えない状態なので，gnuplotなどで出力したグラフを編集してEPSやPDFにする作業が滞っていたので対策を記載．
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/06/gnuplot_inkscale/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/01/04/internet_swiss/index.html">Internet in Switzerland...</a></h2>
-                <div class="summary"><p>スイスで暮らし始めて１ヶ月になるが未だに安定したインターネット環境が得られない．</p>
-<p>インターネット込みの家具付きアパートを契約しているので，そこで契約しているSwisscomのインターネットがちゃんと使えるべきなのだが，それが月が変わったとたんに使えなくなってしまった．Swisscomに電話して使えないことを伝えても，ちゃんと対応してくれないし．．．スイスとはいってもやはり日本ほど手厚いサービスはされないということか．．．</p>
-<p>そこで，臨時措置としてポケットwifiでインターネット接続している（Salt）のだが，そのインターネットも結構頻繁に接続が途絶える．
-インターネット提供会社の質が悪いのか，ローザンヌの街の回線自体がしょぼいのか．何にせよ，ここらへんの面倒くささが日本とは違うと思う．</p>
-
+                <div class="summary">スイスで暮らし始めて１ヶ月になるが未だに安定したインターネット環境が得られない．
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/04/internet_swiss/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/01/03/create_post/index.html">Python utility for creating new post</a></h2>
-                <div class="summary"><p>Pelicanでブログポストを作るときに，作成するファイル自体をtinkererで</p>
-<pre class="literal-block">
-$ tinker --post
-</pre>
-<p>とした時のように，日付で整理されたディレクトリ内に原稿テンプレートを作成したかったので，pythonスクリプトを作成した．</p>
-<ul class="simple">
-<li><a class="reference external" href="https://gist.github.com/ryokbys/e5dea8f2476a83ec2758">create_post.py at Gist</a></li>
-</ul>
-<p>Pelicanのルートディレクトリ（ <tt class="docutils literal">content</tt> ディレクトリが存在するディレクトリ）で，</p>
-<pre class="literal-block">
-$ python /path/to/create_post.py -s create_post 'Utility for creating new post'
-</pre>
-<p>のように <tt class="docutils literal">slug</tt> と <tt class="docutils literal">TITLE</tt> を指定してやると，</p>
-<pre class="literal-block">
-./content/2016/01/03_create_post.rst was written.
-</pre>
-<p>のようにファイルが作成される．
-ファイル中身にはPelican用の次のようなテンプレートが記載されている．</p>
-<pre class="literal-block">
-:title: Utility for creating new post
-:date: 2016-01-03 21 …</pre>
+                <div class="summary">Pelicanでブログポストを作るときに，作成するファイル自体をtinkererで
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/03/create_post/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/01/03/test_post/index.html">test post</a></h2>
-                <div class="summary"><p>Pelicanにおいてどのように新しい投稿を作成するか悩みどころ．</p>
-<p><tt class="docutils literal">content</tt> 内に深いディレクトリ階層を作成したら反映されるか？</p>
-<p>ちゃんと表示される．
-ということは，あとはこのポストを自動的に作成するスクリプトを作れば良いだけ．</p>
-
+                <div class="summary">Pelicanにおいてどのように新しい投稿を作成するか悩みどころ．
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/03/test_post/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/01/03/hello_pelican/index.html">Hello Pelican!</a></h2>
-                <div class="summary"><p>1st and test blog post for Pelican!</p>
-<p>TinkererよりもPelicanの方がユーザが多いようなので乗り換えることにしてみた．</p>
-<div class="figure align-right">
-<a class="reference external image-reference" href="https://flic.kr/p/CmYCGD"><img alt="figure test" src="https://farm6.staticflickr.com/5647/23866223301_661ad26f4e_k.jpg" style="width: 300px;" /></a>
-</div>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit …</p>
+                <div class="summary">1st and test blog post for Pelican!
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/03/hello_pelican/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2015/12/26/al_mg_si_alloy_paper/index.html">Al-Mg-Si alloy paper</a></h2>
-                <div class="summary"><div class="section" id="al-mg-si-alloy-paper">
-<h2>Al-Mg-Si alloy paper</h2>
-<p>Pogatscher et al, PRL 112, 225701 (2014)</p>
-<ul class="simple">
-<li>Al-Mg-Si alloyにSnを少量添加して，natural agingの負の効果を抑えて，artificial agingを促進できる．</li>
-<li>どちらの過程もvacancy-mediatedからの二次相析出．温度の変化で，どちらかを抑えて，どちらかを促進できるということ．</li>
-<li>Sn-V compositeの形成能が温度に依存し，束縛されないV濃度が大きく変化する．</li>
-<li>Sn濃度，温度，時効時間で原子の拡散をコントロールできる．</li>
-</ul>
-</div>
-
+                <div class="summary">Pogatscher et al, PRL 112, 225701 (2014)
                     <a class="btn btn-default btn-xs" href="../posts/2015/12/26/al_mg_si_alloy_paper/index.html">more ...</a>
                 </div>
             </article>

@@ -13,13 +13,13 @@
 
         <meta name="author" content="Ryo KOBAYASHI" />
         <meta name="keywords" content="FX100,python,numpy,gcc,gfortran" />
-        <meta name="description" content="FX100でも，大きな計算だけでなく大量の小さな計算をバカ並列で行うことが認められて来ているので，FX100計算サーバ上でnumpyを用いたpythonコードを走らせたいというモチベーションがあった． しかし，numpyは入っていないし，管理者に要望を伝えても，「メンテナンスの時でないとインストールできないし，優先順位は低い」みたいな感じだったので，自分でインストールしなければならなかった． 前提 名大スパコン FX100 $ uname -aとすると，Linux f13c06n08 2.6.32 #2 SMP Wed Nov 2 17:44:12 JST 2016 s64fx s64fx s64fx GNU/Linuxとなる．Sparc64の上でLinuxが動いている環境． gccは初めから入っているが，gfortranは存在しない． 管理者権限はないし，スパコン側からインターネットに接続できないから，$ pip install numpyのような便利コマンドが使えないため，自分で依存関係も含めてソースコードからコンパイルしてインストールしなければならない． numpyのインストールにはFortranコンパイラが必要そう． gcc-4.4 …" />
+        <meta name="description" content="FX100でも，大きな計算だけでなく大量の小さな計算をバカ並列で行うことが認められて来ているので，FX100計算サーバ上でnumpyを用いたpythonコードを走らせたいというモチベーションがあった． しかし，numpyは入っていないし，管理者に要望を伝えても，「メンテナンスの時でないとインストールできないし，優先順位は低い」みたいな感じだったので，自分でインストールしなければならなかった．" />
 
         <meta property="og:site_name" content="R.K.S. blog" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Install numpy on Fujitsu FX100"/>
         <meta property="og:url" content="../../../../../posts/2017/02/02/install-numpy-on-fujitsu-fx100/index.html"/>
-        <meta property="og:description" content="FX100でも，大きな計算だけでなく大量の小さな計算をバカ並列で行うことが認められて来ているので，FX100計算サーバ上でnumpyを用いたpythonコードを走らせたいというモチベーションがあった． しかし，numpyは入っていないし，管理者に要望を伝えても，「メンテナンスの時でないとインストールできないし，優先順位は低い」みたいな感じだったので，自分でインストールしなければならなかった． 前提 名大スパコン FX100 $ uname -aとすると，Linux f13c06n08 2.6.32 #2 SMP Wed Nov 2 17:44:12 JST 2016 s64fx s64fx s64fx GNU/Linuxとなる．Sparc64の上でLinuxが動いている環境． gccは初めから入っているが，gfortranは存在しない． 管理者権限はないし，スパコン側からインターネットに接続できないから，$ pip install numpyのような便利コマンドが使えないため，自分で依存関係も含めてソースコードからコンパイルしてインストールしなければならない． numpyのインストールにはFortranコンパイラが必要そう． gcc-4.4 …"/>
+        <meta property="og:description" content="FX100でも，大きな計算だけでなく大量の小さな計算をバカ並列で行うことが認められて来ているので，FX100計算サーバ上でnumpyを用いたpythonコードを走らせたいというモチベーションがあった． しかし，numpyは入っていないし，管理者に要望を伝えても，「メンテナンスの時でないとインストールできないし，優先順位は低い」みたいな感じだったので，自分でインストールしなければならなかった．"/>
         <meta property="article:published_time" content="2017-02-02" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="FX100" />

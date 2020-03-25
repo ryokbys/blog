@@ -13,13 +13,13 @@
 
         <meta name="author" content="Ryo KOBAYASHI" />
         <meta name="keywords" content="fortran,makefile" />
-        <meta name="description" content="以下のようなFortranのプログラムがある． - いくつかのファイルに分割されている． - ファイルと同じ名前のモジュールを含むファイルがある．（つまり，hoge.F90の中にmodule hogeが宣言されている．） このような場合，そのモジュールを含むhoge.F90を変更した後にmakeしてもなぜかhoge.F90がコンパイルし直されず，変更が反映されない． $ make -d のように，-dオプションをつけてmakeを実行すると，なぜにそれがコンパイルされないかが分かるのだが， Trying implicit prerequisite `hoge.mod&#39;. Found an implicit rule for `hoge.o&#39;. Considering target file `hoge.mod&#39;. Prerequisite `hoge.mod&#39; is …" />
+        <meta name="description" content="以下のようなFortranのプログラムがある． - いくつかのファイルに分割されている． - ファイルと同じ名前のモジュールを含むファイルがある．（つまり，hoge.F90の中にmodule hogeが宣言されている．）" />
 
         <meta property="og:site_name" content="R.K.S. blog" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Circular dependency when making a Fortran program with modules"/>
         <meta property="og:url" content="../../../../../posts/2017/06/26/circular-dependency-when-making-a-fortran-program-with-modules/index.html"/>
-        <meta property="og:description" content="以下のようなFortranのプログラムがある． - いくつかのファイルに分割されている． - ファイルと同じ名前のモジュールを含むファイルがある．（つまり，hoge.F90の中にmodule hogeが宣言されている．） このような場合，そのモジュールを含むhoge.F90を変更した後にmakeしてもなぜかhoge.F90がコンパイルし直されず，変更が反映されない． $ make -d のように，-dオプションをつけてmakeを実行すると，なぜにそれがコンパイルされないかが分かるのだが， Trying implicit prerequisite `hoge.mod&#39;. Found an implicit rule for `hoge.o&#39;. Considering target file `hoge.mod&#39;. Prerequisite `hoge.mod&#39; is …"/>
+        <meta property="og:description" content="以下のようなFortranのプログラムがある． - いくつかのファイルに分割されている． - ファイルと同じ名前のモジュールを含むファイルがある．（つまり，hoge.F90の中にmodule hogeが宣言されている．）"/>
         <meta property="article:published_time" content="2017-06-26" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="fortran" />

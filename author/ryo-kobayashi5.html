@@ -61,159 +61,74 @@ R.K.S. blog            </a>
         <div class="col-sm-9">
             <article>
                 <h2><a href="../posts/2016/06/19/gamma-surface-with-gnuplot/index.html">gamma surface with gnuplot</a></h2>
-                <div class="summary"><p>材料の機械的性質を議論する場合，generalized stacking fault もしくは gamma surface を考える場合が多い．
+                <div class="summary">材料の機械的性質を議論する場合，generalized stacking fault もしくは gamma surface を考える場合が多い．
 その場合，ある面内で上下の原子をシフトした場合のエネルギーがどう変化するかを調べるわけだが，その可視化として二次元カラーで表示することが多いようだ．
-これは，gnuplotで以下のようにして可視化できる．</p>
-<div class="section" id="data-format">
-<h2>Data format</h2>
-<p>x座標，y座標，データの３列のデータを以下のように並べる．</p>
-<pre class="literal-block">
-0.000   0.000 -9.96910530855912E+001
-0.000   0.033 -9.89868134250834E+001
-0.000   0.067 -9.74010559556275E+001
-...
-0.000   0.967 -9.88510003534038E+001
-0.000   1.000 …</pre></div>
+これは，gnuplotで以下のようにして可視化できる．
                     <a class="btn btn-default btn-xs" href="../posts/2016/06/19/gamma-surface-with-gnuplot/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/06/14/random-sensitive-search/index.html">Random structure search</a></h2>
-                <div class="summary"><p>EPFLでの会議PASC16にて，Chris J Pickardの発表を聴いた．
-そこで <strong>Ab initio random structure search (AIRSS)</strong> を紹介していたので下記論文を読んでみた．</p>
-<ul class="simple">
-<li>Pickard, C. J., &amp; Needs, R. J. (2011). Ab initio random structure searching. Journal of Physics: Condensed Matter, 23(5), 053201. <a class="reference external" href="http://doi.org/10.1088/0953-8984/23/5/053201">http://doi.org/10.1088/0953-8984/23/5/053201</a></li>
-</ul>
-<p>これまでにいくつかの構造探索アルゴリズムが提案されているが，ランダム探索といくつかのバイアス（原子間の結びつきや対称性）を加えるというシンプルなものが良いよという論文．
-結局，以下に挙げられるようなどんなグローバル探索手法でも一長一短でこれが良いという決定打はない．ランダム検索でないと最安定構造を逃すことも多い．</p>
-<p>しかし，当然ランダム探索では …</p>
+                <div class="summary">EPFLでの会議PASC16にて，Chris J Pickardの発表を聴いた．
+そこで <strong>Ab initio random structure search (AIRSS)</strong> を紹介していたので下記論文を読んでみた．
                     <a class="btn btn-default btn-xs" href="../posts/2016/06/14/random-sensitive-search/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/05/17/bash:-all-the-output-to-somewhere/index.html">Bash: all the output to /dev/null</a></h2>
-                <div class="summary"><p>I wanted to run jupyter notebook background without showing any outputs from it.
-So I tried the following command,</p>
-<pre class="literal-block">
-$ jupyter notebook hoge.ipynb 2&gt;&amp;1 &gt; /dev/null &amp;
-</pre>
-<p>But it still showed some outputs on the screen and interrupted me typing other commands.
-This is because, <tt class="docutils literal"><span class="pre">2&gt;&amp;1</span></tt> means that standard …</p>
+                <div class="summary">I wanted to run jupyter notebook background without showing any outputs from it.
+So I tried the following command,
                     <a class="btn btn-default btn-xs" href="../posts/2016/05/17/bash:-all-the-output-to-somewhere/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/05/17/install-python-on-fx100/index.html">Install python on FX100 in nagoya-u</a></h2>
-                <div class="summary"><p>名大スパコン <strong>FX100</strong> で作業することが多いが，作業に必要なツールがデフォルトでは入っていないので自分でpythonをインストールすることから始めた．</p>
-<p>普通にpythonをインストールすると，後々numpyをインストールしようとしたときにhashlibがないことが問題になるようなので，解決する必要がある．</p>
-<p>OSに入っているopensslに問題があるらしいので，opensslを取ってきてインストールしようとすると，
-OSに入っているperlに問題があるらしいので，perl-5.22.2を取ってきてインストール．</p>
-<p>ただし，以下のインストールはログインノードでのpythonおよびnumpyの使用を仮定している．
-計算ノードでの実行を考える場合には，マシンが異なるので，別途コンパイルしなければならない．
-おそらく，これよりもより多くの問題があるだろうし，ネット情報が少ないだろうから大変になると予想される．</p>
-<div class="section" id="install-perl-5-22-2">
-<h2>Install perl-5.22.2</h2>
-<p>どうもopensslのインストールにperlのバージョンの問題があるらしかったから，最新版perlをインストール．</p>
-<div class="highlight"><pre><span></span>$ ./Configure -des -Dprefix<span class="o">=</span><span class="nv">$HOME</span>/local
-$ make -j8 <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> <span class="p">|</span> tee log.make
-$ make install
-</pre></div>
-</div>
-<div class="section" id="install-openssl">
-<h2>Install openssl</h2>
-<p><a class="reference external" href="https://www.openssl.org">OpenSSL Homepage</a> からソースパッケージをダウンロードしてきて，展開し，以下のようにしてコンパイルおよびインストールする．</p>
-<div class="highlight"><pre><span></span>$ ./config shared …</pre></div></div>
+                <div class="summary">名大スパコン <strong>FX100</strong> で作業することが多いが，作業に必要なツールがデフォルトでは入っていないので自分でpythonをインストールすることから始めた．
                     <a class="btn btn-default btn-xs" href="../posts/2016/05/17/install-python-on-fx100/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/05/15/lavaux-vineyard-tasting-walk/index.html">ラヴォー地区ワイナリーテイスティング歩き</a></h2>
-                <div class="summary"><p>本日はLausanne近くのLavaux地区のワイナリーをいくつも巡ってテイスティングをしまくるというイベント（？）があった．</p>
-<p>20CHFくらいでLausanneからの往復電車代とフリーテイスティングとワイングラスが含まれている．テイスティングがいくら位するものなのか知らないので値段設定の良し悪しは分からないが，その程度であの素晴らしい景色の丘をハイキングしながら，ところどころのワイナリーで幾つもの種類のワインを試飲して回れるというのは楽しい．</p>
-<p>まぁ，自分はワインの味の違いなどはほとんど分からんので，テイスティングしても意味ないのだけど，ちょっとハイな気分でアルプスとレマン湖眺めながらハイキングできるなんてのは素晴らしい．この企画はどうも，年に一回しか行われないらしい．これのためにローザンヌに来るなんてのはできないだろうけど，ローザンヌにいてこれに行かないのはもったいない．</p>
-<p>しかし良き一日であった．</p>
-<ul class="simple">
-<li><a class="reference external" href="http://www.lausanne-tourisme.ch/en/loisirs/incontournables/vignoble-de-lavaux/balade-lavaux-cully.html">Lausanne tourisme: Through the Lavaux vineyard: from Grandvaux to Cully</a></li>
-</ul>
-
+                <div class="summary">本日はLausanne近くのLavaux地区のワイナリーをいくつも巡ってテイスティングをしまくるというイベント（？）があった．
                     <a class="btn btn-default btn-xs" href="../posts/2016/05/15/lavaux-vineyard-tasting-walk/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/05/12/gnu-parallel-for-easy-multiprocessing/index.html">GNU parallel for easy multiprocessing</a></h2>
-                <div class="summary"><ul class="simple">
-<li><a class="reference external" href="http://bicycle1885.hatenablog.com/entry/2014/08/10/143612">コマンドを並列に実行するGNU parallelがとても便利</a></li>
-<li><a class="reference external" href="https://blog.riywo.com/2011/04/19/022802/">GNU Parallelがすごすぎて生きるのがつらい</a></li>
-<li><a class="reference external" href="http://w.koshigoe.jp/study/?%5Bsystem%5D+GNU+parallel+%BB%C8%CD%D1%CE%E3">GNU parallel 使用例</a></li>
-</ul>
-<p>などで <strong>GNU parallel</strong> の紹介がされていて，ちょうど自分がやりたかったことにマッチしてうれしい．</p>
-<div class="section" id="id3">
-<h2>インストール</h2>
-<p><a class="reference external" href="http://ftp.gnu.org/gnu/parallel/">http://ftp.gnu.org/gnu/parallel/</a> から <tt class="docutils literal"><span class="pre">parallel-latest.tar.bz2</span></tt> をダウンロードし，</p>
-<pre class="code bash literal-block">
-$ bzip2 -d parallel-latest.tar.bz2
-$ tar xvf parallel-latest.tar
-$ <span class="nb">cd</span> parallel-??????
-$ ./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/local/ <span class="o">&amp;&amp;</span> make <span class="o">&amp;&amp;</span> make install
-</pre>
-<p>としてインストールした．</p>
-</div>
-<div class="section" id="id4">
-<h2>並列処理</h2>
-<p>自分の場合，多くのディレクトリ内（ <tt class="docutils literal"><span class="pre">smpl_*/smd/</span></tt> 内 ）で …</p></div>
+                <div class="summary">などで <strong>GNU parallel</strong> の紹介がされていて，ちょうど自分がやりたかったことにマッチしてうれしい．
                     <a class="btn btn-default btn-xs" href="../posts/2016/05/12/gnu-parallel-for-easy-multiprocessing/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/05/04/galapagos/index.html">Galapagos</a></h2>
-                <div class="summary"><p><a class="reference external" href="https://www.amazon.co.jp/ガラパゴス-上-相場英雄-ebook/dp/B01BD6O708?ie=UTF8&amp;btkr=1&amp;ref_=dp-kindle-redirect">ガラパゴス 相場英雄</a></p>
-<p>現代の日本の車業界，派遣労働，非正規社員なんかを背景とした刑事もので非常に勉強になるし，展開も面白い．</p>
-<p>しかし，最後に鳥居が交換条件として，Tモータースの社長の松崎の辞任を交換条件として提示したのは解せない．鳥居としてはTモータースに天下りする方が圧倒的に利益があると思えるのに．．．そこらへんはあまり説明がなされていないから，ちょっとモヤモヤした読後感が残る．</p>
-
+                <div class="summary"><a class="reference external" href="https://www.amazon.co.jp/ガラパゴス-上-相場英雄-ebook/dp/B01BD6O708?ie=UTF8&amp;btkr=1&amp;ref_=dp-kindle-redirect">ガラパゴス 相場英雄</a>
                     <a class="btn btn-default btn-xs" href="../posts/2016/05/04/galapagos/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/04/27/simple-minimization-using-fire/index.html">Simple minimization using FIRE</a></h2>
-                <div class="summary"><p>Bitzek et al. <em>Structural Relaxation Made Simple</em>, PRL <strong>97</strong>, 170201 (2006)</p>
-<p>Damped MDのような発想で，より効率的に，MDコードをあまり改変する必要なく構造最適化を行う方法．
-論文にアルゴリズムも記載されており，良いパラメータの値も提案されているから本当に実装は簡単．
-それでいて，BFGSやCGと同程度もしくはより効率的に構造最適化が可能．</p>
-
+                <div class="summary">Bitzek et al. <em>Structural Relaxation Made Simple</em>, PRL <strong>97</strong>, 170201 (2006)
                     <a class="btn btn-default btn-xs" href="../posts/2016/04/27/simple-minimization-using-fire/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/04/05/nn-potential-for-ionic-system/index.html">イオン結合系のNNポテンシャル</a></h2>
-                <div class="summary"><p>S.A.Ghasemi et al., PRB92, 045131 (2015)</p>
-<p>電荷可変型（variable charge）原子間ポテンシャルの電気陰性度（electronegativity）項にNNを適用することで，
-環境に依存した電荷分布に対応する原子間ポテンシャルを作るという論文．</p>
-<p>環境に依存した電荷分布は，環境に依存した電気陰性度から自動的に得られる．
-「環境に依存する」という部分を近距離のNNで表現することで，計算不可も抑えられ，
-電荷やエネルギーそのものをNNで予想するよりも安定となる模様．</p>
-<p>金属系や半導体系へはダイレクトには適用できないだろうが，考え方を援用することでポテンシャルを作ることが可能かもと思える．</p>
-
+                <div class="summary">S.A.Ghasemi et al., PRB92, 045131 (2015)
                     <a class="btn btn-default btn-xs" href="../posts/2016/04/05/nn-potential-for-ionic-system/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/04/02/how-to-watch-football-game-live-online/index.html">サッカーのオンラインライブストリーミング</a></h2>
-                <div class="summary"><p>今日のクラシコを見たいと思って調べたら意外に簡単にライブ観戦できたからメモしておく．</p>
-<p><a class="reference external" href="http://www.sportcategory.com/c-1.html">このサイト</a> にいくつかリストされている中から最も見やすいサイトを選択すればよい．
-（他にもこうのようなライブ配信サイトのまとめサイトみたいのがある．）</p>
-<p>大抵のライブストリーミング配信サイトはいろんな広告が表示されて煩わしいし，アクセスが遅くなるのも嫌だから，Adblockというものを導入してそれを防いだほうが良い．
-そのためには，SafariだとダメらしいからFirefoxでも使って，Adblockというアドオンをインストールすべし．</p>
-<p>あとは，画面いっぱいにしてライブ配信を楽しめばよし．</p>
-
+                <div class="summary">今日のクラシコを見たいと思って調べたら意外に簡単にライブ観戦できたからメモしておく．
                     <a class="btn btn-default btn-xs" href="../posts/2016/04/02/how-to-watch-football-game-live-online/index.html">more ...</a>
                 </div>
             </article>

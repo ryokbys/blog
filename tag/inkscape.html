@@ -62,32 +62,7 @@ R.K.S. blog            </a>
         <div class="col-sm-9">
             <article>
                 <h2><a href="../posts/2016/01/06/gnuplot_inkscale/index.html">From gnuplot to inkscape</a></h2>
-                <div class="summary"><p>Mac OSXのバージョンがEl Capitanになってから，Illustrator CS4の調子がすこぶる悪く，ほぼ使えない状態なので，gnuplotなどで出力したグラフを編集してEPSやPDFにする作業が滞っていたので対策を記載．</p>
-<p>流れとしては，</p>
-<ol class="arabic simple">
-<li>gnuplotから <strong>SVG</strong> 出力．</li>
-<li>inkscapeで編集．</li>
-<li>inkscapeでEPSもしくはPDF出力．</li>
-</ol>
-<p>具体的に必要なのは，gnuplotとinkscapeがインストールされていること．inkscapeはbrewなどでインストールできると思う．</p>
-<ol class="arabic">
-<li><p class="first">gnuplotで，</p>
-<pre class="literal-block">
-...
-gnuplot&gt; set term svg
-gnuplot&gt; set output 'hoge.svg'
-gnuplot&gt; replot
-</pre>
-<p>として <strong>SVG</strong> 形式にして出力．</p>
-</li>
-<li><p class="first">inkscapeで編集．</p>
-</li>
-<li><p class="first">キャンバスサイズの調節．</p>
-<ol class="arabic simple">
-<li>すべてを選択しておく．</li>
-<li>キャンバスサイズの変更のため， <tt class="docutils literal">File</tt> &gt; <tt class="docutils literal">Document <span class="pre">properties...</span></tt> を開く．</li>
-<li>開いたウィンドウの真ん中あたりの，Custum sizeのところで，Unitsを <strong>px</strong> にし，すべての辺のマージンを <strong>10.0</strong> とする．</li>
-<li><tt class="docutils literal">Resize …</tt></li></ol></li></ol>
+                <div class="summary">Mac OSXのバージョンがEl Capitanになってから，Illustrator CS4の調子がすこぶる悪く，ほぼ使えない状態なので，gnuplotなどで出力したグラフを編集してEPSやPDFにする作業が滞っていたので対策を記載．
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/06/gnuplot_inkscale/index.html">more ...</a>
                 </div>
             </article>

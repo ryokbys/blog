@@ -62,26 +62,8 @@ R.K.S. blog            </a>
         <div class="col-sm-9">
             <article>
                 <h2><a href="../posts/2016/08/11/math-font-in-sphinx-document/index.html">Math font in sphinx-document</a></h2>
-                <div class="summary"><p>SphinxドキュメントをHTML出力する際の数式フォントを変更したい．
-ここでは，数式をPNGで出力する <strong>pngmath</strong> が選択されているとする．（ <strong>mathjax</strong> の場合は別の話らしい．）</p>
-<p><tt class="docutils literal">conf.py</tt> 内に
-.. code:: python</p>
-<blockquote>
-extensions = ['sphinx.ext.pngmath']</blockquote>
-<p>と書かれていたら， <em>pngmath</em> を使う設定になっている．
-この場合，sphinxはコンパイル時にlatexを呼び出して数式のpngファイルを作成する．
-そのlatexのためのプリアンブル（preamble）を以下のように <tt class="docutils literal">conf.py</tt> に追加すればよい．</p>
-<pre class="code python literal-block">
-<span class="n">pngmath_latex_preamble</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;&quot;&quot;
-\usepackage{eulervm}
-\usepackage{amsmath,amssymb}
-\newcommand{\degree}{$^{\circ}$}
-\newcommand{\temp}{${}^\circ$C}
-\newcommand{\rmd}{{\rm d}}
-\newcommand{\rme}{{\rm e}}
-&quot;&quot;&quot;</span>
-</pre>
-<p>そうするとめでたく数式フォントの変更や自作コマンドなんかを使えるようになる …</p>
+                <div class="summary">SphinxドキュメントをHTML出力する際の数式フォントを変更したい．
+ここでは，数式をPNGで出力する <strong>pngmath</strong> が選択されているとする．（ <strong>mathjax</strong> の場合は別の話らしい．）
                     <a class="btn btn-default btn-xs" href="../posts/2016/08/11/math-font-in-sphinx-document/index.html">more ...</a>
                 </div>
             </article>

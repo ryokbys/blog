@@ -62,82 +62,44 @@ R.K.S. blog            </a>
         <div class="col-sm-9">
             <article>
                 <h2><a href="../posts/2016/10/27/flake8-personal-setting-for-python/index.html">flake8 personal setting for python</a></h2>
-                <div class="summary"><p>When I code python programs using emacs, emacs uses elpy and elpy uses flake8 for syntax checking.
+                <div class="summary">When I code python programs using emacs, emacs uses elpy and elpy uses flake8 for syntax checking.
 But this syntax checking is kind of annoying.
-For example, I would like to write like this</p>
-<pre class="code python literal-block">
-<span class="n">x</span> <span class="o">=</span> <span class="n">some_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">+</span><span class="n">d</span><span class="p">)</span>
-</pre>
-<p>instead of this</p>
-<pre class="code python literal-block">
-<span class="n">x</span> <span class="o">=</span> <span class="n">some_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span>
-</pre>
-<p>I …</p>
+For example, I would like to write like this
                     <a class="btn btn-default btn-xs" href="../posts/2016/10/27/flake8-personal-setting-for-python/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/10/02/no-match-found-in-reftex/index.html">No match found in Reftex</a></h2>
-                <div class="summary"><p>Sometimes when writing a LaTeX document with Emacs.app in MacOS
+                <div class="summary">Sometimes when writing a LaTeX document with Emacs.app in MacOS
 and I tried to put citation in the document by typing <tt class="docutils literal"><span class="pre">Ctl-C</span> + [</tt>,
 emacs fails to search references I am looking for.
-I do not know the reason exactly, but I seems that emacs does not store the reference information …</p>
+I do not know the reason exactly, but I seems that emacs does not store the reference information in it.
                     <a class="btn btn-default btn-xs" href="../posts/2016/10/02/no-match-found-in-reftex/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/03/02/disable-pep8-check-when-writing-python-code-in-emacs/index.html">Disable PEP8 check when writing python code in emacs</a></h2>
-                <div class="summary"><p>PEP check when I open a pyhton code with emacs is so annoying.
-So I figured out how to disable PEP8 check, and this is how it works.</p>
-<p>In the <tt class="docutils literal">.emacs.d/init.d</tt> or appropriate file in your system,
-<tt class="docutils literal"><span class="pre">python-check-command</span></tt> should be set <tt class="docutils literal">nil</tt>.</p>
-<pre class="literal-block">
-(add-hook 'python-mode-hook
-          '(lambda ()
-             (seq python-check-command …</pre>
+                <div class="summary">PEP check when I open a pyhton code with emacs is so annoying.
+So I figured out how to disable PEP8 check, and this is how it works.
                     <a class="btn btn-default btn-xs" href="../posts/2016/03/02/disable-pep8-check-when-writing-python-code-in-emacs/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/02/27/package-managing-system-cask/index.html">Package managing system Cask</a></h2>
-                <div class="summary"><div class="section" id="what-is-cask">
-<h2>What is Cask?</h2>
-<p>Usually, without cask, we need to download and install packages manually
+                <div class="summary">Usually, without cask, we need to download and install packages manually
 and write some configurations in <tt class="docutils literal">.emacs.d/init.el</tt> to make them work.
-Cask makes it much easier.</p>
-<p><a class="reference external" href="http://cask.readthedocs.org/en/latest/">cask documentation</a></p>
-<p>It seems to require the following conditions,</p>
-<ul class="simple">
-<li>emacs &gt;= 24</li>
-<li>python &gt;= 2.6</li>
-</ul>
-<div class="section" id="install">
-<h3>Install</h3>
-<pre class="literal-block">
-$ brew install cask …</pre></div></div>
+Cask makes it much easier.
                     <a class="btn btn-default btn-xs" href="../posts/2016/02/27/package-managing-system-cask/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/02/27/ipython-jupyter-notebook-on-emacs.app/index.html">Use ipython/jupyter notebook on Emacs.app</a></h2>
-                <div class="summary"><div class="section" id="setup">
-<h2>Setup</h2>
-<p>To use ipython/jupyter notebook in Emacs, you need <tt class="docutils literal">elpy</tt> and <tt class="docutils literal">ein</tt> (emacs ipython notebook) packages.
-So write those dependencies in <tt class="docutils literal">.emacs.d/Cask</tt> file (here I assume that the package management system <tt class="docutils literal">cask</tt> is installed),</p>
-<pre class="literal-block">
-(depends-on “ein&quot;)
-(depends-on “elpy”)
-</pre>
-</div>
-<div class="section" id="usage">
-<h2>Usage</h2>
-<div class="section" id="boot-notebook-server">
-<h3>Boot notebook server</h3>
-<p>At first, ipython/jupyter notebook …</p></div></div>
+                <div class="summary">To use ipython/jupyter notebook in Emacs, you need <tt class="docutils literal">elpy</tt> and <tt class="docutils literal">ein</tt> (emacs ipython notebook) packages.
+So write those dependencies in <tt class="docutils literal">.emacs.d/Cask</tt> file (here I assume that the package management system <tt class="docutils literal">cask</tt> is installed),
                     <a class="btn btn-default btn-xs" href="../posts/2016/02/27/ipython-jupyter-notebook-on-emacs.app/index.html">more ...</a>
                 </div>
             </article>

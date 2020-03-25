@@ -61,190 +61,80 @@ R.K.S. blog            </a>
         <div class="col-sm-9">
             <article>
                 <h2><a href="../posts/2016/03/31/precipitate-model-in-al-mg-si-alloy/index.html">Precipitate model in Al-Mg-Si alloy</a></h2>
-                <div class="summary"><p><em>Structure Determination of Mg5Si6 Particles in Al by Dynamic Electron Diffraction Studies</em>,
+                <div class="summary"><em>Structure Determination of Mg5Si6 Particles in Al by Dynamic Electron Diffraction Studies</em>,
 by H. W. Zandbergen, S. J. Andersen, J. Jansen,
-Science <strong>277</strong> (1997) 1221</p>
-<p>精密な実験からbeta''-precipitateの原子構造を解明したという論文．</p>
-<p>beta''相はGPゾーンとともにAl-Mg-Siのprecipitate hardening（析出硬化）に大きく寄与するものと知られていたが，その構造の詳細が分かっていなかった．その原因は，beta''相が非常に小さい（4nm x 4nm x 50nm程度）ため実験で構造を観察することが難しかった．</p>
-<p>この実験では，HRTEM (high resolution transmission electron microscope)のexit waveを利用したことと，electron diffractionとdynamic …</p>
+Science <strong>277</strong> (1997) 1221
                     <a class="btn btn-default btn-xs" href="../posts/2016/03/31/precipitate-model-in-al-mg-si-alloy/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/03/30/reproducibility-of-dft/index.html">DFT計算の再現性に関する論文</a></h2>
-                <div class="summary"><p><em>Reproducibility in density functional theory calculations of solids</em>,
-Kurt Lejaeghere <em>et al.</em>, Science <strong>351</strong>, issue 6280, aad3000, <a class="reference external" href="http://www.sciencemag.org/cgi/doi/10.1126/science.aad3000">link</a></p>
-<p>固体材料のDFT計算ツールはたくさんあり，様々な手法のさまざまな実装が存在している．
-それらの各ツール，各手法の間での凝集エネルギー，格子定数，体積弾性率など単純な物理量の再現性に関する系統的な比較．</p>
-<ul class="simple">
-<li>新しいことは特にないが，最新のツールはほぼどれも2 meV/atom以下程度の精度で信頼できる結果をだすことが分かった．</li>
-<li>このような系統的な研究には，AiiDAのような自動化ツールやデータベースが必要．</li>
-</ul>
-
+                <div class="summary"><em>Reproducibility in density functional theory calculations of solids</em>,
+Kurt Lejaeghere <em>et al.</em>, Science <strong>351</strong>, issue 6280, aad3000, <a class="reference external" href="http://www.sciencemag.org/cgi/doi/10.1126/science.aad3000">link</a>
                     <a class="btn btn-default btn-xs" href="../posts/2016/03/30/reproducibility-of-dft/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/03/29/french/index.html">Today's French</a></h2>
-                <div class="summary"><p><a class="reference external" href="http://tabieigo.com/french/">ここ</a> から例文を取ってきて勉強した．</p>
-<div class="section" id="id2">
-<h2>カフェでの会話</h2>
-<div class="section" id="id3">
-<h3>会話例１</h3>
-<p>A: Bonjour, qu'est-ce que vous prendrez?</p>
-<p>B: Qu'est-ce que vous me conseillez?</p>
-<p>A: Nous utilisons du cafe Illy, donc je vous conseille toutes les boissons à base de café.</p>
-<p>B: Je vois, alors je prendrai un moka chaud.</p>
-<p>A: Quelle taille?</p>
-<p>B: Un grand s'il vous …</p></div></div>
+                <div class="summary"><a class="reference external" href="http://tabieigo.com/french/">ここ</a> から例文を取ってきて勉強した．
                     <a class="btn btn-default btn-xs" href="../posts/2016/03/29/french/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/03/29/pass/index.html">Password manager: pass</a></h2>
-                <div class="summary"><p>Here is memorandom of how I set up password manager <strong>pass</strong>.</p>
-<div class="section" id="install-pass">
-<h2>Install pass</h2>
-<p>On MacOSX (El Capitan in my case),</p>
-<pre class="literal-block">
-$ brew install pass
-</pre>
-<p>will install <tt class="docutils literal">pass</tt> command and others that the <tt class="docutils literal">pass</tt> depends on.</p>
-</div>
-<div class="section" id="prepare-gpg">
-<h2>Prepare gpg</h2>
-<p>To generate PGP key using GnuPG <tt class="docutils literal">gpg</tt>,</p>
-<pre class="literal-block">
-$ gpg --gen-key
-</pre>
-<p>You have to answer some …</p></div>
+                <div class="summary">Here is memorandom of how I set up password manager <strong>pass</strong>.
                     <a class="btn btn-default btn-xs" href="../posts/2016/03/29/pass/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/03/22/arguments-of-function-in-python/index.html">Pythonで可変数の引数の取り方 *args, **kwds</a></h2>
-                <div class="summary"><p>関数の引数に <tt class="docutils literal">*args</tt> や <tt class="docutils literal">**kwds</tt>
-を指定した場合の挙動をいつも忘れてしまうので，例と共に書いておく．</p>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
-    <span class="k">print</span> <span class="n">args</span>
-    <span class="k">print</span> <span class="n">kwds</span>
-</pre>
-<p>上のような関数は， <tt class="docutils literal">args</tt> は変数名なしの引数をタプルとして受け取り，
-<tt class="docutils literal">kwds</tt> は変数名付きで辞書型として受け取る．</p>
-<pre class="code python literal-block">
-<span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="s1">'a'</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="s1">'b'</span><span class="p">)</span>
-</pre>
-<pre class="literal-block">
-(1, 2, 3, 4)
-{'a': 'a', 'b': 'b'}
-</pre>
-<p>下のように，タプルと辞書を明示的に渡してやっても，受け取り側は二つの変数名なしの変数を受け取ったと考えるので，
-<tt class="docutils literal">*args</tt> として <tt class="docutils literal">(arr,dic)</tt> を受け取ったと解釈する．</p>
-<pre class="code python literal-block">
-<span class="n">arr</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">dic …</span></pre>
+                <div class="summary">関数の引数に <tt class="docutils literal">*args</tt> や <tt class="docutils literal">**kwds</tt>
+を指定した場合の挙動をいつも忘れてしまうので，例と共に書いておく．
                     <a class="btn btn-default btn-xs" href="../posts/2016/03/22/arguments-of-function-in-python/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/03/11/constraint-atom-motion-in-lammps/index.html">Constraint atom motion in LAMMPS</a></h2>
-                <div class="summary"><p>Suppose if one creates a dislocation in a system with two surfaces top and bottom on z axis and
+                <div class="summary">Suppose if one creates a dislocation in a system with two surfaces top and bottom on z axis and
 periodic in x and y axes.
 Motions of atoms at the top and bottom layer should be limited along x and y direction and
 not to move z direction.
-One can …</p>
+One can achieve this constraint in LAMMPS by writing as follows,
                     <a class="btn btn-default btn-xs" href="../posts/2016/03/11/constraint-atom-motion-in-lammps/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/03/06/my-recent-language-study/index.html">最近の語学学習について</a></h2>
-                <div class="summary"><p>スイスに来てから３ヶ月も経過してフランス語がいっこうにしゃべれない，
-かつ英語でのやりとりに関しても十分なレベルとは言えないことから語学学習に時間を割いている．</p>
-<div class="section" id="id1">
-<h2>使用中のアプリ</h2>
-<div class="section" id="id2">
-<h3><a class="reference external" href="https://www.ankiapp.com">AnkiApp</a></h3>
-<p>これは昔，英単語を覚えるときに単語帳を作って覚えていたことをアプリで実現しているもので，
-人間の記憶メカニズムに基いて，覚えていない単語を頻繁に出題するようにしてくれる．</p>
-<p>このアプリで使用する単語帳は他の誰かが作成してオンラインで公開されているものや，
-自分で単語を追加していって自分用のものを作成したりと，幅広い．
-単語以外でも簡単な暗記目的にはいろいろと使える．</p>
-<p>参考サイト：</p>
-<ul class="simple">
-<li><a class="reference external" href="http://rightstuff.luminousspice.com/how-to-anki/">the right stuff</a></li>
-<li><a class="reference external" href="https://www.ankiapp.com">AnkiApp</a></li>
-</ul>
-</div>
-<div class="section" id="duolingo">
-<h3>Duolingo</h3>
-<p>簡単な文をパターンに分けて何度も繰り返して練習することをゲーム間隔で行うアプリ（ウェブサイト）．
-文章を発声してくれたりもするから，読み方なんかも分かって良い．
-インターネット接続がないと使えないから，海外でネットワーク接続できないiPhoneでは行き帰りの電車の中で勉強できないのが残念．</p>
-</div>
-</div>
-<div class="section" id="id4">
-<h2>参考サイト</h2>
-<ul class="simple">
-<li><a class="reference external" href="https://voxy.com/blog/wp-content/uploads/2011/03/110329-VOXY-HARDLANGUAGES-FINAL-WIDE.png">英語ネイティブから見た言語の難易度</a></li>
-<li><a class="reference external" href="https://ja.wikipedia.org/wiki/国際音声記号">国際発音記号</a></li>
-</ul>
-</div>
-
+                <div class="summary">スイスに来てから３ヶ月も経過してフランス語がいっこうにしゃべれない，
+かつ英語でのやりとりに関しても十分なレベルとは言えないことから語学学習に時間を割いている．
                     <a class="btn btn-default btn-xs" href="../posts/2016/03/06/my-recent-language-study/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/03/05/a-day-in-a-lausanne-life/index.html">ローザンヌでのある一日</a></h2>
-                <div class="summary"><p>今日は一日時間があったし，月の最初の土曜日は美術館・博物館がフリーになるので，Oucyにあるエリゼー美術館（Musee de l'Elysee）に行ってきた．</p>
-<p>Werner Bischofという有名（らしい）スイス人写真家の生誕１００年を記念した展示がされていた．さまざまな国の文化や人物の写真を撮っていた人らしい．戦後のヨーロッパや日本を含むアジアの写真がたくさんあって面白い．</p>
-<p>時間があったから，もう一つ，エルミタージュ美術館？（Fondation de l'Hermitage）に行ってみたが，なんとそこはフリーではなかったので，中には入らずに外から景色を眺めて帰ってきた．エルミタージュはかなりの高台にあるからいい眺めだった．</p>
-<div class="figure">
-<a class="reference external image-reference" href="https://farm2.staticflickr.com/1651/25419930582_842cb55a3d_o.jpg"><img alt="View from a Hermitage hill." src="https://farm2.staticflickr.com/1651/25419930582_842cb55a3d_o.jpg" style="width: 600px;" /></a>
-</div>
-
+                <div class="summary">今日は一日時間があったし，月の最初の土曜日は美術館・博物館がフリーになるので，Oucyにあるエリゼー美術館（Musee de l'Elysee）に行ってきた．
                     <a class="btn btn-default btn-xs" href="../posts/2016/03/05/a-day-in-a-lausanne-life/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/03/02/disable-pep8-check-when-writing-python-code-in-emacs/index.html">Disable PEP8 check when writing python code in emacs</a></h2>
-                <div class="summary"><p>PEP check when I open a pyhton code with emacs is so annoying.
-So I figured out how to disable PEP8 check, and this is how it works.</p>
-<p>In the <tt class="docutils literal">.emacs.d/init.d</tt> or appropriate file in your system,
-<tt class="docutils literal"><span class="pre">python-check-command</span></tt> should be set <tt class="docutils literal">nil</tt>.</p>
-<pre class="literal-block">
-(add-hook 'python-mode-hook
-          '(lambda ()
-             (seq python-check-command …</pre>
+                <div class="summary">PEP check when I open a pyhton code with emacs is so annoying.
+So I figured out how to disable PEP8 check, and this is how it works.
                     <a class="btn btn-default btn-xs" href="../posts/2016/03/02/disable-pep8-check-when-writing-python-code-in-emacs/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/03/01/automate-git-archive/index.html">Automate git archive</a></h2>
-                <div class="summary"><p>I made a bash function to replace <tt class="docutils literal">git archive</tt> command,</p>
-<pre class="literal-block">
-function gitarch(){
-    basedname=$(git rev-parse --show-toplevel)
-    dname=$(basename $basedname)
-    cwd=$(pwd)
-    cd $basedname
-    fname=${dname}_`ymd`.tgz
-    git archive --format=tar --prefix=${dname}/ HEAD | gzip &gt; $fname
-    cp $fname ${cwd}/
-    cd $cwd
-}
-</pre>
-<p>Writing this function in <tt class="docutils literal">.bashrc</tt> file,
-I can …</p>
+                <div class="summary">I made a bash function to replace <tt class="docutils literal">git archive</tt> command,
                     <a class="btn btn-default btn-xs" href="../posts/2016/03/01/automate-git-archive/index.html">more ...</a>
                 </div>
             </article>

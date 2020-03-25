@@ -13,13 +13,13 @@
 
         <meta name="author" content="Ryo KOBAYASHI" />
         <meta name="keywords" content="python" />
-        <meta name="description" content="関数の引数に *args や **kwds を指定した場合の挙動をいつも忘れてしまうので，例と共に書いておく． def f(*args, **kwds): print args print kwds 上のような関数は， args は変数名なしの引数をタプルとして受け取り， kwds は変数名付きで辞書型として受け取る． f(1,2,3,4,a=&#39;a&#39;,b=&#39;b&#39;) (1, 2, 3, 4) {&#39;a&#39;: &#39;a&#39;, &#39;b&#39;: &#39;b&#39;} 下のように，タプルと辞書を明示的に渡してやっても，受け取り側は二つの変数名なしの変数を受け取ったと考えるので， *args として (arr,dic) を受け取ったと解釈する． arr = (1,2,3,4) dic …" />
+        <meta name="description" content="関数の引数に *args や **kwds を指定した場合の挙動をいつも忘れてしまうので，例と共に書いておく．" />
 
         <meta property="og:site_name" content="R.K.S. blog" />
         <meta property="og:type" content="article"/>
         <meta property="og:title" content="Pythonで可変数の引数の取り方 *args, **kwds"/>
         <meta property="og:url" content="../../../../../posts/2016/03/22/arguments-of-function-in-python/index.html"/>
-        <meta property="og:description" content="関数の引数に *args や **kwds を指定した場合の挙動をいつも忘れてしまうので，例と共に書いておく． def f(*args, **kwds): print args print kwds 上のような関数は， args は変数名なしの引数をタプルとして受け取り， kwds は変数名付きで辞書型として受け取る． f(1,2,3,4,a=&#39;a&#39;,b=&#39;b&#39;) (1, 2, 3, 4) {&#39;a&#39;: &#39;a&#39;, &#39;b&#39;: &#39;b&#39;} 下のように，タプルと辞書を明示的に渡してやっても，受け取り側は二つの変数名なしの変数を受け取ったと考えるので， *args として (arr,dic) を受け取ったと解釈する． arr = (1,2,3,4) dic …"/>
+        <meta property="og:description" content="関数の引数に *args や **kwds を指定した場合の挙動をいつも忘れてしまうので，例と共に書いておく．"/>
         <meta property="article:published_time" content="2016-03-22" />
             <meta property="article:section" content="misc" />
             <meta property="article:tag" content="python" />

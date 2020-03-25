@@ -62,19 +62,9 @@ R.K.S. blog            </a>
         <div class="col-sm-9">
             <article>
                 <h2><a href="../posts/2017/06/26/circular-dependency-when-making-a-fortran-program-with-modules/index.html">Circular dependency when making a Fortran program with modules</a></h2>
-                <div class="summary"><p>以下のようなFortranのプログラムがある．
+                <div class="summary">以下のようなFortranのプログラムがある．
 - いくつかのファイルに分割されている．
-- ファイルと同じ名前のモジュールを含むファイルがある．（つまり，<code>hoge.F90</code>の中に<code>module hoge</code>が宣言されている．）</p>
-<p>このような場合，そのモジュールを含む<code>hoge.F90</code>を変更した後に<code>make</code>してもなぜか<code>hoge.F90</code>がコンパイルし直されず，変更が反映されない．</p>
-<div class="highlight"><pre><span></span><code>$ make -d 
-</code></pre></div>
-
-
-<p>のように，<code>-d</code>オプションをつけて<code>make</code>を実行すると，なぜにそれがコンパイルされないかが分かるのだが，</p>
-<div class="highlight"><pre><span></span><code><span class="nv">Trying</span> <span class="nv">implicit</span> <span class="nv">prerequisite</span> `<span class="nv">hoge</span>.<span class="nv">mod</span><span class="s1">&#39;</span><span class="s">.</span>
-<span class="nv">Found</span> <span class="nv">an</span> <span class="nv">implicit</span> <span class="nv">rule</span> <span class="k">for</span> `<span class="nv">hoge</span>.<span class="nv">o</span><span class="s1">&#39;</span><span class="s">.</span>
-　<span class="nv">Considering</span> <span class="nv">target</span> <span class="nv">file</span> `<span class="nv">hoge</span>.<span class="nv">mod</span><span class="s1">&#39;</span><span class="s">.</span>
-<span class="nv">Prerequisite</span> `<span class="nv">hoge</span>.<span class="nv">mod</span><span class="s1">&#39;</span><span class="s"> is …</span></code></pre></div>
+- ファイルと同じ名前のモジュールを含むファイルがある．（つまり，<code>hoge.F90</code>の中に<code>module hoge</code>が宣言されている．）
                     <a class="btn btn-default btn-xs" href="../posts/2017/06/26/circular-dependency-when-making-a-fortran-program-with-modules/index.html">more ...</a>
                 </div>
             </article>

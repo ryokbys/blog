@@ -62,43 +62,14 @@ R.K.S. blog            </a>
         <div class="col-sm-9">
             <article>
                 <h2><a href="../posts/2016/01/15/today-stamp-in-python/index.html">Today stamp in python</a></h2>
-                <div class="summary"><p>Pythonで実行時の日付表示のためのやり方をいつも忘れるからメモる！</p>
-<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span> <span class="k">as</span> <span class="n">dt</span>
-<span class="n">d</span><span class="o">=</span> <span class="n">dt</span><span class="o">.</span><span class="n">today</span><span class="p">()</span>
-<span class="k">print</span> <span class="n">d</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y/%m/</span><span class="si">%d</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-<p>これだけ．．．</p>
-
+                <div class="summary">Pythonで実行時の日付表示のためのやり方をいつも忘れるからメモる！
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/15/today-stamp-in-python/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/01/13/ipython-notebook-to-pelican-blog-post/index.html">IPython notebook to Pelican blog post</a></h2>
-                <div class="summary"><p>この前のブログポストはIPython notebookでの作業をブログに載せたものだが，ちょっと面倒な方法だった．</p>
-<p>直接 <tt class="docutils literal">.ipynb</tt> ファイルを参照できればよいのだが，そのような手段はないらしい．
-nbviewerというサイトがあるが，そこでは数式が表示されない．
-基本的にはnbviewerサイトと同じことだが，以下のように <tt class="docutils literal">nbconvert</tt> を用いて</p>
-<pre class="literal-block">
-$ ipython nbconvert --to html hoge.ipynb
-</pre>
-<p>とすれば，HTMLファイルが生成されるが，数式が表示されなかったりする．</p>
-<p>結局，ipython notebookから <tt class="docutils literal">.rst</tt> 形式に出力して，Emacsで編集した．</p>
-<ul>
-<li><p class="first">改行コードの <tt class="docutils literal">^M</tt> が含まれていたため，Emacsで <tt class="docutils literal">^M</tt> を置換した．（Emacsでは，改行コード <tt class="docutils literal">^M</tt> は <tt class="docutils literal"><span class="pre">C-q</span> <span class="pre">C-m</span></tt> で指定できる．）</p>
-</li>
-<li><p class="first">別行だての数式が，</p>
-<pre class="literal-block">
-.. raw:: latex
-</pre>
-<p>とかになっていたので，</p>
-<pre class="literal-block">
-.. math::
-</pre>
-<p>に訂正し，微調整した．</p>
-</li>
-</ul>
-
+                <div class="summary">この前のブログポストはIPython notebookでの作業をブログに載せたものだが，ちょっと面倒な方法だった．
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/13/ipython-notebook-to-pelican-blog-post/index.html">more ...</a>
                 </div>
             </article>
@@ -122,124 +93,36 @@ x + y &amp;=&amp; 1,
             <hr/>
             <article>
                 <h2><a href="../posts/2016/01/10/a-little-bit-more-automating-blog-post/index.html">A little bit more automating blog post</a></h2>
-                <div class="summary"><p>以前に，Pelicanでのブログ投稿をある程度自動化するツールを作成することについて書いたが，
-それでもまだいろいろと自動化する必要があったから，少しだけ修正．</p>
-<ul class="simple">
-<li><a class="reference external" href="https://gist.github.com/ryokbys/e5dea8f2476a83ec2758#file-create_post-py">create_post.py</a></li>
-</ul>
-<p>このファイルをどこかパスの通ったところにおいて， <tt class="docutils literal">.bashrc</tt> などに，</p>
-<pre class="literal-block">
-alias post='create_post.py --basedir=&quot;/path/to/pelican/&quot; -a &quot;Author name&quot;'
-</pre>
-<p>と書いておけば，</p>
-<pre class="literal-block">
-$ post &quot;new post title&quot;
-</pre>
-<p>とすれば， <tt class="docutils literal"><span class="pre">/path/to/pelican/content/2016/01/10_new-post-title.rst</span></tt> というファイルが作成されて，
-自動的にrst形式ファイルを開くエディタがこのファイルを開いてくれる．
-編集が終わったら，（ <tt class="docutils literal">post</tt> を実行した）ターミナルは <tt class="docutils literal">/path/to/pelican/</tt> へ移動しているので，</p>
-<pre class="literal-block">
-$ make html
-</pre>
-<p>とすれば，ブログが更新される．</p>
-
+                <div class="summary">以前に，Pelicanでのブログ投稿をある程度自動化するツールを作成することについて書いたが，
+それでもまだいろいろと自動化する必要があったから，少しだけ修正．
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/10/a-little-bit-more-automating-blog-post/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/01/10/use-argsort/index.html">Use argsort</a></h2>
-                <div class="summary"><p>Numpyパッケージにリストを並び替えるための <tt class="docutils literal">argsort</tt> という関数があるが，その使い方がちょいと難しいからメモ．</p>
-<div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">argsort</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
-<span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">a</span><span class="p">)[</span><span class="n">b</span><span class="p">]</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span>
-<span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span>
-<span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">c</span>
-<span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
-</pre></div>
-<p>この例を見ると， <tt class="docutils literal"><span class="pre">a=[3,1,2]</span></tt> の …</p>
+                <div class="summary">Numpyパッケージにリストを並び替えるための <tt class="docutils literal">argsort</tt> という関数があるが，その使い方がちょいと難しいからメモ．
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/10/use-argsort/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/01/08/inheritance-in-python/index.html">Inheritance in python</a></h2>
-                <div class="summary"><p>Pythonでクラスの継承の仕方を練習したのでメモしておく．</p>
-<p>以下のようにして， <tt class="docutils literal">ClassA</tt> と <tt class="docutils literal">ClassB</tt> を定義する．</p>
-<div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ClassA</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">x</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">=</span> <span class="n">x</span>
-
-    <span class="k">def</span> <span class="nf">multi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span>
-
-<span class="k">class</span> <span class="nc">ClassB</span><span class="p">(</span><span class="n">ClassA</span><span class="p">):</span>
-  <span class="k">def</span> <span class="nf">multi</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-      <span class="k">return</span> <span class="nb">super</span><span class="p">(</span><span class="n">ClassB</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">multi</span><span class="p">()</span> <span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span>
-</pre></div>
-<p>これを実行すると，以下のように狙い通りクラスの継承およびオーバーライドができていることが分かる．</p>
-<pre class="literal-block">
-&gt;&gt;&gt; a= ClassA(10)
-&gt;&gt;&gt; print a.x
-10
-&gt;&gt;&gt; print a.multi()
-100 …</pre>
+                <div class="summary">Pythonでクラスの継承の仕方を練習したのでメモしておく．
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/08/inheritance-in-python/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/01/07/logger/index.html">Use logger in python</a></h2>
-                <div class="summary"><div class="section" id="id1">
-<h2>使用例</h2>
-<p>Pythonでのloggerの使い方を学んだからメモしておく．</p>
-<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">logging</span>
-<span class="n">logger</span><span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<span class="n">console</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">()</span>
-<span class="n">console</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
-<span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">%(name)-12s</span><span class="s1">: </span><span class="si">%(levelname)-8s</span><span class="s1"> </span><span class="si">%(message)s</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="n">console</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">console</span><span class="p">)</span>
-
-<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">&#39;this is debug&#39;</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;this is info&#39;</span><span class="p">)</span>
-<span class="n">logger</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s1">&#39;this is warn&#39;</span><span class="p">)</span>
-<span class="n">logger …</span></pre></div></div>
+                <div class="summary">Pythonでのloggerの使い方を学んだからメモしておく．
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/07/logger/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/01/03/create_post/index.html">Python utility for creating new post</a></h2>
-                <div class="summary"><p>Pelicanでブログポストを作るときに，作成するファイル自体をtinkererで</p>
-<pre class="literal-block">
-$ tinker --post
-</pre>
-<p>とした時のように，日付で整理されたディレクトリ内に原稿テンプレートを作成したかったので，pythonスクリプトを作成した．</p>
-<ul class="simple">
-<li><a class="reference external" href="https://gist.github.com/ryokbys/e5dea8f2476a83ec2758">create_post.py at Gist</a></li>
-</ul>
-<p>Pelicanのルートディレクトリ（ <tt class="docutils literal">content</tt> ディレクトリが存在するディレクトリ）で，</p>
-<pre class="literal-block">
-$ python /path/to/create_post.py -s create_post 'Utility for creating new post'
-</pre>
-<p>のように <tt class="docutils literal">slug</tt> と <tt class="docutils literal">TITLE</tt> を指定してやると，</p>
-<pre class="literal-block">
-./content/2016/01/03_create_post.rst was written.
-</pre>
-<p>のようにファイルが作成される．
-ファイル中身にはPelican用の次のようなテンプレートが記載されている．</p>
-<pre class="literal-block">
-:title: Utility for creating new post
-:date: 2016-01-03 21 …</pre>
+                <div class="summary">Pelicanでブログポストを作るときに，作成するファイル自体をtinkererで
                     <a class="btn btn-default btn-xs" href="../posts/2016/01/03/create_post/index.html">more ...</a>
                 </div>
             </article>

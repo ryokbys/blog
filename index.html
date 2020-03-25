@@ -61,125 +61,44 @@ R.K.S. blog            </a>
         <div class="col-sm-9">
             <article>
                 <h2><a href="./posts/2020/03/24/jupyter-themes/index.html">Stylish Jupyter Notebook with jupyter-themes</a></h2>
-                <div class="summary"><p>Appearance of Jupyter Notebook can be modified using <code>jupyter-themes</code>.</p>
-<p>See the following websites for details,</p>
-<ul>
-<li><a href="https://www.hirayuki.com/zakki/jupyter-notebook-dark-thema">jupyterの表示拡張機能、jupyter-themesを徹底紹介する</a></li>
-<li><a href="https://qiita.com/koikoi_jam/items/29d9ef4e16a42038325c">jupyter-themes の fontについて</a></li>
-</ul>
-<p>Chrome extension <code>Stylish</code> should be installed in addition to <code>jupyter-themes</code>.</p>
-<p>My current setting is provided by the following command.</p>
-<div class="highlight"><pre><span></span><code>$ jt -t grade3 -f code -fs <span class="m">12</span> -cellw <span class="m">95</span>% -lineh <span class="m">140 …</span></code></pre></div>
+                <div class="summary">Appearance of Jupyter Notebook can be modified using <code>jupyter-themes</code>.
                     <a class="btn btn-default btn-xs" href="./posts/2020/03/24/jupyter-themes/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="./posts/2020/03/15/2020-environment/index.html">2020年初頭における作業環境</a></h2>
-                <div class="summary"><p>もう最近はこれを毎年メモするだけのブログになってきているので，今年も書いておく．
-すでに３月も中旬なので初頭というのはフェイクニュースだが．</p>
-<h2>Mac</h2>
-<p>Macにおいて使っているソフトを列挙する．</p>
-<ul>
-<li>Emacs：Terminal上ではなくスタンドアローンアプリとしてのEmacsを使っている．</li>
-<li>iTerms：いつからかOS純正のターミナル.appよりもこちらを使っている．理由は忘れてしまった．</li>
-<li>Google日本語入力：OS標準の「ことえり」ではなくこちら．これも理由は忘れてしまった．</li>
-<li>Quiver：数年前に導入して依頼，macのメモアプリはこれ．Markdownで記述できて数式も書ける．</li>
-<li>Slack：チーム内の頻繁に行うコミュニケーションをメールでやるのは億劫なので．そのうちMicrosoftのTeam?に変わるかもしれない．．．</li>
-<li>WorkFlowy：TODOアプリとしてシンプルなこれを使用．人にすすめると月間のアイテム作成量を増やすことができ，現在500件/月だが，あまり頻繁には使っていないので問題ない．いつまで使うか怪しい．．．</li>
-<li>Mendeley：文献管理をPapersからこちらに変更．Papersはなんか身売りしたらしく，最近は改悪傾向のようなのでソフトはフリーのこちら．クラウドサービスに年間サブスクリプション料を払い，容量を買っている．</li>
-<li>PlainCalc：電卓ソフト．計算途中も結果も見えているのでOS標準より良い．</li>
-<li>JupyterLabからJupyter notebookに戻った．JupyterLabだとinteractive系の動作が不安定というより動作しなかったりするので，notebookに戻った．</li>
-</ul>
-<h2>iPad Pro</h2>
-<ul>
-<li>画面保護フィルムに少し抵抗のあるペーパーライクフィルムを使うようにしたらApple Pencilでの書き味が増した．つるつるしてるよりはかなり良い感じ．</li>
-<li>Goodnote5 …</li></ul>
+                <div class="summary">もう最近はこれを毎年メモするだけのブログになってきているので，今年も書いておく．
+すでに３月も中旬なので初頭というのはフェイクニュースだが．
                     <a class="btn btn-default btn-xs" href="./posts/2020/03/15/2020-environment/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="./posts/2019/02/22/2019-work-environment/index.html">2019年初頭における作業環境</a></h2>
-                <div class="summary"><p>一昨年，昨年と年の初頭における作業環境をメモしていたので，今年も書いておく．</p>
-<h2>tmux</h2>
-<p>これはかなり秀逸なツールなので，愛用している．リモートサーバ上での作業に関しては，これが入っていないと面倒でしかたがない．
-以下のスクリプトを<code>~/.bashrc</code>もしくは<code>~/.bash_profile</code>に書いておく．</p>
-<div class="highlight"><pre><span></span><code><span class="k">function</span> tmux<span class="o">()</span> <span class="o">{</span>
-    <span class="nb">local</span> <span class="nv">tmux</span><span class="o">=</span><span class="k">$(</span><span class="nb">type</span> -fp tmux<span class="k">)</span>
-    <span class="k">case</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> in
-        update-environment<span class="p">|</span>update-env<span class="p">|</span>env-update<span class="o">)</span>
-            <span class="nb">local</span> v
-            <span class="k">while</span> <span class="nb">read</span> v<span class="p">;</span> <span class="k">do</span>
-                <span class="k">if</span> <span class="o">[[</span> <span class="nv">$v</span> <span class="o">==</span> -* <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-                    <span class="nb">unset</span> <span class="si">${</span><span class="nv">v</span><span class="p">/#-/</span><span class="si">}</span>
-                <span class="k">else</span>
-                    <span class="c1"># Add quotes around the argument</span>
-                    <span class="nv">v</span><span class="o">=</span><span class="si">${</span><span class="nv">v</span><span class="p">/=/=</span><span class="se">\&quot;</span><span class="si">}</span>
-                    <span class="nv">v</span><span class="o">=</span><span class="si">${</span><span class="nv">v</span><span class="p">/%/</span><span class="se">\&quot;</span><span class="si">}</span>
-                    <span class="nb">eval</span> <span class="nb">export</span> <span class="nv">$v …</span></code></pre></div>
+                <div class="summary">一昨年，昨年と年の初頭における作業環境をメモしていたので，今年も書いておく．
                     <a class="btn btn-default btn-xs" href="./posts/2019/02/22/2019-work-environment/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="./posts/2018/12/06/x11-forwarding-request-failed/index.html">macOS: X11 forwarding request failed</a></h2>
-                <div class="summary"><p>When I tried to connect to macOS Mojave machine from other machine, I got the following message.</p>
-<div class="highlight"><pre><span></span><code>X11 forwarding request failed on channel <span class="m">0</span>
-</code></pre></div>
-
-
-<p>And when using <code>-v</code> option, I got</p>
-<div class="highlight"><pre><span></span><code>debug1: Remote: No xauth program<span class="p">;</span> cannot forward X11.
-X11 forwarding request failed on channel <span class="m">0</span>
-</code></pre></div>
-
-
-<p>So the problem seemed …</p>
+                <div class="summary">When I tried to connect to macOS Mojave machine from other machine, I got the following message.
                     <a class="btn btn-default btn-xs" href="./posts/2018/12/06/x11-forwarding-request-failed/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="./posts/2018/03/01/mayavi-on-jupyter-notebook/index.html">Mayavi on jupyter notebook</a></h2>
-                <div class="summary"><p><strong>Mayavi</strong> は3Dでのデータ可視化を支援するライブラリ．
-これを Jupyter notebook で使えるようにするまでのメモ（macOS High Sierra）．</p>
-<h2>References</h2>
-<ol>
-<li><a href="https://qiita.com/tenfu2tea/items/088b750f0204debe4f7f">Jupyter で 3D 表示 - Mayavi ライブラリ</a></li>
-<li><a href="http://docs.enthought.com/mayavi/mayavi/tips.html#using-mayavi-in-jupyter-notebooks">Tips and Tricks in Mayavi 4.5.0</a></li>
-<li><a href="https://github.com/enthought/mayavi">Mayavi on GitHub</a></li>
-</ol>
-<h2>Mayavi のインストール</h2>
-<p>Mayavi自体は以下のようにして <code>pip</code> でインストールすることができる．</p>
-<div class="highlight"><pre><span></span><code>$ pip install mayavi
-</code></pre></div>
-
-
-<p>しかし，この Mayavi を jupyter notebook で動作させるためには，Qt という表示用ライブラリを Python がら利用するための <strong>PyQt</strong> なるものが必要みたいで，それのインストールは pip …</p>
+                <div class="summary"><strong>Mayavi</strong> は3Dでのデータ可視化を支援するライブラリ．
+これを Jupyter notebook で使えるようにするまでのメモ（macOS High Sierra）．
                     <a class="btn btn-default btn-xs" href="./posts/2018/03/01/mayavi-on-jupyter-notebook/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="./posts/2018/02/19/environment-on-macos-as-of-2018/index.html">2018年初頭における作業環境</a></h2>
-                <div class="summary"><p>昨年も，その時点における快適な作業環境をメモしたので，2018年版もメモしておく．</p>
-<h2>Emacs</h2>
-<p>最近は Emacs を使う人も減っているみたいで，Vim に限らず，Sublime Text であるだとか，Atom であるだとかのエディタアプリを使う人が増えてきているらしい．しかし，主に以下のような理由から，Emacsからまだまだ抜け出せそうにはない．</p>
-<ul>
-<li>FortranやPythonにおいて <em>outline minor</em> モードを使って，関数やサブルーチンを折りたたむことができる．</li>
-<li>magitモードでGitを使える．</li>
-<li>shellも使える．</li>
-<li>gnuplotモードで直接 <em>gnuplot</em> を呼び出すことができる．</li>
-</ul>
-<p>むしろ，より一層Emacsに束縛されている気がする．．．</p>
-<h2>tmux</h2>
-<p>昨年から導入した tmux は，現在リモートサーバ上で常駐しており，欠かせないものになっている．
-特に新しいことを述べることもないが，リモートサーバで計算などをする仕事をする上で，これがないことなどもはや考えられない．</p>
-<h2>Jupyter Lab</h2>
-<p>Jupyter notebook のより洗練された統合環境みたいなもので，タブの導入やファイル操作もできるようになっている．シミュレーションのための実験ノートのような Jupyter notebook ももはやなくてはならいツールとなってきていると思う．</p>
-<h2>Quiver</h2>
-<p>これも昨年のメモに記載されているので …</p>
+                <div class="summary">昨年も，その時点における快適な作業環境をメモしたので，2018年版もメモしておく．
                     <a class="btn btn-default btn-xs" href="./posts/2018/02/19/environment-on-macos-as-of-2018/index.html">more ...</a>
                 </div>
             </article>
@@ -217,9 +136,10 @@ The code is taken from the following site (in Japanese).</p>
             <hr/>
             <article>
                 <h2><a href="./posts/2017/12/22/logo-path-in-flex-theme/index.html">Logo path in Flex theme</a></h2>
-                <div class="summary"><p>Currently this site uses the pelican theme <a href="https://github.com/alexandrevicenzi/Flex">Flex</a>, and I like it.
+                <div class="summary">Currently this site uses the pelican theme <a href="https://github.com/alexandrevicenzi/Flex">Flex</a>, and I like it.
 But one thing annoyed me. There is a logo image on the left side and it works fine with the home, archive, and tag pages. But it does not show up on post pages.
-The reason is that …</p>
+The reason is that the path to the logo image is set in <code>pelicanconf.py</code> and it seems to be relative URL from the current content which is dependent on the article.
+So setting
                     <a class="btn btn-default btn-xs" href="./posts/2017/12/22/logo-path-in-flex-theme/index.html">more ...</a>
                 </div>
             </article>

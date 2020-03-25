@@ -62,36 +62,15 @@ R.K.S. blog            </a>
         <div class="col-sm-9">
             <article>
                 <h2><a href="../posts/2020/03/24/jupyter-themes/index.html">Stylish Jupyter Notebook with jupyter-themes</a></h2>
-                <div class="summary"><p>Appearance of Jupyter Notebook can be modified using <code>jupyter-themes</code>.</p>
-<p>See the following websites for details,</p>
-<ul>
-<li><a href="https://www.hirayuki.com/zakki/jupyter-notebook-dark-thema">jupyterの表示拡張機能、jupyter-themesを徹底紹介する</a></li>
-<li><a href="https://qiita.com/koikoi_jam/items/29d9ef4e16a42038325c">jupyter-themes の fontについて</a></li>
-</ul>
-<p>Chrome extension <code>Stylish</code> should be installed in addition to <code>jupyter-themes</code>.</p>
-<p>My current setting is provided by the following command.</p>
-<div class="highlight"><pre><span></span><code>$ jt -t grade3 -f code -fs <span class="m">12</span> -cellw <span class="m">95</span>% -lineh <span class="m">140 …</span></code></pre></div>
+                <div class="summary">Appearance of Jupyter Notebook can be modified using <code>jupyter-themes</code>.
                     <a class="btn btn-default btn-xs" href="../posts/2020/03/24/jupyter-themes/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2018/03/01/mayavi-on-jupyter-notebook/index.html">Mayavi on jupyter notebook</a></h2>
-                <div class="summary"><p><strong>Mayavi</strong> は3Dでのデータ可視化を支援するライブラリ．
-これを Jupyter notebook で使えるようにするまでのメモ（macOS High Sierra）．</p>
-<h2>References</h2>
-<ol>
-<li><a href="https://qiita.com/tenfu2tea/items/088b750f0204debe4f7f">Jupyter で 3D 表示 - Mayavi ライブラリ</a></li>
-<li><a href="http://docs.enthought.com/mayavi/mayavi/tips.html#using-mayavi-in-jupyter-notebooks">Tips and Tricks in Mayavi 4.5.0</a></li>
-<li><a href="https://github.com/enthought/mayavi">Mayavi on GitHub</a></li>
-</ol>
-<h2>Mayavi のインストール</h2>
-<p>Mayavi自体は以下のようにして <code>pip</code> でインストールすることができる．</p>
-<div class="highlight"><pre><span></span><code>$ pip install mayavi
-</code></pre></div>
-
-
-<p>しかし，この Mayavi を jupyter notebook で動作させるためには，Qt という表示用ライブラリを Python がら利用するための <strong>PyQt</strong> なるものが必要みたいで，それのインストールは pip …</p>
+                <div class="summary"><strong>Mayavi</strong> は3Dでのデータ可視化を支援するライブラリ．
+これを Jupyter notebook で使えるようにするまでのメモ（macOS High Sierra）．
                     <a class="btn btn-default btn-xs" href="../posts/2018/03/01/mayavi-on-jupyter-notebook/index.html">more ...</a>
                 </div>
             </article>
@@ -118,137 +97,58 @@ The code is taken from the following site (in Japanese).</p>
             <hr/>
             <article>
                 <h2><a href="../posts/2017/02/02/install-numpy-on-fujitsu-fx100/index.html">Install numpy on Fujitsu FX100</a></h2>
-                <div class="summary"><p>FX100でも，大きな計算だけでなく大量の小さな計算をバカ並列で行うことが認められて来ているので，FX100計算サーバ上でnumpyを用いたpythonコードを走らせたいというモチベーションがあった．
-しかし，numpyは入っていないし，管理者に要望を伝えても，「メンテナンスの時でないとインストールできないし，優先順位は低い」みたいな感じだったので，自分でインストールしなければならなかった．</p>
-<h2>前提</h2>
-<ul>
-<li>名大スパコン <strong>FX100</strong></li>
-<li><code>$ uname -a</code>とすると，<code>Linux f13c06n08 2.6.32 #2 SMP Wed Nov 2 17:44:12 JST 2016 s64fx s64fx s64fx GNU/Linux</code>となる．Sparc64の上でLinuxが動いている環境．</li>
-<li>gccは初めから入っているが，gfortranは存在しない．</li>
-<li>管理者権限はないし，スパコン側からインターネットに接続できないから，<code>$ pip install numpy</code>のような便利コマンドが使えないため，自分で依存関係も含めてソースコードからコンパイルしてインストールしなければならない．</li>
-<li>numpyのインストールにはFortranコンパイラが必要そう．</li>
-</ul>
-<h2>gcc-4.4 …</h2>
+                <div class="summary">FX100でも，大きな計算だけでなく大量の小さな計算をバカ並列で行うことが認められて来ているので，FX100計算サーバ上でnumpyを用いたpythonコードを走らせたいというモチベーションがあった．
+しかし，numpyは入っていないし，管理者に要望を伝えても，「メンテナンスの時でないとインストールできないし，優先順位は低い」みたいな感じだったので，自分でインストールしなければならなかった．
                     <a class="btn btn-default btn-xs" href="../posts/2017/02/02/install-numpy-on-fujitsu-fx100/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/10/27/flake8-personal-setting-for-python/index.html">flake8 personal setting for python</a></h2>
-                <div class="summary"><p>When I code python programs using emacs, emacs uses elpy and elpy uses flake8 for syntax checking.
+                <div class="summary">When I code python programs using emacs, emacs uses elpy and elpy uses flake8 for syntax checking.
 But this syntax checking is kind of annoying.
-For example, I would like to write like this</p>
-<pre class="code python literal-block">
-<span class="n">x</span> <span class="o">=</span> <span class="n">some_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="o">+</span><span class="n">d</span><span class="p">)</span>
-</pre>
-<p>instead of this</p>
-<pre class="code python literal-block">
-<span class="n">x</span> <span class="o">=</span> <span class="n">some_func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span>
-</pre>
-<p>I …</p>
+For example, I would like to write like this
                     <a class="btn btn-default btn-xs" href="../posts/2016/10/27/flake8-personal-setting-for-python/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/08/09/speedup-python-script-using-numba/index.html">Speedup python script using numba</a></h2>
-                <div class="summary"><p><a class="reference external" href="http://numba.pydata.org">Numba</a> というモジュールを利用することで，pythonスクリプトの数値演算のみからなる関数を劇的に高速化することができる．
-（数値演算でない部分は高速化されない．）</p>
-<p>ただし，高速化する関数の書き方を気をつけないとその恩恵を受けられないので注意．</p>
-<div class="section" id="id1">
-<h2>簡単な例</h2>
-<pre class="code python literal-block">
-<span class="kn">import</span> <span class="nn">numba</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-
-<span class="k">def</span> <span class="nf">matmul1</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-    <span class="n">lenI</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-    <span class="n">lenJ</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">lenK</span> <span class="o">=</span> <span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">lenI</span><span class="p">,</span> <span class="n">lenJ</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lenI</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lenJ</span><span class="p">):</span>
-            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">lenK</span><span class="p">):</span>
-                <span class="n">c …</span></pre></div>
+                <div class="summary"><a class="reference external" href="http://numba.pydata.org">Numba</a> というモジュールを利用することで，pythonスクリプトの数値演算のみからなる関数を劇的に高速化することができる．
+（数値演算でない部分は高速化されない．）
                     <a class="btn btn-default btn-xs" href="../posts/2016/08/09/speedup-python-script-using-numba/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/03/22/arguments-of-function-in-python/index.html">Pythonで可変数の引数の取り方 *args, **kwds</a></h2>
-                <div class="summary"><p>関数の引数に <tt class="docutils literal">*args</tt> や <tt class="docutils literal">**kwds</tt>
-を指定した場合の挙動をいつも忘れてしまうので，例と共に書いておく．</p>
-<pre class="code python literal-block">
-<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwds</span><span class="p">):</span>
-    <span class="k">print</span> <span class="n">args</span>
-    <span class="k">print</span> <span class="n">kwds</span>
-</pre>
-<p>上のような関数は， <tt class="docutils literal">args</tt> は変数名なしの引数をタプルとして受け取り，
-<tt class="docutils literal">kwds</tt> は変数名付きで辞書型として受け取る．</p>
-<pre class="code python literal-block">
-<span class="n">f</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">a</span><span class="o">=</span><span class="s1">'a'</span><span class="p">,</span><span class="n">b</span><span class="o">=</span><span class="s1">'b'</span><span class="p">)</span>
-</pre>
-<pre class="literal-block">
-(1, 2, 3, 4)
-{'a': 'a', 'b': 'b'}
-</pre>
-<p>下のように，タプルと辞書を明示的に渡してやっても，受け取り側は二つの変数名なしの変数を受け取ったと考えるので，
-<tt class="docutils literal">*args</tt> として <tt class="docutils literal">(arr,dic)</tt> を受け取ったと解釈する．</p>
-<pre class="code python literal-block">
-<span class="n">arr</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span>
-<span class="n">dic …</span></pre>
+                <div class="summary">関数の引数に <tt class="docutils literal">*args</tt> や <tt class="docutils literal">**kwds</tt>
+を指定した場合の挙動をいつも忘れてしまうので，例と共に書いておく．
                     <a class="btn btn-default btn-xs" href="../posts/2016/03/22/arguments-of-function-in-python/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/03/02/disable-pep8-check-when-writing-python-code-in-emacs/index.html">Disable PEP8 check when writing python code in emacs</a></h2>
-                <div class="summary"><p>PEP check when I open a pyhton code with emacs is so annoying.
-So I figured out how to disable PEP8 check, and this is how it works.</p>
-<p>In the <tt class="docutils literal">.emacs.d/init.d</tt> or appropriate file in your system,
-<tt class="docutils literal"><span class="pre">python-check-command</span></tt> should be set <tt class="docutils literal">nil</tt>.</p>
-<pre class="literal-block">
-(add-hook 'python-mode-hook
-          '(lambda ()
-             (seq python-check-command …</pre>
+                <div class="summary">PEP check when I open a pyhton code with emacs is so annoying.
+So I figured out how to disable PEP8 check, and this is how it works.
                     <a class="btn btn-default btn-xs" href="../posts/2016/03/02/disable-pep8-check-when-writing-python-code-in-emacs/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/02/28/pelican-blog-post-script/index.html">Pelican blog post script</a></h2>
-                <div class="summary"><p>I updated my blog automation script.
+                <div class="summary">I updated my blog automation script.
 This version make blog posting process much more efficient
-and I am much happier than before.</p>
-<p>This version is uploaded on Gist.</p>
-<ul class="simple">
-<li><a class="reference external" href="https://gist.github.com/ryokbys/d4f343cdbb2f5d33c305">gist ryokbys/myblog.py</a></li>
-</ul>
-<p>Now I can create a new blog post by typing,</p>
-<pre class="literal-block">
-$ blogpost 'BLOG TITLE'
-</pre>
-<p>then a blog-post file is …</p>
+and I am much happier than before.
                     <a class="btn btn-default btn-xs" href="../posts/2016/02/28/pelican-blog-post-script/index.html">more ...</a>
                 </div>
             </article>
             <hr/>
             <article>
                 <h2><a href="../posts/2016/02/27/ipython-jupyter-notebook-on-emacs.app/index.html">Use ipython/jupyter notebook on Emacs.app</a></h2>
-                <div class="summary"><div class="section" id="setup">
-<h2>Setup</h2>
-<p>To use ipython/jupyter notebook in Emacs, you need <tt class="docutils literal">elpy</tt> and <tt class="docutils literal">ein</tt> (emacs ipython notebook) packages.
-So write those dependencies in <tt class="docutils literal">.emacs.d/Cask</tt> file (here I assume that the package management system <tt class="docutils literal">cask</tt> is installed),</p>
-<pre class="literal-block">
-(depends-on “ein&quot;)
-(depends-on “elpy”)
-</pre>
-</div>
-<div class="section" id="usage">
-<h2>Usage</h2>
-<div class="section" id="boot-notebook-server">
-<h3>Boot notebook server</h3>
-<p>At first, ipython/jupyter notebook …</p></div></div>
+                <div class="summary">To use ipython/jupyter notebook in Emacs, you need <tt class="docutils literal">elpy</tt> and <tt class="docutils literal">ein</tt> (emacs ipython notebook) packages.
+So write those dependencies in <tt class="docutils literal">.emacs.d/Cask</tt> file (here I assume that the package management system <tt class="docutils literal">cask</tt> is installed),
                     <a class="btn btn-default btn-xs" href="../posts/2016/02/27/ipython-jupyter-notebook-on-emacs.app/index.html">more ...</a>
                 </div>
             </article>
