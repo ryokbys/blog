@@ -6027,6 +6027,18 @@ $ make html
 推定転送速度： 220.37Mbps (27.55MB/sec)
 &lt;/pre&gt;
 &lt;p&gt;測定した年がだいぶ異なるのでなんとも言えないが，名工大がEPFLに買っていると言っていいのかな．&lt;/p&gt;
+&lt;p&gt;家で使っているソフトバンク光（という名の4G回線？）のスピード測定の結果．&lt;/p&gt;
+&lt;pre class="literal-block"&gt;
+------ BNRスピードテスト (ダウンロード速度) ------
+測定サイト： http://www.musen-lan.com/speed/ Ver5.6001
+測定日時： 2020/03/28 12:52:58
+回線/ISP/地域：
+--------------------------------------------------
+1.NTTPC(WebARENA)1： 1.36Mbps (169.62KB/sec)
+2.NTTPC(WebARENA)2： 1.26Mbps (156.05KB/sec)
+推定転送速度： 1.36Mbps (169.62KB/sec)
+&lt;/pre&gt;
+&lt;p&gt;めっちゃ遅い．．．&lt;/p&gt;
 &lt;/div&gt;
 </content><category term="misc"></category><category term="swiss"></category></entry><entry><title>Use logger in python</title><link href="https://ryokbys.github.io/blog/posts/2016/01/07/logger/index.html" rel="alternate"></link><published>2016-01-07T18:38:11+09:00</published><updated>2016-01-07T18:38:11+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2016-01-07:/blog/posts/2016/01/07/logger/index.html</id><summary type="html">&lt;div class="section" id="id1"&gt;
 &lt;h2&gt;使用例&lt;/h2&gt;
