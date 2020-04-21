@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-04-14T17:18:08+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>AtomEye on macOS Catalina</title><link href="https://ryokbys.github.io/blog/posts/2020/04/14/atomeye-on-macos-catalina/index.html" rel="alternate"></link><published>2020-04-14T17:18:08+09:00</published><updated>2020-04-14T17:18:08+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-04-14:/blog/posts/2020/04/14/atomeye-on-macos-catalina/index.html</id><summary type="html">AtomEyeは原子・分子シミュレーションの構造を可視化するツール．コマンドラインに特化しているようで使い勝手が良いソフトウェアではないと思うが，動作も軽いし，原子のグラフィックスがきれいなので以前は結構よく使っていた．</summary><content type="html">&lt;h2&gt;AtomEye&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-04-21T12:59:40+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>Simplify rsync workflow</title><link href="https://ryokbys.github.io/blog/posts/2020/04/21/simply-rsync-workflow/index.html" rel="alternate"></link><published>2020-04-21T12:59:40+09:00</published><updated>2020-04-21T12:59:40+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-04-21:/blog/posts/2020/04/21/simply-rsync-workflow/index.html</id><summary type="html">If you are using remote computers on a daily basis, you probably use &lt;code&gt;rsync&lt;/code&gt; command for transfering data
+between the local machine and remote machines. And you may need to type remote directory every time you
+use &lt;code&gt;rsync&lt;/code&gt; command, which is a small effort for a single case but it costs a lot if you do the smae thing many times.
+The script &lt;a href="https://github.com/ryokbys/rsync_wrapper"&gt;rsync_wrapper.py&lt;/a&gt; is a helper script to avoid
+typing remote directory every time you use &lt;code&gt;rsync&lt;/code&gt;.</summary><content type="html">&lt;p&gt;If you are using remote computers on a daily basis, you probably use &lt;code&gt;rsync&lt;/code&gt; command for transfering data
+between the local machine and remote machines. And you may need to type remote directory every time you
+use &lt;code&gt;rsync&lt;/code&gt; command, which is a small effort for a single case but it costs a lot if you do the smae thing many times.
+The script &lt;a href="https://github.com/ryokbys/rsync_wrapper"&gt;rsync_wrapper.py&lt;/a&gt; is a helper script to avoid
+typing remote directory every time you use &lt;code&gt;rsync&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Before using &lt;code&gt;rsync_wrapper.py&lt;/code&gt;...&lt;/h2&gt;
+&lt;p&gt;You can see at its &lt;a href="https://github.com/ryokbys/rsync_wrapper"&gt;github page&lt;/a&gt; how to use.
+But before using the script, I strongly recommend that you make the paths of working directories on the local machine
+and remote machines identical so that you don't need to specify the corresponding directory on remote machines.
+For example, if the current working directory on the local machine is &lt;code&gt;/Users/kobayashi/work/2020-04-01/&lt;/code&gt; and the home directory is &lt;code&gt;/Users/kobayashi/&lt;/code&gt;,
+the corresponding directory on remote machines should be &lt;code&gt;~/work/2020-04-01/&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Further tips&lt;/h2&gt;
+&lt;p&gt;You can sync (upload/download) files and directories in the current working directory between the local and remote machines,
+by the following command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ /path/to/rsync_wrapper.py up -r remote
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;If you make an alias to &lt;code&gt;/path/to/rsync_wrapper.py up&lt;/code&gt; as &lt;code&gt;upsync&lt;/code&gt;, you can do the same by,&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ upsync -r remote
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;And from the second time, you can do by just&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ upsync
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;since the first run of &lt;code&gt;rsync_wrapper.py&lt;/code&gt; will make a configuration file &lt;code&gt;.sync&lt;/code&gt; in the directory
+and the script knows which remote host is used for the sync.&lt;/p&gt;
+&lt;p&gt;I think it is very helpful for some people, don't you think?&lt;/p&gt;</content><category term="misc"></category><category term="linux"></category><category term="mac"></category></entry><entry><title>AtomEye on macOS Catalina</title><link href="https://ryokbys.github.io/blog/posts/2020/04/14/atomeye-on-macos-catalina/index.html" rel="alternate"></link><published>2020-04-14T17:18:08+09:00</published><updated>2020-04-14T17:18:08+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-04-14:/blog/posts/2020/04/14/atomeye-on-macos-catalina/index.html</id><summary type="html">AtomEyeは原子・分子シミュレーションの構造を可視化するツール．コマンドラインに特化しているようで使い勝手が良いソフトウェアではないと思うが，動作も軽いし，原子のグラフィックスがきれいなので以前は結構よく使っていた．</summary><content type="html">&lt;h2&gt;AtomEye&lt;/h2&gt;
 &lt;p&gt;AtomEyeは原子・分子シミュレーションの構造を可視化するツール．コマンドラインに特化しているようで使い勝手が良いソフトウェアではないと思うが，動作も軽いし，原子のグラフィックスがきれいなので以前は結構よく使っていた．&lt;/p&gt;
 &lt;p&gt;最近少し事情があってAtomEyeを使わなければいけない状況になったので，macOS Catalinaで使おうとしたら困ったのでメモを残しておく．&lt;/p&gt;
 &lt;p&gt;AtomEyeのHP[1]でmac用バイナリが提供されているけど，どうも指定されているライブラリの位置がCatalineの中のライブラリの場所と異なっていたのが問題だった．

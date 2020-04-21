@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Simplify rsync workflow - R.K.S. blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../../../posts/2020/04/21/simply-rsync-workflow/index.html">
+
+        <meta name="author" content="Ryo KOBAYASHI" />
+        <meta name="keywords" content="linux,mac" />
+        <meta name="description" content="If you are using remote computers on a daily basis, you probably use rsync command for transfering data between the local machine and remote machines. And you may need to type remote directory every time you use rsync command, which is a small effort for a single case but it costs a lot if you do the smae thing many times. The script rsync_wrapper.py is a helper script to avoid typing remote directory every time you use rsync." />
+
+        <meta property="og:site_name" content="R.K.S. blog" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Simplify rsync workflow"/>
+        <meta property="og:url" content="../../../../../posts/2020/04/21/simply-rsync-workflow/index.html"/>
+        <meta property="og:description" content="If you are using remote computers on a daily basis, you probably use rsync command for transfering data between the local machine and remote machines. And you may need to type remote directory every time you use rsync command, which is a small effort for a single case but it costs a lot if you do the smae thing many times. The script rsync_wrapper.py is a helper script to avoid typing remote directory every time you use rsync."/>
+        <meta property="article:published_time" content="2020-04-21" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="linux" />
+            <meta property="article:tag" content="mac" />
+            <meta property="article:author" content="Ryo KOBAYASHI" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../../../theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="../../../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../../../theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../../theme/css/style.css" type="text/css"/>
+        <link href="../../../../../static/custom.css" rel="stylesheet">
+
+        <link href="../../../../../feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="R.K.S. blog ATOM Feed"/>
+
+        <link href="../../../../../feeds/misc.atom.xml" type="application/atom+xml" rel="alternate"
+              title="R.K.S. blog misc ATOM Feed"/>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="../../../../../" class="navbar-brand">
+R.K.S. blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../../../posts/2020/04/21/simply-rsync-workflow/index.html"
+                       rel="bookmark"
+                       title="Permalink to Simplify rsync workflow">
+                        Simplify rsync workflow
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2020-04-21T12:59:40+09:00"> Tue 21 April 2020</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="../../../../../tag/linux.html">linux</a>
+        /
+	<a href="../../../../../tag/mac.html">mac</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>If you are using remote computers on a daily basis, you probably use <code>rsync</code> command for transfering data
+between the local machine and remote machines. And you may need to type remote directory every time you
+use <code>rsync</code> command, which is a small effort for a single case but it costs a lot if you do the smae thing many times.
+The script <a href="https://github.com/ryokbys/rsync_wrapper">rsync_wrapper.py</a> is a helper script to avoid
+typing remote directory every time you use <code>rsync</code>.</p>
+<h2>Before using <code>rsync_wrapper.py</code>...</h2>
+<p>You can see at its <a href="https://github.com/ryokbys/rsync_wrapper">github page</a> how to use.
+But before using the script, I strongly recommend that you make the paths of working directories on the local machine
+and remote machines identical so that you don't need to specify the corresponding directory on remote machines.
+For example, if the current working directory on the local machine is <code>/Users/kobayashi/work/2020-04-01/</code> and the home directory is <code>/Users/kobayashi/</code>,
+the corresponding directory on remote machines should be <code>~/work/2020-04-01/</code>.</p>
+<h2>Further tips</h2>
+<p>You can sync (upload/download) files and directories in the current working directory between the local and remote machines,
+by the following command:</p>
+<div class="highlight"><pre><span></span><code>$ /path/to/rsync_wrapper.py up -r remote
+</code></pre></div>
+
+
+<p>If you make an alias to <code>/path/to/rsync_wrapper.py up</code> as <code>upsync</code>, you can do the same by,</p>
+<div class="highlight"><pre><span></span><code>$ upsync -r remote
+</code></pre></div>
+
+
+<p>And from the second time, you can do by just</p>
+<div class="highlight"><pre><span></span><code>$ upsync
+</code></pre></div>
+
+
+<p>since the first run of <code>rsync_wrapper.py</code> will make a configuration file <code>.sync</code> in the directory
+and the script knows which remote host is used for the sync.</p>
+<p>I think it is very helpful for some people, don't you think?</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="http://twitter.com/ryokbys"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
+    <li class="list-group-item"><a href="http://github.com/ryokbys"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://ryokbys.github.io/blog/archives.html" target="_blank">Archives</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://ryokbys.github.io/blog/tags.html" target="_blank">Tags</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Ryo KOBAYASHI
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../../../theme/js/respond.min.js"></script>
+
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36370521-4']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>
