@@ -55,6 +55,12 @@ round-trip min/avg/max/stddev &lt;span class="o"&gt;=&lt;/span&gt; &lt;span clas
 &lt;li&gt;「構成：」で，「手動」を選択&lt;/li&gt;
 &lt;li&gt;「MTU：」で，「カスタム」を選択し，適切な値を記入（今の場合は &lt;code&gt;1280&lt;/code&gt;）&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h2&gt;Conclusions&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;ping&lt;/code&gt;を使ってMTUの上限値（最適値）を調べることができる&lt;/li&gt;
+&lt;li&gt;「システム環境設定」内でwifiのMTU値をカスタム設定できる&lt;/li&gt;
+&lt;li&gt;しかし，残念なことに突然接続が切れる問題は解決していない...&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2&gt;References&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;https://support.purevpn.com/how-to-change-mtu-value-on-mac&lt;/li&gt;
