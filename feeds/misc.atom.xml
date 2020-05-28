@@ -1,5 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog - misc</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/misc.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-04-21T12:59:40+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>Simplify rsync workflow</title><link href="https://ryokbys.github.io/blog/posts/2020/04/21/simply-rsync-workflow/index.html" rel="alternate"></link><published>2020-04-21T12:59:40+09:00</published><updated>2020-04-21T12:59:40+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-04-21:/blog/posts/2020/04/21/simply-rsync-workflow/index.html</id><summary type="html">If you are using remote computers on a daily basis, you probably use &lt;code&gt;rsync&lt;/code&gt; command for transfering data
+<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog - misc</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/misc.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-05-28T17:15:29+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>MTU setting on macOS for VPN connection</title><link href="https://ryokbys.github.io/blog/posts/2020/05/28/mtu-setting-on-macos-for-vpn-connection/index.html" rel="alternate"></link><published>2020-05-28T17:15:29+09:00</published><updated>2020-05-28T17:15:29+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-05-28:/blog/posts/2020/05/28/mtu-setting-on-macos-for-vpn-connection/index.html</id><summary type="html">コロナの影響で，最近はずっと自宅からリモートワークをしている．
+リモートワークで職場のネットワークにアクセスするには，VPN接続が必要なことがある．
+VPNで接続しても10分程度で突然接続が切れてしまうことが多々あった．
+しかし，この現象は同様の環境におかれている知人のところでは発生しない．知人は，使っているプロバイダ，マシン（Windows）などが異なる．
+いくらかのネットの情報より，MTU（Maximum Transmission Unit）の設定が問題かもしれないということに至った．</summary><content type="html">&lt;h2&gt;Work from home...&lt;/h2&gt;
+&lt;p&gt;コロナの影響で，最近はずっと自宅からリモートワークをしている．
+リモートワークで職場のネットワークにアクセスするには，VPN接続が必要なことがある．
+VPNで接続しても10分程度で突然接続が切れてしまうことが多々あった．
+しかし，この現象は同様の環境におかれている知人のところでは発生しない．知人は，使っているプロバイダ，マシン（Windows）などが異なる．
+いくらかのネットの情報より，MTU（Maximum Transmission Unit）の設定が問題かもしれないということに至った．&lt;/p&gt;
+&lt;h2&gt;Estimate MTU value&lt;/h2&gt;
+&lt;p&gt;macOS 10.15.4 (Catalina) では，&lt;code&gt;ping&lt;/code&gt;コマンドでMTUの上限値を調べることができる．&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ ping -c &lt;span class="m"&gt;5&lt;/span&gt; -D -s &lt;span class="m"&gt;1472&lt;/span&gt; www.google.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;-s 1472&lt;/code&gt;：通信バイトサイズを指定（ヘッダ分&lt;code&gt;+28&lt;/code&gt;がこれに加わる）&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-D&lt;/code&gt;：通信パッケージを分割しない？　通信パッケージが大きすぎたらダメだとなってほしいので．&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;-c 5&lt;/code&gt;：テスト通信の回数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ウチのWiFi環境では，VPN接続しない場合は，1472（つまり 1472+28=1500）で通信できた．&lt;/p&gt;
+&lt;p&gt;以下，VPN環境下での&lt;code&gt;ping&lt;/code&gt;テスト結果：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ ping -c &lt;span class="m"&gt;5&lt;/span&gt; -D -s &lt;span class="m"&gt;1253&lt;/span&gt; www.google.com
+PING www.google.com &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;172&lt;/span&gt;.217.161.228&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;1253&lt;/span&gt; data bytes
+ping: sendto: Message too long
+ping: sendto: Message too long
+Request timeout &lt;span class="k"&gt;for&lt;/span&gt; icmp_seq &lt;span class="m"&gt;0&lt;/span&gt;
+ping: sendto: Message too long
+Request timeout &lt;span class="k"&gt;for&lt;/span&gt; icmp_seq &lt;span class="m"&gt;1&lt;/span&gt;
+^C
+--- www.google.com ping statistics ---
+&lt;span class="m"&gt;3&lt;/span&gt; packets transmitted, &lt;span class="m"&gt;0&lt;/span&gt; packets received, &lt;span class="m"&gt;100&lt;/span&gt;.0% packet loss
+&lt;span class="o"&gt;[&lt;/span&gt;kobayashi@mbp-rk py3Dmol&lt;span class="o"&gt;]&lt;/span&gt;$ ping -c &lt;span class="m"&gt;5&lt;/span&gt; -D -s &lt;span class="m"&gt;1252&lt;/span&gt; www.google.com
+PING www.google.com &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="m"&gt;172&lt;/span&gt;.217.161.228&lt;span class="o"&gt;)&lt;/span&gt;: &lt;span class="m"&gt;1252&lt;/span&gt; data bytes
+&lt;span class="m"&gt;76&lt;/span&gt; bytes from &lt;span class="m"&gt;172&lt;/span&gt;.217.161.228: &lt;span class="nv"&gt;icmp_seq&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="nv"&gt;ttl&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;55&lt;/span&gt; &lt;span class="nv"&gt;time&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;34&lt;/span&gt;.951 ms
+wrong total length &lt;span class="m"&gt;96&lt;/span&gt; instead of &lt;span class="m"&gt;1280&lt;/span&gt;
+&lt;span class="m"&gt;76&lt;/span&gt; bytes from &lt;span class="m"&gt;172&lt;/span&gt;.217.161.228: &lt;span class="nv"&gt;icmp_seq&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &lt;span class="nv"&gt;ttl&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;55&lt;/span&gt; &lt;span class="nv"&gt;time&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;35&lt;/span&gt;.473 ms
+wrong total length &lt;span class="m"&gt;96&lt;/span&gt; instead of &lt;span class="m"&gt;1280&lt;/span&gt;
+&lt;span class="m"&gt;76&lt;/span&gt; bytes from &lt;span class="m"&gt;172&lt;/span&gt;.217.161.228: &lt;span class="nv"&gt;icmp_seq&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt; &lt;span class="nv"&gt;ttl&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;55&lt;/span&gt; &lt;span class="nv"&gt;time&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;34&lt;/span&gt;.116 ms
+wrong total length &lt;span class="m"&gt;96&lt;/span&gt; instead of &lt;span class="m"&gt;1280&lt;/span&gt;
+^C
+--- www.google.com ping statistics ---
+&lt;span class="m"&gt;5&lt;/span&gt; packets transmitted, &lt;span class="m"&gt;5&lt;/span&gt; packets received, &lt;span class="m"&gt;0&lt;/span&gt;.0% packet loss
+round-trip min/avg/max/stddev &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;33&lt;/span&gt;.143/34.767/36.151/1.050 ms
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;このように，1280まではOKだが，1281以上だとパッケージ分割が必要となり，VPNの受付側が分割したパッケージは受け取らんというポリシーの場合には途中で接続が切れるということがある，のかな？&lt;/p&gt;
+&lt;h2&gt;MTU manual setting on macOS Catalina&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;「システム環境設定...」&amp;gt;「ネットワーク」&amp;gt;「Wi-Fi」右下の「詳細...」&lt;/li&gt;
+&lt;li&gt;「ハードウェア」パネルを開く&lt;/li&gt;
+&lt;li&gt;「構成：」で，「手動」を選択&lt;/li&gt;
+&lt;li&gt;「MTU：」で，「カスタム」を選択し，適切な値を記入（今の場合は &lt;code&gt;1280&lt;/code&gt;）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2&gt;References&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;https://support.purevpn.com/how-to-change-mtu-value-on-mac&lt;/li&gt;
+&lt;li&gt;https://www.chrismacpherson.net/dev/configuring-vpn-mtu/&lt;/li&gt;
+&lt;/ol&gt;</content><category term="misc"></category><category term="mac"></category></entry><entry><title>Simplify rsync workflow</title><link href="https://ryokbys.github.io/blog/posts/2020/04/21/simply-rsync-workflow/index.html" rel="alternate"></link><published>2020-04-21T12:59:40+09:00</published><updated>2020-04-21T12:59:40+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-04-21:/blog/posts/2020/04/21/simply-rsync-workflow/index.html</id><summary type="html">If you are using remote computers on a daily basis, you probably use &lt;code&gt;rsync&lt;/code&gt; command for transfering data
 between the local machine and remote machines. And you may need to type remote directory every time you
 use &lt;code&gt;rsync&lt;/code&gt; command, which is a small effort for a single case but it costs a lot if you do the smae thing many times.
 The script &lt;a href="https://github.com/ryokbys/rsync_wrapper"&gt;rsync_wrapper.py&lt;/a&gt; is a helper script to avoid

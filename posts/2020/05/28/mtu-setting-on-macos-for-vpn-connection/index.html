@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>MTU setting on macOS for VPN connection - R.K.S. blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../../../posts/2020/05/28/mtu-setting-on-macos-for-vpn-connection/index.html">
+
+        <meta name="author" content="Ryo KOBAYASHI" />
+        <meta name="keywords" content="mac" />
+        <meta name="description" content="コロナの影響で，最近はずっと自宅からリモートワークをしている． リモートワークで職場のネットワークにアクセスするには，VPN接続が必要なことがある． VPNで接続しても10分程度で突然接続が切れてしまうことが多々あった． しかし，この現象は同様の環境におかれている知人のところでは発生しない．知人は，使っているプロバイダ，マシン（Windows）などが異なる． いくらかのネットの情報より，MTU（Maximum Transmission Unit）の設定が問題かもしれないということに至った．" />
+
+        <meta property="og:site_name" content="R.K.S. blog" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="MTU setting on macOS for VPN connection"/>
+        <meta property="og:url" content="../../../../../posts/2020/05/28/mtu-setting-on-macos-for-vpn-connection/index.html"/>
+        <meta property="og:description" content="コロナの影響で，最近はずっと自宅からリモートワークをしている． リモートワークで職場のネットワークにアクセスするには，VPN接続が必要なことがある． VPNで接続しても10分程度で突然接続が切れてしまうことが多々あった． しかし，この現象は同様の環境におかれている知人のところでは発生しない．知人は，使っているプロバイダ，マシン（Windows）などが異なる． いくらかのネットの情報より，MTU（Maximum Transmission Unit）の設定が問題かもしれないということに至った．"/>
+        <meta property="article:published_time" content="2020-05-28" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="mac" />
+            <meta property="article:author" content="Ryo KOBAYASHI" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../../../theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="../../../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../../../theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../../theme/css/style.css" type="text/css"/>
+        <link href="../../../../../static/custom.css" rel="stylesheet">
+
+        <link href="../../../../../feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="R.K.S. blog ATOM Feed"/>
+
+        <link href="../../../../../feeds/misc.atom.xml" type="application/atom+xml" rel="alternate"
+              title="R.K.S. blog misc ATOM Feed"/>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="../../../../../" class="navbar-brand">
+R.K.S. blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../../../posts/2020/05/28/mtu-setting-on-macos-for-vpn-connection/index.html"
+                       rel="bookmark"
+                       title="Permalink to MTU setting on macOS for VPN connection">
+                        MTU setting on macOS for VPN connection
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2020-05-28T17:15:29+09:00"> Thu 28 May 2020</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="../../../../../tag/mac.html">mac</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <h2>Work from home...</h2>
+<p>コロナの影響で，最近はずっと自宅からリモートワークをしている．
+リモートワークで職場のネットワークにアクセスするには，VPN接続が必要なことがある．
+VPNで接続しても10分程度で突然接続が切れてしまうことが多々あった．
+しかし，この現象は同様の環境におかれている知人のところでは発生しない．知人は，使っているプロバイダ，マシン（Windows）などが異なる．
+いくらかのネットの情報より，MTU（Maximum Transmission Unit）の設定が問題かもしれないということに至った．</p>
+<h2>Estimate MTU value</h2>
+<p>macOS 10.15.4 (Catalina) では，<code>ping</code>コマンドでMTUの上限値を調べることができる．</p>
+<div class="highlight"><pre><span></span><code>$ ping -c <span class="m">5</span> -D -s <span class="m">1472</span> www.google.com
+</code></pre></div>
+
+
+<ul>
+<li><code>-s 1472</code>：通信バイトサイズを指定（ヘッダ分<code>+28</code>がこれに加わる）</li>
+<li><code>-D</code>：通信パッケージを分割しない？　通信パッケージが大きすぎたらダメだとなってほしいので．</li>
+<li><code>-c 5</code>：テスト通信の回数</li>
+</ul>
+<p>ウチのWiFi環境では，VPN接続しない場合は，1472（つまり 1472+28=1500）で通信できた．</p>
+<p>以下，VPN環境下での<code>ping</code>テスト結果：</p>
+<div class="highlight"><pre><span></span><code>$ ping -c <span class="m">5</span> -D -s <span class="m">1253</span> www.google.com
+PING www.google.com <span class="o">(</span><span class="m">172</span>.217.161.228<span class="o">)</span>: <span class="m">1253</span> data bytes
+ping: sendto: Message too long
+ping: sendto: Message too long
+Request timeout <span class="k">for</span> icmp_seq <span class="m">0</span>
+ping: sendto: Message too long
+Request timeout <span class="k">for</span> icmp_seq <span class="m">1</span>
+^C
+--- www.google.com ping statistics ---
+<span class="m">3</span> packets transmitted, <span class="m">0</span> packets received, <span class="m">100</span>.0% packet loss
+<span class="o">[</span>kobayashi@mbp-rk py3Dmol<span class="o">]</span>$ ping -c <span class="m">5</span> -D -s <span class="m">1252</span> www.google.com
+PING www.google.com <span class="o">(</span><span class="m">172</span>.217.161.228<span class="o">)</span>: <span class="m">1252</span> data bytes
+<span class="m">76</span> bytes from <span class="m">172</span>.217.161.228: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">0</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">55</span> <span class="nv">time</span><span class="o">=</span><span class="m">34</span>.951 ms
+wrong total length <span class="m">96</span> instead of <span class="m">1280</span>
+<span class="m">76</span> bytes from <span class="m">172</span>.217.161.228: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">1</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">55</span> <span class="nv">time</span><span class="o">=</span><span class="m">35</span>.473 ms
+wrong total length <span class="m">96</span> instead of <span class="m">1280</span>
+<span class="m">76</span> bytes from <span class="m">172</span>.217.161.228: <span class="nv">icmp_seq</span><span class="o">=</span><span class="m">2</span> <span class="nv">ttl</span><span class="o">=</span><span class="m">55</span> <span class="nv">time</span><span class="o">=</span><span class="m">34</span>.116 ms
+wrong total length <span class="m">96</span> instead of <span class="m">1280</span>
+^C
+--- www.google.com ping statistics ---
+<span class="m">5</span> packets transmitted, <span class="m">5</span> packets received, <span class="m">0</span>.0% packet loss
+round-trip min/avg/max/stddev <span class="o">=</span> <span class="m">33</span>.143/34.767/36.151/1.050 ms
+</code></pre></div>
+
+
+<p>このように，1280まではOKだが，1281以上だとパッケージ分割が必要となり，VPNの受付側が分割したパッケージは受け取らんというポリシーの場合には途中で接続が切れるということがある，のかな？</p>
+<h2>MTU manual setting on macOS Catalina</h2>
+<ol>
+<li>「システム環境設定...」&gt;「ネットワーク」&gt;「Wi-Fi」右下の「詳細...」</li>
+<li>「ハードウェア」パネルを開く</li>
+<li>「構成：」で，「手動」を選択</li>
+<li>「MTU：」で，「カスタム」を選択し，適切な値を記入（今の場合は <code>1280</code>）</li>
+</ol>
+<h2>References</h2>
+<ol>
+<li>https://support.purevpn.com/how-to-change-mtu-value-on-mac</li>
+<li>https://www.chrismacpherson.net/dev/configuring-vpn-mtu/</li>
+</ol>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="http://twitter.com/ryokbys"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
+    <li class="list-group-item"><a href="http://github.com/ryokbys"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://ryokbys.github.io/blog/archives.html" target="_blank">Archives</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://ryokbys.github.io/blog/tags.html" target="_blank">Tags</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Ryo KOBAYASHI
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../../../theme/js/respond.min.js"></script>
+
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36370521-4']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>
