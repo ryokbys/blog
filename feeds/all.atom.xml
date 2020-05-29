@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-05-28T17:15:29+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>MTU setting on macOS for VPN connection</title><link href="https://ryokbys.github.io/blog/posts/2020/05/28/mtu-setting-on-macos-for-vpn-connection/index.html" rel="alternate"></link><published>2020-05-28T17:15:29+09:00</published><updated>2020-05-28T17:15:29+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-05-28:/blog/posts/2020/05/28/mtu-setting-on-macos-for-vpn-connection/index.html</id><summary type="html">コロナの影響で，最近はずっと自宅からリモートワークをしている．
+<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-05-28T23:05:07+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>Yield strength of high entropy alloys</title><link href="https://ryokbys.github.io/blog/posts/2020/05/28/yield-strength-of-high-entropy-alloys/index.html" rel="alternate"></link><published>2020-05-28T23:05:07+09:00</published><updated>2020-05-28T23:05:07+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-05-28:/blog/posts/2020/05/28/yield-strength-of-high-entropy-alloys/index.html</id><summary type="html">論文覚書．</summary><content type="html">&lt;p&gt;論文覚書．&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;B. Yin and W. A. Curtin, “Origin of high strength in the CoCrFeNiPd high-entropy alloy,” Mater. Res. Lett., vol. 8, no. 6, pp. 209–215, 2020.&lt;/li&gt;
+&lt;li&gt;B. Yin, S. Yoshida, N. Tsuji, and W. A. Curtin, “Yield strength and misfit volumes of NiCoCr and implications for short-range-order,” Nat. Commun., vol. 11, no. 2507, pp. 1–7, 2020.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Solute strengthは基本的に転位とsoluteとの相互作用によって決まる．その理論を用いてHigh entropy alloy (HEA)のyield strengthを予測することができる．一方，最近はHEA内のランダムでない配置（short-range order, SRO）が注目されているらしい．上の二報は，SROがyield strengthに影響しているという意見もあるがどうかを調べた論文．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;どちらも結論は似ており，yield strengthの予測にはSROを考える必要はなさそうというもの．&lt;/li&gt;
+&lt;li&gt;理論には，最適化すべきパラメータが不要で，格子定数，弾性係数，misfit volumeという物性値を実験もしくは計算で求められれば，yield strengthを求めることができる．&lt;/li&gt;
+&lt;li&gt;Ref.[1]では，Pdを含むことでstrengthが上昇するのは，Pdのmisfit volumeが大きいから．&lt;/li&gt;
+&lt;li&gt;Ref.[2]でも，SROを持ち出さずに実験値と理論だけでyield strengthをかなり精度良く予測できる．&lt;/li&gt;
+&lt;li&gt;ただし，Ref.[2]のNiCoCr系では，どうもDFT計算の精度が悪いようで，misfit volumeを精度良く求めることができないらしい．&lt;/li&gt;
+&lt;li&gt;数学的モデルの重要性をあらためて認識させられる．&lt;/li&gt;
+&lt;/ul&gt;</content><category term="misc"></category><category term="research"></category><category term="paper"></category><category term="alloy"></category></entry><entry><title>MTU setting on macOS for VPN connection</title><link href="https://ryokbys.github.io/blog/posts/2020/05/28/mtu-setting-on-macos-for-vpn-connection/index.html" rel="alternate"></link><published>2020-05-28T17:15:29+09:00</published><updated>2020-05-28T17:15:29+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-05-28:/blog/posts/2020/05/28/mtu-setting-on-macos-for-vpn-connection/index.html</id><summary type="html">コロナの影響で，最近はずっと自宅からリモートワークをしている．
 リモートワークで職場のネットワークにアクセスするには，VPN接続が必要なことがある．
 VPNで接続しても10分程度で突然接続が切れてしまうことが多々あった．
 しかし，この現象は同様の環境におかれている知人のところでは発生しない．知人は，使っているプロバイダ，マシン（Windows）などが異なる．
