@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Note-takingアプリ - R.K.S. blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../../../posts/2020/06/28/zettlr/index.html">
+
+        <meta name="author" content="Ryo KOBAYASHI" />
+        <meta name="keywords" content="mac" />
+        <meta name="description" content="ここ数年はnote-takingアプリとしてQuiverというアプリを使っていたが， - 個人開発アプリなので開発スピードが遅い - 最近アップデートが滞っている - wiki-linkライクなリンクを作ることができない - WYSIWYGでない（これは良し悪しだが．．．） という理由から他のnote-takingアプリを調べていた．" />
+
+        <meta property="og:site_name" content="R.K.S. blog" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Note-takingアプリ"/>
+        <meta property="og:url" content="../../../../../posts/2020/06/28/zettlr/index.html"/>
+        <meta property="og:description" content="ここ数年はnote-takingアプリとしてQuiverというアプリを使っていたが， - 個人開発アプリなので開発スピードが遅い - 最近アップデートが滞っている - wiki-linkライクなリンクを作ることができない - WYSIWYGでない（これは良し悪しだが．．．） という理由から他のnote-takingアプリを調べていた．"/>
+        <meta property="article:published_time" content="2020-06-28" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="mac" />
+            <meta property="article:author" content="Ryo KOBAYASHI" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../../../theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="../../../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../../../theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../../theme/css/style.css" type="text/css"/>
+        <link href="../../../../../static/custom.css" rel="stylesheet">
+
+        <link href="../../../../../feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="R.K.S. blog ATOM Feed"/>
+
+        <link href="../../../../../feeds/misc.atom.xml" type="application/atom+xml" rel="alternate"
+              title="R.K.S. blog misc ATOM Feed"/>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="../../../../../" class="navbar-brand">
+R.K.S. blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../../../posts/2020/06/28/zettlr/index.html"
+                       rel="bookmark"
+                       title="Permalink to Note-takingアプリ">
+                        Note-takingアプリ
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2020-06-28T22:04:02+09:00"> Sun 28 June 2020</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="../../../../../tag/mac.html">mac</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>ここ数年はnote-takingアプリとして<a href="https://happenapps.com">Quiver</a>というアプリを使っていたが，
+- 個人開発アプリなので開発スピードが遅い
+- 最近アップデートが滞っている
+- wiki-linkライクなリンクを作ることができない
+- WYSIWYGでない（これは良し悪しだが．．．）
+という理由から他のnote-takingアプリを調べていた．</p>
+<p>note-takingアプリは群雄割拠らしく，様々なアプリがある．自分が調べたものだけでも，
+- <a href="https://roamresearch.com">Roam research</a>
+- <a href="https://www.notion.so/Getting-Started-4eb46ec6797448fa85c2c3c19998d384">Notion</a>
+- <a href="https://obsidian.md">Obisidian</a>
+- <a href="https://www.zettlr.com">Zettlr</a>
+などがある．それぞれ目的が少々違うようだが，どれも基本的にはMarkdownでメモを取り，ノートの間のリンクを作成することができ，backlinkを調べる・表示することができる．
+価格もそれぞれで，オープンソースのもの，個人利用ならば無料のもの，サブスクリプションのものなどそれぞれ．</p>
+<p>その中で，とりあえずZettlrを使い始めることにした．一応理由を書いておく（備忘録）．
+1. WYSIWYGなので，Quiverみたいに画面をスプリットせずに書いたそばからプレビューされる．
+2. wiki-linkライクなリンクを<code>[[keyword]]</code>のようにして作成できる．これは単にこの<code>keyword</code>を全てのファイルから検索するだけなようだけど，<code>keyword</code>を含むノートが全て表示されるので，backlink機能が実装されているとも言える．
+3. オープンソース（無料）
+4. ファイルはローカルに保存されている．純粋なMarkdown形式ファイルの集合だけであって，特殊なフォーマットなどを用いない．
+5. Zoteroで管理している文献をciteすることができる．</p>
+<p>Zettlrの少し残念な点（2020-06-28）：
+- 画像埋め込みはリンクなので（良いことかな？），リンク先の画像ファイルを移動・名称変更するとリンクが切れてしまって見えなくなる．
+- 他のアプリからのノートのimportがまだ充実していない．（Quiver内のノートが使えなくなるのが残念）
+- Mendeleyの文献をciteできない？</p>
+<p>それでもとりあえずはZettlrを使ってみることにする．新しいツールを使うことはそれ自体が少し楽しい．</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="http://twitter.com/ryokbys"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
+    <li class="list-group-item"><a href="http://github.com/ryokbys"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://ryokbys.github.io/blog/archives.html" target="_blank">Archives</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://ryokbys.github.io/blog/tags.html" target="_blank">Tags</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Ryo KOBAYASHI
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../../../theme/js/respond.min.js"></script>
+
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36370521-4']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>
