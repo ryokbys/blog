@@ -1,32 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog - misc</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/misc.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-06-28T22:04:02+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>Note-takingアプリ</title><link href="https://ryokbys.github.io/blog/posts/2020/06/28/zettlr/index.html" rel="alternate"></link><published>2020-06-28T22:04:02+09:00</published><updated>2020-06-28T22:04:02+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-06-28:/blog/posts/2020/06/28/zettlr/index.html</id><summary type="html">ここ数年はnote-takingアプリとして&lt;a href="https://happenapps.com"&gt;Quiver&lt;/a&gt;というアプリを使っていたが，
-- 個人開発アプリなので開発スピードが遅い
-- 最近アップデートが滞っている
-- wiki-linkライクなリンクを作ることができない
-- WYSIWYGでない（これは良し悪しだが．．．）
-という理由から他のnote-takingアプリを調べていた．</summary><content type="html">&lt;p&gt;ここ数年はnote-takingアプリとして&lt;a href="https://happenapps.com"&gt;Quiver&lt;/a&gt;というアプリを使っていたが，
-- 個人開発アプリなので開発スピードが遅い
-- 最近アップデートが滞っている
-- wiki-linkライクなリンクを作ることができない
-- WYSIWYGでない（これは良し悪しだが．．．）
-という理由から他のnote-takingアプリを調べていた．&lt;/p&gt;
-&lt;p&gt;note-takingアプリは群雄割拠らしく，様々なアプリがある．自分が調べたものだけでも，
-- &lt;a href="https://roamresearch.com"&gt;Roam research&lt;/a&gt;
-- &lt;a href="https://www.notion.so/Getting-Started-4eb46ec6797448fa85c2c3c19998d384"&gt;Notion&lt;/a&gt;
-- &lt;a href="https://obsidian.md"&gt;Obisidian&lt;/a&gt;
-- &lt;a href="https://www.zettlr.com"&gt;Zettlr&lt;/a&gt;
-などがある．それぞれ目的が少々違うようだが，どれも基本的にはMarkdownでメモを取り，ノートの間のリンクを作成することができ，backlinkを調べる・表示することができる．
+<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog - misc</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/misc.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-06-28T22:04:02+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>Note-takingアプリ</title><link href="https://ryokbys.github.io/blog/posts/2020/06/28/zettlr/index.html" rel="alternate"></link><published>2020-06-28T22:04:02+09:00</published><updated>2020-06-28T22:04:02+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-06-28:/blog/posts/2020/06/28/zettlr/index.html</id><summary type="html">ここ数年はnote-takingアプリとして&lt;a href="https://happenapps.com"&gt;Quiver&lt;/a&gt;というアプリを使っていたが，</summary><content type="html">&lt;p&gt;ここ数年はnote-takingアプリとして&lt;a href="https://happenapps.com"&gt;Quiver&lt;/a&gt;というアプリを使っていたが，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;個人開発アプリなので開発スピードが遅い&lt;/li&gt;
+&lt;li&gt;最近アップデートが滞っている&lt;/li&gt;
+&lt;li&gt;wiki-linkライクなリンクを作ることができない&lt;/li&gt;
+&lt;li&gt;WYSIWYGでない（これは良し悪しだが．．．）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;という理由から他のnote-takingアプリを調べていた．&lt;/p&gt;
+&lt;p&gt;note-takingアプリは群雄割拠らしく，様々なアプリがある．自分が調べたものだけでも，&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://roamresearch.com"&gt;Roam research&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.notion.so/Getting-Started-4eb46ec6797448fa85c2c3c19998d384"&gt;Notion&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://obsidian.md"&gt;Obisidian&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.zettlr.com"&gt;Zettlr&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;などがある．それぞれ目的が少々違うようだが，どれも基本的にはMarkdownでメモを取り，ノートの間のリンクを作成することができ，backlinkを調べる・表示することができる．
 価格もそれぞれで，オープンソースのもの，個人利用ならば無料のもの，サブスクリプションのものなどそれぞれ．&lt;/p&gt;
-&lt;p&gt;その中で，とりあえずZettlrを使い始めることにした．一応理由を書いておく（備忘録）．
-1. WYSIWYGなので，Quiverみたいに画面をスプリットせずに書いたそばからプレビューされる．
-2. wiki-linkライクなリンクを&lt;code&gt;[[keyword]]&lt;/code&gt;のようにして作成できる．これは単にこの&lt;code&gt;keyword&lt;/code&gt;を全てのファイルから検索するだけなようだけど，&lt;code&gt;keyword&lt;/code&gt;を含むノートが全て表示されるので，backlink機能が実装されているとも言える．
-3. オープンソース（無料）
-4. ファイルはローカルに保存されている．純粋なMarkdown形式ファイルの集合だけであって，特殊なフォーマットなどを用いない．
-5. Zoteroで管理している文献をciteすることができる．&lt;/p&gt;
-&lt;p&gt;Zettlrの少し残念な点（2020-06-28）：
-- 画像埋め込みはリンクなので（良いことかな？），リンク先の画像ファイルを移動・名称変更するとリンクが切れてしまって見えなくなる．
-- 他のアプリからのノートのimportがまだ充実していない．（Quiver内のノートが使えなくなるのが残念）
-- Mendeleyの文献をciteできない？&lt;/p&gt;
+&lt;p&gt;その中で，とりあえずZettlrを使い始めることにした．一応理由を書いておく（備忘録）．&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;WYSIWYGなので，Quiverみたいに画面をスプリットせずに書いたそばからプレビューされる．&lt;/li&gt;
+&lt;li&gt;wiki-linkライクなリンクを&lt;code&gt;[[keyword]]&lt;/code&gt;のようにして作成できる．これは単にこの&lt;code&gt;keyword&lt;/code&gt;を全てのファイルから検索するだけなようだけど，&lt;code&gt;keyword&lt;/code&gt;を含むノートが全て表示されるので，backlink機能が実装されているとも言える．&lt;/li&gt;
+&lt;li&gt;オープンソース（無料）&lt;/li&gt;
+&lt;li&gt;ファイルはローカルに保存されている．純粋なMarkdown形式ファイルの集合だけであって，特殊なフォーマットなどを用いない．&lt;/li&gt;
+&lt;li&gt;Zoteroで管理している文献をciteすることができる．&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Zettlrの少し残念な点（2020-06-28）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;画像埋め込みはリンクなので（良いことかな？），リンク先の画像ファイルを移動・名称変更するとリンクが切れてしまって見えなくなる．&lt;/li&gt;
+&lt;li&gt;他のアプリからのノートのimportがまだ充実していない．（Quiver内のノートが使えなくなるのが残念）&lt;/li&gt;
+&lt;li&gt;Mendeleyの文献をciteできない？&lt;/li&gt;
+&lt;/ul&gt;
 &lt;p&gt;それでもとりあえずはZettlrを使ってみることにする．新しいツールを使うことはそれ自体が少し楽しい．&lt;/p&gt;</content><category term="misc"></category><category term="mac"></category></entry><entry><title>MacBookPro移行記録</title><link href="https://ryokbys.github.io/blog/posts/2020/06/14/macbookpro-transition/index.html" rel="alternate"></link><published>2020-06-14T17:46:49+09:00</published><updated>2020-06-14T17:46:49+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-06-14:/blog/posts/2020/06/14/macbookpro-transition/index.html</id><summary type="html">とある研究所の委託研究費で昨年度に購入したMacBookProは，研究期間が終了したら返却しなければいけなかったらしく，本年度は０円の形式的な共同研究契約を結ばざるを得なかった．そのため，今年度の予算でMBPを購入してデータの移行を行った．</summary><content type="html">&lt;h2&gt;MacBookPro買い替え&lt;/h2&gt;
 &lt;p&gt;とある研究所の委託研究費で昨年度に購入したMacBookProは，研究期間が終了したら返却しなければいけなかったらしく，本年度は０円の形式的な共同研究契約を結ばざるを得なかった．そのため，今年度の予算でMBPを購入してデータの移行を行った．&lt;/p&gt;
 &lt;h2&gt;データ移行&lt;/h2&gt;
