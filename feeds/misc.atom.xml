@@ -13,9 +13,9 @@
 &lt;li&gt;
 &lt;p&gt;追加ウィンドウから以下の設定：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;アプリケーション：&lt;code&gt;Finder.app&lt;/code&gt;
-　- メニュータイトル：&lt;code&gt;Save to zettlr assets&lt;/code&gt;
-　- キーボードショートカット：&lt;code&gt;⌘^⇧1&lt;/code&gt;（&lt;code&gt;cmd+shift+control+1&lt;/code&gt;）&lt;/li&gt;
+&lt;li&gt;アプリケーション：&lt;code&gt;Finder.app&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;メニュータイトル：&lt;code&gt;Save to zettlr assets&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;キーボードショートカット：&lt;code&gt;⌘^⇧1&lt;/code&gt;（&lt;code&gt;cmd+shift+control+1&lt;/code&gt;）&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
