@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog - misc</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/misc.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-06-28T22:04:02+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>Note-takingアプリ</title><link href="https://ryokbys.github.io/blog/posts/2020/06/28/zettlr/index.html" rel="alternate"></link><published>2020-06-28T22:04:02+09:00</published><updated>2020-06-28T22:04:02+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-06-28:/blog/posts/2020/06/28/zettlr/index.html</id><summary type="html">ここ数年はnote-takingアプリとして&lt;a href="https://happenapps.com"&gt;Quiver&lt;/a&gt;というアプリを使っていたが，</summary><content type="html">&lt;p&gt;ここ数年はnote-takingアプリとして&lt;a href="https://happenapps.com"&gt;Quiver&lt;/a&gt;というアプリを使っていたが，&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog - misc</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/misc.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-07-04T22:07:40+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>Automator quick action on macOS</title><link href="https://ryokbys.github.io/blog/posts/2020/07/04/automator-quick-action/index.html" rel="alternate"></link><published>2020-07-04T22:07:40+09:00</published><updated>2020-07-04T22:07:40+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-07-04:/blog/posts/2020/07/04/automator-quick-action/index.html</id><summary type="html">とある目的で，何らかのファイルを特定のフォルダにコピーし，ファイル名が年月日から始まるように変更したかった．これまではそれを手動で行っていたが，CUIであればすぐにスクリプトを作るなぁと思ったので，macOS純正の&lt;strong&gt;Automator&lt;/strong&gt;アプリでできるだけやってみた．</summary><content type="html">&lt;p&gt;とある目的で，何らかのファイルを特定のフォルダにコピーし，ファイル名が年月日から始まるように変更したかった．これまではそれを手動で行っていたが，CUIであればすぐにスクリプトを作るなぁと思ったので，macOS純正の&lt;strong&gt;Automator&lt;/strong&gt;アプリでできるだけやってみた．&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Automator.appでクイックアクションを開く&lt;/li&gt;
+&lt;li&gt;図のように，「Finder項目をコピー」，「Finder項目の名前を変更」，「Finder項目を表示」をつなげてワークフローを作る．
+    &lt;img alt="img" src="../../images/20200704_automator.png"&gt;&lt;/li&gt;
+&lt;li&gt;適当な名前で保存する．ここでは，「Save to zettlr assets」という名前になっている．&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;このクイックアクションは，&lt;code&gt;~/Library/Services/Save to zettlr assets.workflow&lt;/code&gt;という名前で保存されている．Finder上で何かしらのファイルを選択し，右クリックでコンテキストメニューを表示し，「サービス」から選択することで上記ワークフローが実行される．だが，これだけだとまだ面倒なので，次のようにしてこのアクションにキーボード・ショートカットを設定する．&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;システム環境設定&lt;/strong&gt;を開き，「キーボード」内の「ショートカット」タブを選択．&lt;/li&gt;
+&lt;li&gt;左の選択肢の中から「アプリケーション」を選択し，右で「＋」をクリック．&lt;/li&gt;
+&lt;li&gt;追加ウィンドウから以下の設定：
+　- アプリケーション：&lt;code&gt;Finder.app&lt;/code&gt;
+　- メニュータイトル：&lt;code&gt;Save to zettlr assets&lt;/code&gt;
+　- キーボードショートカット：&lt;code&gt;⌘^⇧1&lt;/code&gt;（&lt;code&gt;cmd+shift+control+1&lt;/code&gt;）&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;これで，ファイルを選択して上記ショートカットでクイックアクションが実行されるようになり，だいぶ作業が簡略化された．めでたし，めでたし．&lt;/p&gt;</content><category term="misc"></category><category term="mac"></category></entry><entry><title>Note-takingアプリ</title><link href="https://ryokbys.github.io/blog/posts/2020/06/28/zettlr/index.html" rel="alternate"></link><published>2020-06-28T22:04:02+09:00</published><updated>2020-06-28T22:04:02+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-06-28:/blog/posts/2020/06/28/zettlr/index.html</id><summary type="html">ここ数年はnote-takingアプリとして&lt;a href="https://happenapps.com"&gt;Quiver&lt;/a&gt;というアプリを使っていたが，</summary><content type="html">&lt;p&gt;ここ数年はnote-takingアプリとして&lt;a href="https://happenapps.com"&gt;Quiver&lt;/a&gt;というアプリを使っていたが，&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;個人開発アプリなので開発スピードが遅い&lt;/li&gt;
 &lt;li&gt;最近アップデートが滞っている&lt;/li&gt;
