@@ -13,13 +13,17 @@
 &lt;li&gt;日々のメモノートとそれ以外は少し用途というか考え方が異なるので，日々のノートは&lt;code&gt;01_daily_notes&lt;/code&gt;という保存し，Obsidianの「Daily notes」plugin機能を使って，&lt;code&gt;YYYY-MM-DD&lt;/code&gt;というファイル名で作成することにする．&lt;/li&gt;
 &lt;li&gt;Daily notes pluginでは，テンプレートファイルを設定することができるので，&lt;code&gt;01_daily_notes/template&lt;/code&gt;という以下のようなファイルを作り，それをテンプレートとする．&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;```Markdown
-   tags: #diary&lt;/p&gt;
-&lt;p&gt;# Tasks
-   - [ ] something&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;# Notes&lt;/p&gt;
-&lt;p&gt;```&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;tags&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="o"&gt;#&lt;/span&gt;&lt;span class="n"&gt;diary&lt;/span&gt;
+
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Tasks&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="n"&gt;something&lt;/span&gt;
+
+&lt;span class="c1"&gt;---&lt;/span&gt;
+
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Notes&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
 &lt;ul&gt;
 &lt;li&gt;daily notesなのに，タグとしては&lt;code&gt;#diary&lt;/code&gt;となっているのはご愛嬌．．．&lt;/li&gt;
 &lt;li&gt;最初にdaily noteのTasksに，今日やることをリストアップして，チェックしていくという流れ．&lt;/li&gt;
