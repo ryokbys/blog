@@ -106,10 +106,10 @@ extensions = ['sphinx.ext.pngmath']</blockquote>
 そのlatexのためのプリアンブル（preamble）を以下のように <tt class="docutils literal">conf.py</tt> に追加すればよい．</p>
 <pre class="code python literal-block">
 <span class="n">pngmath_latex_preamble</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&quot;&quot;&quot;
-\usepackage{eulervm}
+\usepackage</span><span class="si">{eulervm}</span><span class="s2">
 \usepackage{amsmath,amssymb}
 \newcommand{\degree}{$^{\circ}$}
-\newcommand{\temp}{${}^\circ$C}
+\newcommand{\temp}{$</span><span class="si">{}</span><span class="s2">^\circ$C}
 \newcommand{\rmd}{{\rm d}}
 \newcommand{\rme}{{\rm e}}
 &quot;&quot;&quot;</span>

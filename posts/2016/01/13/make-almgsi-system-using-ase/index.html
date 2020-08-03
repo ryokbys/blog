@@ -135,7 +135,7 @@ and 45 Si atoms in the system, and rest of all are Al atoms.</p>
 <span class="kn">from</span> <span class="nn">ase</span> <span class="kn">import</span> <span class="n">Atoms</span>
 <span class="kn">from</span> <span class="nn">ase.lattice.cubic</span> <span class="kn">import</span> <span class="n">FaceCenteredCubic</span>
 <span class="n">atoms</span><span class="o">=</span><span class="n">FaceCenteredCubic</span><span class="p">(</span><span class="n">symbol</span><span class="o">=</span><span class="s1">'Al'</span><span class="p">,</span><span class="n">latticeconstant</span><span class="o">=</span><span class="mf">4.041</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
-<span class="k">print</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_number_of_atoms</span><span class="p">()</span>
+<span class="nb">print</span> <span class="n">atoms</span><span class="o">.</span><span class="n">get_number_of_atoms</span><span class="p">()</span>
 </pre>
 <pre class="literal-block">
 32000
@@ -154,8 +154,8 @@ and 45 Si atoms in the system, and rest of all are Al atoms.</p>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">symbol</span><span class="o">=</span> <span class="s1">'Mg'</span>
             <span class="n">n_mg</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="k">print</span> <span class="s1">'number of Mg = '</span><span class="p">,</span><span class="n">n_mg</span>
-<span class="k">print</span> <span class="s1">'number of Si = '</span><span class="p">,</span><span class="n">n_si</span>
+<span class="nb">print</span> <span class="s1">'number of Mg = '</span><span class="p">,</span><span class="n">n_mg</span>
+<span class="nb">print</span> <span class="s1">'number of Si = '</span><span class="p">,</span><span class="n">n_si</span>
 </pre>
 <pre class="literal-block">
 number of Mg =  102
@@ -174,7 +174,7 @@ solute atoms.</p>
         <span class="n">atoms</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
         <span class="n">n_vac</span> <span class="o">+=</span> <span class="mi">1</span>
 
-<span class="k">print</span> <span class="s1">'number of vacancies = '</span><span class="p">,</span><span class="n">n_vac</span>
+<span class="nb">print</span> <span class="s1">'number of vacancies = '</span><span class="p">,</span><span class="n">n_vac</span>
 </pre>
 <pre class="literal-block">
 number of vacancies =  139
@@ -187,8 +187,8 @@ number of vacancies =  139
         <span class="n">n_si</span> <span class="o">+=</span> <span class="mi">1</span>
     <span class="k">elif</span> <span class="n">atoms</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">symbol</span> <span class="o">==</span> <span class="s1">'Mg'</span><span class="p">:</span>
         <span class="n">n_mg</span> <span class="o">+=</span> <span class="mi">1</span>
-<span class="k">print</span> <span class="s1">'number of Mg = '</span><span class="p">,</span><span class="n">n_mg</span>
-<span class="k">print</span> <span class="s1">'number of Si = '</span><span class="p">,</span><span class="n">n_si</span>
+<span class="nb">print</span> <span class="s1">'number of Mg = '</span><span class="p">,</span><span class="n">n_mg</span>
+<span class="nb">print</span> <span class="s1">'number of Si = '</span><span class="p">,</span><span class="n">n_si</span>
 </pre>
 <pre class="literal-block">
 number of Mg =  101

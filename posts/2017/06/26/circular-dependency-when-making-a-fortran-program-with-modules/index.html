@@ -107,10 +107,10 @@ R.K.S. blog            </a>
 
 
 <p>のように，<code>-d</code>オプションをつけて<code>make</code>を実行すると，なぜにそれがコンパイルされないかが分かるのだが，</p>
-<div class="highlight"><pre><span></span><code><span class="nv">Trying</span> <span class="nv">implicit</span> <span class="nv">prerequisite</span> `<span class="nv">hoge</span>.<span class="nv">mod</span><span class="s1">&#39;</span><span class="s">.</span>
-<span class="nv">Found</span> <span class="nv">an</span> <span class="nv">implicit</span> <span class="nv">rule</span> <span class="k">for</span> `<span class="nv">hoge</span>.<span class="nv">o</span><span class="s1">&#39;</span><span class="s">.</span>
-　<span class="nv">Considering</span> <span class="nv">target</span> <span class="nv">file</span> `<span class="nv">hoge</span>.<span class="nv">mod</span><span class="s1">&#39;</span><span class="s">.</span>
-<span class="nv">Prerequisite</span> `<span class="nv">hoge</span>.<span class="nv">mod</span><span class="s1">&#39;</span><span class="s"> is older than target `hoge.o</span><span class="s1">&#39;</span>.
+<div class="highlight"><pre><span></span><code><span class="err">Trying implicit prerequisite `hoge.mod&#39;.</span>
+<span class="err">Found an implicit rule for `hoge.o&#39;.</span>
+<span class="err">　Considering target file `hoge.mod&#39;.</span>
+<span class="err">Prerequisite `hoge.mod&#39; is older than target `hoge.o&#39;.</span>
 </code></pre></div>
 
 
@@ -127,8 +127,8 @@ R.K.S. blog            </a>
 <p>この解決策は確実に上手くいくのだが，なんかバカっぽいし，この問題を忘れた頃にまた同じようにファイル名と同名のモジュールを作成して，同じ問題が生じると思われる．
 もっと根本的な解決策が欲しい．</p>
 <h2>解決策２：<code>.mod</code>も含めた依存関係を明示する</h2>
-<div class="highlight"><pre><span></span><code><span class="nf">hoge.o hoge.mod </span><span class="o">:</span> <span class="n">hoge</span>.<span class="n">F</span>90
-    <span class="k">$(</span>MPIFC<span class="k">)</span> -c <span class="k">$(</span>MPIFLAGS<span class="k">)</span> <span class="k">$(</span>CPPFLAGS<span class="k">)</span> $&lt;
+<div class="highlight"><pre><span></span><code><span class="err">hoge.o hoge.mod : hoge.F90</span>
+<span class="err">    $(MPIFC) -c $(MPIFLAGS) $(CPPFLAGS) $&lt;</span>
 </code></pre></div>
 
 

@@ -120,43 +120,43 @@ R.K.S. blog            </a>
 <p>この <strong>2</strong> が本当に良い機能で，使ってみないと「そんなものかね」的に思うが，一度使ったら最後，これがないリモートサーバで作業する気などなくなってしまう．そのくらい良い機能．</p>
 <p>インストールや設定の仕方，使い方などはすでにインターネット上にいろいろと出回っているので，ここには記載しないが，いくつかのキーバインドは自分が便利と思うものを載せておく．
 以下のような内容で <code>~/.tmux.conf</code> を保存しておくことで，自分の好きな設定ができている（ほとんどどこかのウェブサイトから取ってきたものだが，どこかを忘れてしまった）．</p>
-<div class="highlight"><pre><span></span><code># <span class="nv">Prefix</span>変更 <span class="nv">C</span><span class="o">-</span><span class="nv">b</span> <span class="o">-&gt;</span> <span class="nv">C</span><span class="o">-</span><span class="nv">t</span>
-<span class="nv">set</span><span class="o">-</span><span class="nv">option</span> <span class="o">-</span><span class="nv">g</span> <span class="nv">prefix</span> <span class="nv">C</span><span class="o">-</span><span class="nv">t</span>
-<span class="nv">bind</span><span class="o">-</span><span class="nv">key</span> <span class="nv">C</span><span class="o">-</span><span class="nv">t</span> <span class="k">send</span><span class="o">-</span><span class="nv">prefix</span>
-<span class="nv">unbind</span><span class="o">-</span><span class="nv">key</span> <span class="nv">C</span><span class="o">-</span><span class="nv">b</span>
+<div class="highlight"><pre><span></span><code><span class="o">#</span> <span class="n">Prefix変更</span> <span class="k">C</span><span class="o">-</span><span class="n">b</span> <span class="o">-&gt;</span> <span class="k">C</span><span class="o">-</span><span class="n">t</span>
+<span class="k">set</span><span class="o">-</span><span class="k">option</span> <span class="o">-</span><span class="k">g</span> <span class="k">prefix</span> <span class="k">C</span><span class="o">-</span><span class="n">t</span>
+<span class="n">bind</span><span class="o">-</span><span class="k">key</span> <span class="k">C</span><span class="o">-</span><span class="n">t</span> <span class="n">send</span><span class="o">-</span><span class="k">prefix</span>
+<span class="n">unbind</span><span class="o">-</span><span class="k">key</span> <span class="k">C</span><span class="o">-</span><span class="n">b</span>
 
-# 設定再読込キーバインド
-<span class="nv">unbind</span> <span class="nv">r</span>
-<span class="nv">bind</span> <span class="nv">r</span> <span class="nv">source</span><span class="o">-</span><span class="nv">file</span> <span class="o">~/</span>.<span class="nv">tmux</span>.<span class="nv">conf</span> \<span class="c1">; display &quot;Reloaded ~/.tmux.conf&quot;</span>
+<span class="o">#</span> <span class="err">設定再読込キーバインド</span>
+<span class="n">unbind</span> <span class="n">r</span>
+<span class="n">bind</span> <span class="n">r</span> <span class="k">source</span><span class="o">-</span><span class="n">file</span> <span class="o">~/</span><span class="p">.</span><span class="n">tmux</span><span class="p">.</span><span class="n">conf</span> <span class="err">\</span><span class="p">;</span> <span class="n">display</span> <span class="ss">&quot;Reloaded ~/.tmux.conf&quot;</span>
 
-# <span class="nv">key</span> <span class="nv">bind</span> <span class="ss">(</span><span class="nv">window</span>の移動<span class="ss">)</span>
-# カーソルキーで移動
-<span class="nv">bind</span> <span class="o">-</span><span class="nv">n</span> <span class="nv">left</span> <span class="nv">previous</span><span class="o">-</span><span class="nv">window</span>
-<span class="nv">bind</span> <span class="o">-</span><span class="nv">n</span> <span class="nv">right</span> <span class="k">next</span><span class="o">-</span><span class="nv">window</span>
+<span class="o">#</span> <span class="k">key</span> <span class="n">bind</span> <span class="p">(</span><span class="n">windowの移動</span><span class="p">)</span>
+<span class="o">#</span> <span class="err">カーソルキーで移動</span>
+<span class="n">bind</span> <span class="o">-</span><span class="n">n</span> <span class="k">left</span> <span class="n">previous</span><span class="o">-</span><span class="n">window</span>
+<span class="n">bind</span> <span class="o">-</span><span class="n">n</span> <span class="k">right</span> <span class="k">next</span><span class="o">-</span><span class="n">window</span>
 
-# <span class="nv">key</span> <span class="nv">bind</span> <span class="ss">(</span><span class="nv">pane</span>の移動<span class="ss">)</span>
-# <span class="nv">Shift</span> <span class="o">+</span> カーソルキーで移動
-<span class="nv">bind</span> <span class="o">-</span><span class="nv">n</span> <span class="nv">S</span><span class="o">-</span><span class="nv">left</span> <span class="nv">select</span><span class="o">-</span><span class="nv">pane</span> <span class="o">-</span><span class="nv">L</span>
-<span class="nv">bind</span> <span class="o">-</span><span class="nv">n</span> <span class="nv">S</span><span class="o">-</span><span class="nv">down</span> <span class="nv">select</span><span class="o">-</span><span class="nv">pane</span> <span class="o">-</span><span class="nv">D</span>
-<span class="nv">bind</span> <span class="o">-</span><span class="nv">n</span> <span class="nv">S</span><span class="o">-</span><span class="nv">up</span> <span class="nv">select</span><span class="o">-</span><span class="nv">pane</span> <span class="o">-</span><span class="nv">U</span>
-<span class="nv">bind</span> <span class="o">-</span><span class="nv">n</span> <span class="nv">S</span><span class="o">-</span><span class="nv">right</span> <span class="nv">select</span><span class="o">-</span><span class="nv">pane</span> <span class="o">-</span><span class="nv">R</span>
+<span class="o">#</span> <span class="k">key</span> <span class="n">bind</span> <span class="p">(</span><span class="n">paneの移動</span><span class="p">)</span>
+<span class="o">#</span> <span class="n">Shift</span> <span class="o">+</span> <span class="err">カーソルキーで移動</span>
+<span class="n">bind</span> <span class="o">-</span><span class="n">n</span> <span class="n">S</span><span class="o">-</span><span class="k">left</span> <span class="k">select</span><span class="o">-</span><span class="n">pane</span> <span class="o">-</span><span class="n">L</span>
+<span class="n">bind</span> <span class="o">-</span><span class="n">n</span> <span class="n">S</span><span class="o">-</span><span class="n">down</span> <span class="k">select</span><span class="o">-</span><span class="n">pane</span> <span class="o">-</span><span class="n">D</span>
+<span class="n">bind</span> <span class="o">-</span><span class="n">n</span> <span class="n">S</span><span class="o">-</span><span class="n">up</span> <span class="k">select</span><span class="o">-</span><span class="n">pane</span> <span class="o">-</span><span class="n">U</span>
+<span class="n">bind</span> <span class="o">-</span><span class="n">n</span> <span class="n">S</span><span class="o">-</span><span class="k">right</span> <span class="k">select</span><span class="o">-</span><span class="n">pane</span> <span class="o">-</span><span class="n">R</span>
 
-# <span class="mi">256</span>色端末を使用する
-<span class="nv">set</span><span class="o">-</span><span class="nv">option</span> <span class="o">-</span><span class="nv">g</span> <span class="nv">default</span><span class="o">-</span><span class="nv">terminal</span> <span class="s2">&quot;</span><span class="s">tmux-256color</span><span class="s2">&quot;</span>
-# <span class="nv">vi</span>のキーバインドを使用する
-# <span class="nv">set</span><span class="o">-</span><span class="nv">window</span><span class="o">-</span><span class="nv">option</span> <span class="o">-</span><span class="nv">g</span> <span class="nv">mode</span><span class="o">-</span><span class="nv">keys</span> <span class="nv">vi</span>
+<span class="o">#</span> <span class="mi">256</span><span class="err">色端末を使用する</span>
+<span class="k">set</span><span class="o">-</span><span class="k">option</span> <span class="o">-</span><span class="k">g</span> <span class="k">default</span><span class="o">-</span><span class="n">terminal</span> <span class="ss">&quot;tmux-256color&quot;</span>
+<span class="o">#</span> <span class="n">viのキーバインドを使用する</span>
+<span class="o">#</span> <span class="k">set</span><span class="o">-</span><span class="n">window</span><span class="o">-</span><span class="k">option</span> <span class="o">-</span><span class="k">g</span> <span class="k">mode</span><span class="o">-</span><span class="n">keys</span> <span class="n">vi</span>
 
-# ステータスバー設定
-<span class="nv">set</span> <span class="o">-</span><span class="nv">g</span> <span class="nv">status</span><span class="o">-</span><span class="nv">interval</span> <span class="mi">10</span>
-<span class="nv">set</span> <span class="o">-</span><span class="nv">g</span> <span class="nv">status</span><span class="o">-</span><span class="nv">bg</span> <span class="nv">colour100</span>
-<span class="nv">setw</span> <span class="o">-</span><span class="nv">g</span> <span class="nv">window</span><span class="o">-</span><span class="nv">status</span><span class="o">-</span><span class="nv">current</span><span class="o">-</span><span class="nv">fg</span> <span class="nv">black</span>
-<span class="nv">setw</span> <span class="o">-</span><span class="nv">g</span> <span class="nv">window</span><span class="o">-</span><span class="nv">status</span><span class="o">-</span><span class="nv">current</span><span class="o">-</span><span class="nv">bg</span> <span class="nv">white</span>
+<span class="o">#</span> <span class="err">ステータスバー設定</span>
+<span class="k">set</span> <span class="o">-</span><span class="k">g</span> <span class="n">status</span><span class="o">-</span><span class="nb">interval</span> <span class="mi">10</span>
+<span class="k">set</span> <span class="o">-</span><span class="k">g</span> <span class="n">status</span><span class="o">-</span><span class="n">bg</span> <span class="n">colour100</span>
+<span class="n">setw</span> <span class="o">-</span><span class="k">g</span> <span class="n">window</span><span class="o">-</span><span class="n">status</span><span class="o">-</span><span class="k">current</span><span class="o">-</span><span class="n">fg</span> <span class="n">black</span>
+<span class="n">setw</span> <span class="o">-</span><span class="k">g</span> <span class="n">window</span><span class="o">-</span><span class="n">status</span><span class="o">-</span><span class="k">current</span><span class="o">-</span><span class="n">bg</span> <span class="n">white</span>
 
-# <span class="nv">split</span> <span class="nv">panes</span> <span class="nv">using</span> <span class="o">|</span> <span class="nv">and</span> <span class="o">-</span>
-<span class="nv">bind</span> <span class="nv">h</span> <span class="nv">split</span><span class="o">-</span><span class="nv">window</span> <span class="o">-</span><span class="nv">h</span>
-<span class="nv">bind</span> <span class="nv">v</span> <span class="nv">split</span><span class="o">-</span><span class="nv">window</span> <span class="o">-</span><span class="nv">v</span>
-<span class="nv">unbind</span> <span class="s1">&#39;</span><span class="s">&quot;</span><span class="s1">&#39;</span>
-<span class="nv">unbind</span> <span class="o">%</span>
+<span class="o">#</span> <span class="n">split</span> <span class="n">panes</span> <span class="k">using</span> <span class="o">|</span> <span class="k">and</span> <span class="o">-</span>
+<span class="n">bind</span> <span class="n">h</span> <span class="n">split</span><span class="o">-</span><span class="n">window</span> <span class="o">-</span><span class="n">h</span>
+<span class="n">bind</span> <span class="n">v</span> <span class="n">split</span><span class="o">-</span><span class="n">window</span> <span class="o">-</span><span class="n">v</span>
+<span class="n">unbind</span> <span class="s1">&#39;&quot;&#39;</span>
+<span class="n">unbind</span> <span class="o">%</span>
 </code></pre></div>
 
 

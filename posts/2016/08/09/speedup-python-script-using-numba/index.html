@@ -105,7 +105,7 @@ R.K.S. blog            </a>
 <h2>簡単な例</h2>
 <pre class="code python literal-block">
 <span class="kn">import</span> <span class="nn">numba</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
 <span class="k">def</span> <span class="nf">matmul1</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">lenI</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -118,7 +118,7 @@ R.K.S. blog            </a>
                 <span class="n">c</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span> <span class="o">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">,</span> <span class="n">k</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="n">k</span><span class="p">,</span> <span class="n">j</span><span class="p">]</span>
     <span class="k">return</span> <span class="n">c</span>
 
-<span class="nd">&#64;numba.jit</span>
+<span class="nd">&#64;numba</span><span class="o">.</span><span class="n">jit</span>
 <span class="k">def</span> <span class="nf">matmul_numba</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">lenI</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="n">lenJ</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
@@ -154,7 +154,7 @@ R.K.S. blog            </a>
 <span class="kn">import</span> <span class="nn">numba</span>
 <span class="kn">import</span> <span class="nn">math</span>
 
-<span class="nd">&#64;numba.jit</span>
+<span class="nd">&#64;numba</span><span class="o">.</span><span class="n">jit</span>
 <span class="k">def</span> <span class="nf">direct_cube</span><span class="p">(</span><span class="n">nc</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="n">pos</span><span class="o">=</span><span class="p">[],</span><span class="n">chgs</span><span class="o">=</span><span class="p">[],</span><span class="n">alc</span><span class="o">=</span><span class="mf">10.</span><span class="p">):</span>
     <span class="n">phi</span> <span class="o">=</span> <span class="mf">0.0</span>
     <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,),</span><span class="n">dtype</span><span class="o">=</span><span class="nb">float</span><span class="p">)</span>

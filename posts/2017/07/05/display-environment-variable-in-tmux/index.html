@@ -98,13 +98,13 @@ R.K.S. blog            </a>
                 <p><code>tmux</code> is a great command when using remote servers for work. Mainly because once I turn on <code>tmux</code> on the remote server, I can recover the session whenever I reconnect the server again. This feature is greater than it sounds. If you have not tried <code>tmux</code> yet, and you often work on the remote server, you definitely should use <code>tmux</code>.</p>
 <p>But when I try to use <code>gnuplot</code> or something that needs X11 forwarding through SSH, sometimes you need to change <code>DISPLAY</code> environment variable in <code>tmux</code> session. Because the <code>DISPLAY</code> variable has been set when you turned on the <code>tmux</code> session first, and the variable could change when you reconnect to the server, but the variable in the <code>tmux</code> session is still the one set before. So when you try to run some X11 session in the <code>tmux</code> session, it will fail because of the <code>DISPLAY</code> variable of the SSH session and <code>tmux</code> session are different.</p>
 <p>To solve the problem, the <code>DISPLAY</code> environment variable of SSH session should be saved every time you connect with SSH like, and you can set the <code>DISPLAY</code> variable using the saved value. You can achieve this by writing the following line in <code>~/.bashrc</code>,</p>
-<div class="highlight"><pre><span></span><code><span class="k">if</span> [ <span class="o">-</span><span class="nv">z</span> <span class="s2">&quot;</span><span class="s">$TMUX</span><span class="s2">&quot;</span> ]<span class="c1">; then</span>
-    <span class="nv">echo</span> <span class="mh">$D</span><span class="nv">ISPLAY</span> <span class="o">&gt;</span> <span class="o">~/</span>.<span class="nv">display</span>.<span class="nv">txt</span>
-<span class="nv">fi</span>
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="p">[</span> <span class="o">-</span><span class="n">z</span> <span class="ss">&quot;$TMUX&quot;</span> <span class="p">];</span> <span class="k">then</span>
+    <span class="n">echo</span> <span class="err">$</span><span class="n">DISPLAY</span> <span class="o">&gt;</span> <span class="o">~/</span><span class="p">.</span><span class="n">display</span><span class="p">.</span><span class="n">txt</span>
+<span class="n">fi</span>
 
-<span class="nv">function</span> <span class="nv">set_display</span><span class="ss">()</span>{
-    <span class="nv">export</span> <span class="nv">DISPLAY</span><span class="o">=</span>$<span class="ss">(</span><span class="nv">cat</span> <span class="o">~/</span>.<span class="nv">display</span>.<span class="nv">txt</span><span class="ss">)</span>
-}
+<span class="k">function</span> <span class="n">set_display</span><span class="p">()</span><span class="err">{</span>
+    <span class="n">export</span> <span class="n">DISPLAY</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">cat</span> <span class="o">~/</span><span class="p">.</span><span class="n">display</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span>
+<span class="err">}</span>
 </code></pre></div>
 
 

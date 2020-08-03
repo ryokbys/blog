@@ -99,12 +99,12 @@ R.K.S. blog            </a>
 <p>[TOC]</p>
 <h2>Markdown setting</h2>
 <p>To activate the Markdown, I wrote the following line in <code>pelicanconf.py</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="n">MD_EXTENSIONS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;codehilite&#39;</span><span class="p">,</span><span class="s1">&#39;extra&#39;</span><span class="p">,</span><span class="s1">&#39;smarty&#39;</span><span class="p">,</span> <span class="s1">&#39;toc&#39;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="err">MD_EXTENSIONS = [&#39;codehilite&#39;,&#39;extra&#39;,&#39;smarty&#39;, &#39;toc&#39;]</span>
 </code></pre></div>
 
 
 <p>And to make <code>toc</code> to be available in Markdown I added <code>'extract_toc'</code> as,</p>
-<div class="highlight"><pre><span></span><code><span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="ss">&quot;tag_cloud&quot;</span><span class="p">,</span><span class="ss">&quot;render_math&quot;</span><span class="p">,</span><span class="s1">&#39;extract_toc&#39;</span><span class="p">]</span>
+<div class="highlight"><pre><span></span><code><span class="err">PLUGINS = [&quot;tag_cloud&quot;,&quot;render_math&quot;,&#39;extract_toc&#39;]</span>
 </code></pre></div>
 
 

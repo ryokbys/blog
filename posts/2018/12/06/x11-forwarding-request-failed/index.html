@@ -108,10 +108,10 @@ X11 forwarding request failed on channel <span class="m">0</span>
 
 <p>So the problem seemed to be an issue of <code>xauth</code>-related, and actually this was because the remote server could not find the <code>xauth</code> program, even though I do not know the reason why..
 I add a line <code>XAuthLocation /opt/X11/bin/xauth</code> to <code>/etc/ssh/sshd_config</code> on the remote server, to become as follows.</p>
-<div class="highlight"><pre><span></span><code><span class="n">X11Forwarding</span> <span class="n">yes</span>
-<span class="n">X11DisplayOffset</span> <span class="mi">10</span>
-<span class="n">X11UseLocalhost</span> <span class="k">no</span>
-<span class="n">XAuthLocation</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">X11</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">xauth</span>
+<div class="highlight"><pre><span></span><code><span class="err">X11Forwarding yes</span>
+<span class="err">X11DisplayOffset 10</span>
+<span class="err">X11UseLocalhost no</span>
+<span class="err">XAuthLocation /opt/X11/bin/xauth</span>
 </code></pre></div>
 
 

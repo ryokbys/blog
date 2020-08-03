@@ -1,5 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-07-14T15:38:07+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>Quiver to Obsidian</title><link href="https://ryokbys.github.io/blog/posts/2020/07/14/quiver-to-obsidian/index.html" rel="alternate"></link><published>2020-07-14T15:38:07+09:00</published><updated>2020-07-14T15:38:07+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-07-14:/blog/posts/2020/07/14/quiver-to-obsidian/index.html</id><summary type="html">今回もnote-takingアプリに関すること．</summary><content type="html">&lt;p&gt;今回もnote-takingアプリに関すること．&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-08-03T11:39:17+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>My Obsidian workflow</title><link href="https://ryokbys.github.io/blog/posts/2020/08/03/my-obsidian-workflow/index.html" rel="alternate"></link><published>2020-08-03T11:39:17+09:00</published><updated>2020-08-03T11:39:17+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-08-03:/blog/posts/2020/08/03/my-obsidian-workflow/index.html</id><summary type="html">&lt;a href="https://obsidian.md"&gt;Obsidian&lt;/a&gt;というnote-takingアプリがなかなか良く出来たアプリで，今流行りの&lt;a href="https://zettelkasten.de"&gt;Zettelkasten&lt;/a&gt;が実装できるというので一ヶ月ほど使っている．</summary><content type="html">&lt;p&gt;&lt;a href="https://obsidian.md"&gt;Obsidian&lt;/a&gt;というnote-takingアプリがなかなか良く出来たアプリで，今流行りの&lt;a href="https://zettelkasten.de"&gt;Zettelkasten&lt;/a&gt;が実装できるというので一ヶ月ほど使っている．&lt;/p&gt;
+&lt;p&gt;アプリの紹介は「&lt;a href="https://note.com/takibayashi/n/nd6250964f0a7"&gt;第２の脳アプリObsidianを使って日次メモを書く方法&lt;/a&gt;」なんかを参照してもらうとして，自分の使い方をメモを兼ねて紹介しておく．
+ちなみに，このやり方は &lt;a href="https://github.com/nickmilo/IMF-v3"&gt;nickmiloのIMF-v3&lt;/a&gt; を参考にしている．&lt;/p&gt;
+&lt;h2&gt;ディレクトリ構造&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;ノートをカテゴリしてディレクトリに分けるのは良くないと言われるのを良く耳にするので，基本的にはノートはディレクトリで分けたりせず，全て（Obsidian vaultの）ルートディレクトリ内に直に保存する．&lt;/li&gt;
+&lt;li&gt;画像ファイル，PDFなどの添付ファイルはルートディレクトリに一緒に置くとごちゃつくので&lt;code&gt;00_assets/&lt;/code&gt;というディレクトリに保存することにする．&lt;/li&gt;
+&lt;li&gt;日々のノートは個別のノートとは少し性格がことなるので，&lt;code&gt;01_daily_notes&lt;/code&gt;というディレクトリに保存する．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;日々のノート（Daily notes）&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;日々のメモノートとそれ以外は少し用途というか考え方が異なるので，日々のノートは&lt;code&gt;01_daily_notes&lt;/code&gt;という保存し，Obsidianの「Daily notes」plugin機能を使って，&lt;code&gt;YYYY-MM-DD&lt;/code&gt;というファイル名で作成することにする．&lt;/li&gt;
+&lt;li&gt;Daily notes pluginでは，テンプレートファイルを設定することができるので，&lt;code&gt;01_daily_notes/template&lt;/code&gt;という以下のようなファイルを作り，それをテンプレートとする．
+  ```
+  tags: #diary&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;# Tasks
+  - [ ] something&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;# Notes&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;``
+  - daily notesなのに，タグとしては&lt;/code&gt;#diary&lt;code&gt;となっているのはご愛嬌．．．
+  - 最初にdaily noteのTasksに，今日やることをリストアップして，チェックしていくという流れ．
+  -&lt;/code&gt;# Notes`以下にメモを書いていく．一つのノートとして独立するような内容はコピペで独立したノートを作り，リンクする．&lt;/p&gt;
+&lt;h2&gt;Index and Map of Contents (MOC)&lt;/h2&gt;
+&lt;p&gt;全てのノートがルートディレクトリ内に一様に保存されているので，何かしらのインデックス・ノートなり各ノートを参照する機構がないと，個々のノートが単独で保存されてしまい，どこからも行き着くことの出来ない「dead note」になってしまう．そのため，&lt;a href="https://github.com/nickmilo/IMF-v3"&gt;nickmiloのIMF-v3&lt;/a&gt;に従って，indexノートとMOCノートを作る．&lt;/p&gt;
+&lt;h3&gt;indexノート &lt;code&gt;000 Index&lt;/code&gt;&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="mi"&gt;000&lt;/span&gt; &lt;span class="k"&gt;Index&lt;/span&gt;
+
+&lt;span class="o"&gt;##&lt;/span&gt; &lt;span class="k"&gt;Index&lt;/span&gt; &lt;span class="k"&gt;Map&lt;/span&gt;
+&lt;span class="k"&gt;Each&lt;/span&gt; &lt;span class="k"&gt;index&lt;/span&gt; &lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="k"&gt;contains&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="k"&gt;Map&lt;/span&gt; &lt;span class="k"&gt;Of&lt;/span&gt; &lt;span class="n"&gt;Contents&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;MOC&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;**&lt;/span&gt; &lt;span class="n"&gt;information&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;000&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="c1"&gt;-- [[000 Index]]&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;010&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="c1"&gt;-- [[010 Personal Life MOC]] 自分・家族・生活に関すること&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;030&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="c1"&gt;-- [[030 Computer MOC]] 関連，使い方，ソフトウェア&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;040&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="c1"&gt;-- [[040 Finance MOC]] 資産運用，投資など&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;050&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="c1"&gt;-- [[050 Productivity MOC]] - note-taking, project managements, productivity&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;090&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="c1"&gt;-- [[090 Learning MOC]] 学習のことなど&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;00&lt;/span&gt;&lt;span class="n"&gt;_assets&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="c1"&gt;-- テキスト以外のファイル格納庫&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;01&lt;/span&gt;&lt;span class="n"&gt;_daily_notes&lt;/span&gt;&lt;span class="o"&gt;/`&lt;/span&gt;&lt;span class="n"&gt;YYYY&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;MM&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;DD&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt; &lt;span class="c1"&gt;-- 日記&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;99&lt;/span&gt;&lt;span class="n"&gt;_archive&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="c1"&gt;-- もう更新されないノート格納庫&lt;/span&gt;
+
+&lt;span class="o"&gt;##&lt;/span&gt; &lt;span class="n"&gt;Tags&lt;/span&gt;
+
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;000&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="c1"&gt;-- #IMF #MOC #Zettelkasten &lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;010&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="c1"&gt;-- &lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;030&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="c1"&gt;-- #computer #software #commands #スパコン &lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;040&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="c1"&gt;-- #株 #資産運用 &lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;050&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="c1"&gt;-- #obsidian #note-taking #diary #productivity #GTD&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="mi"&gt;090&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="c1"&gt;-- #learning&lt;/span&gt;
+
+&lt;span class="o"&gt;##&lt;/span&gt; &lt;span class="n"&gt;Rules&lt;/span&gt;
+
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="err"&gt;全てのノートはルートディレクトリに保存．ディレクトリによるカテゴリ分けはしない．タグとリンクでつなげる．&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="err"&gt;ノートは何かのノートから&lt;/span&gt;&lt;span class="n"&gt;wiki風リンクで派生させる形で作成する&lt;/span&gt;&lt;span class="err"&gt;．&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="err"&gt;上記インデックスファイルから&lt;/span&gt;&lt;span class="n"&gt;MOC&lt;/span&gt; &lt;span class="n"&gt;noteにリンクして&lt;/span&gt;&lt;span class="err"&gt;，&lt;/span&gt;&lt;span class="n"&gt;MOCからさらにリンクしていく&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="err"&gt;会議・ミーティングは&lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="n"&gt;MTG&lt;/span&gt; &lt;span class="n"&gt;YYMMDD&lt;/span&gt; &lt;span class="err"&gt;会議名&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;md&lt;/span&gt;&lt;span class="o"&gt;`&lt;/span&gt;&lt;span class="err"&gt;というノートに．&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;000 Index&lt;/code&gt;というファイル名にすることで，ソートすると一番上に表示される．&lt;/li&gt;
+&lt;li&gt;ここで&lt;code&gt;[[...]]&lt;/code&gt;のような記述は，wiki風のリンクでObsidianの中でリンクとして管理されて，backlinkなんかもつくので便利．&lt;/li&gt;
+&lt;li&gt;各カテゴリーのMOCに関する説明と，そのMOCファイルへのリンク，および関連するタグなどを記載しておく．&lt;/li&gt;
+&lt;li&gt;Obsidianノート管理のルールが書いてある（これは別ノートに書いても良いかも）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;MOCノート&lt;/h3&gt;
+&lt;p&gt;各カテゴリーやトピックに関連するノートへのリンクをまとめておくノート．&lt;/p&gt;
+&lt;p&gt;例えば，&lt;code&gt;000 Index&lt;/code&gt;ノートにある&lt;code&gt;[[050 Productivity MOC]]&lt;/code&gt;からは下記のようなノートに飛ぶようになっている．&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="cp"&gt;# 050 Productivity MOC&lt;/span&gt;
+&lt;span class="cp"&gt;#note-taking #obsidian #MOC #IMF #Zettelkasten #productivity &lt;/span&gt;
+
+&lt;span class="err"&gt;ノートのとり方，情報のまとめ方，情報の引き出し方など．文章の書き方なども含めても良い．&lt;/span&gt;
+
+&lt;span class="o"&gt;---&lt;/span&gt;
+
+&lt;span class="cp"&gt;## Notes&lt;/span&gt;
+
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="n"&gt;Article_Khan_Zettelkasten&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="kt"&gt;long&lt;/span&gt; &lt;span class="n"&gt;blog&lt;/span&gt; &lt;span class="n"&gt;post&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt; &lt;span class="n"&gt;Al&lt;/span&gt; &lt;span class="n"&gt;Kahn&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="n"&gt;Flow&lt;/span&gt; &lt;span class="n"&gt;creation&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="n"&gt;from&lt;/span&gt; &lt;span class="n"&gt;nickmilo&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="n"&gt;IMF&lt;/span&gt; &lt;span class="n"&gt;v3&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="n"&gt;How&lt;/span&gt; &lt;span class="n"&gt;To&lt;/span&gt; &lt;span class="n"&gt;Take&lt;/span&gt; &lt;span class="n"&gt;Smart&lt;/span&gt; &lt;span class="n"&gt;Notes&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt; &lt;span class="n"&gt;TIAGO&lt;/span&gt; &lt;span class="n"&gt;FORTE&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="n"&gt;Marp&lt;/span&gt; &lt;span class="n"&gt;CLI&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="n"&gt;markdown&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;slide&lt;/span&gt; &lt;span class="n"&gt;tool&lt;/span&gt; &lt;span class="n"&gt;made&lt;/span&gt; &lt;span class="n"&gt;by&lt;/span&gt; &lt;span class="n"&gt;some&lt;/span&gt; &lt;span class="n"&gt;Japanese&lt;/span&gt; &lt;span class="n"&gt;guy&lt;/span&gt;
+
+&lt;span class="cp"&gt;## Writing my blog&lt;/span&gt;
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="n"&gt;pelican_blog_workflow&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt;
+
+&lt;span class="o"&gt;---&lt;/span&gt; 
+&lt;span class="cp"&gt;## Useful notes in Obsidian&lt;/span&gt;
+
+&lt;span class="o"&gt;-&lt;/span&gt; &lt;span class="p"&gt;[[&lt;/span&gt;&lt;span class="n"&gt;LaTeX&lt;/span&gt; &lt;span class="n"&gt;preambles&lt;/span&gt;&lt;span class="p"&gt;]]&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt; &lt;span class="err"&gt;ここの&lt;/span&gt;&lt;span class="n"&gt;preambleをコピペしてノートの最初に書いておくとLaTeXを書くのが便利になる&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Hotkeys&lt;/h3&gt;
+&lt;p&gt;Obsidianではキーボードショートカットをかなり自由に設定できるので，以下のような自分仕様の変更を加えている．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Cmd + T&lt;/code&gt; -- 今日のDaily noteを開く&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Cmd + 1&lt;/code&gt; -- 左サイドバーの表示／非表示&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Cmd + 2&lt;/code&gt; -- 右サイドバーの表示／非表示&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;他に，特に変更していないが良く使うものをあげておく．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Cmd + O&lt;/code&gt; -- ノートをタイトルで検索して開く．最近開いたノートも表示される．&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Cmd + Shift + F&lt;/code&gt; -- 全ノートの文字列検索．&lt;/li&gt;
+&lt;/ul&gt;</content><category term="misc"></category><category term="mac"></category><category term="Obsidian"></category><category term="zettelkasten"></category></entry><entry><title>Quiver to Obsidian</title><link href="https://ryokbys.github.io/blog/posts/2020/07/14/quiver-to-obsidian/index.html" rel="alternate"></link><published>2020-07-14T15:38:07+09:00</published><updated>2020-07-14T15:38:07+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-07-14:/blog/posts/2020/07/14/quiver-to-obsidian/index.html</id><summary type="html">今回もnote-takingアプリに関すること．</summary><content type="html">&lt;p&gt;今回もnote-takingアプリに関すること．&lt;/p&gt;
 &lt;p&gt;前回のポストがZettlrからQuiverにで戻ったというポストだったが，そこからさらに&lt;a href="https://obsidian.md"&gt;Obsidian&lt;/a&gt;に移った．やはり決め手はQuiverではできない相互リンクを使ってみたいということだった．Quiverでもノート間のリンクは可能だが，一方向リンクとなっているし，wikiリンク風ではないので，ノートのURLを取得してそれを別のノートに貼り付けて，という作業が面倒なためにあまり使い勝手が良くない．&lt;/p&gt;
 &lt;p&gt;nickmiloという人が，&lt;a href="https://github.com/nickmilo/IMF-v3"&gt;IMF v3&lt;/a&gt; というフレームワークを提案している．これは Zettelkasten という有名なnote-takingの方法を包含するようなものだが，上のリンクからmarkdown群を取ってきてObsidianを使ってそれを開くと，Obsidianを使ってIMFフレームワークを実行する方法がわかる．
 これをちょっと試してみることにする．&lt;/p&gt;
@@ -8,6 +111,7 @@
 &lt;ul&gt;
 &lt;li&gt;プライベートユースでは無料（いまのところは．．．）&lt;/li&gt;
 &lt;li&gt;wiki風相互リンク可能&lt;/li&gt;
+&lt;li&gt;wiki風リンクされているファイル名が変更されたら，リンク元のテキストも自動で変更されて便利&lt;/li&gt;
 &lt;li&gt;リンクネットワークの可視化（ウニョウニョ動くグラフネットワーク）&lt;/li&gt;
 &lt;li&gt;見た目の選択肢がまぁまぁ豊富&lt;/li&gt;
 &lt;li&gt;Markdownのプレビューは別画面でできるが，書いているテキストもある程度見た目が変わるので分かりやすい&lt;/li&gt;
@@ -329,10 +433,10 @@ X11 forwarding request failed on channel &lt;span class="m"&gt;0&lt;/span&gt;
 
 &lt;p&gt;So the problem seemed to be an issue of &lt;code&gt;xauth&lt;/code&gt;-related, and actually this was because the remote server could not find the &lt;code&gt;xauth&lt;/code&gt; program, even though I do not know the reason why..
 I add a line &lt;code&gt;XAuthLocation /opt/X11/bin/xauth&lt;/code&gt; to &lt;code&gt;/etc/ssh/sshd_config&lt;/code&gt; on the remote server, to become as follows.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;X11Forwarding&lt;/span&gt; &lt;span class="n"&gt;yes&lt;/span&gt;
-&lt;span class="n"&gt;X11DisplayOffset&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
-&lt;span class="n"&gt;X11UseLocalhost&lt;/span&gt; &lt;span class="k"&gt;no&lt;/span&gt;
-&lt;span class="n"&gt;XAuthLocation&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;opt&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;X11&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;xauth&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;X11Forwarding yes&lt;/span&gt;
+&lt;span class="err"&gt;X11DisplayOffset 10&lt;/span&gt;
+&lt;span class="err"&gt;X11UseLocalhost no&lt;/span&gt;
+&lt;span class="err"&gt;XAuthLocation /opt/X11/bin/xauth&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -422,7 +526,7 @@ $ python setup.py install --prefix&lt;span class="o"&gt;=&lt;/span&gt;~/local/
 
 
 &lt;p&gt;のようなエラー出力が表示されるが，もう一度実行すると，&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;Notebook&lt;/span&gt; &lt;span class="n"&gt;initialized&lt;/span&gt; &lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;x3d&lt;/span&gt; &lt;span class="n"&gt;backend&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Notebook initialized with x3d backend.&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -449,12 +553,12 @@ $ python setup.py install --prefix&lt;span class="o"&gt;=&lt;/span&gt;~/local/
 Quiverに入力したものはiPhoneなどと同期するのはできなそうだが，あまりその必要性を感じていないので今のところ問題ではない．&lt;/p&gt;</content><category term="misc"></category><category term="mac"></category><category term="linux"></category><category term="research"></category></entry><entry><title>A parameter lacking in a journal paper...</title><link href="https://ryokbys.github.io/blog/posts/2017/12/27/a-parameter-lacking-in-a-journal-paper.../index.html" rel="alternate"></link><published>2017-12-27T22:19:29+09:00</published><updated>2017-12-27T22:19:29+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2017-12-27:/blog/posts/2017/12/27/a-parameter-lacking-in-a-journal-paper.../index.html</id><summary type="html">&lt;p&gt;There is an erratum in the JAP journal paper (Ref.[1]) by Bonny et al about tungsten-rhenium EAM potential.
 The parameters for &lt;span class="math"&gt;\(V_\mathrm{WRe}\)&lt;/span&gt; listed in the paper, cubic spline with 5 knots, were not sufficient and
 the following 6th knot should be added.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;r_6&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
-&lt;span class="n"&gt;a_6&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;0 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;There is an erratum in the JAP journal paper (Ref.[1]) by Bonny et al about tungsten-rhenium EAM potential.
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;r_6 = 4.2&lt;/span&gt;
+&lt;span class="err"&gt;a_6 = -0 …&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</summary><content type="html">&lt;p&gt;There is an erratum in the JAP journal paper (Ref.[1]) by Bonny et al about tungsten-rhenium EAM potential.
 The parameters for &lt;span class="math"&gt;\(V_\mathrm{WRe}\)&lt;/span&gt; listed in the paper, cubic spline with 5 knots, were not sufficient and
 the following 6th knot should be added.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;r_6&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;
-&lt;span class="n"&gt;a_6&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;25133241&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;r_6 = 4.2&lt;/span&gt;
+&lt;span class="err"&gt;a_6 = -0.25133241&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -1702,11 +1806,11 @@ The code is taken from the following site (in Japanese).&lt;/p&gt;
 &lt;div class="prompt input_prompt"&gt;In [14]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sklearn.gaussian_process&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;GP&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;div class="highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sklearn.gaussian_process&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;GP&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt;
 &lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_context&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'talk'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
@@ -1761,7 +1865,7 @@ So the input of &lt;code&gt;gp.fit()&lt;/code&gt; has to be 2D array of (num of 
 &lt;span class="c1"&gt;#...Fit to data using Maximum Likelihood Estimation of the parameters&lt;/span&gt;
 &lt;span class="n"&gt;gp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;fit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="c1"&gt;#...Make the prediction on the meshed x-axis (ask for MSE as well)&lt;/span&gt;
-&lt;span class="n"&gt;y_pred&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sigma&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="n"&gt;eval_MSE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;y_pred&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sigma&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;gp&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;predict&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;  &lt;span class="n"&gt;eval_MSE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="kc"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2166,7 +2270,7 @@ REQV/wPfJM64ync4DAAAAABJRU5ErkJggg==
 &lt;div class="prompt input_prompt"&gt;In [33]:&lt;/div&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
-&lt;div class="highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concatenate&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;[::&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
+&lt;div class="highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;concatenate&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;X&lt;/span&gt;&lt;span class="p"&gt;[::&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]])&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
@@ -2237,7 +2341,7 @@ So setting</summary><content type="html">&lt;p&gt;Currently this site uses the p
 But one thing annoyed me. There is a logo image on the left side and it works fine with the home, archive, and tag pages. But it does not show up on post pages.
 The reason is that the path to the logo image is set in &lt;code&gt;pelicanconf.py&lt;/code&gt; and it seems to be relative URL from the current content which is dependent on the article.
 So setting&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;SITELOGO&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;images/logo.png&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;SITELOGO = &amp;quot;images/logo.png&amp;quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -2245,23 +2349,23 @@ So setting&lt;/p&gt;
 But I do not know how to set &lt;code&gt;SITEURL&lt;/code&gt; into it.&lt;/p&gt;
 &lt;p&gt;So I modified directory &lt;code&gt;pelican-themes/Flex/templates/base.html&lt;/code&gt; file, line 81,
 from&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;        {&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;SITELOGO&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;}
-        &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;img&lt;/span&gt; &lt;span class="nv"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;{{ SITELOGO }}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;{{ SITETITLE }}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;{{ SITETITLE }}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-        {&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;}
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="x"&gt;        &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;SITELOGO&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;        &amp;lt;img src=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITELOGO&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot; alt=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITETITLE&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot; title=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITETITLE&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class="x"&gt;        &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;to&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;        {&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;SITELOGO&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;}
-        &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nv"&gt;img&lt;/span&gt; &lt;span class="nv"&gt;src&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;{{ SITEURL }}/{{ SITELOGO }}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;alt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;{{ SITETITLE }}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;title&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;{{ SITETITLE }}&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
-        {&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;}
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="x"&gt;        &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="nv"&gt;SITELOGO&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
+&lt;span class="x"&gt;        &amp;lt;img src=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITEURL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITELOGO&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot; alt=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITETITLE&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot; title=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITETITLE&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&amp;quot;&amp;gt;&lt;/span&gt;
+&lt;span class="x"&gt;        &lt;/span&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;else&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;I added &lt;code&gt;{{ SITEURL }}/&lt;/code&gt; before &lt;code&gt;{{ SITELOGO }}&lt;/code&gt; to make the &lt;code&gt;SITELOGO&lt;/code&gt; path as a relative path from &lt;code&gt;SITEURL&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Then it works fine even at post pages.&lt;/p&gt;
 &lt;p&gt;But after struggling on this for hours, it turns out that just setting&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;SITELOGO&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;/images/logo.png&amp;quot;&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;SITELOGO = &amp;quot;/images/logo.png&amp;quot;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3482,9 +3586,9 @@ $$&lt;/p&gt;
 &lt;div class="inner_cell"&gt;
 &lt;div class="input_area"&gt;
 &lt;div class="highlight hl-ipython2"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="k"&gt;matplotlib&lt;/span&gt; inline
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;seaborn&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;sns&lt;/span&gt;
 
 &lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_style&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'ticks'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="n"&gt;sns&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_context&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'talk'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -3805,8 +3909,8 @@ rm -rf &lt;span class="k"&gt;$(&lt;/span&gt;cat &lt;span class="si"&gt;${&lt;/sp
 &lt;li&gt;Put this script at &lt;code&gt;~/bin/&lt;/code&gt; or somewhere the shell can find by looking at &lt;code&gt;PATH&lt;/code&gt; environment variable.&lt;/li&gt;
 &lt;li&gt;In any directory where there are many files you want to remove often, create the file &lt;code&gt;.clean&lt;/code&gt; which is something like&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;out&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;
-&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;out.*&lt;/span&gt;
+&lt;span class="err"&gt;*.txt&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3821,13 +3925,13 @@ rm -rf &lt;span class="k"&gt;$(&lt;/span&gt;cat &lt;span class="si"&gt;${&lt;/sp
 &lt;p&gt;It is a very simple script, but it is very convenient for my daily routines.&lt;/p&gt;</content><category term="misc"></category><category term="linux"></category></entry><entry><title>DISPLAY environment variable in tmux</title><link href="https://ryokbys.github.io/blog/posts/2017/07/05/display-environment-variable-in-tmux/index.html" rel="alternate"></link><published>2017-07-05T14:19:06+09:00</published><updated>2017-07-05T14:19:06+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2017-07-05:/blog/posts/2017/07/05/display-environment-variable-in-tmux/index.html</id><summary type="html">&lt;code&gt;tmux&lt;/code&gt; is a great command when using remote servers for work. Mainly because once I turn on &lt;code&gt;tmux&lt;/code&gt; on the remote server, I can recover the session whenever I reconnect the server again. This feature is greater than it sounds. If you have not tried &lt;code&gt;tmux&lt;/code&gt; yet, and you often work on the remote server, you definitely should use &lt;code&gt;tmux&lt;/code&gt;.</summary><content type="html">&lt;p&gt;&lt;code&gt;tmux&lt;/code&gt; is a great command when using remote servers for work. Mainly because once I turn on &lt;code&gt;tmux&lt;/code&gt; on the remote server, I can recover the session whenever I reconnect the server again. This feature is greater than it sounds. If you have not tried &lt;code&gt;tmux&lt;/code&gt; yet, and you often work on the remote server, you definitely should use &lt;code&gt;tmux&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;But when I try to use &lt;code&gt;gnuplot&lt;/code&gt; or something that needs X11 forwarding through SSH, sometimes you need to change &lt;code&gt;DISPLAY&lt;/code&gt; environment variable in &lt;code&gt;tmux&lt;/code&gt; session. Because the &lt;code&gt;DISPLAY&lt;/code&gt; variable has been set when you turned on the &lt;code&gt;tmux&lt;/code&gt; session first, and the variable could change when you reconnect to the server, but the variable in the &lt;code&gt;tmux&lt;/code&gt; session is still the one set before. So when you try to run some X11 session in the &lt;code&gt;tmux&lt;/code&gt; session, it will fail because of the &lt;code&gt;DISPLAY&lt;/code&gt; variable of the SSH session and &lt;code&gt;tmux&lt;/code&gt; session are different.&lt;/p&gt;
 &lt;p&gt;To solve the problem, the &lt;code&gt;DISPLAY&lt;/code&gt; environment variable of SSH session should be saved every time you connect with SSH like, and you can set the &lt;code&gt;DISPLAY&lt;/code&gt; variable using the saved value. You can achieve this by writing the following line in &lt;code&gt;~/.bashrc&lt;/code&gt;,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt; [ &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;z&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;$TMUX&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; ]&lt;span class="c1"&gt;; then&lt;/span&gt;
-    &lt;span class="nv"&gt;echo&lt;/span&gt; &lt;span class="mh"&gt;$D&lt;/span&gt;&lt;span class="nv"&gt;ISPLAY&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;.&lt;span class="nv"&gt;display&lt;/span&gt;.&lt;span class="nv"&gt;txt&lt;/span&gt;
-&lt;span class="nv"&gt;fi&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;z&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;$TMUX&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;];&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="n"&gt;echo&lt;/span&gt; &lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="n"&gt;DISPLAY&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;display&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;
+&lt;span class="n"&gt;fi&lt;/span&gt;
 
-&lt;span class="nv"&gt;function&lt;/span&gt; &lt;span class="nv"&gt;set_display&lt;/span&gt;&lt;span class="ss"&gt;()&lt;/span&gt;{
-    &lt;span class="nv"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;DISPLAY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;cat&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;.&lt;span class="nv"&gt;display&lt;/span&gt;.&lt;span class="nv"&gt;txt&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-}
+&lt;span class="k"&gt;function&lt;/span&gt; &lt;span class="n"&gt;set_display&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="err"&gt;{&lt;/span&gt;
+    &lt;span class="n"&gt;export&lt;/span&gt; &lt;span class="n"&gt;DISPLAY&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;cat&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;display&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;txt&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="err"&gt;}&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3852,10 +3956,10 @@ Then you can set the &lt;code&gt;DISPLAY&lt;/code&gt; variable in the &lt;code&g
 
 
 &lt;p&gt;のように，&lt;code&gt;-d&lt;/code&gt;オプションをつけて&lt;code&gt;make&lt;/code&gt;を実行すると，なぜにそれがコンパイルされないかが分かるのだが，&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;Trying&lt;/span&gt; &lt;span class="nv"&gt;implicit&lt;/span&gt; &lt;span class="nv"&gt;prerequisite&lt;/span&gt; `&lt;span class="nv"&gt;hoge&lt;/span&gt;.&lt;span class="nv"&gt;mod&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;.&lt;/span&gt;
-&lt;span class="nv"&gt;Found&lt;/span&gt; &lt;span class="nv"&gt;an&lt;/span&gt; &lt;span class="nv"&gt;implicit&lt;/span&gt; &lt;span class="nv"&gt;rule&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; `&lt;span class="nv"&gt;hoge&lt;/span&gt;.&lt;span class="nv"&gt;o&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;.&lt;/span&gt;
-　&lt;span class="nv"&gt;Considering&lt;/span&gt; &lt;span class="nv"&gt;target&lt;/span&gt; &lt;span class="nv"&gt;file&lt;/span&gt; `&lt;span class="nv"&gt;hoge&lt;/span&gt;.&lt;span class="nv"&gt;mod&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;.&lt;/span&gt;
-&lt;span class="nv"&gt;Prerequisite&lt;/span&gt; `&lt;span class="nv"&gt;hoge&lt;/span&gt;.&lt;span class="nv"&gt;mod&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt; is older than target `hoge.o&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;.
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;Trying implicit prerequisite `hoge.mod&amp;#39;.&lt;/span&gt;
+&lt;span class="err"&gt;Found an implicit rule for `hoge.o&amp;#39;.&lt;/span&gt;
+&lt;span class="err"&gt;　Considering target file `hoge.mod&amp;#39;.&lt;/span&gt;
+&lt;span class="err"&gt;Prerequisite `hoge.mod&amp;#39; is older than target `hoge.o&amp;#39;.&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3872,8 +3976,8 @@ Then you can set the &lt;code&gt;DISPLAY&lt;/code&gt; variable in the &lt;code&g
 &lt;p&gt;この解決策は確実に上手くいくのだが，なんかバカっぽいし，この問題を忘れた頃にまた同じようにファイル名と同名のモジュールを作成して，同じ問題が生じると思われる．
 もっと根本的な解決策が欲しい．&lt;/p&gt;
 &lt;h2&gt;解決策２：&lt;code&gt;.mod&lt;/code&gt;も含めた依存関係を明示する&lt;/h2&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nf"&gt;hoge.o hoge.mod &lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;hoge&lt;/span&gt;.&lt;span class="n"&gt;F&lt;/span&gt;90
-    &lt;span class="k"&gt;$(&lt;/span&gt;MPIFC&lt;span class="k"&gt;)&lt;/span&gt; -c &lt;span class="k"&gt;$(&lt;/span&gt;MPIFLAGS&lt;span class="k"&gt;)&lt;/span&gt; &lt;span class="k"&gt;$(&lt;/span&gt;CPPFLAGS&lt;span class="k"&gt;)&lt;/span&gt; $&amp;lt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;hoge.o hoge.mod : hoge.F90&lt;/span&gt;
+&lt;span class="err"&gt;    $(MPIFC) -c $(MPIFLAGS) $(CPPFLAGS) $&amp;lt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -3942,43 +4046,43 @@ Codeを含めてスライドにする場合なんかはこれはかなり便利�
 &lt;p&gt;この &lt;strong&gt;2&lt;/strong&gt; が本当に良い機能で，使ってみないと「そんなものかね」的に思うが，一度使ったら最後，これがないリモートサーバで作業する気などなくなってしまう．そのくらい良い機能．&lt;/p&gt;
 &lt;p&gt;インストールや設定の仕方，使い方などはすでにインターネット上にいろいろと出回っているので，ここには記載しないが，いくつかのキーバインドは自分が便利と思うものを載せておく．
 以下のような内容で &lt;code&gt;~/.tmux.conf&lt;/code&gt; を保存しておくことで，自分の好きな設定ができている（ほとんどどこかのウェブサイトから取ってきたものだが，どこかを忘れてしまった）．&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;# &lt;span class="nv"&gt;Prefix&lt;/span&gt;変更 &lt;span class="nv"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="nv"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;
-&lt;span class="nv"&gt;set&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;option&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;g&lt;/span&gt; &lt;span class="nv"&gt;prefix&lt;/span&gt; &lt;span class="nv"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt;
-&lt;span class="nv"&gt;bind&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;key&lt;/span&gt; &lt;span class="nv"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;t&lt;/span&gt; &lt;span class="k"&gt;send&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;prefix&lt;/span&gt;
-&lt;span class="nv"&gt;unbind&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;key&lt;/span&gt; &lt;span class="nv"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;b&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Prefix変更&lt;/span&gt; &lt;span class="k"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt; &lt;span class="o"&gt;-&amp;gt;&lt;/span&gt; &lt;span class="k"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;option&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;g&lt;/span&gt; &lt;span class="k"&gt;prefix&lt;/span&gt; &lt;span class="k"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt;
+&lt;span class="n"&gt;bind&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;key&lt;/span&gt; &lt;span class="k"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;t&lt;/span&gt; &lt;span class="n"&gt;send&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;prefix&lt;/span&gt;
+&lt;span class="n"&gt;unbind&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;key&lt;/span&gt; &lt;span class="k"&gt;C&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;b&lt;/span&gt;
 
-# 設定再読込キーバインド
-&lt;span class="nv"&gt;unbind&lt;/span&gt; &lt;span class="nv"&gt;r&lt;/span&gt;
-&lt;span class="nv"&gt;bind&lt;/span&gt; &lt;span class="nv"&gt;r&lt;/span&gt; &lt;span class="nv"&gt;source&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;file&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;.&lt;span class="nv"&gt;tmux&lt;/span&gt;.&lt;span class="nv"&gt;conf&lt;/span&gt; \&lt;span class="c1"&gt;; display &amp;quot;Reloaded ~/.tmux.conf&amp;quot;&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;設定再読込キーバインド&lt;/span&gt;
+&lt;span class="n"&gt;unbind&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt;
+&lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="k"&gt;source&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;file&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tmux&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;conf&lt;/span&gt; &lt;span class="err"&gt;\&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;display&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;Reloaded ~/.tmux.conf&amp;quot;&lt;/span&gt;
 
-# &lt;span class="nv"&gt;key&lt;/span&gt; &lt;span class="nv"&gt;bind&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;window&lt;/span&gt;の移動&lt;span class="ss"&gt;)&lt;/span&gt;
-# カーソルキーで移動
-&lt;span class="nv"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt; &lt;span class="nv"&gt;left&lt;/span&gt; &lt;span class="nv"&gt;previous&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;window&lt;/span&gt;
-&lt;span class="nv"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt; &lt;span class="nv"&gt;right&lt;/span&gt; &lt;span class="k"&gt;next&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;window&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="k"&gt;key&lt;/span&gt; &lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;windowの移動&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;カーソルキーで移動&lt;/span&gt;
+&lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="k"&gt;left&lt;/span&gt; &lt;span class="n"&gt;previous&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;window&lt;/span&gt;
+&lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="k"&gt;right&lt;/span&gt; &lt;span class="k"&gt;next&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;window&lt;/span&gt;
 
-# &lt;span class="nv"&gt;key&lt;/span&gt; &lt;span class="nv"&gt;bind&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;pane&lt;/span&gt;の移動&lt;span class="ss"&gt;)&lt;/span&gt;
-# &lt;span class="nv"&gt;Shift&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; カーソルキーで移動
-&lt;span class="nv"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt; &lt;span class="nv"&gt;S&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;left&lt;/span&gt; &lt;span class="nv"&gt;select&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;pane&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;L&lt;/span&gt;
-&lt;span class="nv"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt; &lt;span class="nv"&gt;S&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;down&lt;/span&gt; &lt;span class="nv"&gt;select&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;pane&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;D&lt;/span&gt;
-&lt;span class="nv"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt; &lt;span class="nv"&gt;S&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;up&lt;/span&gt; &lt;span class="nv"&gt;select&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;pane&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;U&lt;/span&gt;
-&lt;span class="nv"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;n&lt;/span&gt; &lt;span class="nv"&gt;S&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;right&lt;/span&gt; &lt;span class="nv"&gt;select&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;pane&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;R&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="k"&gt;key&lt;/span&gt; &lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;paneの移動&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;Shift&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="err"&gt;カーソルキーで移動&lt;/span&gt;
+&lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;left&lt;/span&gt; &lt;span class="k"&gt;select&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pane&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;L&lt;/span&gt;
+&lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;down&lt;/span&gt; &lt;span class="k"&gt;select&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pane&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;D&lt;/span&gt;
+&lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;up&lt;/span&gt; &lt;span class="k"&gt;select&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pane&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;U&lt;/span&gt;
+&lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;n&lt;/span&gt; &lt;span class="n"&gt;S&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;right&lt;/span&gt; &lt;span class="k"&gt;select&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;pane&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;R&lt;/span&gt;
 
-# &lt;span class="mi"&gt;256&lt;/span&gt;色端末を使用する
-&lt;span class="nv"&gt;set&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;option&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;g&lt;/span&gt; &lt;span class="nv"&gt;default&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;terminal&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;tmux-256color&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
-# &lt;span class="nv"&gt;vi&lt;/span&gt;のキーバインドを使用する
-# &lt;span class="nv"&gt;set&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;window&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;option&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;g&lt;/span&gt; &lt;span class="nv"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;keys&lt;/span&gt; &lt;span class="nv"&gt;vi&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="mi"&gt;256&lt;/span&gt;&lt;span class="err"&gt;色端末を使用する&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;option&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;g&lt;/span&gt; &lt;span class="k"&gt;default&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;terminal&lt;/span&gt; &lt;span class="ss"&gt;&amp;quot;tmux-256color&amp;quot;&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;viのキーバインドを使用する&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="k"&gt;set&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;window&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;option&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;g&lt;/span&gt; &lt;span class="k"&gt;mode&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;keys&lt;/span&gt; &lt;span class="n"&gt;vi&lt;/span&gt;
 
-# ステータスバー設定
-&lt;span class="nv"&gt;set&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;g&lt;/span&gt; &lt;span class="nv"&gt;status&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;interval&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
-&lt;span class="nv"&gt;set&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;g&lt;/span&gt; &lt;span class="nv"&gt;status&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;bg&lt;/span&gt; &lt;span class="nv"&gt;colour100&lt;/span&gt;
-&lt;span class="nv"&gt;setw&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;g&lt;/span&gt; &lt;span class="nv"&gt;window&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;status&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;current&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;fg&lt;/span&gt; &lt;span class="nv"&gt;black&lt;/span&gt;
-&lt;span class="nv"&gt;setw&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;g&lt;/span&gt; &lt;span class="nv"&gt;window&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;status&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;current&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;bg&lt;/span&gt; &lt;span class="nv"&gt;white&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="err"&gt;ステータスバー設定&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;g&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nb"&gt;interval&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;
+&lt;span class="k"&gt;set&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;g&lt;/span&gt; &lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;bg&lt;/span&gt; &lt;span class="n"&gt;colour100&lt;/span&gt;
+&lt;span class="n"&gt;setw&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;g&lt;/span&gt; &lt;span class="n"&gt;window&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;current&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fg&lt;/span&gt; &lt;span class="n"&gt;black&lt;/span&gt;
+&lt;span class="n"&gt;setw&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;g&lt;/span&gt; &lt;span class="n"&gt;window&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;status&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;current&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;bg&lt;/span&gt; &lt;span class="n"&gt;white&lt;/span&gt;
 
-# &lt;span class="nv"&gt;split&lt;/span&gt; &lt;span class="nv"&gt;panes&lt;/span&gt; &lt;span class="nv"&gt;using&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="nv"&gt;and&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;
-&lt;span class="nv"&gt;bind&lt;/span&gt; &lt;span class="nv"&gt;h&lt;/span&gt; &lt;span class="nv"&gt;split&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;window&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;h&lt;/span&gt;
-&lt;span class="nv"&gt;bind&lt;/span&gt; &lt;span class="nv"&gt;v&lt;/span&gt; &lt;span class="nv"&gt;split&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;window&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;v&lt;/span&gt;
-&lt;span class="nv"&gt;unbind&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;
-&lt;span class="nv"&gt;unbind&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;
+&lt;span class="o"&gt;#&lt;/span&gt; &lt;span class="n"&gt;split&lt;/span&gt; &lt;span class="n"&gt;panes&lt;/span&gt; &lt;span class="k"&gt;using&lt;/span&gt; &lt;span class="o"&gt;|&lt;/span&gt; &lt;span class="k"&gt;and&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;
+&lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="n"&gt;h&lt;/span&gt; &lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;window&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;h&lt;/span&gt;
+&lt;span class="n"&gt;bind&lt;/span&gt; &lt;span class="n"&gt;v&lt;/span&gt; &lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;window&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;v&lt;/span&gt;
+&lt;span class="n"&gt;unbind&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;&amp;quot;&amp;#39;&lt;/span&gt;
+&lt;span class="n"&gt;unbind&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4032,7 +4136,7 @@ Codeを含めてスライドにする場合なんかはこれはかなり便利�
 &lt;li&gt;Delete selected particles&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;So you can use CNA to identify which atoms are FCC-like and which are not. Then you can select FCC atoms using &lt;code&gt;Expression select&lt;/code&gt; by adding the following expression into the &lt;code&gt;Boolean expression:&lt;/code&gt; text box,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;StructureType&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;StructureType == 1&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4123,24 +4227,24 @@ configure: error: cannot guess build type&lt;span class="p"&gt;;&lt;/span&gt; yo
 
 &lt;p&gt;となって，進むことができない．
 オプションに&lt;code&gt;--build=sparc64-linux-gnu&lt;/code&gt;を追加すると，&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;checking&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;correct&lt;/span&gt; &lt;span class="nv"&gt;version&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;gmp&lt;/span&gt;.&lt;span class="nv"&gt;h&lt;/span&gt;... &lt;span class="nv"&gt;no&lt;/span&gt;
-&lt;span class="nv"&gt;configure&lt;/span&gt;: &lt;span class="nv"&gt;error&lt;/span&gt;: &lt;span class="nv"&gt;Building&lt;/span&gt; &lt;span class="nv"&gt;GCC&lt;/span&gt; &lt;span class="nv"&gt;requires&lt;/span&gt; &lt;span class="nv"&gt;GMP&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;.&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nv"&gt;and&lt;/span&gt; &lt;span class="nv"&gt;MPFR&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;.&lt;span class="mi"&gt;3&lt;/span&gt;.&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;.
-&lt;span class="nv"&gt;Try&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;with&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;gmp&lt;/span&gt; &lt;span class="nv"&gt;and&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;or&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;with&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;mpfr&lt;/span&gt; &lt;span class="nv"&gt;options&lt;/span&gt; &lt;span class="nv"&gt;to&lt;/span&gt; &lt;span class="nv"&gt;specify&lt;/span&gt; &lt;span class="nv"&gt;their&lt;/span&gt; &lt;span class="nv"&gt;locations&lt;/span&gt;.
-&lt;span class="nv"&gt;Copies&lt;/span&gt; &lt;span class="nv"&gt;of&lt;/span&gt; &lt;span class="nv"&gt;these&lt;/span&gt; &lt;span class="nv"&gt;libraries&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt; source code can be found at their respective&lt;/span&gt;
-&lt;span class="nv"&gt;hosting&lt;/span&gt; &lt;span class="nv"&gt;sites&lt;/span&gt; &lt;span class="nv"&gt;as&lt;/span&gt; &lt;span class="nv"&gt;well&lt;/span&gt; &lt;span class="nv"&gt;as&lt;/span&gt; &lt;span class="nv"&gt;at&lt;/span&gt; &lt;span class="nv"&gt;ftp&lt;/span&gt;:&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="nv"&gt;gcc&lt;/span&gt;.&lt;span class="nv"&gt;gnu&lt;/span&gt;.&lt;span class="nv"&gt;org&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;pub&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;gcc&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;infrastructure&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;.
-&lt;span class="nv"&gt;See&lt;/span&gt; &lt;span class="nv"&gt;also&lt;/span&gt; &lt;span class="nv"&gt;http&lt;/span&gt;:&lt;span class="o"&gt;//&lt;/span&gt;&lt;span class="nv"&gt;gcc&lt;/span&gt;.&lt;span class="nv"&gt;gnu&lt;/span&gt;.&lt;span class="nv"&gt;org&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;install&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;prerequisites&lt;/span&gt;.&lt;span class="nv"&gt;html&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;additional&lt;/span&gt; &lt;span class="nv"&gt;info&lt;/span&gt;.
-&lt;span class="k"&gt;If&lt;/span&gt; &lt;span class="nv"&gt;you&lt;/span&gt; &lt;span class="nv"&gt;obtained&lt;/span&gt; &lt;span class="nv"&gt;GMP&lt;/span&gt; &lt;span class="nv"&gt;and&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;or&lt;/span&gt; &lt;span class="nv"&gt;MPFR&lt;/span&gt; &lt;span class="nv"&gt;from&lt;/span&gt; &lt;span class="nv"&gt;a&lt;/span&gt; &lt;span class="nv"&gt;vendor&lt;/span&gt; &lt;span class="nv"&gt;distribution&lt;/span&gt; &lt;span class="nv"&gt;package&lt;/span&gt;, &lt;span class="nv"&gt;make&lt;/span&gt;
-&lt;span class="nv"&gt;sure&lt;/span&gt; &lt;span class="nv"&gt;that&lt;/span&gt; &lt;span class="nv"&gt;you&lt;/span&gt; &lt;span class="nv"&gt;have&lt;/span&gt; &lt;span class="nv"&gt;installed&lt;/span&gt; &lt;span class="nv"&gt;both&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;libraries&lt;/span&gt; &lt;span class="nv"&gt;and&lt;/span&gt; &lt;span class="nv"&gt;the&lt;/span&gt; &lt;span class="nv"&gt;header&lt;/span&gt; &lt;span class="nv"&gt;files&lt;/span&gt;.
-&lt;span class="nv"&gt;They&lt;/span&gt; &lt;span class="nv"&gt;may&lt;/span&gt; &lt;span class="nv"&gt;be&lt;/span&gt; &lt;span class="nv"&gt;located&lt;/span&gt; &lt;span class="nv"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;separate&lt;/span&gt; &lt;span class="nv"&gt;packages&lt;/span&gt;.
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;checking for correct version of gmp.h... no&lt;/span&gt;
+&lt;span class="c"&gt;configure: error: Building GCC requires GMP 4.1+ and MPFR 2.3.2+.&lt;/span&gt;
+&lt;span class="err"&gt;Try the --with-gmp and/or --with-mpfr options to specify their locations.&lt;/span&gt;
+&lt;span class="err"&gt;Copies of these libraries&amp;#39; source code can be found at their respective&lt;/span&gt;
+&lt;span class="err"&gt;hosting sites as well as at ftp://gcc.gnu.org/pub/gcc/infrastructure/.&lt;/span&gt;
+&lt;span class="err"&gt;See also http://gcc.gnu.org/install/prerequisites.html for additional info.&lt;/span&gt;
+&lt;span class="err"&gt;If you obtained GMP and/or MPFR from a vendor distribution package, make&lt;/span&gt;
+&lt;span class="err"&gt;sure that you have installed both the libraries and the header files.&lt;/span&gt;
+&lt;span class="err"&gt;They may be located in separate packages.&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;となり，進めない．どうも&lt;code&gt;GMP&lt;/code&gt;と&lt;code&gt;MPFR&lt;/code&gt;というライブラリが必要とのこと．&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;次のセクションにMPFRとGMPのインストールを記載する．&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;GMPとMPFRをインストールしたら，それらのヘッダファイルやライブラリファイルへのパスを明示的に渡してやって&lt;code&gt;./configure&lt;/code&gt;を行う．&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ .&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;configure&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;prefix&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;local&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;fx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;build&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;sparc64&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;linux&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;gnu&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;with&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;gmp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;include&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;local&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;fx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;include&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;with&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;gmp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;lib&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;local&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;fx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;lib&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;with&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;mpfr&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;include&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;local&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;fx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;include&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;with&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;mpfr&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;lib&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;local&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;fx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;lib&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;enable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;languages&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;c&lt;/span&gt;,&lt;span class="nv"&gt;fortran&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;disable&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;multilib&lt;/span&gt;
-$ &lt;span class="nv"&gt;make&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;j24&lt;/span&gt;
-$ &lt;span class="nv"&gt;make&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/local-fx/ --build&lt;span class="o"&gt;=&lt;/span&gt;sparc64-linux-gnu --with-gmp-include&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/local-fx/include --with-gmp-lib&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/local-fx/lib --with-mpfr-include&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/local-fx/include --with-mpfr-lib&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/local-fx/lib --enable-languages&lt;span class="o"&gt;=&lt;/span&gt;c,fortran --disable-multilib
+$ make -j24
+$ make install
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4152,18 +4256,18 @@ $ &lt;span class="nv"&gt;make&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/sp
 &lt;li&gt;&lt;a href="http://www.mpfr.org"&gt;http://www.mpfr.org&lt;/a&gt;
 からダウンロードしてきて，解凍して，&lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ .&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;configure&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;prefix&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;local&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;fx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;build&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;sparc64&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;linux&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;gnu&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/local-fx/ --build&lt;span class="o"&gt;=&lt;/span&gt;sparc64-linux-gnu
 ...
-&lt;span class="nv"&gt;checking&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;gmp&lt;/span&gt;.&lt;span class="nv"&gt;h&lt;/span&gt;... &lt;span class="nv"&gt;no&lt;/span&gt;
-&lt;span class="nv"&gt;configure&lt;/span&gt;: &lt;span class="nv"&gt;error&lt;/span&gt;: &lt;span class="nv"&gt;gmp&lt;/span&gt;.&lt;span class="nv"&gt;h&lt;/span&gt; &lt;span class="nv"&gt;can&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="s"&gt;t be found, or is unusable.&lt;/span&gt;
+checking &lt;span class="k"&gt;for&lt;/span&gt; gmp.h... no
+configure: error: gmp.h can&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;t be found, or is unusable.
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;と，結局&lt;code&gt;GMP&lt;/code&gt;が必要．&lt;/p&gt;
 &lt;p&gt;次のセクションのGMPをインストール後，下記のようにGMPの&lt;code&gt;gmp.h&lt;/code&gt;と&lt;code&gt;libgmp.a&lt;/code&gt;の場所を明示的にconfigureに渡してやれば，configureは通る．&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ .&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;configure&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;prefix&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;local&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;fx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;build&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;sparc64&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;linux&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;gnu&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;with&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;gmp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="k"&gt;include&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;local&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;fx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="k"&gt;include&lt;/span&gt; &lt;span class="o"&gt;--&lt;/span&gt;&lt;span class="nv"&gt;with&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;gmp&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;lib&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;$&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;local&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;fx&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;lib&lt;/span&gt;
-$ &lt;span class="nv"&gt;make&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nv"&gt;j12&lt;/span&gt;
-$ &lt;span class="nv"&gt;make&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ ./configure --prefix&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/local-fx/ --build&lt;span class="o"&gt;=&lt;/span&gt;sparc64-linux-gnu --with-gmp-include&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/local-fx/include --with-gmp-lib&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;/local-fx/lib
+$ make -j12
+$ make install
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4239,20 +4343,20 @@ Terminal.appの環境設定「プロファイル」で，「読み込み...」�
 &lt;h2&gt;Mailデータ移行&lt;/h2&gt;
 &lt;p&gt;&lt;a href="http://blog.skeg.jp/archives/2016/11/mail-backup-sierra.html"&gt;ここ&lt;/a&gt;を参考にして，以下のファイル群を旧macからコピーした．&lt;/p&gt;
 &lt;h3&gt;インターネットアカウントの復元&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;UserName&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Library&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Accounts&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;/Users/UserName/Library/Accounts&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;h3&gt;メールデータの復元&lt;/h3&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;kazuto&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Library&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Mail&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
-&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;UserName&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Library&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Mail&lt;/span&gt; &lt;span class="n"&gt;Downloads&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
-&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;UserName&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Library&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Containers&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mail&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;
-&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;UserName&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Library&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Preferences&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;accounts&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plist&lt;/span&gt;
-&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;UserName&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Library&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Preferences&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;accountsd&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plist&lt;/span&gt;
-&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;UserName&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Library&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Preferences&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mail&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;shared&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plist&lt;/span&gt;
-&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;UserName&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Library&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Preferences&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;MailMigratorService&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plist&lt;/span&gt;
-&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;UserName&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Library&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;SyncedPreferences&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mail&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mail&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;vipsenders&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plist&lt;/span&gt;
-&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;UserName&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Library&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;SyncedPreferences&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;apple&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;mail&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plist&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;/Users/kazuto/Library/Mail/&lt;/span&gt;
+&lt;span class="err"&gt;/Users/UserName/Library/Mail Downloads/&lt;/span&gt;
+&lt;span class="err"&gt;/Users/UserName/Library/Containers/com.apple.mail/&lt;/span&gt;
+&lt;span class="err"&gt;/Users/UserName/Library/Preferences/com.apple.accounts.plist&lt;/span&gt;
+&lt;span class="err"&gt;/Users/UserName/Library/Preferences/com.apple.accountsd.plist&lt;/span&gt;
+&lt;span class="err"&gt;/Users/UserName/Library/Preferences/com.apple.mail-shared.plist&lt;/span&gt;
+&lt;span class="err"&gt;/Users/UserName/Library/Preferences/com.apple.MailMigratorService.plist&lt;/span&gt;
+&lt;span class="err"&gt;/Users/UserName/Library/SyncedPreferences/com.apple.mail-com.apple.mail.vipsenders.plist&lt;/span&gt;
+&lt;span class="err"&gt;/Users/UserName/Library/SyncedPreferences/com.apple.mail.plist&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4284,7 +4388,7 @@ $ brew linkapps
 &lt;h3&gt;pyenv&lt;/h3&gt;
 &lt;p&gt;どうもpyenvだとかvirtualenvだとかさまざまあるらしいが，ここではpyenvとvirtualenvプラグインをインストールする方法を採用する．下記参考．
 &lt;a href="http://cocodrips.hateblo.jp/entry/2014/09/02/171127"&gt;http://cocodrips.hateblo.jp/entry/2014/09/02/171127&lt;/a&gt;&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nv"&gt;CFLAGS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;-I$(xcrun --show-sdk-path)/usr/include&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;pyenv&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;.&lt;span class="mi"&gt;7&lt;/span&gt;.&lt;span class="mi"&gt;13&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nv"&gt;CFLAGS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;-I&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;xcrun --show-sdk-path&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;/usr/include&amp;quot;&lt;/span&gt; pyenv install &lt;span class="m"&gt;2&lt;/span&gt;.7.13
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4292,18 +4396,18 @@ $ brew linkapps
 参考
 &lt;a href="http://kazscape.com/2014/12/kz-pythonインストール覚書/"&gt;http://kazscape.com/2014/12/kz-pythonインストール覚書/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;どうも，anacondaというものをインストールすると，numpy，scipyだとかipython，jupyterなどがインストールされるらしくてかなり便利らしい．&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nv"&gt;CFLAGS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="s"&gt;-I$(xcrun --show-sdk-path)/usr/include&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt; &lt;span class="nv"&gt;pyenv&lt;/span&gt; &lt;span class="nv"&gt;install&lt;/span&gt; &lt;span class="nv"&gt;anaconda&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;.&lt;span class="mi"&gt;0&lt;/span&gt;.&lt;span class="mi"&gt;0&lt;/span&gt;
-$ &lt;span class="nv"&gt;pyenv&lt;/span&gt; &lt;span class="nv"&gt;versions&lt;/span&gt;
-  &lt;span class="nv"&gt;system&lt;/span&gt;
-&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;.&lt;span class="mi"&gt;7&lt;/span&gt;.&lt;span class="mi"&gt;13&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;by&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;kobayashi&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;.&lt;span class="nv"&gt;pyenv&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;version&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
-  &lt;span class="mi"&gt;3&lt;/span&gt;.&lt;span class="mi"&gt;5&lt;/span&gt;.&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="nv"&gt;rc1&lt;/span&gt;
-  &lt;span class="nv"&gt;anaconda&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;.&lt;span class="mi"&gt;0&lt;/span&gt;.&lt;span class="mi"&gt;0&lt;/span&gt;
-$ &lt;span class="nv"&gt;pyenv&lt;/span&gt; &lt;span class="nv"&gt;global&lt;/span&gt; &lt;span class="nv"&gt;anaconda&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;.&lt;span class="mi"&gt;0&lt;/span&gt;.&lt;span class="mi"&gt;0&lt;/span&gt;
-$ &lt;span class="nv"&gt;pyenv&lt;/span&gt; &lt;span class="nv"&gt;versions&lt;/span&gt;
-  &lt;span class="nv"&gt;system&lt;/span&gt;
-  &lt;span class="mi"&gt;2&lt;/span&gt;.&lt;span class="mi"&gt;7&lt;/span&gt;.&lt;span class="mi"&gt;13&lt;/span&gt;
-  &lt;span class="mi"&gt;3&lt;/span&gt;.&lt;span class="mi"&gt;5&lt;/span&gt;.&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="nv"&gt;rc1&lt;/span&gt;
-&lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="nv"&gt;anaconda&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;.&lt;span class="mi"&gt;0&lt;/span&gt;.&lt;span class="mi"&gt;0&lt;/span&gt; &lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;set&lt;/span&gt; &lt;span class="nv"&gt;by&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;kobayashi&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;.&lt;span class="nv"&gt;pyenv&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="nv"&gt;version&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nv"&gt;CFLAGS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;-I&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;xcrun --show-sdk-path&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;/usr/include&amp;quot;&lt;/span&gt; pyenv install anaconda-4.0.0
+$ pyenv versions
+  system
+* &lt;span class="m"&gt;2&lt;/span&gt;.7.13 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt; by /Users/kobayashi/.pyenv/version&lt;span class="o"&gt;)&lt;/span&gt;
+  &lt;span class="m"&gt;3&lt;/span&gt;.5.3rc1
+  anaconda-4.0.0
+$ pyenv global anaconda-4.0.0
+$ pyenv versions
+  system
+  &lt;span class="m"&gt;2&lt;/span&gt;.7.13
+  &lt;span class="m"&gt;3&lt;/span&gt;.5.3rc1
+* anaconda-4.0.0 &lt;span class="o"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;set&lt;/span&gt; by /Users/kobayashi/.pyenv/version&lt;span class="o"&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4315,8 +4419,8 @@ $ &lt;span class="nv"&gt;pyenv&lt;/span&gt; &lt;span class="nv"&gt;versions&lt;/
 
 &lt;h3&gt;matplotlib.pyplotの問題&lt;/h3&gt;
 &lt;p&gt;このバージョンのmatplotlib (1.5.1)では，pyplotをimportしようとすると，下記のようなwarningが出て先に進まない（macOS Sierra 10.12.2）．&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Users&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;kobayashi&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pyenv&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;versions&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;anaconda&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;lib&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;python2&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;site&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;packages&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;matplotlib&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;font_manager&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;py&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="mi"&gt;273&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;UserWarning&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="n"&gt;Matplotlib&lt;/span&gt; &lt;span class="k"&gt;is&lt;/span&gt; &lt;span class="n"&gt;building&lt;/span&gt; &lt;span class="n"&gt;the&lt;/span&gt; &lt;span class="n"&gt;font&lt;/span&gt; &lt;span class="k"&gt;cache&lt;/span&gt; &lt;span class="k"&gt;using&lt;/span&gt; &lt;span class="n"&gt;fc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;list&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt; &lt;span class="n"&gt;This&lt;/span&gt; &lt;span class="n"&gt;may&lt;/span&gt; &lt;span class="n"&gt;take&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="n"&gt;moment&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;
-  &lt;span class="n"&gt;warnings&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;warn&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Matplotlib is building the font cache using fc-list. This may take a moment.&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;/Users/kobayashi/.pyenv/versions/anaconda-4.0.0/lib/python2.7/site-packages/matplotlib/font_manager.py:273: UserWarning: Matplotlib is building the font cache using fc-list. This may take a moment.&lt;/span&gt;
+&lt;span class="err"&gt;  warnings.warn(&amp;#39;Matplotlib is building the font cache using fc-list. This may take a moment.&amp;#39;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4326,17 +4430,17 @@ $ &lt;span class="nv"&gt;pyenv&lt;/span&gt; &lt;span class="nv"&gt;versions&lt;/
 &lt;/ul&gt;
 &lt;p&gt;上記でいろいろと解決策が議論されているが，どれも自分の場合は有効でなかったため，下記のような対策をとった．これは&lt;code&gt;matplotlib/font_manager.py&lt;/code&gt;を書き換えることになるので注意が必要．&lt;/p&gt;
 &lt;p&gt;これはどうも，上記&lt;code&gt;font_manager.py&lt;/code&gt;の273行目&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;        &lt;span class="n"&gt;pipe&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;Popen&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;fc-list&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;--format=%{file}\\n&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt;
-                                &lt;span class="k"&gt;stdout&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PIPE&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
-                                &lt;span class="n"&gt;stderr&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;subprocess&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;PIPE&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;        pipe = subprocess.Popen([&amp;#39;fc-list&amp;#39;, &amp;#39;--format=%{file}\\n&amp;#39;],&lt;/span&gt;
+&lt;span class="err"&gt;                                stdout=subprocess.PIPE,&lt;/span&gt;
+&lt;span class="err"&gt;                                stderr=subprocess.PIPE)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;という箇所が問題なようだ．&lt;code&gt;%{file}&lt;/code&gt;という部分がバグっているように思われる．
 ここは，font-listを&lt;code&gt;fc-list&lt;/code&gt;を用いて取得する部分なのだが，その部分をごっそり無視するため，
 font_manager.py:325,326行目の&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;            &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="nv"&gt;f&lt;/span&gt; &lt;span class="nv"&gt;in&lt;/span&gt; &lt;span class="nv"&gt;get_fontconfig_fonts&lt;/span&gt;&lt;span class="ss"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;fontext&lt;/span&gt;&lt;span class="ss"&gt;)&lt;/span&gt;:
-                &lt;span class="nv"&gt;fontfiles&lt;/span&gt;[&lt;span class="nv"&gt;f&lt;/span&gt;] &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="w"&gt;            &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="ow"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;get_fontconfig_fonts&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fontext&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;:&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
+&lt;span class="w"&gt;                &lt;/span&gt;&lt;span class="n"&gt;fontfiles&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;f&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="w"&gt;&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4385,12 +4489,12 @@ $ brew cask search
 &lt;p&gt;[TOC]&lt;/p&gt;
 &lt;h2&gt;Markdown setting&lt;/h2&gt;
 &lt;p&gt;To activate the Markdown, I wrote the following line in &lt;code&gt;pelicanconf.py&lt;/code&gt;.&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;MD_EXTENSIONS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;codehilite&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;extra&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;smarty&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;toc&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;MD_EXTENSIONS = [&amp;#39;codehilite&amp;#39;,&amp;#39;extra&amp;#39;,&amp;#39;smarty&amp;#39;, &amp;#39;toc&amp;#39;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;And to make &lt;code&gt;toc&lt;/code&gt; to be available in Markdown I added &lt;code&gt;'extract_toc'&lt;/code&gt; as,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="n"&gt;PLUGINS&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;tag_cloud&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="ss"&gt;&amp;quot;render_math&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;extract_toc&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;PLUGINS = [&amp;quot;tag_cloud&amp;quot;,&amp;quot;render_math&amp;quot;,&amp;#39;extract_toc&amp;#39;]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
@@ -4574,10 +4678,10 @@ extensions = ['sphinx.ext.pngmath']&lt;/blockquote&gt;
 そのlatexのためのプリアンブル（preamble）を以下のように &lt;tt class="docutils literal"&gt;conf.py&lt;/tt&gt; に追加すればよい．&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="n"&gt;pngmath_latex_preamble&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sa"&gt;r&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&amp;quot;&amp;quot;
-\usepackage{eulervm}
+\usepackage&lt;/span&gt;&lt;span class="si"&gt;{eulervm}&lt;/span&gt;&lt;span class="s2"&gt;
 \usepackage{amsmath,amssymb}
 \newcommand{\degree}{$^{\circ}$}
-\newcommand{\temp}{${}^\circ$C}
+\newcommand{\temp}{$&lt;/span&gt;&lt;span class="si"&gt;{}&lt;/span&gt;&lt;span class="s2"&gt;^\circ$C}
 \newcommand{\rmd}{{\rm d}}
 \newcommand{\rme}{{\rm e}}
 &amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
@@ -4591,7 +4695,7 @@ extensions = ['sphinx.ext.pngmath']&lt;/blockquote&gt;
 &lt;h2&gt;簡単な例&lt;/h2&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numba&lt;/span&gt;
-&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="kn"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
 
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;matmul1&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;lenI&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
@@ -4604,7 +4708,7 @@ extensions = ['sphinx.ext.pngmath']&lt;/blockquote&gt;
                 &lt;span class="n"&gt;c&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt; &lt;span class="o"&gt;*&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;k&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;j&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;c&lt;/span&gt;
 
-&lt;span class="nd"&gt;&amp;#64;numba.jit&lt;/span&gt;
+&lt;span class="nd"&gt;&amp;#64;numba&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jit&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;matmul_numba&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;b&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;lenI&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
     &lt;span class="n"&gt;lenJ&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;shape&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
@@ -4640,7 +4744,7 @@ extensions = ['sphinx.ext.pngmath']&lt;/blockquote&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numba&lt;/span&gt;
 &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;math&lt;/span&gt;
 
-&lt;span class="nd"&gt;&amp;#64;numba.jit&lt;/span&gt;
+&lt;span class="nd"&gt;&amp;#64;numba&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;jit&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;direct_cube&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;nc&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;pos&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[],&lt;/span&gt;&lt;span class="n"&gt;chgs&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;[],&lt;/span&gt;&lt;span class="n"&gt;alc&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;10.&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="n"&gt;phi&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;0.0&lt;/span&gt;
     &lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;zeros&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;,),&lt;/span&gt;&lt;span class="n"&gt;dtype&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nb"&gt;float&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
@@ -5212,8 +5316,8 @@ Or you have to change pgp key priviledeg using &lt;tt class="docutils literal"&g
 を指定した場合の挙動をいつも忘れてしまうので，例と共に書いておく．&lt;/p&gt;
 &lt;pre class="code python literal-block"&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;f&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;*&lt;/span&gt;&lt;span class="n"&gt;args&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="o"&gt;**&lt;/span&gt;&lt;span class="n"&gt;kwds&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;
-    &lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;kwds&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="n"&gt;args&lt;/span&gt;
+    &lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="n"&gt;kwds&lt;/span&gt;
 &lt;/pre&gt;
 &lt;p&gt;上のような関数は， &lt;tt class="docutils literal"&gt;args&lt;/tt&gt; は変数名なしの引数をタプルとして受け取り，
 &lt;tt class="docutils literal"&gt;kwds&lt;/tt&gt; は変数名付きで辞書型として受け取る．&lt;/p&gt;
@@ -5783,7 +5887,7 @@ cp &lt;span class="nv"&gt;$*&lt;/span&gt; &lt;span class="nv"&gt;$dname&lt;/span
 試してみたくはある．．．&lt;/p&gt;
 </content><category term="misc"></category><category term="research"></category><category term="swiss"></category></entry><entry><title>Bugfix in ASE</title><link href="https://ryokbys.github.io/blog/posts/2016/01/22/bugfix-in-ase/index.html" rel="alternate"></link><published>2016-01-22T10:49:15+09:00</published><updated>2016-01-22T10:49:15+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2016-01-22:/blog/posts/2016/01/22/bugfix-in-ase/index.html</id><summary type="html">There was a bug in ASE package.</summary><content type="html">&lt;p&gt;There was a bug in ASE package.&lt;/p&gt;
 &lt;p&gt;When I tried to read a &lt;tt class="docutils literal"&gt;vasprun.xml&lt;/tt&gt; file using &lt;tt class="docutils literal"&gt;ase.io.read&lt;/tt&gt; like,&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;atoms&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;vasprun.xml&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;format&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;vasp-xml&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;atoms&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;vasprun.xml&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="nb"&gt;format&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;vasp-xml&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;and the &lt;tt class="docutils literal"&gt;vasprun.xml&lt;/tt&gt; contains some constraints for atoms, I got the following message,&lt;/p&gt;
 &lt;pre class="literal-block"&gt;
@@ -5802,7 +5906,7 @@ UnboundLocalError: local variable 'cell' referenced before assignment
 </content><category term="misc"></category><category term="research"></category><category term="ase"></category></entry><entry><title>Today stamp in python</title><link href="https://ryokbys.github.io/blog/posts/2016/01/15/today-stamp-in-python/index.html" rel="alternate"></link><published>2016-01-15T16:08:01+09:00</published><updated>2016-01-15T16:08:01+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2016-01-15:/blog/posts/2016/01/15/today-stamp-in-python/index.html</id><summary type="html">Pythonで実行時の日付表示のためのやり方をいつも忘れるからメモる！</summary><content type="html">&lt;p&gt;Pythonで実行時の日付表示のためのやり方をいつも忘れるからメモる！&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;datetime&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;datetime&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;dt&lt;/span&gt;
 &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;dt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;today&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;%Y/%m/&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="n"&gt;d&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;%Y/%m/&lt;/span&gt;&lt;span class="si"&gt;%d&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;これだけ．．．&lt;/p&gt;
 </content><category term="misc"></category><category term="python"></category></entry><entry><title>Generating VASP inputs via ASE</title><link href="https://ryokbys.github.io/blog/posts/2016/01/14/generating-vasp-inputs-via-ase/index.html" rel="alternate"></link><published>2016-01-14T22:45:32+09:00</published><updated>2016-01-14T22:45:32+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2016-01-14:/blog/posts/2016/01/14/generating-vasp-inputs-via-ase/index.html</id><summary type="html">This is done on jupyter notebook, and it can be read via nbviewer web service. See the link below:</summary><content type="html">&lt;div class="section" id="on-jupyter-notebook"&gt;
@@ -5886,7 +5990,7 @@ and 45 Si atoms in the system, and rest of all are Al atoms.&lt;/p&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ase&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;Atoms&lt;/span&gt;
 &lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;ase.lattice.cubic&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;FaceCenteredCubic&lt;/span&gt;
 &lt;span class="n"&gt;atoms&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;FaceCenteredCubic&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;symbol&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'Al'&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;latticeconstant&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mf"&gt;4.041&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;20&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="n"&gt;atoms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_number_of_atoms&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="n"&gt;atoms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;get_number_of_atoms&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
 &lt;/pre&gt;
 &lt;pre class="literal-block"&gt;
 32000
@@ -5905,8 +6009,8 @@ and 45 Si atoms in the system, and rest of all are Al atoms.&lt;/p&gt;
         &lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
             &lt;span class="n"&gt;atoms&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;symbol&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'Mg'&lt;/span&gt;
             &lt;span class="n"&gt;n_mg&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'number of Mg = '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n_mg&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'number of Si = '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n_si&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'number of Mg = '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n_mg&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'number of Si = '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n_si&lt;/span&gt;
 &lt;/pre&gt;
 &lt;pre class="literal-block"&gt;
 number of Mg =  102
@@ -5925,7 +6029,7 @@ solute atoms.&lt;/p&gt;
         &lt;span class="n"&gt;atoms&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;pop&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
         &lt;span class="n"&gt;n_vac&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
 
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'number of vacancies = '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n_vac&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'number of vacancies = '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n_vac&lt;/span&gt;
 &lt;/pre&gt;
 &lt;pre class="literal-block"&gt;
 number of vacancies =  139
@@ -5938,8 +6042,8 @@ number of vacancies =  139
         &lt;span class="n"&gt;n_si&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
     &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="n"&gt;atoms&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="n"&gt;i&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;symbol&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;'Mg'&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
         &lt;span class="n"&gt;n_mg&lt;/span&gt; &lt;span class="o"&gt;+=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'number of Mg = '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n_mg&lt;/span&gt;
-&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'number of Si = '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n_si&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'number of Mg = '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n_mg&lt;/span&gt;
+&lt;span class="nb"&gt;print&lt;/span&gt; &lt;span class="s1"&gt;'number of Si = '&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="n"&gt;n_si&lt;/span&gt;
 &lt;/pre&gt;
 &lt;pre class="literal-block"&gt;
 number of Mg =  101

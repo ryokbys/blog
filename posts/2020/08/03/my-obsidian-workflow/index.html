@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>My Obsidian workflow - R.K.S. blog</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../../../../../posts/2020/08/03/my-obsidian-workflow/index.html">
+
+        <meta name="author" content="Ryo KOBAYASHI" />
+        <meta name="keywords" content="mac,Obsidian,zettelkasten" />
+        <meta name="description" content="Obsidianというnote-takingアプリがなかなか良く出来たアプリで，今流行りのZettelkastenが実装できるというので一ヶ月ほど使っている．" />
+
+        <meta property="og:site_name" content="R.K.S. blog" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="My Obsidian workflow"/>
+        <meta property="og:url" content="../../../../../posts/2020/08/03/my-obsidian-workflow/index.html"/>
+        <meta property="og:description" content="Obsidianというnote-takingアプリがなかなか良く出来たアプリで，今流行りのZettelkastenが実装できるというので一ヶ月ほど使っている．"/>
+        <meta property="article:published_time" content="2020-08-03" />
+            <meta property="article:section" content="misc" />
+            <meta property="article:tag" content="mac" />
+            <meta property="article:tag" content="Obsidian" />
+            <meta property="article:tag" content="zettelkasten" />
+            <meta property="article:author" content="Ryo KOBAYASHI" />
+
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../../../../../theme/css/bootstrap.united.min.css" type="text/css"/>
+    <link href="../../../../../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../../../../../theme/css/pygments/monokai.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../../theme/css/style.css" type="text/css"/>
+        <link href="../../../../../static/custom.css" rel="stylesheet">
+
+        <link href="../../../../../feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="R.K.S. blog ATOM Feed"/>
+
+        <link href="../../../../../feeds/misc.atom.xml" type="application/atom+xml" rel="alternate"
+              title="R.K.S. blog misc ATOM Feed"/>
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="../../../../../" class="navbar-brand">
+R.K.S. blog            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+
+<!-- Banner -->
+<!-- End Banner -->
+
+<!-- Content Container -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../../../../../posts/2020/08/03/my-obsidian-workflow/index.html"
+                       rel="bookmark"
+                       title="Permalink to My Obsidian workflow">
+                        My Obsidian workflow
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2020-08-03T11:39:17+09:00"> Mon 03 August 2020</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="../../../../../tag/mac.html">mac</a>
+        /
+	<a href="../../../../../tag/obsidian.html">Obsidian</a>
+        /
+	<a href="../../../../../tag/zettelkasten.html">zettelkasten</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p><a href="https://obsidian.md">Obsidian</a>というnote-takingアプリがなかなか良く出来たアプリで，今流行りの<a href="https://zettelkasten.de">Zettelkasten</a>が実装できるというので一ヶ月ほど使っている．</p>
+<p>アプリの紹介は「<a href="https://note.com/takibayashi/n/nd6250964f0a7">第２の脳アプリObsidianを使って日次メモを書く方法</a>」なんかを参照してもらうとして，自分の使い方をメモを兼ねて紹介しておく．
+ちなみに，このやり方は <a href="https://github.com/nickmilo/IMF-v3">nickmiloのIMF-v3</a> を参考にしている．</p>
+<h2>ディレクトリ構造</h2>
+<ul>
+<li>ノートをカテゴリしてディレクトリに分けるのは良くないと言われるのを良く耳にするので，基本的にはノートはディレクトリで分けたりせず，全て（Obsidian vaultの）ルートディレクトリ内に直に保存する．</li>
+<li>画像ファイル，PDFなどの添付ファイルはルートディレクトリに一緒に置くとごちゃつくので<code>00_assets/</code>というディレクトリに保存することにする．</li>
+<li>日々のノートは個別のノートとは少し性格がことなるので，<code>01_daily_notes</code>というディレクトリに保存する．</li>
+</ul>
+<h2>日々のノート（Daily notes）</h2>
+<ul>
+<li>日々のメモノートとそれ以外は少し用途というか考え方が異なるので，日々のノートは<code>01_daily_notes</code>という保存し，Obsidianの「Daily notes」plugin機能を使って，<code>YYYY-MM-DD</code>というファイル名で作成することにする．</li>
+<li>Daily notes pluginでは，テンプレートファイルを設定することができるので，<code>01_daily_notes/template</code>という以下のようなファイルを作り，それをテンプレートとする．
+  ```
+  tags: #diary</li>
+</ul>
+<p># Tasks
+  - [ ] something</p>
+<hr>
+<p># Notes</p>
+<p><code>``
+  - daily notesなのに，タグとしては</code>#diary<code>となっているのはご愛嬌．．．
+  - 最初にdaily noteのTasksに，今日やることをリストアップして，チェックしていくという流れ．
+  -</code># Notes`以下にメモを書いていく．一つのノートとして独立するような内容はコピペで独立したノートを作り，リンクする．</p>
+<h2>Index and Map of Contents (MOC)</h2>
+<p>全てのノートがルートディレクトリ内に一様に保存されているので，何かしらのインデックス・ノートなり各ノートを参照する機構がないと，個々のノートが単独で保存されてしまい，どこからも行き着くことの出来ない「dead note」になってしまう．そのため，<a href="https://github.com/nickmilo/IMF-v3">nickmiloのIMF-v3</a>に従って，indexノートとMOCノートを作る．</p>
+<h3>indexノート <code>000 Index</code></h3>
+<div class="highlight"><pre><span></span><code><span class="o">#</span> <span class="mi">000</span> <span class="k">Index</span>
+
+<span class="o">##</span> <span class="k">Index</span> <span class="k">Map</span>
+<span class="k">Each</span> <span class="k">index</span> <span class="n">file</span> <span class="k">contains</span> <span class="o">**</span><span class="k">Map</span> <span class="k">Of</span> <span class="n">Contents</span> <span class="p">(</span><span class="n">MOC</span><span class="p">)</span><span class="o">**</span> <span class="n">information</span><span class="p">.</span>
+<span class="o">-</span> <span class="mi">000</span><span class="n">s</span> <span class="c1">-- [[000 Index]]</span>
+<span class="o">-</span> <span class="mi">010</span><span class="n">s</span> <span class="c1">-- [[010 Personal Life MOC]] 自分・家族・生活に関すること</span>
+<span class="o">-</span> <span class="mi">030</span><span class="n">s</span> <span class="c1">-- [[030 Computer MOC]] 関連，使い方，ソフトウェア</span>
+<span class="o">-</span> <span class="mi">040</span><span class="n">s</span> <span class="c1">-- [[040 Finance MOC]] 資産運用，投資など</span>
+<span class="o">-</span> <span class="mi">050</span><span class="n">s</span> <span class="c1">-- [[050 Productivity MOC]] - note-taking, project managements, productivity</span>
+<span class="o">-</span> <span class="mi">090</span><span class="n">s</span> <span class="c1">-- [[090 Learning MOC]] 学習のことなど</span>
+<span class="o">-</span> <span class="mi">00</span><span class="n">_assets</span><span class="o">/</span> <span class="c1">-- テキスト以外のファイル格納庫</span>
+<span class="o">-</span> <span class="mi">01</span><span class="n">_daily_notes</span><span class="o">/`</span><span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span><span class="p">.</span><span class="n">md</span><span class="o">`</span> <span class="c1">-- 日記</span>
+<span class="o">-</span> <span class="mi">99</span><span class="n">_archive</span><span class="o">/</span> <span class="c1">-- もう更新されないノート格納庫</span>
+
+<span class="o">##</span> <span class="n">Tags</span>
+
+<span class="o">-</span> <span class="mi">000</span><span class="n">s</span> <span class="c1">-- #IMF #MOC #Zettelkasten </span>
+<span class="o">-</span> <span class="mi">010</span><span class="n">s</span> <span class="c1">-- </span>
+<span class="o">-</span> <span class="mi">030</span><span class="n">s</span> <span class="c1">-- #computer #software #commands #スパコン </span>
+<span class="o">-</span> <span class="mi">040</span><span class="n">s</span> <span class="c1">-- #株 #資産運用 </span>
+<span class="o">-</span> <span class="mi">050</span><span class="n">s</span> <span class="c1">-- #obsidian #note-taking #diary #productivity #GTD</span>
+<span class="o">-</span> <span class="mi">090</span><span class="n">s</span> <span class="c1">-- #learning</span>
+
+<span class="o">##</span> <span class="n">Rules</span>
+
+<span class="o">-</span> <span class="err">全てのノートはルートディレクトリに保存．ディレクトリによるカテゴリ分けはしない．タグとリンクでつなげる．</span>
+<span class="o">-</span> <span class="err">ノートは何かのノートから</span><span class="n">wiki風リンクで派生させる形で作成する</span><span class="err">．</span>
+<span class="o">-</span> <span class="err">上記インデックスファイルから</span><span class="n">MOC</span> <span class="n">noteにリンクして</span><span class="err">，</span><span class="n">MOCからさらにリンクしていく</span>
+<span class="o">-</span> <span class="err">会議・ミーティングは</span><span class="o">`</span><span class="n">MTG</span> <span class="n">YYMMDD</span> <span class="err">会議名</span><span class="p">.</span><span class="n">md</span><span class="o">`</span><span class="err">というノートに．</span>
+</code></pre></div>
+
+
+<ul>
+<li><code>000 Index</code>というファイル名にすることで，ソートすると一番上に表示される．</li>
+<li>ここで<code>[[...]]</code>のような記述は，wiki風のリンクでObsidianの中でリンクとして管理されて，backlinkなんかもつくので便利．</li>
+<li>各カテゴリーのMOCに関する説明と，そのMOCファイルへのリンク，および関連するタグなどを記載しておく．</li>
+<li>Obsidianノート管理のルールが書いてある（これは別ノートに書いても良いかも）</li>
+</ul>
+<h3>MOCノート</h3>
+<p>各カテゴリーやトピックに関連するノートへのリンクをまとめておくノート．</p>
+<p>例えば，<code>000 Index</code>ノートにある<code>[[050 Productivity MOC]]</code>からは下記のようなノートに飛ぶようになっている．</p>
+<div class="highlight"><pre><span></span><code><span class="cp"># 050 Productivity MOC</span>
+<span class="cp">#note-taking #obsidian #MOC #IMF #Zettelkasten #productivity </span>
+
+<span class="err">ノートのとり方，情報のまとめ方，情報の引き出し方など．文章の書き方なども含めても良い．</span>
+
+<span class="o">---</span>
+
+<span class="cp">## Notes</span>
+
+<span class="o">-</span> <span class="p">[[</span><span class="n">Article_Khan_Zettelkasten</span><span class="p">]]</span> <span class="o">--</span> <span class="kt">long</span> <span class="n">blog</span> <span class="n">post</span> <span class="n">by</span> <span class="n">Al</span> <span class="n">Kahn</span>
+<span class="o">-</span> <span class="p">[[</span><span class="n">Flow</span> <span class="n">creation</span><span class="p">]]</span> <span class="o">--</span> <span class="n">from</span> <span class="n">nickmilo</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">IMF</span> <span class="n">v3</span>
+<span class="o">-</span> <span class="p">[[</span><span class="n">How</span> <span class="n">To</span> <span class="n">Take</span> <span class="n">Smart</span> <span class="n">Notes</span><span class="p">]]</span> <span class="o">--</span> <span class="n">by</span> <span class="n">TIAGO</span> <span class="n">FORTE</span>
+<span class="o">-</span> <span class="p">[[</span><span class="n">Marp</span> <span class="n">CLI</span><span class="p">]]</span> <span class="o">--</span> <span class="n">markdown</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">slide</span> <span class="n">tool</span> <span class="n">made</span> <span class="n">by</span> <span class="n">some</span> <span class="n">Japanese</span> <span class="n">guy</span>
+
+<span class="cp">## Writing my blog</span>
+<span class="o">-</span> <span class="p">[[</span><span class="n">pelican_blog_workflow</span><span class="p">]]</span>
+
+<span class="o">---</span> 
+<span class="cp">## Useful notes in Obsidian</span>
+
+<span class="o">-</span> <span class="p">[[</span><span class="n">LaTeX</span> <span class="n">preambles</span><span class="p">]]</span> <span class="o">--</span> <span class="err">ここの</span><span class="n">preambleをコピペしてノートの最初に書いておくとLaTeXを書くのが便利になる</span>
+</code></pre></div>
+
+
+<h3>Hotkeys</h3>
+<p>Obsidianではキーボードショートカットをかなり自由に設定できるので，以下のような自分仕様の変更を加えている．</p>
+<ul>
+<li><code>Cmd + T</code> -- 今日のDaily noteを開く</li>
+<li><code>Cmd + 1</code> -- 左サイドバーの表示／非表示</li>
+<li><code>Cmd + 2</code> -- 右サイドバーの表示／非表示</li>
+</ul>
+<p>他に，特に変更していないが良く使うものをあげておく．</p>
+<ul>
+<li><code>Cmd + O</code> -- ノートをタイトルで検索して開く．最近開いたノートも表示される．</li>
+<li><code>Cmd + Shift + F</code> -- 全ノートの文字列検索．</li>
+</ul>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+<!-- Sidebar -->
+<section class="well well-sm">
+  <ul class="list-group list-group-flush">
+
+<!-- Sidebar/Social -->
+<li class="list-group-item">
+  <h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+  <ul class="list-group" id="social">
+    <li class="list-group-item"><a href="http://twitter.com/ryokbys"><i class="fa fa-twitter-square fa-lg"></i> twitter</a></li>
+    <li class="list-group-item"><a href="http://github.com/ryokbys"><i class="fa fa-github-square fa-lg"></i> github</a></li>
+  </ul>
+</li>
+<!-- End Sidebar/Social -->
+
+<!-- Sidebar/Links -->
+<li class="list-group-item">
+  <h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+  <ul class="list-group" id="links">
+    <li class="list-group-item">
+      <a href="http://ryokbys.github.io/blog/archives.html" target="_blank">Archives</a>
+    </li>
+    <li class="list-group-item">
+      <a href="http://ryokbys.github.io/blog/tags.html" target="_blank">Tags</a>
+    </li>
+  </ul>
+</li>
+<!-- End Sidebar/Links -->
+  </ul>
+</section>
+<!-- End Sidebar -->            </aside>
+        </div>
+    </div>
+</div>
+<!-- End Content Container -->
+
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2020 Ryo KOBAYASHI
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../../../../../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../../../../../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../../../../../theme/js/respond.min.js"></script>
+
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36370521-4']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+
+</body>
+</html>

@@ -129,24 +129,24 @@ configure: error: cannot guess build type<span class="p">;</span> you must speci
 
 <p>となって，進むことができない．
 オプションに<code>--build=sparc64-linux-gnu</code>を追加すると，</p>
-<div class="highlight"><pre><span></span><code><span class="nv">checking</span> <span class="k">for</span> <span class="nv">correct</span> <span class="nv">version</span> <span class="nv">of</span> <span class="nv">gmp</span>.<span class="nv">h</span>... <span class="nv">no</span>
-<span class="nv">configure</span>: <span class="nv">error</span>: <span class="nv">Building</span> <span class="nv">GCC</span> <span class="nv">requires</span> <span class="nv">GMP</span> <span class="mi">4</span>.<span class="mi">1</span><span class="o">+</span> <span class="nv">and</span> <span class="nv">MPFR</span> <span class="mi">2</span>.<span class="mi">3</span>.<span class="mi">2</span><span class="o">+</span>.
-<span class="nv">Try</span> <span class="nv">the</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">gmp</span> <span class="nv">and</span><span class="o">/</span><span class="nv">or</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">mpfr</span> <span class="nv">options</span> <span class="nv">to</span> <span class="nv">specify</span> <span class="nv">their</span> <span class="nv">locations</span>.
-<span class="nv">Copies</span> <span class="nv">of</span> <span class="nv">these</span> <span class="nv">libraries</span><span class="s1">&#39;</span><span class="s"> source code can be found at their respective</span>
-<span class="nv">hosting</span> <span class="nv">sites</span> <span class="nv">as</span> <span class="nv">well</span> <span class="nv">as</span> <span class="nv">at</span> <span class="nv">ftp</span>:<span class="o">//</span><span class="nv">gcc</span>.<span class="nv">gnu</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">pub</span><span class="o">/</span><span class="nv">gcc</span><span class="o">/</span><span class="nv">infrastructure</span><span class="o">/</span>.
-<span class="nv">See</span> <span class="nv">also</span> <span class="nv">http</span>:<span class="o">//</span><span class="nv">gcc</span>.<span class="nv">gnu</span>.<span class="nv">org</span><span class="o">/</span><span class="nv">install</span><span class="o">/</span><span class="nv">prerequisites</span>.<span class="nv">html</span> <span class="k">for</span> <span class="nv">additional</span> <span class="nv">info</span>.
-<span class="k">If</span> <span class="nv">you</span> <span class="nv">obtained</span> <span class="nv">GMP</span> <span class="nv">and</span><span class="o">/</span><span class="nv">or</span> <span class="nv">MPFR</span> <span class="nv">from</span> <span class="nv">a</span> <span class="nv">vendor</span> <span class="nv">distribution</span> <span class="nv">package</span>, <span class="nv">make</span>
-<span class="nv">sure</span> <span class="nv">that</span> <span class="nv">you</span> <span class="nv">have</span> <span class="nv">installed</span> <span class="nv">both</span> <span class="nv">the</span> <span class="nv">libraries</span> <span class="nv">and</span> <span class="nv">the</span> <span class="nv">header</span> <span class="nv">files</span>.
-<span class="nv">They</span> <span class="nv">may</span> <span class="nv">be</span> <span class="nv">located</span> <span class="nv">in</span> <span class="nv">separate</span> <span class="nv">packages</span>.
+<div class="highlight"><pre><span></span><code><span class="err">checking for correct version of gmp.h... no</span>
+<span class="c">configure: error: Building GCC requires GMP 4.1+ and MPFR 2.3.2+.</span>
+<span class="err">Try the --with-gmp and/or --with-mpfr options to specify their locations.</span>
+<span class="err">Copies of these libraries&#39; source code can be found at their respective</span>
+<span class="err">hosting sites as well as at ftp://gcc.gnu.org/pub/gcc/infrastructure/.</span>
+<span class="err">See also http://gcc.gnu.org/install/prerequisites.html for additional info.</span>
+<span class="err">If you obtained GMP and/or MPFR from a vendor distribution package, make</span>
+<span class="err">sure that you have installed both the libraries and the header files.</span>
+<span class="err">They may be located in separate packages.</span>
 </code></pre></div>
 
 
 <p>となり，進めない．どうも<code>GMP</code>と<code>MPFR</code>というライブラリが必要とのこと．</p>
 <p><strong>次のセクションにMPFRとGMPのインストールを記載する．</strong></p>
 <p>GMPとMPFRをインストールしたら，それらのヘッダファイルやライブラリファイルへのパスを明示的に渡してやって<code>./configure</code>を行う．</p>
-<div class="highlight"><pre><span></span><code>$ .<span class="o">/</span><span class="nv">configure</span> <span class="o">--</span><span class="nv">prefix</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span> <span class="o">--</span><span class="nv">build</span><span class="o">=</span><span class="nv">sparc64</span><span class="o">-</span><span class="nv">linux</span><span class="o">-</span><span class="nv">gnu</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">gmp</span><span class="o">-</span><span class="k">include</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span><span class="k">include</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">gmp</span><span class="o">-</span><span class="nv">lib</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span><span class="nv">lib</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">mpfr</span><span class="o">-</span><span class="k">include</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span><span class="k">include</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">mpfr</span><span class="o">-</span><span class="nv">lib</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span><span class="nv">lib</span> <span class="o">--</span><span class="nv">enable</span><span class="o">-</span><span class="nv">languages</span><span class="o">=</span><span class="nv">c</span>,<span class="nv">fortran</span> <span class="o">--</span><span class="nv">disable</span><span class="o">-</span><span class="nv">multilib</span>
-$ <span class="nv">make</span> <span class="o">-</span><span class="nv">j24</span>
-$ <span class="nv">make</span> <span class="nv">install</span>
+<div class="highlight"><pre><span></span><code>$ ./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/local-fx/ --build<span class="o">=</span>sparc64-linux-gnu --with-gmp-include<span class="o">=</span><span class="nv">$HOME</span>/local-fx/include --with-gmp-lib<span class="o">=</span><span class="nv">$HOME</span>/local-fx/lib --with-mpfr-include<span class="o">=</span><span class="nv">$HOME</span>/local-fx/include --with-mpfr-lib<span class="o">=</span><span class="nv">$HOME</span>/local-fx/lib --enable-languages<span class="o">=</span>c,fortran --disable-multilib
+$ make -j24
+$ make install
 </code></pre></div>
 
 
@@ -158,18 +158,18 @@ $ <span class="nv">make</span> <span class="nv">install</span>
 <li><a href="http://www.mpfr.org">http://www.mpfr.org</a>
 からダウンロードしてきて，解凍して，</li>
 </ul>
-<div class="highlight"><pre><span></span><code>$ .<span class="o">/</span><span class="nv">configure</span> <span class="o">--</span><span class="nv">prefix</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span> <span class="o">--</span><span class="nv">build</span><span class="o">=</span><span class="nv">sparc64</span><span class="o">-</span><span class="nv">linux</span><span class="o">-</span><span class="nv">gnu</span>
+<div class="highlight"><pre><span></span><code>$ ./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/local-fx/ --build<span class="o">=</span>sparc64-linux-gnu
 ...
-<span class="nv">checking</span> <span class="k">for</span> <span class="nv">gmp</span>.<span class="nv">h</span>... <span class="nv">no</span>
-<span class="nv">configure</span>: <span class="nv">error</span>: <span class="nv">gmp</span>.<span class="nv">h</span> <span class="nv">can</span><span class="s1">&#39;</span><span class="s">t be found, or is unusable.</span>
+checking <span class="k">for</span> gmp.h... no
+configure: error: gmp.h can<span class="err">&#39;</span>t be found, or is unusable.
 </code></pre></div>
 
 
 <p>と，結局<code>GMP</code>が必要．</p>
 <p>次のセクションのGMPをインストール後，下記のようにGMPの<code>gmp.h</code>と<code>libgmp.a</code>の場所を明示的にconfigureに渡してやれば，configureは通る．</p>
-<div class="highlight"><pre><span></span><code>$ .<span class="o">/</span><span class="nv">configure</span> <span class="o">--</span><span class="nv">prefix</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span> <span class="o">--</span><span class="nv">build</span><span class="o">=</span><span class="nv">sparc64</span><span class="o">-</span><span class="nv">linux</span><span class="o">-</span><span class="nv">gnu</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">gmp</span><span class="o">-</span><span class="k">include</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span><span class="k">include</span> <span class="o">--</span><span class="nv">with</span><span class="o">-</span><span class="nv">gmp</span><span class="o">-</span><span class="nv">lib</span><span class="o">=</span>$<span class="nv">HOME</span><span class="o">/</span><span class="nv">local</span><span class="o">-</span><span class="nv">fx</span><span class="o">/</span><span class="nv">lib</span>
-$ <span class="nv">make</span> <span class="o">-</span><span class="nv">j12</span>
-$ <span class="nv">make</span> <span class="nv">install</span>
+<div class="highlight"><pre><span></span><code>$ ./configure --prefix<span class="o">=</span><span class="nv">$HOME</span>/local-fx/ --build<span class="o">=</span>sparc64-linux-gnu --with-gmp-include<span class="o">=</span><span class="nv">$HOME</span>/local-fx/include --with-gmp-lib<span class="o">=</span><span class="nv">$HOME</span>/local-fx/lib
+$ make -j12
+$ make install
 </code></pre></div>
 
 
