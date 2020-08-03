@@ -113,18 +113,20 @@ R.K.S. blog            </a>
 <h2>日々のノート（Daily notes）</h2>
 <ul>
 <li>日々のメモノートとそれ以外は少し用途というか考え方が異なるので，日々のノートは<code>01_daily_notes</code>という保存し，Obsidianの「Daily notes」plugin機能を使って，<code>YYYY-MM-DD</code>というファイル名で作成することにする．</li>
-<li>Daily notes pluginでは，テンプレートファイルを設定することができるので，<code>01_daily_notes/template</code>という以下のようなファイルを作り，それをテンプレートとする．
-  ```
-  tags: #diary</li>
+<li>Daily notes pluginでは，テンプレートファイルを設定することができるので，<code>01_daily_notes/template</code>という以下のようなファイルを作り，それをテンプレートとする．</li>
 </ul>
+<p>```
+  tags: #diary</p>
 <p># Tasks
   - [ ] something</p>
 <hr>
 <p># Notes</p>
-<p><code>``
-  - daily notesなのに，タグとしては</code>#diary<code>となっているのはご愛嬌．．．
-  - 最初にdaily noteのTasksに，今日やることをリストアップして，チェックしていくという流れ．
-  -</code># Notes`以下にメモを書いていく．一つのノートとして独立するような内容はコピペで独立したノートを作り，リンクする．</p>
+<p>```</p>
+<ul>
+<li>daily notesなのに，タグとしては<code>#diary</code>となっているのはご愛嬌．．．</li>
+<li>最初にdaily noteのTasksに，今日やることをリストアップして，チェックしていくという流れ．</li>
+<li><code># Notes</code>以下にメモを書いていく．一つのノートとして独立するような内容はコピペで独立したノートを作り，リンクする．</li>
+</ul>
 <h2>Index and Map of Contents (MOC)</h2>
 <p>全てのノートがルートディレクトリ内に一様に保存されているので，何かしらのインデックス・ノートなり各ノートを参照する機構がないと，個々のノートが単独で保存されてしまい，どこからも行き着くことの出来ない「dead note」になってしまう．そのため，<a href="https://github.com/nickmilo/IMF-v3">nickmiloのIMF-v3</a>に従って，indexノートとMOCノートを作る．</p>
 <h3>indexノート <code>000 Index</code></h3>

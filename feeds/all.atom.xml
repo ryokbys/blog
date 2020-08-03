@@ -11,18 +11,20 @@
 &lt;h2&gt;日々のノート（Daily notes）&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;日々のメモノートとそれ以外は少し用途というか考え方が異なるので，日々のノートは&lt;code&gt;01_daily_notes&lt;/code&gt;という保存し，Obsidianの「Daily notes」plugin機能を使って，&lt;code&gt;YYYY-MM-DD&lt;/code&gt;というファイル名で作成することにする．&lt;/li&gt;
-&lt;li&gt;Daily notes pluginでは，テンプレートファイルを設定することができるので，&lt;code&gt;01_daily_notes/template&lt;/code&gt;という以下のようなファイルを作り，それをテンプレートとする．
-  ```
-  tags: #diary&lt;/li&gt;
+&lt;li&gt;Daily notes pluginでは，テンプレートファイルを設定することができるので，&lt;code&gt;01_daily_notes/template&lt;/code&gt;という以下のようなファイルを作り，それをテンプレートとする．&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;```
+  tags: #diary&lt;/p&gt;
 &lt;p&gt;# Tasks
   - [ ] something&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;# Notes&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;``
-  - daily notesなのに，タグとしては&lt;/code&gt;#diary&lt;code&gt;となっているのはご愛嬌．．．
-  - 最初にdaily noteのTasksに，今日やることをリストアップして，チェックしていくという流れ．
-  -&lt;/code&gt;# Notes`以下にメモを書いていく．一つのノートとして独立するような内容はコピペで独立したノートを作り，リンクする．&lt;/p&gt;
+&lt;p&gt;```&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;daily notesなのに，タグとしては&lt;code&gt;#diary&lt;/code&gt;となっているのはご愛嬌．．．&lt;/li&gt;
+&lt;li&gt;最初にdaily noteのTasksに，今日やることをリストアップして，チェックしていくという流れ．&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;# Notes&lt;/code&gt;以下にメモを書いていく．一つのノートとして独立するような内容はコピペで独立したノートを作り，リンクする．&lt;/li&gt;
+&lt;/ul&gt;
 &lt;h2&gt;Index and Map of Contents (MOC)&lt;/h2&gt;
 &lt;p&gt;全てのノートがルートディレクトリ内に一様に保存されているので，何かしらのインデックス・ノートなり各ノートを参照する機構がないと，個々のノートが単独で保存されてしまい，どこからも行き着くことの出来ない「dead note」になってしまう．そのため，&lt;a href="https://github.com/nickmilo/IMF-v3"&gt;nickmiloのIMF-v3&lt;/a&gt;に従って，indexノートとMOCノートを作る．&lt;/p&gt;
 &lt;h3&gt;indexノート &lt;code&gt;000 Index&lt;/code&gt;&lt;/h3&gt;
