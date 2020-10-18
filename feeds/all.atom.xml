@@ -1,5 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-08-03T11:39:17+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>My Obsidian workflow</title><link href="https://ryokbys.github.io/blog/posts/2020/08/03/my-obsidian-workflow/index.html" rel="alternate"></link><published>2020-08-03T11:39:17+09:00</published><updated>2020-08-03T11:39:17+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-08-03:/blog/posts/2020/08/03/my-obsidian-workflow/index.html</id><summary type="html">&lt;a href="https://obsidian.md"&gt;Obsidian&lt;/a&gt;というnote-takingアプリがなかなか良く出来たアプリで，今流行りの&lt;a href="https://zettelkasten.de"&gt;Zettelkasten&lt;/a&gt;が実装できるというので一ヶ月ほど使っている．</summary><content type="html">&lt;p&gt;&lt;a href="https://obsidian.md"&gt;Obsidian&lt;/a&gt;というnote-takingアプリがなかなか良く出来たアプリで，今流行りの&lt;a href="https://zettelkasten.de"&gt;Zettelkasten&lt;/a&gt;が実装できるというので一ヶ月ほど使っている．&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-10-18T10:54:42+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>fp.py on ISSP Ohtaka</title><link href="https://ryokbys.github.io/blog/posts/2020/10/18/fp.py-on-issp-ohtaka/index.html" rel="alternate"></link><published>2020-10-18T10:54:42+09:00</published><updated>2020-10-18T10:54:42+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-10-18:/blog/posts/2020/10/18/fp.py-on-issp-ohtaka/index.html</id><summary type="html">東大物性研のスパコン[1]のシステムBというのが使えるようになったので，そこで自分のプログラムの動作確認をした．古典力場構築プログラム&lt;code&gt;fp.py&lt;/code&gt;[2]が普通に使えたので，設定とジョブ投入方法をメモしておく．</summary><content type="html">&lt;p&gt;東大物性研のスパコン[1]のシステムBというのが使えるようになったので，そこで自分のプログラムの動作確認をした．古典力場構築プログラム&lt;code&gt;fp.py&lt;/code&gt;[2]が普通に使えたので，設定とジョブ投入方法をメモしておく．&lt;/p&gt;
+&lt;h2&gt;ダウンロード&lt;/h2&gt;
+&lt;p&gt;nap (Nagoya Atomistic simulation Package) を下記GitHubサイトからダウンロードする．
+https://github.com/ryokbys/nap&lt;/p&gt;
+&lt;p&gt;展開して，ディレクトリ名を変更して，&lt;code&gt;~/src/nap&lt;/code&gt; というディレクトリに置かれたとする．&lt;/p&gt;
+&lt;h2&gt;pmdのコンパイル&lt;/h2&gt;
+&lt;p&gt;Parallel Molecular Dynamics (pmd) プログラムをコンパイルする．&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; ~/src/nap/
+$ ./configure &lt;span class="nv"&gt;FCFLAGS&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;-O3 -march=core-avx2 -ip -ipo -g -traceback&amp;#39;&lt;/span&gt;
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; pmd/
+$ make pmd
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Pythonの設定&lt;/h2&gt;
+&lt;p&gt;初期設定ではpythonへのパスは通っていない．システム内にいくつかのバージョンのpythonが入っているが，残念ながらログインノードと計算ノードでインストールされているパッケージが異なっていて，扱いづらいので，自分のディレクトリに独自のpythonをインストールする．&lt;/p&gt;
+&lt;p&gt;Homebrew for Linux を利用してpython@3.8をインストールするため，&lt;a href="https://docs.brew.sh/Homebrew-on-Linux"&gt;ココ&lt;/a&gt; に従い Homebrew for Linux をインストールする．&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;python@3.8&lt;/code&gt; をインストールして，pythonとpipのリンクを &lt;code&gt;$HOME/bin/&lt;/code&gt; に入れて &lt;code&gt;python&lt;/code&gt; と &lt;code&gt;pip&lt;/code&gt; コマンドを使えるようにしておく．&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ brew install python@3.8
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; ~/bin/
+$ ln -s ~/.linuxbrew/bin/python3 python
+$ ln -s ~/.linuxbrew/bin/pip3 pip
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;いくつか必要となるPythonパッケージをインストールする．&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ pip install numpy pandas docopt ase
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;nappyの設定&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;~/.bash_profile.local&lt;/code&gt; に下記を追加して，&lt;code&gt;PYTHONPATH&lt;/code&gt; へnappyを追加しておく．&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PYTHONPATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HOME&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;/src/nap:&lt;span class="si"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;PYTHONPATH&lt;/span&gt;&lt;span class="si"&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;これがちゃんと反映されるように，&lt;code&gt;~/.bash_profile&lt;/code&gt; の最後に下記を書いておく．&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nb"&gt;source&lt;/span&gt; ~/.bash_profile.local
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;fp.pyの動作確認&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;nap/examples/fp_LLZ/&lt;/code&gt; を適当な場所にコピーして &lt;em&gt;fp.py&lt;/em&gt; のテストを行う．&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ &lt;span class="nb"&gt;cd&lt;/span&gt; /path/to/testdir
+$ cp -r ~/src/nap/examples/fp_LLZ ./
+$ &lt;span class="nb"&gt;cd&lt;/span&gt; fp_LLZ
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;&lt;code&gt;subjob.sh&lt;/code&gt;内の&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pmd 2&amp;gt;&amp;amp;1 &amp;gt; out.pmd.NpT&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;の行を，&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;srun -N 1 -n 1 -c 1 pmd 2&amp;gt;&amp;amp;1 &amp;gt; out.pmd.NpT&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;のように &lt;code&gt;srun&lt;/code&gt; でpmdを実行するように変更する．&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;in.fitpot&lt;/code&gt; の中に &lt;code&gt;cs_num_individuals 4&lt;/code&gt; という行があり，４個体並列で計算することを確認し，下記コマンドで &lt;em&gt;fp.py&lt;/em&gt; を実行する．&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ sbatch -p B1cpu -J &lt;span class="s1"&gt;&amp;#39;test_fp&amp;#39;&lt;/span&gt; -N &lt;span class="m"&gt;1&lt;/span&gt; -n &lt;span class="m"&gt;4&lt;/span&gt; -o out.fp ~/src/nap/nappy/fitpot/fp.py --nproc&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;下記のような &lt;code&gt;out.fp&lt;/code&gt; ファイルが出力されていれば成功．&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;$ tail -n5 out.fp
+   iid,Lr,Lth,Lvol,Llat,L&lt;span class="o"&gt;=&lt;/span&gt;        &lt;span class="m"&gt;6&lt;/span&gt;    &lt;span class="m"&gt;0&lt;/span&gt;.7614     &lt;span class="m"&gt;0&lt;/span&gt;.4336     &lt;span class="m"&gt;2&lt;/span&gt;.4838     &lt;span class="m"&gt;0&lt;/span&gt;.0000     &lt;span class="m"&gt;3&lt;/span&gt;.6788
+   iid,Lr,Lth,Lvol,Llat,L&lt;span class="o"&gt;=&lt;/span&gt;        &lt;span class="m"&gt;5&lt;/span&gt;    &lt;span class="m"&gt;0&lt;/span&gt;.4043     &lt;span class="m"&gt;0&lt;/span&gt;.2991     &lt;span class="m"&gt;1&lt;/span&gt;.0301     &lt;span class="m"&gt;0&lt;/span&gt;.0000     &lt;span class="m"&gt;1&lt;/span&gt;.7336
+   iid,Lr,Lth,Lvol,Llat,L&lt;span class="o"&gt;=&lt;/span&gt;        &lt;span class="m"&gt;9&lt;/span&gt;    &lt;span class="m"&gt;2&lt;/span&gt;.1364     &lt;span class="m"&gt;0&lt;/span&gt;.8182    &lt;span class="m"&gt;27&lt;/span&gt;.3374     &lt;span class="m"&gt;0&lt;/span&gt;.0000    &lt;span class="m"&gt;30&lt;/span&gt;.2921
+ step,time,best,vars&lt;span class="o"&gt;=&lt;/span&gt;      &lt;span class="m"&gt;1&lt;/span&gt;    &lt;span class="m"&gt;137&lt;/span&gt;.4    &lt;span class="m"&gt;1&lt;/span&gt;.7336  &lt;span class="m"&gt;1&lt;/span&gt;.000  &lt;span class="m"&gt;1&lt;/span&gt;.152  &lt;span class="m"&gt;1&lt;/span&gt;.177  &lt;span class="m"&gt;0&lt;/span&gt;.974  &lt;span class="m"&gt;0&lt;/span&gt;.833  &lt;span class="m"&gt;0&lt;/span&gt;.873  &lt;span class="m"&gt;2&lt;/span&gt;.037  &lt;span class="m"&gt;1&lt;/span&gt;.773  &lt;span class="m"&gt;2&lt;/span&gt;.352  &lt;span class="m"&gt;2&lt;/span&gt;.169  &lt;span class="m"&gt;1&lt;/span&gt;.964  &lt;span class="m"&gt;4&lt;/span&gt;.219  &lt;span class="m"&gt;2&lt;/span&gt;.038  &lt;span class="m"&gt;1&lt;/span&gt;.536  &lt;span class="m"&gt;1&lt;/span&gt;.862  &lt;span class="m"&gt;1&lt;/span&gt;.000
+elapsed &lt;span class="nb"&gt;time&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="m"&gt;137&lt;/span&gt;.432213 sec.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h2&gt;Ohtakaにおける注意&lt;/h2&gt;
+&lt;p&gt;Ohtakaには１ノード当たり2CPUあり，全部で128コアあるので，&lt;em&gt;fp.py&lt;/em&gt; では128並列まで可能なはず．&lt;/p&gt;
+&lt;p&gt;1プロセスのクロックはそれほど速くないので，スピードは速くないが，並列数が多いので広域探索が可能なのでもしかしたら収束までが速くなるかもしれない．&lt;/p&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href="https://aip.scitation.org/doi/10.1063/5.0015373"&gt;R. Kobayashi, Y. Miyaji, K. Nakano, M. Nakayama, "High-throughput production of force-fields for solid-state electrolyte materials", APL Materials 8, 081111 (2020)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.issp.u-tokyo.ac.jp/supercom"&gt;東京大学物性研究所スーパーコンピュータ・センター&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;</content><category term="misc"></category><category term="research"></category><category term="HPC"></category></entry><entry><title>My Obsidian workflow</title><link href="https://ryokbys.github.io/blog/posts/2020/08/03/my-obsidian-workflow/index.html" rel="alternate"></link><published>2020-08-03T11:39:17+09:00</published><updated>2020-08-03T11:39:17+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-08-03:/blog/posts/2020/08/03/my-obsidian-workflow/index.html</id><summary type="html">&lt;a href="https://obsidian.md"&gt;Obsidian&lt;/a&gt;というnote-takingアプリがなかなか良く出来たアプリで，今流行りの&lt;a href="https://zettelkasten.de"&gt;Zettelkasten&lt;/a&gt;が実装できるというので一ヶ月ほど使っている．</summary><content type="html">&lt;p&gt;&lt;a href="https://obsidian.md"&gt;Obsidian&lt;/a&gt;というnote-takingアプリがなかなか良く出来たアプリで，今流行りの&lt;a href="https://zettelkasten.de"&gt;Zettelkasten&lt;/a&gt;が実装できるというので一ヶ月ほど使っている．&lt;/p&gt;
 &lt;p&gt;アプリの紹介は「&lt;a href="https://note.com/takibayashi/n/nd6250964f0a7"&gt;第２の脳アプリObsidianを使って日次メモを書く方法&lt;/a&gt;」なんかを参照してもらうとして，自分の使い方をメモを兼ねて紹介しておく．
 ちなみに，このやり方は &lt;a href="https://github.com/nickmilo/IMF-v3"&gt;nickmiloのIMF-v3&lt;/a&gt; を参考にしている．&lt;/p&gt;
 &lt;h2&gt;ディレクトリ構造&lt;/h2&gt;
