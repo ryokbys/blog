@@ -49,12 +49,12 @@ $ &lt;span class="nb"&gt;cd&lt;/span&gt; fp_LLZ
 
 
 &lt;p&gt;&lt;code&gt;subjob.sh&lt;/code&gt;内の&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;pmd 2&amp;gt;&amp;amp;1 &amp;gt; out.pmd.NpT&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;pmd &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &amp;gt; out.pmd.NpT
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;の行を，&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="err"&gt;srun -N 1 -n 1 -c 1 pmd 2&amp;gt;&amp;amp;1 &amp;gt; out.pmd.NpT&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;srun -N &lt;span class="m"&gt;1&lt;/span&gt; -n &lt;span class="m"&gt;1&lt;/span&gt; -c &lt;span class="m"&gt;1&lt;/span&gt; pmd &lt;span class="m"&gt;2&lt;/span&gt;&amp;gt;&lt;span class="p"&gt;&amp;amp;&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt; &amp;gt; out.pmd.NpT
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 

@@ -148,12 +148,12 @@ $ <span class="nb">cd</span> fp_LLZ
 
 
 <p><code>subjob.sh</code>内の</p>
-<div class="highlight"><pre><span></span><code><span class="err">pmd 2&gt;&amp;1 &gt; out.pmd.NpT</span>
+<div class="highlight"><pre><span></span><code>pmd <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; out.pmd.NpT
 </code></pre></div>
 
 
 <p>の行を，</p>
-<div class="highlight"><pre><span></span><code><span class="err">srun -N 1 -n 1 -c 1 pmd 2&gt;&amp;1 &gt; out.pmd.NpT</span>
+<div class="highlight"><pre><span></span><code>srun -N <span class="m">1</span> -n <span class="m">1</span> -c <span class="m">1</span> pmd <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; out.pmd.NpT
 </code></pre></div>
 
 
