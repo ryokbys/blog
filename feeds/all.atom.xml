@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-10-18T10:54:42+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>fp.py on ISSP Ohtaka</title><link href="https://ryokbys.github.io/blog/posts/2020/10/18/fp.py-on-issp-ohtaka/index.html" rel="alternate"></link><published>2020-10-18T10:54:42+09:00</published><updated>2020-10-18T10:54:42+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-10-18:/blog/posts/2020/10/18/fp.py-on-issp-ohtaka/index.html</id><summary type="html">東大物性研のスパコン[1]のシステムBというのが使えるようになったので，そこで自分のプログラムの動作確認をした．古典力場構築プログラム&lt;code&gt;fp.py&lt;/code&gt;[2]が普通に使えたので，設定とジョブ投入方法をメモしておく．</summary><content type="html">&lt;p&gt;東大物性研のスパコン[1]のシステムBというのが使えるようになったので，そこで自分のプログラムの動作確認をした．古典力場構築プログラム&lt;code&gt;fp.py&lt;/code&gt;[2]が普通に使えたので，設定とジョブ投入方法をメモしておく．&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>R.K.S. blog</title><link href="https://ryokbys.github.io/blog/" rel="alternate"></link><link href="https://ryokbys.github.io/blog/feeds/all.atom.xml" rel="self"></link><id>https://ryokbys.github.io/blog/</id><updated>2020-11-03T22:24:35+09:00</updated><subtitle>Live as if you were to die tomorrow. Learn as if you were to live forever.</subtitle><entry><title>No more car navigation...</title><link href="https://ryokbys.github.io/blog/posts/2020/11/03/no-more-car-navigation.../index.html" rel="alternate"></link><published>2020-11-03T22:24:35+09:00</published><updated>2020-11-03T22:24:35+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-11-03:/blog/posts/2020/11/03/no-more-car-navigation.../index.html</id><summary type="html">最近車を買い替えたが，新しい車ではカーナビとして Android auto で Google map を利用するのがデフォルトとなっている．以前から思ってはいたことだが，このやり方よりも良いユーザー体験はあるのだろうか．．．？</summary><content type="html">&lt;p&gt;最近車を買い替えたが，新しい車ではカーナビとして Android auto で Google map を利用するのがデフォルトとなっている．以前から思ってはいたことだが，このやり方よりも良いユーザー体験はあるのだろうか．．．？&lt;/p&gt;
+&lt;p&gt;Android auto で Google map を使う際の流れを記すと，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;USBケーブルで携帯をつなぐ．&lt;/li&gt;
+&lt;li&gt;Android auto ボタンを押す（Google mapがデフォルトで開く）．&lt;/li&gt;
+&lt;li&gt;Google の音声認識ボタンを押し（もしくは「OK, google」と声かけ），目的地を言う．&lt;/li&gt;
+&lt;li&gt;ナビ開始ボタンを押す．&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Android auto は以下の２つの点で，これまでの車メーカーなどのカーナビと比べて勝っている．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;目的地の入力が便利&lt;/li&gt;
+&lt;li&gt;普段使っているナビ（Google map）を使える&lt;/li&gt;
+&lt;li&gt;普段使っているオーディオ（Amazon music とか podcast）を聞くことができる&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;今のところ一点だけ Android auto をつないで使うことで問題がある．それは，Android auto を使うと，機能を使わなければいけないラジオを聞くことが出来ないことで，これはどうにかしてほしい．Android auto 内のラジオアプリで聞くことはできるが，モバイル通信を使ってラジオを聞くのは負けな気がする．&lt;/p&gt;
+&lt;p&gt;それでも，渋滞情報が〜とか，ナビとしての性能は〜とかいうカーナビ側の利点を挙げることもできるとは思うが，今の所この流れを覆すようなメリットはなさそうな気がする．カーナビメーカーはいつまでやっていけるか見ものだな．．．&lt;/p&gt;</content><category term="misc"></category><category term="tech"></category><category term="car"></category></entry><entry><title>fp.py on ISSP Ohtaka</title><link href="https://ryokbys.github.io/blog/posts/2020/10/18/fp.py-on-issp-ohtaka/index.html" rel="alternate"></link><published>2020-10-18T10:54:42+09:00</published><updated>2020-10-18T10:54:42+09:00</updated><author><name>Ryo KOBAYASHI</name></author><id>tag:ryokbys.github.io,2020-10-18:/blog/posts/2020/10/18/fp.py-on-issp-ohtaka/index.html</id><summary type="html">東大物性研のスパコン[1]のシステムBというのが使えるようになったので，そこで自分のプログラムの動作確認をした．古典力場構築プログラム&lt;code&gt;fp.py&lt;/code&gt;[2]が普通に使えたので，設定とジョブ投入方法をメモしておく．</summary><content type="html">&lt;p&gt;東大物性研のスパコン[1]のシステムBというのが使えるようになったので，そこで自分のプログラムの動作確認をした．古典力場構築プログラム&lt;code&gt;fp.py&lt;/code&gt;[2]が普通に使えたので，設定とジョブ投入方法をメモしておく．&lt;/p&gt;
 &lt;h2&gt;ダウンロード&lt;/h2&gt;
 &lt;p&gt;nap (Nagoya Atomistic simulation Package) を下記GitHubサイトからダウンロードする．
 https://github.com/ryokbys/nap&lt;/p&gt;
