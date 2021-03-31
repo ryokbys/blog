@@ -3,8 +3,8 @@
 そこで，macOSで使えるAutomatorアプリを使って，大量の異なるディレクトリ内にあるdocxファイルをpdfに変換するワークフローを作ったのでメモしておく．（年間数回しか行わない作業なのでメモしないと忘れてしまう．）</summary><content type="html">&lt;p&gt;昨今の状況で，オンラインでのレポートの提出が多くなったが，docx形式で提出されたものをこちらで見やすいようにpdfに変換したいということがあった．
 そこで，macOSで使えるAutomatorアプリを使って，大量の異なるディレクトリ内にあるdocxファイルをpdfに変換するワークフローを作ったのでメモしておく．（年間数回しか行わない作業なのでメモしないと忘れてしまう．）&lt;/p&gt;
 &lt;p&gt;Automator.appで「ワークフロー」を開いて，下図のようなコンポーネント構成にする．
-&lt;img alt="" src="https://ryokbys.github.io/blog/images/210210_automator_docx2pdf.png"&gt;
-指定されたフォルダ内のサブフォルダの中身も検索するようにして，フォルダ内の「docx」もしくは「doc」ファイル全てに対してAppleScriptを実行する．
+&lt;img alt="" src="https://ryokbys.github.io/blog/images/210210_automator_docx2pdf.png"&gt;&lt;/p&gt;
+&lt;p&gt;指定されたフォルダ内のサブフォルダの中身も検索するようにして，フォルダ内の「docx」もしくは「doc」ファイル全てに対してAppleScriptを実行する．
 実行するAppleScriptは以下のようなもので，どこかのサイトから引用したものだが，どこのサイトか忘れてしまった（スミマセン）．&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;code&gt;&lt;span class="nv"&gt;use&lt;/span&gt; &lt;span class="nv"&gt;scripting&lt;/span&gt; &lt;span class="nv"&gt;additions&lt;/span&gt;
 
