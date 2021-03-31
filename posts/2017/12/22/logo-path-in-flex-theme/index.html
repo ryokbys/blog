@@ -99,9 +99,8 @@ R.K.S. blog            </a>
 But one thing annoyed me. There is a logo image on the left side and it works fine with the home, archive, and tag pages. But it does not show up on post pages.
 The reason is that the path to the logo image is set in <code>pelicanconf.py</code> and it seems to be relative URL from the current content which is dependent on the article.
 So setting</p>
-<div class="highlight"><pre><span></span><code><span class="err">SITELOGO = &quot;images/logo.png&quot;</span>
+<div class="highlight"><pre><span></span><code>SITELOGO = &quot;images/logo.png&quot;
 </code></pre></div>
-
 
 <p>does not work for post pages.
 But I do not know how to set <code>SITEURL</code> into it.</p>
@@ -112,20 +111,17 @@ from</p>
 <span class="x">        </span><span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
 </code></pre></div>
 
-
 <p>to</p>
 <div class="highlight"><pre><span></span><code><span class="x">        </span><span class="cp">{%</span> <span class="k">if</span> <span class="nv">SITELOGO</span> <span class="cp">%}</span><span class="x"></span>
 <span class="x">        &lt;img src=&quot;</span><span class="cp">{{</span> <span class="nv">SITEURL</span> <span class="cp">}}</span><span class="x">/</span><span class="cp">{{</span> <span class="nv">SITELOGO</span> <span class="cp">}}</span><span class="x">&quot; alt=&quot;</span><span class="cp">{{</span> <span class="nv">SITETITLE</span> <span class="cp">}}</span><span class="x">&quot; title=&quot;</span><span class="cp">{{</span> <span class="nv">SITETITLE</span> <span class="cp">}}</span><span class="x">&quot;&gt;</span>
 <span class="x">        </span><span class="cp">{%</span> <span class="k">else</span> <span class="cp">%}</span><span class="x"></span>
 </code></pre></div>
 
-
 <p>I added <code>{{ SITEURL }}/</code> before <code>{{ SITELOGO }}</code> to make the <code>SITELOGO</code> path as a relative path from <code>SITEURL</code>.</p>
 <p>Then it works fine even at post pages.</p>
 <p>But after struggling on this for hours, it turns out that just setting</p>
-<div class="highlight"><pre><span></span><code><span class="err">SITELOGO = &quot;/images/logo.png&quot;</span>
+<div class="highlight"><pre><span></span><code>SITELOGO = &quot;/images/logo.png&quot;
 </code></pre></div>
-
 
 <p>solves the issue here... What a waste of time...</p>
             </div>

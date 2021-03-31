@@ -114,25 +114,21 @@ R.K.S. blog            </a>
 <div class="highlight"><pre><span></span><code>$ pip install mayavi
 </code></pre></div>
 
-
 <p>しかし，この Mayavi を jupyter notebook で動作させるためには，Qt という表示用ライブラリを Python がら利用するための <strong>PyQt</strong> なるものが必要みたいで，それのインストールは pip からは行うことができなかった．
 そのため，Homebrew を用いて，</p>
 <div class="highlight"><pre><span></span><code>$ brew install qt
 $ brew install pyqt
 </code></pre></div>
 
-
 <p>として，Qt および PyQt をインストールした．
 インストール後は，</p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="nv">$PYTHONPATH</span>:/usr/local/Cellar/pyqt
 </code></pre></div>
 
-
 <p>とするか，<code>~/.bashrc</code> もしくは <code>~/.bash_profile</code> に上記を書きこんでそれを反映させるかして，python が PyQt を使えるようにする．</p>
 <p>Ref. [2] に従い，</p>
 <div class="highlight"><pre><span></span><code>$ jupyter nbextension install --py mayavi --user
 </code></pre></div>
-
 
 <p>というおまじないもやっておく．</p>
 <h2>Github版Mayaviのインストール</h2>
@@ -147,7 +143,6 @@ or
 $ python setup.py install --prefix<span class="o">=</span>~/local/
 </code></pre></div>
 
-
 <p><code>--prefix</code>オプションを指定した場合はそれ以下に <code>mayavi</code> と <code>tvtk</code> がインストールされる．
 <code>build</code> を行わないと TVTK が正常に動作しないので注意．</p>
 </li>
@@ -157,12 +152,10 @@ $ python setup.py install --prefix<span class="o">=</span>~/local/
 <span class="n">mlab</span><span class="o">.</span><span class="n">init_notebook</span><span class="p">()</span>
 </code></pre></div>
 
-
 <p>とすることで，notebook 上で Mayavi が使えるようになり，</p>
 <div class="highlight"><pre><span></span><code><span class="n">s</span> <span class="o">=</span> <span class="n">mlab</span><span class="o">.</span><span class="n">test_plot3d</span><span class="p">()</span>
 <span class="n">s</span>
 </code></pre></div>
-
 
 <p>で，3D表示がされれば成功．</p>
 <h2>Issues</h2>
@@ -172,18 +165,16 @@ $ python setup.py install --prefix<span class="o">=</span>~/local/
 </li>
 <li>
 <p><code>init_notebook()</code> のところで，最初，</p>
-<div class="highlight"><pre><span></span><code><span class="n">An</span> <span class="k">exception</span> <span class="n">has</span> <span class="n">occurred</span><span class="p">,</span> <span class="n">use</span> <span class="o">%</span><span class="n">tb</span> <span class="k">to</span> <span class="n">see</span> <span class="n">the</span> <span class="k">full</span> <span class="n">traceback</span><span class="p">.</span>
+<div class="highlight"><pre><span></span><code>An exception has occurred, use %tb to see the full traceback.
 
-<span class="n">SystemExit</span><span class="p">:</span> <span class="n">This</span> <span class="n">program</span> <span class="n">needs</span> <span class="k">access</span> <span class="k">to</span> <span class="n">the</span> <span class="n">screen</span><span class="p">.</span> <span class="n">Please</span> <span class="n">run</span> <span class="k">with</span> <span class="n">a</span>
-<span class="n">Framework</span> <span class="n">build</span> <span class="k">of</span> <span class="n">python</span><span class="p">,</span> <span class="k">and</span> <span class="k">only</span> <span class="k">when</span> <span class="n">you</span> <span class="k">are</span> <span class="n">logged</span> <span class="k">in</span>
-<span class="k">on</span> <span class="n">the</span> <span class="n">main</span> <span class="n">display</span> <span class="k">of</span> <span class="n">your</span> <span class="n">Mac</span><span class="p">.</span>
+SystemExit: This program needs access to the screen. Please run with a
+Framework build of python, and only when you are logged in
+on the main display of your Mac.
 </code></pre></div>
-
 
 <p>のようなエラー出力が表示されるが，もう一度実行すると，</p>
-<div class="highlight"><pre><span></span><code><span class="err">Notebook initialized with x3d backend.</span>
+<div class="highlight"><pre><span></span><code>Notebook initialized with x3d backend.
 </code></pre></div>
-
 
 <p>のようになり，問題なくなる...</p>
 </li>

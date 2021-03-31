@@ -111,22 +111,19 @@ R.K.S. blog            </a>
 rm -rf <span class="k">$(</span>cat <span class="si">${</span><span class="nv">CLEAN_FILE</span><span class="si">}</span><span class="k">)</span>
 </code></pre></div>
 
-
 <ol>
 <li>Put this script at <code>~/bin/</code> or somewhere the shell can find by looking at <code>PATH</code> environment variable.</li>
 <li>In any directory where there are many files you want to remove often, create the file <code>.clean</code> which is something like</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="err">out.*</span>
-<span class="err">*.txt</span>
+<div class="highlight"><pre><span></span><code>out.*
+*.txt
 </code></pre></div>
-
 
 <ol>
 <li>Run the above script,</li>
 </ol>
 <div class="highlight"><pre><span></span><code>$ clean
 </code></pre></div>
-
 
 <p>Then the files specifined by the <code>.clean</code> file will be removed.</p>
 <p>It is a very simple script, but it is very convenient for my daily routines.</p>

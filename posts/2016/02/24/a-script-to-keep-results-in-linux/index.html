@@ -109,7 +109,7 @@ identifier is also counted as an argument.</p>
 <span class="nv">CMDNAME</span><span class="o">=</span><span class="sb">`</span>basename <span class="nv">$0</span><span class="sb">`</span>
 <span class="k">while</span> <span class="nb">getopts</span> i: OPT
 <span class="k">do</span>
-  <span class="k">case</span> <span class="nv">$OPT</span> in
+  <span class="k">case</span> <span class="nv">$OPT</span> <span class="k">in</span>
     <span class="s2">&quot;i&quot;</span> <span class="o">)</span> <span class="nv">flag_i</span><span class="o">=</span><span class="s2">&quot;true&quot;</span><span class="p">;</span> <span class="nv">identifier</span><span class="o">=</span><span class="s2">&quot;</span><span class="nv">$OPTARG</span><span class="s2">&quot;</span> <span class="p">;;</span>
       * <span class="o">)</span> <span class="nb">echo</span> <span class="s2">&quot;Usage: </span><span class="nv">$CMDNAME</span><span class="s2"> [-i identifier] FILE [FILE, ...]&quot;</span>
   <span class="k">esac</span>

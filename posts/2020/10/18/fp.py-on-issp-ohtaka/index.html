@@ -111,7 +111,6 @@ $ <span class="nb">cd</span> pmd/
 $ make pmd
 </code></pre></div>
 
-
 <h2>Pythonの設定</h2>
 <p>初期設定ではpythonへのパスは通っていない．システム内にいくつかのバージョンのpythonが入っているが，残念ながらログインノードと計算ノードでインストールされているパッケージが異なっていて，扱いづらいので，自分のディレクトリに独自のpythonをインストールする．</p>
 <p>Homebrew for Linux を利用してpython@3.8をインストールするため，<a href="https://docs.brew.sh/Homebrew-on-Linux">ココ</a> に従い Homebrew for Linux をインストールする．</p>
@@ -122,22 +121,18 @@ $ ln -s ~/.linuxbrew/bin/python3 python
 $ ln -s ~/.linuxbrew/bin/pip3 pip
 </code></pre></div>
 
-
 <p>いくつか必要となるPythonパッケージをインストールする．</p>
 <div class="highlight"><pre><span></span><code>$ pip install numpy pandas docopt ase
 </code></pre></div>
-
 
 <h2>nappyの設定</h2>
 <p><code>~/.bash_profile.local</code> に下記を追加して，<code>PYTHONPATH</code> へnappyを追加しておく．</p>
 <div class="highlight"><pre><span></span><code>$ <span class="nb">export</span> <span class="nv">PYTHONPATH</span><span class="o">=</span><span class="si">${</span><span class="nv">HOME</span><span class="si">}</span>/src/nap:<span class="si">${</span><span class="nv">PYTHONPATH</span><span class="si">}</span>
 </code></pre></div>
 
-
 <p>これがちゃんと反映されるように，<code>~/.bash_profile</code> の最後に下記を書いておく．</p>
 <div class="highlight"><pre><span></span><code><span class="nb">source</span> ~/.bash_profile.local
 </code></pre></div>
-
 
 <h2>fp.pyの動作確認</h2>
 <p><code>nap/examples/fp_LLZ/</code> を適当な場所にコピーして <em>fp.py</em> のテストを行う．</p>
@@ -146,22 +141,18 @@ $ cp -r ~/src/nap/examples/fp_LLZ ./
 $ <span class="nb">cd</span> fp_LLZ
 </code></pre></div>
 
-
 <p><code>subjob.sh</code>内の</p>
 <div class="highlight"><pre><span></span><code>pmd <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; out.pmd.NpT
 </code></pre></div>
-
 
 <p>の行を，</p>
 <div class="highlight"><pre><span></span><code>srun -N <span class="m">1</span> -n <span class="m">1</span> -c <span class="m">1</span> pmd <span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span> &gt; out.pmd.NpT
 </code></pre></div>
 
-
 <p>のように <code>srun</code> でpmdを実行するように変更する．</p>
 <p><code>in.fitpot</code> の中に <code>cs_num_individuals 4</code> という行があり，４個体並列で計算することを確認し，下記コマンドで <em>fp.py</em> を実行する．</p>
 <div class="highlight"><pre><span></span><code>$ sbatch -p B1cpu -J <span class="s1">&#39;test_fp&#39;</span> -N <span class="m">1</span> -n <span class="m">4</span> -o out.fp ~/src/nap/nappy/fitpot/fp.py --nproc<span class="o">=</span><span class="m">4</span>
 </code></pre></div>
-
 
 <p>下記のような <code>out.fp</code> ファイルが出力されていれば成功．</p>
 <div class="highlight"><pre><span></span><code>$ tail -n5 out.fp
@@ -171,7 +162,6 @@ $ <span class="nb">cd</span> fp_LLZ
  step,time,best,vars<span class="o">=</span>      <span class="m">1</span>    <span class="m">137</span>.4    <span class="m">1</span>.7336  <span class="m">1</span>.000  <span class="m">1</span>.152  <span class="m">1</span>.177  <span class="m">0</span>.974  <span class="m">0</span>.833  <span class="m">0</span>.873  <span class="m">2</span>.037  <span class="m">1</span>.773  <span class="m">2</span>.352  <span class="m">2</span>.169  <span class="m">1</span>.964  <span class="m">4</span>.219  <span class="m">2</span>.038  <span class="m">1</span>.536  <span class="m">1</span>.862  <span class="m">1</span>.000
 elapsed <span class="nb">time</span> <span class="o">=</span> <span class="m">137</span>.432213 sec.
 </code></pre></div>
-
 
 <h2>Ohtakaにおける注意</h2>
 <p>Ohtakaには１ノード当たり2CPUあり，全部で128コアあるので，<em>fp.py</em> では128並列まで可能なはず．</p>

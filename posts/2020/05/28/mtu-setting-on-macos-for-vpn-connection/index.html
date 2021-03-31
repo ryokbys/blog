@@ -106,7 +106,6 @@ VPNで接続しても10分程度で突然接続が切れてしまうことが多
 <div class="highlight"><pre><span></span><code>$ ping -c <span class="m">5</span> -D -s <span class="m">1472</span> www.google.com
 </code></pre></div>
 
-
 <ul>
 <li><code>-s 1472</code>：通信バイトサイズを指定（ヘッダ分<code>+28</code>がこれに加わる）</li>
 <li><code>-D</code>：通信パッケージを分割しない？　通信パッケージが大きすぎたらダメだとなってほしいので．</li>
@@ -137,7 +136,6 @@ wrong total length <span class="m">96</span> instead of <span class="m">1280</sp
 <span class="m">5</span> packets transmitted, <span class="m">5</span> packets received, <span class="m">0</span>.0% packet loss
 round-trip min/avg/max/stddev <span class="o">=</span> <span class="m">33</span>.143/34.767/36.151/1.050 ms
 </code></pre></div>
-
 
 <p>このように，1280まではOKだが，1281以上だとパッケージ分割が必要となり，VPNの受付側が分割したパッケージは受け取らんというポリシーの場合には途中で接続が切れるということがある，のかな？</p>
 <h2>MTU manual setting on macOS Catalina</h2>

@@ -99,21 +99,18 @@ R.K.S. blog            </a>
 <div class="highlight"><pre><span></span><code>X11 forwarding request failed on channel <span class="m">0</span>
 </code></pre></div>
 
-
 <p>And when using <code>-v</code> option, I got</p>
 <div class="highlight"><pre><span></span><code>debug1: Remote: No xauth program<span class="p">;</span> cannot forward X11.
 X11 forwarding request failed on channel <span class="m">0</span>
 </code></pre></div>
 
-
 <p>So the problem seemed to be an issue of <code>xauth</code>-related, and actually this was because the remote server could not find the <code>xauth</code> program, even though I do not know the reason why..
 I add a line <code>XAuthLocation /opt/X11/bin/xauth</code> to <code>/etc/ssh/sshd_config</code> on the remote server, to become as follows.</p>
-<div class="highlight"><pre><span></span><code><span class="err">X11Forwarding yes</span>
-<span class="err">X11DisplayOffset 10</span>
-<span class="err">X11UseLocalhost no</span>
-<span class="err">XAuthLocation /opt/X11/bin/xauth</span>
+<div class="highlight"><pre><span></span><code>X11Forwarding yes
+X11DisplayOffset 10
+X11UseLocalhost no
+XAuthLocation /opt/X11/bin/xauth
 </code></pre></div>
-
 
 <p>Problem solved.</p>
 <p>References</p>

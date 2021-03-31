@@ -106,12 +106,10 @@ R.K.S. blog            </a>
     <span class="nt">&lt;rc&gt;&lt;c&gt;</span>  48<span class="nt">&lt;/c&gt;&lt;c&gt;</span>O <span class="nt">&lt;/c&gt;&lt;c&gt;</span>     16.00000000<span class="nt">&lt;/c&gt;&lt;c&gt;</span>      6.00000000<span class="nt">&lt;/c&gt;&lt;c&gt;</span>  PAW_PBE O_s 07Sep2000                 <span class="nt">&lt;/c&gt;&lt;/rc&gt;</span>
 </code></pre></div>
 
-
 <p>So reading the <code>vasprun.xml</code> file with using <em>ASE</em> module or something like that does not work.</p>
 <p>My current solution is just to correct using <code>sed</code> command.</p>
 <div class="highlight"><pre><span></span><code>$ sed -i &quot;&quot; -e &#39;s|<span class="nt">&lt;c&gt;</span>r <span class="nt">&lt;/c&gt;</span>|<span class="nt">&lt;c&gt;</span>Zr<span class="nt">&lt;/c&gt;</span>|&#39; vasprun.xml
 </code></pre></div>
-
 
 <p>But this is kind of an annoying bug when one does some automatic parsing of <code>vasprun.xml</code>...</p>
             </div>

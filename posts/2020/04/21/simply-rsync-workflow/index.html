@@ -115,16 +115,13 @@ by the following command:</p>
 <div class="highlight"><pre><span></span><code>$ /path/to/rsync_wrapper.py up -r remote
 </code></pre></div>
 
-
 <p>If you make an alias to <code>/path/to/rsync_wrapper.py up</code> as <code>upsync</code>, you can do the same by,</p>
 <div class="highlight"><pre><span></span><code>$ upsync -r remote
 </code></pre></div>
 
-
 <p>And from the second time, you can do by just</p>
 <div class="highlight"><pre><span></span><code>$ upsync
 </code></pre></div>
-
 
 <p>since the first run of <code>rsync_wrapper.py</code> will make a configuration file <code>.sync</code> in the directory
 and the script knows which remote host is used for the sync.</p>

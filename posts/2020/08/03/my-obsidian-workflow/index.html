@@ -115,16 +115,15 @@ R.K.S. blog            </a>
 <li>日々のメモノートとそれ以外は少し用途というか考え方が異なるので，日々のノートは<code>01_daily_notes</code>という保存し，Obsidianの「Daily notes」plugin機能を使って，<code>YYYY-MM-DD</code>というファイル名で作成することにする．</li>
 <li>Daily notes pluginでは，テンプレートファイルを設定することができるので，<code>01_daily_notes/template</code>という以下のようなファイルを作り，それをテンプレートとする．</li>
 </ul>
-<div class="highlight"><pre><span></span><code><span class="n">tags</span><span class="p">:</span> <span class="o">#</span><span class="n">diary</span>
+<div class="highlight"><pre><span></span><code>tags: <span class="ni">#diary</span>
 
-<span class="o">#</span> <span class="n">Tasks</span>
-<span class="o">-</span> <span class="p">[</span> <span class="p">]</span> <span class="n">something</span>
+<span class="gh"># Tasks</span>
+<span class="k">- [ ]</span> something
 
-<span class="c1">---</span>
+---
 
-<span class="o">#</span> <span class="n">Notes</span>
+<span class="gh"># Notes</span>
 </code></pre></div>
-
 
 <ul>
 <li>daily notesなのに，タグとしては<code>#diary</code>となっているのはご愛嬌．．．</li>
@@ -134,37 +133,36 @@ R.K.S. blog            </a>
 <h2>Index and Map of Contents (MOC)</h2>
 <p>全てのノートがルートディレクトリ内に一様に保存されているので，何かしらのインデックス・ノートなり各ノートを参照する機構がないと，個々のノートが単独で保存されてしまい，どこからも行き着くことの出来ない「dead note」になってしまう．そのため，<a href="https://github.com/nickmilo/IMF-v3">nickmiloのIMF-v3</a>に従って，indexノートとMOCノートを作る．</p>
 <h3>indexノート <code>000 Index</code></h3>
-<div class="highlight"><pre><span></span><code><span class="o">#</span> <span class="mi">000</span> <span class="k">Index</span>
+<div class="highlight"><pre><span></span><code><span class="gh"># 000 Index</span>
 
-<span class="o">##</span> <span class="k">Index</span> <span class="k">Map</span>
-<span class="k">Each</span> <span class="k">index</span> <span class="n">file</span> <span class="k">contains</span> <span class="o">**</span><span class="k">Map</span> <span class="k">Of</span> <span class="n">Contents</span> <span class="p">(</span><span class="n">MOC</span><span class="p">)</span><span class="o">**</span> <span class="n">information</span><span class="p">.</span>
-<span class="o">-</span> <span class="mi">000</span><span class="n">s</span> <span class="c1">-- [[000 Index]]</span>
-<span class="o">-</span> <span class="mi">010</span><span class="n">s</span> <span class="c1">-- [[010 Personal Life MOC]] 自分・家族・生活に関すること</span>
-<span class="o">-</span> <span class="mi">030</span><span class="n">s</span> <span class="c1">-- [[030 Computer MOC]] 関連，使い方，ソフトウェア</span>
-<span class="o">-</span> <span class="mi">040</span><span class="n">s</span> <span class="c1">-- [[040 Finance MOC]] 資産運用，投資など</span>
-<span class="o">-</span> <span class="mi">050</span><span class="n">s</span> <span class="c1">-- [[050 Productivity MOC]] - note-taking, project managements, productivity</span>
-<span class="o">-</span> <span class="mi">090</span><span class="n">s</span> <span class="c1">-- [[090 Learning MOC]] 学習のことなど</span>
-<span class="o">-</span> <span class="mi">00</span><span class="n">_assets</span><span class="o">/</span> <span class="c1">-- テキスト以外のファイル格納庫</span>
-<span class="o">-</span> <span class="mi">01</span><span class="n">_daily_notes</span><span class="o">/`</span><span class="n">YYYY</span><span class="o">-</span><span class="n">MM</span><span class="o">-</span><span class="n">DD</span><span class="p">.</span><span class="n">md</span><span class="o">`</span> <span class="c1">-- 日記</span>
-<span class="o">-</span> <span class="mi">99</span><span class="n">_archive</span><span class="o">/</span> <span class="c1">-- もう更新されないノート格納庫</span>
+<span class="gu">## Index Map</span>
+Each index file contains <span class="gs">**Map Of Contents (MOC)**</span> information.
+<span class="k">-</span> 000s -- [[000 Index]]
+<span class="k">-</span> 010s -- [[010 Personal Life MOC]] 自分・家族・生活に関すること
+<span class="k">-</span> 030s -- [[030 Computer MOC]] 関連，使い方，ソフトウェア
+<span class="k">-</span> 040s -- [[040 Finance MOC]] 資産運用，投資など
+<span class="k">-</span> 050s -- [[050 Productivity MOC]] - note-taking, project managements, productivity
+<span class="k">-</span> 090s -- [[090 Learning MOC]] 学習のことなど
+<span class="k">-</span> 00_assets/ -- テキスト以外のファイル格納庫
+<span class="k">-</span> 01_daily_notes/`YYYY-MM-DD.md` -- 日記
+<span class="k">-</span> 99_archive/ -- もう更新されないノート格納庫
 
-<span class="o">##</span> <span class="n">Tags</span>
+<span class="gu">## Tags</span>
 
-<span class="o">-</span> <span class="mi">000</span><span class="n">s</span> <span class="c1">-- #IMF #MOC #Zettelkasten </span>
-<span class="o">-</span> <span class="mi">010</span><span class="n">s</span> <span class="c1">-- </span>
-<span class="o">-</span> <span class="mi">030</span><span class="n">s</span> <span class="c1">-- #computer #software #commands #スパコン </span>
-<span class="o">-</span> <span class="mi">040</span><span class="n">s</span> <span class="c1">-- #株 #資産運用 </span>
-<span class="o">-</span> <span class="mi">050</span><span class="n">s</span> <span class="c1">-- #obsidian #note-taking #diary #productivity #GTD</span>
-<span class="o">-</span> <span class="mi">090</span><span class="n">s</span> <span class="c1">-- #learning</span>
+<span class="k">-</span> 000s -- <span class="ni">#IMF</span> <span class="ni">#MOC</span> <span class="ni">#Zettelkasten</span> 
+<span class="k">-</span> 010s -- 
+<span class="k">-</span> 030s -- <span class="ni">#computer</span> <span class="ni">#software</span> <span class="ni">#commands</span> <span class="ni">#スパコン</span> 
+<span class="k">-</span> 040s -- <span class="ni">#株</span> <span class="ni">#資産運用</span> 
+<span class="k">-</span> 050s -- <span class="ni">#obsidian</span> <span class="ni">#note</span>-taking <span class="ni">#diary</span> <span class="ni">#productivity</span> <span class="ni">#GTD</span>
+<span class="k">-</span> 090s -- <span class="ni">#learning</span>
 
-<span class="o">##</span> <span class="n">Rules</span>
+<span class="gu">## Rules</span>
 
-<span class="o">-</span> <span class="err">全てのノートはルートディレクトリに保存．ディレクトリによるカテゴリ分けはしない．タグとリンクでつなげる．</span>
-<span class="o">-</span> <span class="err">ノートは何かのノートから</span><span class="n">wiki風リンクで派生させる形で作成する</span><span class="err">．</span>
-<span class="o">-</span> <span class="err">上記インデックスファイルから</span><span class="n">MOC</span> <span class="n">noteにリンクして</span><span class="err">，</span><span class="n">MOCからさらにリンクしていく</span>
-<span class="o">-</span> <span class="err">会議・ミーティングは</span><span class="o">`</span><span class="n">MTG</span> <span class="n">YYMMDD</span> <span class="err">会議名</span><span class="p">.</span><span class="n">md</span><span class="o">`</span><span class="err">というノートに．</span>
+<span class="k">-</span> 全てのノートはルートディレクトリに保存．ディレクトリによるカテゴリ分けはしない．タグとリンクでつなげる．
+<span class="k">-</span> ノートは何かのノートからwiki風リンクで派生させる形で作成する．
+<span class="k">-</span> 上記インデックスファイルからMOC noteにリンクして，MOCからさらにリンクしていく
+<span class="k">-</span> 会議・ミーティングは`MTG YYMMDD 会議名.md`というノートに．
 </code></pre></div>
-
 
 <ul>
 <li><code>000 Index</code>というファイル名にすることで，ソートすると一番上に表示される．</li>
@@ -175,29 +173,28 @@ R.K.S. blog            </a>
 <h3>MOCノート</h3>
 <p>各カテゴリーやトピックに関連するノートへのリンクをまとめておくノート．</p>
 <p>例えば，<code>000 Index</code>ノートにある<code>[[050 Productivity MOC]]</code>からは下記のようなノートに飛ぶようになっている．</p>
-<div class="highlight"><pre><span></span><code><span class="cp"># 050 Productivity MOC</span>
-<span class="cp">#note-taking #obsidian #MOC #IMF #Zettelkasten #productivity </span>
+<div class="highlight"><pre><span></span><code><span class="gh"># 050 Productivity MOC</span>
+<span class="gh">#note-taking #obsidian #MOC #IMF #Zettelkasten #productivity </span>
 
-<span class="err">ノートのとり方，情報のまとめ方，情報の引き出し方など．文章の書き方なども含めても良い．</span>
+ノートのとり方，情報のまとめ方，情報の引き出し方など．文章の書き方なども含めても良い．
 
-<span class="o">---</span>
+---
 
-<span class="cp">## Notes</span>
+<span class="gu">## Notes</span>
 
-<span class="o">-</span> <span class="p">[[</span><span class="n">Article_Khan_Zettelkasten</span><span class="p">]]</span> <span class="o">--</span> <span class="kt">long</span> <span class="n">blog</span> <span class="n">post</span> <span class="n">by</span> <span class="n">Al</span> <span class="n">Kahn</span>
-<span class="o">-</span> <span class="p">[[</span><span class="n">Flow</span> <span class="n">creation</span><span class="p">]]</span> <span class="o">--</span> <span class="n">from</span> <span class="n">nickmilo</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">IMF</span> <span class="n">v3</span>
-<span class="o">-</span> <span class="p">[[</span><span class="n">How</span> <span class="n">To</span> <span class="n">Take</span> <span class="n">Smart</span> <span class="n">Notes</span><span class="p">]]</span> <span class="o">--</span> <span class="n">by</span> <span class="n">TIAGO</span> <span class="n">FORTE</span>
-<span class="o">-</span> <span class="p">[[</span><span class="n">Marp</span> <span class="n">CLI</span><span class="p">]]</span> <span class="o">--</span> <span class="n">markdown</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">slide</span> <span class="n">tool</span> <span class="n">made</span> <span class="n">by</span> <span class="n">some</span> <span class="n">Japanese</span> <span class="n">guy</span>
+<span class="k">-</span> [[Article_Khan_Zettelkasten]] -- long blog post by Al Kahn
+<span class="k">-</span> [[Flow creation]] -- from nickmilo&#39;s IMF v3
+<span class="k">-</span> [[How To Take Smart Notes]] -- by TIAGO FORTE
+<span class="k">-</span> [[Marp CLI]] -- markdown-to-slide tool made by some Japanese guy
 
-<span class="cp">## Writing my blog</span>
-<span class="o">-</span> <span class="p">[[</span><span class="n">pelican_blog_workflow</span><span class="p">]]</span>
+<span class="gu">## Writing my blog</span>
+<span class="k">-</span> [[pelican_blog_workflow]]
 
-<span class="o">---</span> 
-<span class="cp">## Useful notes in Obsidian</span>
+--- 
+<span class="gu">## Useful notes in Obsidian</span>
 
-<span class="o">-</span> <span class="p">[[</span><span class="n">LaTeX</span> <span class="n">preambles</span><span class="p">]]</span> <span class="o">--</span> <span class="err">ここの</span><span class="n">preambleをコピペしてノートの最初に書いておくとLaTeXを書くのが便利になる</span>
+<span class="k">-</span> [[LaTeX preambles]] -- ここのpreambleをコピペしてノートの最初に書いておくとLaTeXを書くのが便利になる
 </code></pre></div>
-
 
 <h3>Hotkeys</h3>
 <p>Obsidianではキーボードショートカットをかなり自由に設定できるので，以下のような自分仕様の変更を加えている．</p>

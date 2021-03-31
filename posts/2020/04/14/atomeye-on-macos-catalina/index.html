@@ -113,13 +113,11 @@ AtomEyeはコマンド名は<code>A</code>なことに注意．</p>
     /usr/X11/lib/libX11.6.dylib <span class="o">(</span>compatibility version <span class="m">10</span>.0.0, current version <span class="m">10</span>.0.0<span class="o">)</span>
 </code></pre></div>
 
-
 <p>しかし，Calatinaでは（もしくは自分の環境では）<code>/usr/X11</code>は空ディレクトリへのsymlinkで，<code>X11</code>は<code>/opt/X11</code>に存在していた．なので，上記の動的ライブラリのリンクを以下のように変更した．</p>
 <div class="highlight"><pre><span></span><code>$ install_name_tool -change /usr/X11/lib/libXpm.4.dylib /opt/X11/lib/libXpm.4.dylib ~/bin/A
 $ install_name_tool -change /usr/X11/lib/libXext.6.dylib /opt/X11/lib/libXext.6.dylib ~/bin/A
 $ install_name_tool -change /usr/X11/lib/libX11.6.dylib /opt/X11/lib/libX11.6.dylib ~/bin/A
 </code></pre></div>
-
 
 <p>他に，<code>/usr/X11</code>を<code>/opt/X11</code>へのsymlinkに変更するという手段も考えられるが，Catalinaではそれはできなかった．以前のmacOSでは，SIPなるものを無効にするとできたようだが，少なくとも自分の環境ではそれはできなかった．
 ちなみに，ソースコードも取ってくることはできるらしいので，それをコンパイルすることは可能とは思う[2]．</p>

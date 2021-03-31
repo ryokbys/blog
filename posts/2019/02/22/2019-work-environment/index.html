@@ -104,7 +104,7 @@ R.K.S. blog            </a>
 以下のスクリプトを<code>~/.bashrc</code>もしくは<code>~/.bash_profile</code>に書いておく．</p>
 <div class="highlight"><pre><span></span><code><span class="k">function</span> tmux<span class="o">()</span> <span class="o">{</span>
     <span class="nb">local</span> <span class="nv">tmux</span><span class="o">=</span><span class="k">$(</span><span class="nb">type</span> -fp tmux<span class="k">)</span>
-    <span class="k">case</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> in
+    <span class="k">case</span> <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="k">in</span>
         update-environment<span class="p">|</span>update-env<span class="p">|</span>env-update<span class="o">)</span>
             <span class="nb">local</span> v
             <span class="k">while</span> <span class="nb">read</span> v<span class="p">;</span> <span class="k">do</span>
@@ -125,11 +125,9 @@ R.K.S. blog            </a>
 <span class="o">}</span>
 </code></pre></div>
 
-
 <p>そうして，以下のコマンドを打つことで，tmux内のX windowの設定を切り替えられるので，gnuplotなどのグラフをちゃんと転送できるようになる．</p>
 <div class="highlight"><pre><span></span><code>$ tmux update-env
 </code></pre></div>
-
 
 <h2>Jupyter Lab</h2>
 <p>こちらも前年同様で，引き続き使用している．もはや欠かせない．前年度からの変更は，プロジェクト毎のディレクトリの構造を整理し，<code>project/</code>ディレクトリの中に，<code>src/codebase/</code>というディレクトリを用意し，その中に<code>__init__.py</code>という空のファイルと，pythonスクリプトを置いておく．それらのスクリプトは，そのプロジェクトに共通する便利スクリプト群であり，そのプロジェクトで使うすべてのjupyter notebookから参照しやすくした．jupyter notebookからそれらを利用する際には，以下のようなコードを書けば良い．</p>
@@ -140,7 +138,6 @@ R.K.S. blog            </a>
 <span class="kn">from</span> <span class="nn">codebase</span> <span class="kn">import</span> <span class="n">pmd</span>
 <span class="kn">from</span> <span class="nn">codebase</span> <span class="kn">import</span> <span class="n">cspline</span> <span class="k">as</span> <span class="n">csp</span>
 </code></pre></div>
-
 
 <h2>Quiver.app</h2>
 <p>昨年から引き続き使用している．しかし，最近iPad Proを使うようになってから，一部のメモはそちらに移行している．</p>
